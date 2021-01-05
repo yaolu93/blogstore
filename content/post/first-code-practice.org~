@@ -10,7 +10,7 @@
   
 * 2D to sparseArray, then sparseArray to 2D
     
-  #+BEGIN_SRC java
+  #+BEGIN_SRC
 
 public class SparseArray {
     //create init 2D array

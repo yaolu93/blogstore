@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: http://localhost:64480/AchillesLy/sitemap.xml
