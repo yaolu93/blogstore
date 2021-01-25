@@ -1,5 +1,5 @@
 #+TITLE:  First code practice
-
+#+date:   2021-1-4
 *SharseArray*
 
 /this demo is to help us transform the data from big data to the small data/
