@@ -1,9 +1,14 @@
 ---
 title: "This is a hidden post."
-date: 2018-03-08T17:40:19+08:00
-lastmod: 2018-03-08T22:01:19+08:00
-draft: true
+date: 2019-03-08
+lastmod: 2019-03-08
+
+
+draft: ture
+tags: ["Java", "Leetcode","Memento","Visitor"]
+categories: ["Leetcode","Desige Pattern","Microservice","Linux","Penetration Test"]
 author: '<a href="https://halu.lu" target="_blank">Halulu</a>'
+
 
 hiddenFromHomePage: true
 ---
