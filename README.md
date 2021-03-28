@@ -1,2 +1,2 @@
 # blogstore
-Achilles' Blig
+Achilles' Blog
