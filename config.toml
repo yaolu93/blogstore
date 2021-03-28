@@ -1,4 +1,4 @@
-baseURL = "https://achillesly.github.io/AchillesLy/"
+baseURL = "https://www.achilleslu.com/"
 languageCode = "en"
 defaultContentLanguage = "en"                             # en / zh-cn / ... (This field determines which i18n file to use)
 title = "Achilles"
@@ -28,11 +28,11 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   priority = 0.5
   filename = "sitemap.xml"
 
-##[[menu.main]]             # config your menu              # 配置目录
-##  name = "Home"
-##  weight = 10
-##  identifier = "home"
-##  url = "/"
+[[menu.main]]             # config your menu              # 配置目录
+  name = "Home"
+  weight = 10
+  identifier = "home"
+  url = "/"
   
 [[menu.main]]
   name = "Archives"
@@ -180,11 +180,11 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     alipay = "/path/to/your/alipay-qr-code.png"           # 支付宝二维码
 
   [params.social]                                         # 社交链接
-    a-email = "lytreetree@gmail.com"
+    a-email = "https://lytreetree@gmail.com"
 ##    b-stack-overflow = "http://localhost:1313"
 ##    c-twitter = "http://localhost:1313"
 ##    d-facebook = "http://localhost:1313"
-    e-linkedin = "www.linkedin.com/in/achilles-lu"
+    e-linkedin = "https://www.linkedin.com/in/achilles-lu"
 ##    f-google = "http://localhost:1313"
     g-github = "https://github.com/AchillesLy"
 ##    h-weibo = "http://localhost:1313"

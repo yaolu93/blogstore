@@ -1,16 +1,27 @@
-#+TITLE:  First code practice
-#+date:   2021-1-4
-*SharseArray*
+---
+title: "Go_in_SparseArray"
+date: 2020-12-23
+lastmod: 2021-01-1
+draft: false
+tags: ["preview", "中文", "tag-1"]
+categories: ["中文"]
+author: "Achilles"
+---
 
-/this demo is to help us transform the data from big data to the small data/
+# SharseArray
+
+**this demo is to help us transform the data from big data to the small data**
 
 
-* what we need to notic
+> what we need to notic
   "= new int [11][11];"  it means we have a Array is 11*11.
   
-* 2D to sparseArray, then sparseArray to 2D
+> 2D to sparseArray, then sparseArray to 2D
     
-  #+BEGIN_SRC java
+
+
+
+``` Java
 
 public class SparseArray {
     //create init 2D array
@@ -119,6 +130,6 @@ public class SparseArray {
 }
 
 
-  #+END_SRC
+```
 
     
