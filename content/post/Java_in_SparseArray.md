@@ -3,8 +3,8 @@ title: "Java_in_SparseArray"
 date: 2020-12-23
 lastmod: 2021-01-1
 draft: false
-tags: ["preview", "中文", "tag-1"]
-categories: ["中文"]
+tags: ["Java", "Leetcode"]
+categories: ["Leetcode"]
 author: "Achilles"
 ---
 
