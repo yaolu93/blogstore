@@ -7,31 +7,12 @@ weight: 50
 
 ---
 
-
-
-
-Achilles Lu
-============
-
 ----
 
->  A Knowledge Enthusiast and a speedy learner. I can adapt to different countries, multi-language, and diverse development environments. 
-I always strive to do my best and complete the work. Also, I am a good team player - able to change from one role to another - determined and kind.  
-I have 4+ years’ experience working in multicultural development environments include Backend, Mobile, and Web.  
-
+>  A Knowledge Enthusiast and ambitious Software Engineer with 4+ years of experience across various industry sectors,
+including insurance, educational institution, and IT. Additionally has a good personality adapts to different countries, multi-language, and diverse development environments. 
+Always considering cohesion and optimize software with design patterns and algorithms.
 ----
-
-Education
----------
-
-2020-2021 (expected)
-:   **Master, Software Engineering**; University of Limerick
-
-    *Thesis title: Evaluating the Lecovich Approach for Migrating from Monolithic to Microservices using ServiceCutter and Sarkar's Modularity Metrics*
-
-2012-2016
-:   **BSc, Petroleum Engineering**; University of Yangtze 
-
 
 Experience
 ----------
@@ -50,6 +31,18 @@ links:
 **That Other Job You Had**
 
 Also with a short description.
+
+Education
+---------
+
+2020-2021 (expected)
+:   **Master, Software Engineering**; University of Limerick
+
+    *Thesis title: Evaluating the Lecovich Approach for Migrating from Monolithic to Microservices using ServiceCutter and Sarkar's Modularity Metrics*
+
+2012-2016
+:   **BSc, Petroleum Engineering**; University of Yangtze 
+
 
 Technical Experience
 --------------------
