@@ -1,0 +1,211 @@
+#+title: Shortcodes
+
+#+date: 2016-08-30T16:01:23+08:00
+
+* Admonition
+  :PROPERTIES:
+  :CUSTOM_ID: admonition
+  :END:
+{{% admonition note "I'm title!" false %}} biu biu biu.
+
+{{% admonition type="note" title="note" details="true" %}} biu biu biu.
+{{% /admonition %}}
+
+{{% admonition example %}} Without title. {{% /admonition %}}
+
+{{% /admonition %}}
+
+#+begin_example
+  {{%/* admonition note "I'm title!" false */%}}
+  biu biu biu.
+
+  {{%/* admonition type="note" title="note" details="true" */%}}
+  biu biu biu.
+  {{%/* /admonition */%}}
+
+  {{%/* admonition example */%}}
+  Without title.
+  {{%/* /admonition */%}}
+
+  {{%/* /admonition */%}}
+#+end_example
+
+#+begin_html
+  <!--more-->
+#+end_html
+
+{{% admonition abstract abstract %}} biu biu biu. {{% /admonition %}}
+
+#+begin_example
+  {{%/* admonition abstract abstract */%}}
+  biu biu biu.
+  {{%/* /admonition */%}}
+#+end_example
+
+{{% admonition info "info" %}} biu biu biu. {{% /admonition %}}
+
+{{% admonition tip "tip" %}} biu biu biu. {{% /admonition %}}
+
+{{% admonition success "success" %}} biu biu biu. {{% /admonition %}}
+
+{{% admonition question "question" %}} biu biu biu. {{% /admonition %}}
+
+{{% admonition warning "warning" %}} biu biu biu. {{% /admonition %}}
+
+{{% admonition failure "failure" %}} biu biu biu. {{% /admonition %}}
+
+{{% admonition danger "danger" %}} biu biu biu. {{% /admonition %}}
+
+{{% admonition bug "bug" %}} biu biu biu. {{% /admonition %}}
+
+{{% admonition example "example" %}} biu biu biu. {{% /admonition %}}
+
+{{% admonition quote "quote" %}} biu biu biu. {{% /admonition %}}
+
+* center, right, left
+  :PROPERTIES:
+  :CUSTOM_ID: center-right-left
+  :END:
+#+begin_example
+  ## default
+  ![img](/path/to/img.gif "img")
+
+  {{%/* center */%}}
+  ## center
+  ![img](/path/to/img.gif "img")
+  {{%/* /center */%}}
+
+  {{%/* right */%}}
+  ## right
+  ![img](/path/to/img.gif "img")
+  {{%/* /right */%}}
+
+  {{%/* left */%}}
+  ## left
+  ![img](/path/to/img.gif "img")
+  {{%/* /left */%}}
+#+end_example
+
+** default
+   :PROPERTIES:
+   :CUSTOM_ID: default
+   :END:
+#+caption: img
+[[https://wx1.sinaimg.cn/small/006SToa6ly1fm07summ2gj30qo0qomzu.jpg]]
+
+{{% center %}} ## center
+[[https://wx1.sinaimg.cn/small/006SToa6ly1fm07summ2gj30qo0qomzu.jpg]]
+{{% /center %}}
+
+{{% right %}} ## right
+[[https://wx1.sinaimg.cn/small/006SToa6ly1fm07summ2gj30qo0qomzu.jpg]]
+{{% /right %}}
+
+{{% left %}} ## left
+[[https://wx1.sinaimg.cn/small/006SToa6ly1fm07summ2gj30qo0qomzu.jpg]]
+{{% /left %}}
+
+--------------
+
+** figure with class
+   :PROPERTIES:
+   :CUSTOM_ID: figure-with-class
+   :END:
+#+begin_example
+  {{%/* figure src="/path/to/img.gif" title="default" alt="img" */%}}
+  {{%/* figure class="center" src="/path/to/img.gif" title="center" alt="img" */%}}
+  {{%/* figure class="right" src="/path/to/img.gif" title="right" alt="img" */%}}
+  {{%/* figure class="left" src="/path/to/img.gif" title="left" alt="img" */%}}
+#+end_example
+
+{{% figure
+src="https://wx1.sinaimg.cn/small/006SToa6ly1fm07summ2gj30qo0qomzu.jpg"
+title="default" alt="img" %}} {{% figure class="center"
+src="https://wx1.sinaimg.cn/small/006SToa6ly1fm07summ2gj30qo0qomzu.jpg"
+title="center" alt="img" %}} {{% figure class="right"
+src="https://wx1.sinaimg.cn/small/006SToa6ly1fm07summ2gj30qo0qomzu.jpg"
+title="right" alt="img" %}} {{% figure class="left"
+src="https://wx1.sinaimg.cn/small/006SToa6ly1fm07summ2gj30qo0qomzu.jpg"
+title="left" alt="img" %}}
+
+--------------
+
+#+begin_example
+  {{%/* center */%}}
+
+  ## hybrid in center
+  {{%/* figure src="/path/to/img.gif" title="default" alt="img" */%}}
+  {{%/* figure class="right" src="/path/to/img.gif" title="right" alt="img" */%}}
+
+  {{%/* left */%}}
+  {{%/* figure src="/path/to/img.gif" title="default in left" alt="img" */%}}
+  {{%/* /left */%}}
+
+  {{%/* /center */%}}
+#+end_example
+
+{{% center %}} ## hybrid in center {{% figure
+src="https://wx1.sinaimg.cn/small/006SToa6ly1fm07summ2gj30qo0qomzu.jpg"
+title="default" alt="img" %}} {{% figure class="right"
+src="https://wx1.sinaimg.cn/small/006SToa6ly1fm07summ2gj30qo0qomzu.jpg"
+title="right" alt="img" %}} {{% left %}} {{% figure
+src="https://wx1.sinaimg.cn/small/006SToa6ly1fm07summ2gj30qo0qomzu.jpg"
+title="default in left" alt="img" %}} {{% /left %}} {{% /center %}}
+
+--------------
+
+* Music 163
+  :PROPERTIES:
+  :CUSTOM_ID: music-163
+  :END:
+** Params
+   :PROPERTIES:
+   :CUSTOM_ID: params
+   :END:
+
+- =id=
+
+  - required param
+  - you can extract from music url
+  - url format http://music.163.com/#/song?id=28196554
+
+- Fiddle =auto=
+
+  - optional param
+  - default value 0
+  - you can overwrite it with 1
+
+** Examples
+   :PROPERTIES:
+   :CUSTOM_ID: examples
+   :END:
+
+- Simple
+
+#+begin_example
+  {{%/* music "28196554" */%}}
+  {{%/* music "28196554" "1" */%}}
+#+end_example
+
+- Named Params
+
+#+begin_example
+  {{%/* music id="28196554" */%}}
+  {{%/* music id="28196554" auto="1" */%}}
+#+end_example
+
+- Example
+
+#+begin_example
+  {{%/* music "28196554" */%}}
+#+end_example
+
+{{%/* music "28196554" */%}}
+
+#+begin_html
+  <style>
+  .post-content img {
+    height: 64px;
+  }
+  </style>
+#+end_html

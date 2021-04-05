@@ -1,0 +1,106 @@
+#+title: JS Sequence Diagrams
+
+#+date: 2015-03-04T21:57:45+08:00
+
+** Usage
+   :PROPERTIES:
+   :CUSTOM_ID: usage
+   :END:
+#+begin_example
+  Andrew->China: Says Hello
+  Note right of China: China thinks\nabout it
+  China-->Andrew: How are you?
+  Andrew->>China: I am good thanks!
+#+end_example
+
+#+begin_html
+  <!--more-->
+#+end_html
+
+#+begin_example
+  ```sequence
+  Andrew->China: Says Hello
+  Note right of China: China thinks\nabout it
+  China-->Andrew: How are you?
+  Andrew->>China: I am good thanks!
+  ```
+#+end_example
+
+** Configuration
+   :PROPERTIES:
+   :CUSTOM_ID: configuration
+   :END:
+Configure for all home and regular pages:
+
+#+begin_example
+  [params.sequenceDiagrams]
+    enable = true
+    options = "{theme: 'hand'}"
+#+end_example
+
+Configure for a single post in the front matter (*Params in front matter
+have higher precedence*):
+
+#+begin_example
+  sequenceDiagrams: 
+    enable: true
+    options: "{theme: 'hand'}"
+#+end_example
+
+*** Options
+    :PROPERTIES:
+    :CUSTOM_ID: options
+    :END:
+#+begin_src js
+  options = {
+    // Change the styling of the diagram, typically one of 'simple', 'hand'. New themes can be registered with registerTheme(...).
+    theme: string,
+
+    // CSS style to apply to the diagram's svg tag. (Only supported if using snap.svg)
+    css_class: string,
+  }
+#+end_src
+
+See more information from https://github.com/bramp/js-sequence-diagrams.
+
+** Examples
+   :PROPERTIES:
+   :CUSTOM_ID: examples
+   :END:
+#+begin_example
+  Title: Here is a title
+  A->B: Normal line
+  B-->C: Dashed line
+  C->>D: Open arrow
+  D-->>A: Dashed open arrow
+#+end_example
+
+#+begin_example
+  ```sequence
+  Title: Here is a title
+  A->B: Normal line
+  B-->C: Dashed line
+  C->>D: Open arrow
+  D-->>A: Dashed open arrow
+  ```
+#+end_example
+
+--------------
+
+#+begin_example
+  # Example of a comment.
+  Note left of A: Note to the\n left of A
+  Note right of A: Note to the\n right of A
+  Note over A: Note over A
+  Note over A,B: Note over both A and B
+#+end_example
+
+#+begin_example
+  ```sequence
+  # Example of a comment.
+  Note left of A: Note to the\n left of A
+  Note right of A: Note to the\n right of A
+  Note over A: Note over A
+  Note over A,B: Note over both A and B
+  ```
+#+end_example
