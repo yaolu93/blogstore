@@ -9,7 +9,7 @@ weight: 50
 
 
 
->  A Knowledge Enthusiast and ambitious Software Engineer with 4+ years of experience across various industry sectors. Including insurance, educational institution and IT.
+>  A Knowledge Enthusiast and ambitious Software Engineer with 3+ years of experience across various industry sectors. Including insurance, educational institution and IT.
 <br> 
 Additionally has a good personality, adapts to different countries, multi-language, and diverse development environments.
 <br> 
@@ -41,7 +41,7 @@ Always considering cohesion and optimizing software with design patterns and alg
 
 ## ***PROFESSIONAL EXPERIENCE*** 
 --------------------
-### **University of Limerick	          				Sept 2020 - Apr 2021** 
+### **University of Limerick｜Sept 2020 - Apr 2021** 
 
 **College Project**								*Limerick, Ireland*	 
 
@@ -60,7 +60,7 @@ Always considering cohesion and optimizing software with design patterns and alg
     * Applied the ABM model to simulate the most practical purchase plan for supermarket revenue staff and customers in high concurrency scenarios (**Golang**). 
 
 
-### **Ping Jia Technology Co., Ltd.  				Aug 2018 - Apr 2019** 
+### **Ping Jia Technology Co., Ltd.|Aug 2018 - Apr 2019** 
 [Ping Jia](http://www.chinaubi.com/main/)
 
 **Java Back-End Engineer**	   *Shanghai, China*						
@@ -93,7 +93,7 @@ Always considering cohesion and optimizing software with design patterns and alg
     * Interact with Ping An Insurance Company's product manager to help auto-insurance sales staff improve insurance policy issuance efficiency. 
 
 
-### **Yuan Ju Network Technology Co., Ltd.  			Apr 2017 - May 2018** 
+### **Yuan Ju Network Technology Co., Ltd.｜Apr 2017 - May 2018** 
    [Yuan Ju](http://www.1391.com/)
 <br>
 
