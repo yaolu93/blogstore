@@ -11,13 +11,13 @@ weight: 50
 
 >  A Knowledge Enthusiast and ambitious Software Engineer with 3+ years of experience across various industry sectors. Including insurance, educational institution and IT.
 <br> 
-Additionally has a good personality, adapts to different countries, multi-language, and diverse development environments.
+Additionally has a good personality and adapts to different countries, multi-language, and diverse development environments.
 <br> 
 Always considering cohesion and optimizing software with design patterns and algorithms.  
 
 <br>
 
-## ***TECHNICAL SKILLS AND EXPERTISE***
+## **TECHNICAL SKILLS AND EXPERTISE**
 ----------
     
 **Programming and Scripting Language**: JAVA, Python, Golang, SQL, LINUX SHELL SCRIPTING, JAVASCRIPT, HTML 5, CSS 3, XML. 
@@ -32,14 +32,14 @@ Always considering cohesion and optimizing software with design patterns and alg
 
 **Version Control Software**: Git, SVN. 
 
-**Communication skills**: Excellent written and Verbal communication skills. Empathic listener.  
+**Communication skills**: Excellent written and verbal communication skills. Empathic listener.  
 
-**Teamwork**: Excellent team player with ability to contribute immensely towards a common goal and meet up.	
-
-
+**Teamwork**: Excellent team player with the ability to contribute immensely towards a common goal and meet up.	
 
 
-## ***PROFESSIONAL EXPERIENCE*** 
+
+
+## **PROFESSIONAL EXPERIENCE** 
 --------------------
 ### **University of Limerick｜Sept 2020 - Apr 2021** 
 
@@ -66,9 +66,9 @@ Always considering cohesion and optimizing software with design patterns and alg
 **Java Back-End Engineer**	   *Shanghai, China*						
    
 
-* Communicate with the account manager of Ping An Insurance Company, implement and improve requirements. 
+* Communicated with the account manager of Ping An Insurance Company, implemented and improved requirements. 
 
-* Performed detailed information/requirement collection, solution mapping, development and deployment and interaction with different divisions.  
+* Performed detailed information/requirement collection, solution mapping, development and deployment and interacted with different divisions.  
 
 * Applied market intelligence and performance monitoring for the development and maintenance of various services. 
 
@@ -90,7 +90,7 @@ Always considering cohesion and optimizing software with design patterns and alg
 
     * Supported application development roles in various projects from inception to implementation of application development. 
 
-    * Interact with Ping An Insurance Company's product manager to help auto-insurance sales staff improve insurance policy issuance efficiency. 
+    * Interacted with Ping An Insurance Company's product manager to help auto-insurance sales staff improve insurance policy issuance efficiency. 
 
 
 ### **Yuan Ju Network Technology Co., Ltd.｜Apr 2017 - May 2018** 
@@ -103,7 +103,7 @@ Always considering cohesion and optimizing software with design patterns and alg
 
 * Rigorous time-bound issue resolution and bug fix. Monitoring the bug rate until midnight after the deployment. 
 
-* Review the code with the team and optimize the code *50%* of the time during the **holiday**. 
+* Reviewing the code with the team and optimizing the code *50%* of the time during the **holidays**. 
 
 - ####  Project: Book Chaser (both the main version and Google version): 
 
@@ -117,7 +117,7 @@ Always considering cohesion and optimizing software with design patterns and alg
 
 
 
-## ***EDUCATION***
+## **EDUCATION**
 
 ---------
 
