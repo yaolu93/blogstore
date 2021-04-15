@@ -4,7 +4,7 @@ date: 2021-04-02
 lastmod: 2021-04-02
 menu: "main"
 weight: 50
-
+author: "Achilles"
 ---
 
 
@@ -41,7 +41,7 @@ Always considering cohesion and optimizing software with design patterns and alg
 
 ## ***PROFESSIONAL EXPERIENCE*** 
 --------------------
-### **University of Limerick｜Sept 2020 - Apr 2021** 
+### **University of Limerick <span style="float:right">Sept 2020 - Apr 2021</span>** 
 
 **College Project**								*Limerick, Ireland*	 
 
@@ -60,7 +60,7 @@ Always considering cohesion and optimizing software with design patterns and alg
     * Applied the ABM model to simulate the most practical purchase plan for supermarket revenue staff and customers in high concurrency scenarios (**Golang**). 
 
 
-### **Ping Jia Technology Co., Ltd.|Aug 2018 - Apr 2019** 
+### **Ping Jia Technology Co., Ltd.<span style="float:right">Aug 2018 - Apr 2019</span>** 
 [Ping Jia](http://www.chinaubi.com/main/)
 
 **Java Back-End Engineer**	   *Shanghai, China*						
@@ -72,7 +72,7 @@ Always considering cohesion and optimizing software with design patterns and alg
 
 * Applied market intelligence and performance monitoring for the development and maintenance of various services. 
 
- - #### Project: Ping Jia Car Insurance 
+ - #### ***Project: Ping Jia Car Insurance*** 
 
     * Designed, Developed and implemented databases with the Ping Jia Car insurance application.  
 
@@ -93,7 +93,7 @@ Always considering cohesion and optimizing software with design patterns and alg
     * Interact with Ping An Insurance Company's product manager to help auto-insurance sales staff improve insurance policy issuance efficiency. 
 
 
-### **Yuan Ju Network Technology Co., Ltd.｜Apr 2017 - May 2018** 
+### **Yuan Ju Network Technology Co., Ltd.<span style="float:right">Apr 2017 - May 2018</span>** 
    [Yuan Ju](http://www.1391.com/)
 <br>
 
@@ -105,9 +105,9 @@ Always considering cohesion and optimizing software with design patterns and alg
 
 * Review the code with the team and optimize the code *50%* of the time during the **holiday**. 
 
-- ####  Project: Book Chaser (both the main version and Google version): 
+- ####  ***Project: Book Chaser (both the main version and Google version):*** 
 
-- Project address in google play: [Book Chaser](https://play.google.com/store/apps/details?id=com.ushaqi.zhuishushenqi.play) 
+- ***Project address in google play:*** [Book Chaser](https://play.google.com/store/apps/details?id=com.ushaqi.zhuishushenqi.play) 
 
     + An online reading application with **70 million** users and **5 million daily active users**.  **Online bug rate below 0.03%**. Released the product in the Google Play market after passing strict tests.  
 
@@ -122,17 +122,18 @@ Always considering cohesion and optimizing software with design patterns and alg
 ---------
 
 2020-2021 (expected)
-:   **Master, Software Engineering**: University of Limerick
+:   **Master, Software Engineering**: University of Limerick<span style="float:right">Limerick, Ireland</span> 
 
     *Thesis title: Evaluating the Lecovich Approach for Migrating from Monolithic to Microservices using ServiceCutter and Sarkar's Modularity Metrics*
 
 2012-2016
 :   **BSc, Petroleum Engineering**: University of Yangtze 
+<span style="float:right">Jingzhou, China</span> 
 
 
 ----------------------------------------
 
-* Human Languages:
+* Languages:
 
      * Mandarin Chinese (Native Speaker)
      * English (Advanced)
