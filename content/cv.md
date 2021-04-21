@@ -43,7 +43,8 @@ Always considering cohesion and optimizing software with design patterns and alg
 --------------------
 ### **University of Limerick <span style="float:right">Sept 2020 - Apr 2021</span>** 
 
-**College Project**								*Limerick, Ireland*	 
+**College Project**									 
+<span style="float:right">Limerick, Ireland</span>
 
 - #### Gym builder 
  
@@ -63,7 +64,8 @@ Always considering cohesion and optimizing software with design patterns and alg
 ### **Ping Jia Technology Co., Ltd.<span style="float:right">Aug 2018 - Apr 2019</span>** 
 [Ping Jia](http://www.chinaubi.com/main/)
 
-**Java Back-End Engineer**	   *Shanghai, China*						
+**Java Back-End Engineer**	  		 
+<span style="float:right">Shanghai, China</span>				
    
 
 * Communicated with the account manager of Ping An Insurance Company, implemented and improved requirements. 
@@ -97,7 +99,8 @@ Always considering cohesion and optimizing software with design patterns and alg
    [Yuan Ju](http://www.1391.com/)
 <br>
 
-**Android Developer** 								*Shanghai, China* 
+**Android Developer** 								 
+<span style="float:right">Shanghai, China</span> 
 
 * Responsible for development (**Java** & **Android**) and maintenance of overseas versions. 
 
@@ -122,7 +125,8 @@ Always considering cohesion and optimizing software with design patterns and alg
 ---------
 
 2020-2021 (expected)
-:   **Master, Software Engineering**: University of Limerick<span style="float:right">Limerick, Ireland</span> 
+:   **Master, Software Engineering**: University of Limerick
+<span style="float:right">Limerick, Ireland</span> 
 
     *Thesis title: Evaluating the Lecovich Approach for Migrating from Monolithic to Microservices using ServiceCutter and Sarkar's Modularity Metrics*
 
