@@ -1,3 +1,7 @@
+package graph;
+
+import linear.Queue;
+
 public class Graph {
     //顶点数目
     private final int V;

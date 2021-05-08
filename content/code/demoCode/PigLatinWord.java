@@ -1,3 +1,5 @@
+package demoCode;
+
 public class PigLatinWord {
     static boolean isVowel(char ch) {
         return (ch == 'A' || ch == 'a' || ch == 'E' || ch == 'e' || ch == 'I' || ch == 'i' || ch == 'O' || ch == 'o'
