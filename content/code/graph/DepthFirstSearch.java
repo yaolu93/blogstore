@@ -1,4 +1,4 @@
-package cn.itcast.algorithm.graph;
+package graph;
 
 public class DepthFirstSearch {
     //索引代表顶点，值表示当前顶点是否已经被搜索
