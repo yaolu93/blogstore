@@ -32,7 +32,7 @@ public class PigLatinWord {
     public static void main(String args[]) {
         String plstring1 = pigLatinWord("butter"); // begin with consonant
         String plstring2 = pigLatinWord("apple"); // begin with vowel
-        String plstring3 = pigLatinWord("me"); // begin with consonant
+        String plstring3 = pigLatinWord("my"); // begin with consonant
         String plstring4 = pigLatinWord("child"); // consonant cluster word
         String plstring5 = pigLatinWord("egg"); // begin with vowel
         String plstring6 = pigLatinWord("store"); // consonant cluster word
