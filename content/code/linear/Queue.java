@@ -43,6 +43,7 @@ public class Queue<T> implements Iterable<T>{
             last= new Node(t,null);
             head.next=last;
         }else {
+	    // we need to noticed that last in here means Queue.last, Node's oldLast = Queue.last now. Imagine like this could be more intuitive
             //当前尾结点last不为null
             Node oldLast = last;
             last = new Node(t, null);
@@ -59,6 +60,8 @@ public class Queue<T> implements Iterable<T>{
             return null;
         }
 
+	// same as the Queue.last, in here  Node's oldFirst = Queue.head.next.
+	// Queue's head.next = Node's oldFirst.next
         Node oldFirst= head.next;
         head.next=oldFirst.next;
         N--;
@@ -68,6 +71,7 @@ public class Queue<T> implements Iterable<T>{
         if (isEmpty()){
             last=null;
         }
+	//Node's oldfirst.item
         return oldFirst.item;
     }
 

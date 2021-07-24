@@ -34,6 +34,7 @@ public class DepthFirstSearch {
     }
 
     //判断w顶点与s顶点是否相通
+    // We do have to debugging and see what is the return 
     public boolean marked(int w){
        return marked[w];
     }
