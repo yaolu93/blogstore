@@ -39,12 +39,13 @@ public class Queue<T> implements Iterable<T> {
     // 向队列中插入元素t
     public void enqueue(T t) {
 
-        if (last == null) {
-            // 当前尾结点last为null
-            last = new Node(t, null);
-            head.next = last;
-        } else {
-            // 当前尾结点last不为null
+        if (last==null){
+            //当前尾结点last为null
+            last= new Node(t,null);
+            head.next=last;
+        }else {
+	    // we need to noticed that last in here means Queue.last, Node's oldLast = Queue.last now. Imagine like this could be more intuitive
+            //当前尾结点last不为null
             Node oldLast = last;
             last = new Node(t, null);
             oldLast.next = last;
@@ -60,8 +61,10 @@ public class Queue<T> implements Iterable<T> {
             return null;
         }
 
-        Node oldFirst = head.next;
-        head.next = oldFirst.next;
+	// same as the Queue.last, in here  Node's oldFirst = Queue.head.next.
+	// Queue's head.next = Node's oldFirst.next
+        Node oldFirst= head.next;
+        head.next=oldFirst.next;
         N--;
 
         // 因为出队列其实是在删除元素，因此如果队列中的元素被删除完了，需要重置last=null;
@@ -69,6 +72,7 @@ public class Queue<T> implements Iterable<T> {
         if (isEmpty()) {
             last = null;
         }
+	//Node's oldfirst.item
         return oldFirst.item;
     }
 
