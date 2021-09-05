@@ -22,6 +22,17 @@ public class DivideAndConquerSort {
      */
     private static Comparable[] assistant;
 
+       /**
+     * Compare whether v is smaller than w
+     * 
+     * @param comparable
+     * @param comparable2
+     * @return
+     */
+    private static boolean less(Comparable v, Comparable w) {
+        return v.compareTo(w) < 0;
+    }
+
     /**
      * Compare two elements, whether v is smaller than w.
      */
@@ -120,15 +131,6 @@ public class DivideAndConquerSort {
         }
     }
 
-    /**
-     * Compare whether v is smaller than w
-     * 
-     * @param comparable
-     * @param comparable2
-     * @return
-     */
-    private static boolean less(Comparable v, Comparable w) {
-        return v.compareTo(w) < 0;
-    }
+ 
 
 }
