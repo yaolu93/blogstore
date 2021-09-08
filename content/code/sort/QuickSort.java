@@ -35,7 +35,7 @@ public class QuickSort {
 
         //security check when we are using the recursion
         if(high <= low){
-            break;
+            return;
         }
         int partition = partition(a, low, high);
         // using the partition to divide the Array into two different groups. which also
