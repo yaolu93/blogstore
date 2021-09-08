@@ -75,8 +75,8 @@ public class SequenceList<T> {
         }
 
         //put the all i elements position toward next step.
-        for (int index = N; index > i; index++) {
-           elements[index] = elements[index--];
+        for (int index = N; index > i; index--) {
+           elements[index] = elements[index-1];
         }
 
         //put element t into i position
