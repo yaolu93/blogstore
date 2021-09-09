@@ -1,7 +1,8 @@
 package linear;
 
+import java.util.Iterator;
 
-public class SequenceList<T> {
+public class SequenceList<T> implements Iterable<T>{
 
     public static void main(String[] args){
         //System.out.println("Sequence, List!");
@@ -13,9 +14,19 @@ public class SequenceList<T> {
         s1.insert("MCgrady");
         s1.insert(1,"James");
 
+        for (String single : s1) {
+            System.out.println("name:"+single);
+        }
+        System.out.println("=============================");
         String getResult = s1.get(1);
         System.out.println("get the index 1 element:"+ getResult);
 
+        String removeResult = s1.remove(0);
+        System.out.println("get the remove element:"+ removeResult); 
+
+        s1.clear();
+        System.out.println("the left elements number is :"+ s1.length()); 
+ 
 
     }
 
@@ -114,6 +125,33 @@ public class SequenceList<T> {
         }
 
         return -1;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        // TODO Auto-generated method stub
+        return new SIterator();
+    }
+
+    private class SIterator implements Iterator{
+
+        int cursor;
+        public SIterator(){
+            this.cursor = 0;
+        }
+
+        @Override
+        public boolean hasNext() {
+            // TODO Auto-generated method stub
+            return cursor < N;
+        }
+
+        @Override
+        public Object next() {
+            // TODO Auto-generated method stub
+            return elements[cursor++];
+        }
+
     }
 
 }
