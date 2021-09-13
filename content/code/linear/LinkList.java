@@ -1,10 +1,25 @@
 package linear;
 
+import java.util.Iterator;
 
-public class LinkList<T>{
+public class LinkList<T> implements Iterable<T>{
 
     public static void main(String[] args){
         System.out.println("LinkList!");
+
+        LinkList<String> link = new LinkList<>();
+        link.insert(0, "number01");
+        link.insert(1, "number02");
+        link.insert(2, "number03");
+        link.insert(3, "number04");
+
+        for (String string : link) {
+            System.out.println(string);
+        }
+
+        System.out.println(link.length());
+        
+        System.out.println("======================="); 
     }
 
     //this is the first Node
@@ -78,17 +93,94 @@ public class LinkList<T>{
     }
 
 
-    public void insert(int t, T t){
-        return;
+    public void insert(int i, T t){
+
+        if (i<0 || i> N) {
+            throw new RuntimeException("the position is not correct!");
+        }        
+        //find the front Node.
+        Node pre = head;
+
+        for(int index = 0; index <= i-1; index++) {
+            pre = pre.next;
+        }
+
+        //find current i position
+        Node cursor = pre.next;
+
+        //contruct new Node then make the new pointer.
+        Node newNode = new Node(t,cursor);
+        //make the front Node point newNode
+        pre.next = newNode;
+
+        N++;
+ 
     }
 
     public T remove(int i){
-        return null;
+        
+
+        //check Boundary conditions
+        if (i<0 || i>N) {
+            throw new RuntimeException("this is wrong position");
+        }
+        //find the front position
+        Node pre = head;
+        for (int index = 0; index < i-1; index++) {
+            pre = pre.next;
+        }
+
+        //find the current i position
+        Node cursor = pre.next;
+
+        //make front point toward next point, the current element will remove automactically
+        pre.next = cursor.next;
+
+        //Important Notice N--.
+        N--;
+
+        return (T) cursor.item;
     }
 
-    public int indexOf(){
-        return 0;
+    public int indexOf(T t){
+
+        Node n = head;
+
+        for (int i = 0; n.next != null; i++) {
+            n = n.next;
+            if (n.item.equals(t)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
+    @Override
+    public Iterator<T> iterator() {
+        // TODO Auto-generated method stub
+        return new LIterator();
+    }
+
+    private class LIterator implements Iterator<T>{
+
+        private Node n;
+        public LIterator(){
+            n = head;
+        }
+        @Override
+        public boolean hasNext() {
+            // TODO Auto-generated method stub
+            return n.next != null;
+        }
+
+        @Override
+        public T next() {
+            // TODO Auto-generated method stub
+            n = n.next;
+            return (T)n.item;
+        }
+
+
+    }
 
 }
