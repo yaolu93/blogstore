@@ -1,5 +1,3 @@
-
-
 ---
 title: "Command Pattern in Python"
 date: 2021-04-01
