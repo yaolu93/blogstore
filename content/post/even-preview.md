@@ -1,16 +1,16 @@
 ---
 title: "Theme preview"
-date: 2018-07-10T00:00:00+08:00
-lastmod: 2018-07-10T00:00:00+08:00
+date: 2018-07-10
+lastmod: 2018-07-10
 draft: true
-tags: ["preview", "Theme preview", "tag-3"]
-categories: ["Theme preview", "category-2", "category-3"]
 
 weight: 10
 contentCopyright: MIT
 mathjax: true
 autoCollapseToc: true
 
+
+hiddenFromHomePage: true
 ---
 
 > Based on [MarkdownPreview test.md](https://github.com/facelessuser/MarkdownPreview/blob/master/examples/test.md).
