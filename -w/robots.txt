@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://localhost:49477/AchillesLy/sitemap.xml
+Sitemap: https://www.achilleslu.com/sitemap.xml

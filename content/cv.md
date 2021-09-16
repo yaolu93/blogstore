@@ -30,6 +30,8 @@ Always considering cohesion and optimizing software with design patterns and alg
 
 **Android**:  Native Android development, Mobile development life cycle, User experience design 
 
+**DevOps**: Oracle-Cloud, Docker
+
 **Version Control Software**: Git, SVN. 
 
 **Communication skills**: Excellent written and verbal communication skills. Empathic listener.  
@@ -41,18 +43,24 @@ Always considering cohesion and optimizing software with design patterns and alg
 
 ## **PROFESSIONAL EXPERIENCE** 
 --------------------
-### **University of Limerick <span style="float:right">Sept 2020 - Apr 2021</span>** 
+### **University of Limerick <span style="float:right">Sept 2020 - Aug 2021</span>** 
 
-**College Project**									 
+**Research Project**									 
 <span style="float:right">Limerick, Ireland</span>
 
+- #### Microservices Research
+    **Microservices Architecture Researcher**
+
+    * Analysing different Approaches for the Migration to Microservices Architecture
+    * Build the microservices on Oracle Cloud using SSH, Docker
+    * Modified application architecture is Java, SpringBoot, Microservices, routes REST requests to the appropriate backend server
 - #### Gym builder 
  
     * This project aimed to critique the use of architecture and design patterns as a mechanism for supporting quality attributes. 
 
     * Worked as a collaborative team member with program developers and fellow designers. 
 
-    * Facilitated conceptualizing and designing front-end (**ReactJS**), back-end (**Python** & **Flask**), Database (**SQLAlchemy**). 
+    * Facilitated conceptualizing and designing back-end (**Python** & **Flask**), Database (**SQLAlchemy**). 
 
     * Tracked, reviewed and revised project deliverables to meet objectives. 
 
@@ -125,10 +133,12 @@ Always considering cohesion and optimizing software with design patterns and alg
 ---------
 
 2020-2021 
-:   **Master, Software Engineering**: University of Limerick
+:   **Master, Software Engineering**: University of Limerick 
 <span style="float:right">Limerick, Ireland</span> 
 
     *Thesis title: Comparing Approaches for the Migration toMicroservices Architecture using Smells*
+    
+    ***(GPA 3.5/4.0, A Grade)***
 
 2012-2016
 :   **BSc, Petroleum Engineering**: University of Yangtze 
