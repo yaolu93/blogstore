@@ -124,11 +124,11 @@ Always considering cohesion and optimizing software with design patterns and alg
 
 ---------
 
-2020-2021 (expected)
+2020-2021 
 :   **Master, Software Engineering**: University of Limerick
 <span style="float:right">Limerick, Ireland</span> 
 
-    *Thesis title: Evaluating the Lecovich Approach for Migrating from Monolithic to Microservices using ServiceCutter and Sarkar's Modularity Metrics*
+    *Thesis title: Comparing Approaches for the Migration toMicroservices Architecture using Smells*
 
 2012-2016
 :   **BSc, Petroleum Engineering**: University of Yangtze 
