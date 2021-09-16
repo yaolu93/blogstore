@@ -136,7 +136,7 @@ Always considering cohesion and optimizing software with design patterns and alg
 :   **Master, Software Engineering**: University of Limerick 
 <span style="float:right">Limerick, Ireland</span> 
 
-    *Thesis title: Comparing Approaches for the Migration toMicroservices Architecture using Smells*
+    *Dissertation: Comparing Approaches for the Migration toMicroservices Architecture using Smells*
     
     ***(GPA 3.5/4.0, A Grade)***
 
