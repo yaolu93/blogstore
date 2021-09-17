@@ -6,7 +6,7 @@ public class LinkList<T> implements Iterable<T>{
 
     public static void main(String[] args){
         System.out.println("LinkList!");
-
+        
         LinkList<String> link = new LinkList<>();
         link.insert(0, "number01");
         link.insert(1, "number02");
@@ -182,5 +182,44 @@ public class LinkList<T> implements Iterable<T>{
 
 
     }
+
+        //用来反转整个链表
+    public void reverse(){
+
+        //判断当前链表是否为空链表，如果是空链表，则结束运行，如果不是，则调用重载的reverse方法完成反转
+        if (isEmpty()){
+            return;
+        }
+
+        reverse(head.next);
+    }
+
+    //反转指定的结点curr，并把反转后的结点返回
+    public Node reverse(Node curr){
+        if (curr.next==null){
+            head.next=curr;
+            System.out.println("Curr="+ curr.item.toString());
+            return curr;
+        }
+        System.out.println("curr1="+ curr.item.toString());
+        //递归的反转当前结点curr的下一个结点；返回值就是链表反转后，当前结点的上一个结点
+        Node pre = reverse(curr.next);
+        System.out.println("pre1="+ pre.item.toString());
+        System.out.println("curr2="+ curr.item.toString()); 
+        System.out.println("curr.next1="+ curr.next.item.toString());
+
+        //让返回的结点的下一个结点变为当前结点curr；
+        pre.next=curr;
+        System.out.println("curr3="+ curr.item.toString());
+        System.out.println("pre2="+ pre.item.toString());
+        System.out.println("pre.next="+ pre.next.item.toString());
+        //把当前结点的下一个结点变为null
+        System.out.println("curr.next2="+ curr.next.item.toString());
+        curr.next=null;
+        System.out.println("curr4="+ curr.item.toString());
+        return curr;
+    }
+
+
 
 }
