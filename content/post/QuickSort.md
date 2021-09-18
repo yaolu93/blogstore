@@ -78,6 +78,8 @@ author: "Achilles"
 
 A large array is partitioned into two arrays one of which holds values smaller than the specified value, say pivot, based on which the partition is made and another array holds values greater than the pivot value.
 
+``` java
+
 	    private static int partition(Comparable[] a, int low, int high) {                                                                                                                                                    
 	                                                                                                                                                                                                                         
 	        //Initial the key point. Remember the key point could always change, so it can not be 0, after allocated it can be any index from (low index)                                                                    
