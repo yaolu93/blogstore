@@ -1,6 +1,32 @@
+
+---
+title: "Quick Sort and Partition"
+date: 2021-09-17
+lastmod: 2021-09-17
+draft: false
+tags: ["Java", "Leetcode", "Sort"]
+categories: ["Leetcode"]
+author: "Achilles"
+---
+
+
+
+
+
   # Quick Sort
   Quick sort is a Divide and Conquer algorithm.  It partitions a large array into two arrays by a pivot value, and carry out the process recursively so that the entire array becomes an ordered sequence.                                                                                                                                                                                       
 	
+
+
+
+
+
+
+
+
+
+
+``` Java
 	public class QuickSort {                                                                                                                                                                                                 
 	                                                                                                                                                                                                                         
 	    public static void main(String[] args) {                                                                                                                                                                             
@@ -44,8 +70,11 @@
 	        sort(a, partition + 1, high);                                                                                                                                                                                    
 	                                                                                                                                                                                                                         
 	    }                                                                                                                                                                                                                    
-	                
-##Partition	       
+````		
+
+
+# Partition 
+> Partition	       
 
 A large array is partitioned into two arrays one of which holds values smaller than the specified value, say pivot, based on which the partition is made and another array holds values greater than the pivot value.
 

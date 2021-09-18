@@ -3,7 +3,7 @@ title: "Linklist and DoublyLinklist"
 date: 2021-09-16
 lastmod: 2021-09-17
 draft: false
-tags: ["Java", "Leetcode"]
+tags: ["Java", "Leetcode","Linear"]
 categories: ["Leetcode"]
 author: "Achilles"
 ---
