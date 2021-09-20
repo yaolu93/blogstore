@@ -25,10 +25,32 @@ public class CircleList {
         fifth.next = sixth;
         sixth.next = seventh;
 
+        //product the circle
+        seventh.next = third;
+
+        boolean circle = isCircle(first);
+        System.out.println("the list created circle:"+ circle);
+
         //get Middle value.
         String middle = getMid(first);
         System.out.println("the middle value is:"+ middle);
     
+    }
+
+    private static boolean isCircle(Node<String> first) {
+
+        Node<String> slow = first;
+        Node<String> fast = first;
+
+        while(fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if(fast.equals(slow)){
+                return true;
+            }
+        }
+        return false;
     }
 
     public static String getMid(Node<String> first){
