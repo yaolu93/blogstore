@@ -6,13 +6,13 @@ public class LinkList<T> implements Iterable<T>{
 
     public static void main(String[] args){
         System.out.println("LinkList!");
-        
+
         LinkList<String> link = new LinkList<>();
         link.insert(0, "number01");
         link.insert(1, "number02");
         link.insert(2, "number03");
         link.insert(3, "number04");
-
+    
         for (String string : link) {
             System.out.println(string);
         }

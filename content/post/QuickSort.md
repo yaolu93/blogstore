@@ -1,4 +1,3 @@
-
 ---
 title: "Quick Sort and Partition"
 date: 2021-09-17
