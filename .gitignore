@@ -1,4 +1,6 @@
 public/
 *.DS_Store
 .DS_Store
-
+.idea/
+code.iml
+out
