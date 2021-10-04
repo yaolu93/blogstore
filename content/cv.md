@@ -138,7 +138,7 @@ Always considering cohesion and optimizing software with design patterns and alg
 
     *Dissertation: Comparing Approaches for the Migration toMicroservices Architecture using Smells*
     
-    ***(GPA 3.5/4.0, A Grade)***
+    ***(First-Class Honours, A1 Grade)***
 
 2012-2016
 :   **BSc, Petroleum Engineering**: University of Yangtze 
