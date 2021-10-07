@@ -1,4 +1,4 @@
-package linear;
+//package linear;
 
 public class JosephCircle {
     public static void main(String[] args) {
