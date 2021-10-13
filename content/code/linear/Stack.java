@@ -1,106 +1,96 @@
-package linear;
+import  java.util.Iterator;
+
+
+
+
 
 import java.util.Iterator;
 
-public class Stack<T> implements Iterable<T> {
+public class Stack<T> implements Iterable<T>{
+    //记录首结点
+    private Node head;
+    //栈中元素的个数
+    private int N;
+
+
 
     private class Node{
         public T item;
-        public int N;
+        public Node next;
 
-        private class Node{
-            public T item;
-            public Node next;
-
-            public Node(T item, Node next){
-                this.item = item;
-                this.next = next;
-            }
+        public Node(T item, Node next) {
+            this.item = item;
+            this.next = next;
         }
-        
-    }
-    // recording the link size;
-    private int N;
-    // recording the first Node
-    private Node head;
-
-
-    public Stack(){
-        this.head = new Node(null, null);
-        this.N = 0;
     }
 
-    //check is the elements in the stack is empty
+    public Stack() {
+        this.head = new Node(null,null);
+        this.N=0;
+    }
+
+    //判断当前栈中元素个数是否为0
     public boolean isEmpty(){
-        return N == 0;
+        return N==0;
     }
 
-    //get the size of the elements
+    //获取栈中元素的个数
     public int size(){
         return N;
     }
 
-    //push the T into the stack
+    //把t元素压入栈
     public void push(T t){
-
-        Node top = head.next;
-
+        //找到首结点指向的第一个结点
+        Node oldFirst = head.next;
+        //创建新结点
         Node newNode = new Node(t, null);
-
+        //让首结点指向新结点
         head.next = newNode;
-
-        newNode.next = top;
-
+        //让新结点指向原来的第一个结点
+        newNode.next=oldFirst;
+        //元素个数+1；
         N++;
-
     }
 
+    //弹出栈顶元素
     public T pop(){
-        Node top = head.next;
-        if(top == null){
+        //找到首结点指向的第一个结点
+        Node oldFirst = head.next;
+        if (oldFirst==null){
             return null;
         }
-
-        head.next = top.next;
+        //让首结点指向原来第一个结点的下一个结点
+        head.next=oldFirst.next;
+        //元素个数-1；
         N--;
-
-        return top.item;
-    }
-
-
-
-    public static void main(String[] args) {
-        System.out.println("Stack");
+        return oldFirst.item;
     }
 
     @Override
     public Iterator<T> iterator() {
-        // TODO Auto-generated method stub
         return new SIterator();
     }
 
     private class SIterator implements Iterator{
-        
         private Node n;
 
         public SIterator(){
-            this.n = head;
+            this.n=head;
         }
 
         @Override
         public boolean hasNext() {
-            // TODO Auto-generated method stub
-            return n.next != null;
+            return n.next!=null;
         }
 
         @Override
         public Object next() {
-            // TODO Auto-generated method stu
-
             n = n.next;
-
             return n.item;
         }
-
     }
+
 }
+
+
