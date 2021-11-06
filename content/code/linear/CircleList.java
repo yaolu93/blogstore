@@ -16,7 +16,7 @@ public class CircleList {
         Node<String> fifth = new Node<String>("ee", null);
         Node<String> sixth = new Node<String>("ff", null);
         Node<String> seventh = new Node<String>("gg", null);
-    
+        // just wanna say sorry github
     
         first.next = second;
         second.next = third;
