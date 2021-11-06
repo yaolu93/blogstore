@@ -1,4 +1,4 @@
-package code.graph;
+package demoCode;
 
 public class demo{
     public static void main(String[] args) {

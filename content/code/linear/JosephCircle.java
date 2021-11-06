@@ -1,3 +1,4 @@
+package linear;
 //package linear;
 
 public class JosephCircle {

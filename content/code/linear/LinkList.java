@@ -196,6 +196,8 @@ public class LinkList<T> implements Iterable<T>{
 
     //反转指定的结点curr，并把反转后的结点返回
     public Node reverse(Node curr){
+	//what we  really need to knwo is
+	// type variable = value;
         if (curr.next==null){
             head.next=curr;
             System.out.println("Curr="+ curr.item.toString());
