@@ -42,18 +42,15 @@
 class Solution {
     public int singleNonDuplicate(int[] nums) {
 
-        int length = nums.length-1;
+        // int length = nums.length-1;
 
-        for(int index = 0; index < length; index+=2 ){
+        // for(int index = 0; index < length; index+=2 ){
 
-            if(nums[index] != nums[index+1]){
-                return nums[index];
-
-            }
-
-        }
-
-        return nums[length];
+        //     if(nums[index] != nums[index+1]){
+        //         return nums[index];
+        //     }
+        // }
+        // return nums[length];
         
     }
 }
