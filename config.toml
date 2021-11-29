@@ -1,7 +1,7 @@
 baseURL = "https://www.achilleslu.com/"
 languageCode = "en"
 defaultContentLanguage = "en"                             # en / zh-cn / ... (This field determines which i18n file to use)
-title = "Achilles"
+title = "Yao"
 preserveTaxonomyNames = true
 enableRobotsTXT = true
 enableEmoji = true
@@ -21,7 +21,7 @@ googleAnalytics = ""      # UA-XXXXXXXX-X
 copyright = ""            # default: author.name ↓        # 默认为下面配置的author.name ↓
 
 [author]                  # essential                     # 必需
-  name = "Achilles"
+  name = "Yao"
 
 [sitemap]                 # essential                     # 必需
   changefreq = "weekly"
@@ -180,13 +180,13 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     alipay = "/path/to/your/alipay-qr-code.png"           # 支付宝二维码
 
   [params.social]                                         # 社交链接
-    a-email = "https://lytreetree@gmail.com"
+    a-email = "https://yao.lu.1223@gmail.com"
 ##    b-stack-overflow = "http://localhost:1313"
 ##    c-twitter = "http://localhost:1313"
 ##    d-facebook = "http://localhost:1313"
-    e-linkedin = "https://www.linkedin.com/in/achilles-lu"
+    e-linkedin = "https://www.linkedin.com/in/yao-lu93"
 ##    f-google = "http://localhost:1313"
-    g-github = "https://github.com/AchillesLy"
+    g-github = "https://github.com/yaolu93"
 ##    h-weibo = "http://localhost:1313"
 ##    i-zhihu = "http://localhost:1313"
 ##    j-douban = "http://localhost:1313"
