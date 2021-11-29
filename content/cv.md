@@ -9,7 +9,7 @@ author: "Achilles"
 
 
 
->  A Knowledge Enthusiast and ambitious Software Engineer with 3+ years of experience across various industry sectors. Including insurance, educational institution and IT.
+>  A Knowledge Enthusiast and ambitious Software Engineer with **3+ years** of practical experience.
 <br> 
 Additionally has a good personality and adapts to different countries, multi-language, and diverse development environments.
 <br> 
@@ -17,33 +17,27 @@ Always considering cohesion and optimizing software with design patterns and alg
 
 <br>
 
-## **TECHNICAL SKILLS AND EXPERTISE**
-----------
+## **EDUCATION**
+
+---------
+
+2020-2021 
+:   **Master, Software Engineering**: University of Limerick 
+<span style="float:right">Limerick, Ireland</span> 
+
+    *Dissertation: Comparing Approaches for the Migration toMicroservices Architecture using Smells*
     
-**Programming and Scripting Language**: JAVA, Python, Golang, SQL, LINUX SHELL SCRIPTING, JAVASCRIPT, HTML 5, CSS 3, XML. 
+    ***(First-Class Honours 1.1, A1 Grade)***
 
-**Web Frameworks**：SpringBoot, SpringMVC, Flask. 
-
-**Development Environment**：Emacs, Vim, IDEA, Eclipse, VS Code, Android Studio. 
-
-**Database System**：MySQL, Redis, MyBatis, SQLAlchemy, SQLite. 
-
-**Android**:  Native Android development, Mobile development life cycle, User experience design 
-
-**DevOps**: Oracle-Cloud, Docker
-
-**Version Control Software**: Git, SVN. 
-
-**Communication skills**: Excellent written and verbal communication skills. Empathic listener.  
-
-**Teamwork**: Excellent team player with the ability to contribute immensely towards a common goal and meet up.	
-
+2012-2016
+:   **BSc, Petroleum Engineering**: University of Yangtze 
+<span style="float:right">Jingzhou, China</span> 
 
 
 
 ## **PROFESSIONAL EXPERIENCE** 
 --------------------
-### **University of Limerick <span style="float:right">Sept 2020 - Aug 2021</span>** 
+### **University of Limerick <span style="float:right">Sep 2020 - Sep 2021</span>** 
 
 **Research Project**									 
 <span style="float:right">Limerick, Ireland</span>
@@ -51,18 +45,13 @@ Always considering cohesion and optimizing software with design patterns and alg
 - #### Microservices Research
     **Microservices Architecture Researcher**
 
-    * Analysing different Approaches for the Migration to Microservices Architecture
+    * Comparing Approaches for the Migration to Microservices Architecture using Smells
     * Build the microservices on Oracle Cloud using SSH, Docker
     * Modified application architecture is Java, SpringBoot, Microservices, routes REST requests to the appropriate backend server
 - #### Gym builder 
- 
     * This project aimed to critique the use of architecture and design patterns as a mechanism for supporting quality attributes. 
-
-    * Worked as a collaborative team member with program developers and fellow designers. 
-
     * Facilitated conceptualizing and designing back-end (**Python** & **Flask**), Database (**SQLAlchemy**). 
 
-    * Tracked, reviewed and revised project deliverables to meet objectives. 
 
 - #### ABM of the Supermarket Checkout System 
 
@@ -128,21 +117,27 @@ Always considering cohesion and optimizing software with design patterns and alg
 
 
 
-## **EDUCATION**
-
----------
-
-2020-2021 
-:   **Master, Software Engineering**: University of Limerick 
-<span style="float:right">Limerick, Ireland</span> 
-
-    *Dissertation: Comparing Approaches for the Migration toMicroservices Architecture using Smells*
+## **TECHNICAL SKILLS AND EXPERTISE**
+----------
     
-    ***(First-Class Honours, A1 Grade)***
+**Programming and Scripting Language**: Java, Python, Golang, SQL, JavaScript, HTML, CSS, XML. 
 
-2012-2016
-:   **BSc, Petroleum Engineering**: University of Yangtze 
-<span style="float:right">Jingzhou, China</span> 
+**Web Frameworks**：Spring Boot,Spring Cloud, SpringMVC, Flask. 
+
+**Development Environment**：Emacs, Vim, IntelliJ, Eclipse, VS Code, Android Studio. 
+
+**Database System**：MySQL, Redis, MyBatis, SQLAlchemy, SQLite. 
+
+**Android**:  Native Android development, Mobile development life cycle, User experience design 
+
+**DevOps**: Oracle-Cloud, Docker
+
+**Version Control Software**: Git, SVN. 
+
+<!--**Communication skills**: Excellent written and verbal communication skills. Empathic listener.  
+
+**Teamwork**: Excellent team player with the ability to contribute immensely towards a common goal and meet up.	 -->
+
 
 
 ----------------------------------------
