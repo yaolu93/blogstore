@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 /*
  * @lc app=leetcode id=349 lang=java
  *
@@ -47,6 +52,41 @@
 class Solution {
     public int[] intersection(int[] nums1, int[] nums2) {
         
+        Set<Integer> set1 = new HashSet<Integer>();
+        
+        Set<Integer> set2 = new HashSet<Integer>();
+
+        //delete the duplicate elements
+        for(int num1 : nums1){
+            set1.add(num1);
+        }
+        for (int num2 : nums2) {
+            set2.add(num2);
+        }
+        
+        //get the same elements
+        return getSameElement(set1, set2);
+
+
+    }
+
+    private int[] getSameElement(Set<Integer> set1, Set<Integer> set2) {
+        if(set2.size() > set1.size()){
+            return getSameElement(set2, set1);
+        }
+        List<Integer> res = new ArrayList<Integer>();
+        for (int element : set1) {
+            if(set2.contains(element)){
+                res.add(element);
+            }
+        }
+
+        int[] result = new int[res.size()];
+
+        for (int i = 0; i < res.size(); i++) {
+            result[i] = res.get(i);
+        }
+        return result;
     }
 }
 // @lc code=end
