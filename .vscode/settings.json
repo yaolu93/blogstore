@@ -1,5 +1,6 @@
 {
     "java.project.sourcePaths": [
         "content/code"
-    ]
+    ],
+    "editor.wordWrap": "on"
 }
