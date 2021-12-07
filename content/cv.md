@@ -38,6 +38,7 @@ Always considering cohesion and optimizing software with design patterns and alg
 
 ## **PROFESSIONAL EXPERIENCE** 
 --------------------
+### **Amdocs Inc<span style="float:right">Dec 2021 - Present</span>** 
 ### **University of Limerick <span style="float:right">Sep 2020 - Sep 2021</span>** 
 
 **Research Project**									 
