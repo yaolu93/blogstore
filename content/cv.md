@@ -1,10 +1,10 @@
 ---
 title: "CV"
 date: 2021-04-02
-lastmod: 2021-04-02
+lastmod: 2021-12-07
 menu: "main"
 weight: 50
-author: "Achilles"
+author: "Yao"
 ---
 
 
@@ -38,60 +38,40 @@ Always considering cohesion and optimizing software with design patterns and alg
 
 ## **PROFESSIONAL EXPERIENCE** 
 --------------------
+### **Amdocs<span style="float:right">Dec 2021 - Present</span>** 
+
+**Software Engineer**	  		 
+<span style="float:right">Dublin, Ireland</span>				
 ### **University of Limerick <span style="float:right">Sep 2020 - Sep 2021</span>** 
 
-**Research Project**									 
+**Microservices Architecture Researcher**									 
 <span style="float:right">Limerick, Ireland</span>
 
 - #### Microservices Research
-    **Microservices Architecture Researcher**
-
     * Comparing Approaches for the Migration to Microservices Architecture using Smells
     * Build the microservices on Oracle Cloud using SSH, Docker
     * Modified application architecture is Java, SpringBoot, Microservices, routes REST requests to the appropriate backend server
-- #### Gym builder 
+- #### Gym builder
     * This project aimed to critique the use of architecture and design patterns as a mechanism for supporting quality attributes. 
     * Facilitated conceptualizing and designing back-end (**Python** & **Flask**), Database (**SQLAlchemy**). 
-
-
 - #### ABM of the Supermarket Checkout System 
-
     * Applied the ABM model to simulate the most practical purchase plan for supermarket revenue staff and customers in high concurrency scenarios (**Golang**). 
 
 
 ### **Ping Jia Technology Co., Ltd.<span style="float:right">Aug 2018 - Apr 2019</span>** 
-[Ping Jia](http://www.chinaubi.com/main/)
-
 **Java Back-End Engineer**	  		 
 <span style="float:right">Shanghai, China</span>				
+
+* Cooperate with account managers of Ping An Insurance Company for software product implementation and performance improvements 
+* Cooperate code review with coworkers in the development cycle to find ideal solutions to problems
+* Collaborate with front-end and mobile developers
+
+ - #### ***Project: Ping Jia Car Insurance*** (Vue.js +Spring Boot +MyBatis +MySQL +Redis +Swagger +Jenkins +Git) 
+    * Develop Microservices and Software Components from scratch using **SpringBoot** to implement the business logic, interact with the database using **Mybaits**, provide flexible API interfaces
+    * Managing Car insurance source code using **Git** , releasing different versions by **Jenkins**
+    * Refactor policy query statements to reduce query time from 5 seconds to 1 second
+    * Achieve user login components, authority management system, policy details components, SMS sending functions
    
-
-* Communicated with the account manager of Ping An Insurance Company, implemented and improved requirements. 
-
-* Performed detailed information/requirement collection, solution mapping, development and deployment and interacted with different divisions.  
-
-* Applied market intelligence and performance monitoring for the development and maintenance of various services. 
-
- - #### ***Project: Ping Jia Car Insurance*** 
-
-    * Designed, Developed and implemented databases with the Ping Jia Car insurance application.  
-
-    * Designed, developed and maintained client portals of all our clients using **Spring Framework**. 
-
-    * Managing all Ping Jia Car insurance source code using **GIT**.  
-
-    * Utilized database management systems including **Redis**, **MySQL**.  
-
-    * Provided application integration support for internal and external developers using **REST**.  
-
-    * Built various REST API using **Java** & **Spring MVC**.  
-
-    * Worked with the team to develop Ping Jia Car insurance Workstation and Technical Analysis Tools.  
-
-    * Supported application development roles in various projects from inception to implementation of application development. 
-
-    * Interacted with Ping An Insurance Company's product manager to help auto-insurance sales staff improve insurance policy issuance efficiency. 
-
 
 ### **Yuan Ju Network Technology Co., Ltd.<span style="float:right">Apr 2017 - May 2018</span>** 
    [Yuan Ju](http://www.1391.com/)
@@ -100,40 +80,39 @@ Always considering cohesion and optimizing software with design patterns and alg
 **Android Developer** 								 
 <span style="float:right">Shanghai, China</span> 
 
-* Responsible for development (**Java** & **Android**) and maintenance of overseas versions. 
+* Development and maintenance of app (**overseas version of Book Chaser**)
+* Work cross functionally with other team members: other engineers, testers, designers and customer support
+* Attend scrum meetings, communicate with the product manager to ensure their requirements are fulfilled
 
-* Rigorous time-bound issue resolution and bug fix. Monitoring the bug rate until midnight after the deployment. 
-
-* Reviewing the code with the team and optimizing the code *50%* of the time during the **holidays**. 
-
-- ####  ***Project: Book Chaser (both the main version and Google version):*** 
+- ####  ***Project: Book Chaser*** (Android SDK +Node.js +Redis +Alibaba Cloud +Jenkins +Git)
 
 - ***Project address in google play:*** [Book Chaser](https://play.google.com/store/apps/details?id=com.ushaqi.zhuishushenqi.play) 
 
-    + An online reading application with **70 million** users and **5 million daily active users**.  **Online bug rate below 0.03%**. Released the product in the Google Play market after passing strict tests.  
-
-    + Achieved application multilingual switch environment and the function of Google payment, as an application developer, **providing 24/7 support**. 
-
-    + Acquired complete functional knowledge of various frameworks and operations of the client. 
+    * An online reading application with **70 million** users and **5 million daily active users**.  **Online bug rate below 0.03%**. Released the product in the Google Play market after passing strict tests  
+    * Achieved Google Pay in Book Chaser helps the company increase revenue every month
+    * Injected Event Tracking into the app to help BI division analysis users data
+    * Improved OkHttp for android RESTful integrations
+    * Refactor entire application UI to optimize the code of the components and reduce coupling
+    * Deployed and managed the updates of new android versions to Google play store
 
 
 
 ## **TECHNICAL SKILLS AND EXPERTISE**
 ----------
     
-**Programming and Scripting Language**: Java, Python, Golang, SQL, JavaScript, HTML, CSS, XML. 
+**Programming and Scripting Language**: Java, Python, Golang, SQL, JavaScript, HTML, CSS, XML 
 
-**Web Frameworks**：Spring Boot,Spring Cloud, SpringMVC, Flask. 
+**Web Frameworks**：Spring Boot,Spring Cloud, SpringMVC, Flask 
 
-**Development Environment**：Emacs, Vim, IntelliJ, Eclipse, VS Code, Android Studio. 
+**Development Environment**：Emacs, Vim, IntelliJ, Eclipse, VS Code, Android Studio 
 
-**Database System**：MySQL, Redis, MyBatis, SQLAlchemy, SQLite. 
+**Database System**：MySQL, Redis, MyBatis, SQLAlchemy, SQLite 
 
 **Android**:  Native Android development, Mobile development life cycle, User experience design 
 
 **DevOps**: Oracle-Cloud, Docker
 
-**Version Control Software**: Git, SVN. 
+**Version Control Software**: Git, SVN 
 
 <!--**Communication skills**: Excellent written and verbal communication skills. Empathic listener.  
 
