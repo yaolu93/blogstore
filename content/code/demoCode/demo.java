@@ -10,7 +10,7 @@ public class demo{
         int c = 5;
 
         b %= c;
-
+        // this is embassy thing for submit 
         System.out.println("the result is :" + b);
         
 
