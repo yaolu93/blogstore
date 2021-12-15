@@ -40,7 +40,7 @@ Always considering cohesion and optimizing software with design patterns and alg
 --------------------
 ### **Amdocs<span style="float:right">Dec 2021 - Present</span>** 
 
-**Software Engineer**	  		 
+**DevOps Engineer**	  		 
 <span style="float:right">Dublin, Ireland</span>				
 ### **University of Limerick <span style="float:right">Sep 2020 - Sep 2021</span>** 
 
@@ -50,7 +50,7 @@ Always considering cohesion and optimizing software with design patterns and alg
 - #### Microservices Research
     * Comparing Approaches for the Migration to Microservices Architecture using Smells
     * Build the microservices on Oracle Cloud using SSH, Docker
-    * Modified application architecture is Java, SpringBoot, Microservices, routes REST requests to the appropriate backend server
+    * Modified application architecture is Java, SpringBoot, Microservices, routes REST requests to the ap~ropriate backend server
 - #### Gym builder
     * This project aimed to critique the use of architecture and design patterns as a mechanism for supporting quality attributes. 
     * Facilitated conceptualizing and designing back-end (**Python** & **Flask**), Database (**SQLAlchemy**). 
