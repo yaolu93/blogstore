@@ -1,0 +1,168 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Hello",
+            "request": "launch",
+            "mainClass": "demoCode.Hello",
+            "projectName": "blogstore_59bc1d40"
+        },
+        {
+            "type": "java",
+            "name": "Launch NewHello",
+            "request": "launch",
+            "mainClass": "demoCode.NewHello",
+            "projectName": "blogstore_59bc1d40"
+        },
+        {
+            "type": "java",
+            "name": "Launch PigLatinWord",
+            "request": "launch",
+            "mainClass": "demoCode.PigLatinWord",
+            "projectName": "blogstore_59bc1d40"
+        },
+        {
+            "type": "java",
+            "name": "Launch Solution",
+            "request": "launch",
+            "mainClass": "demoCode.Solution",
+            "projectName": "blogstore_59bc1d40"
+        },
+        {
+            "type": "java",
+            "name": "Launch demo",
+            "request": "launch",
+            "mainClass": "demoCode.demo",
+            "projectName": "blogstore_59bc1d40"
+        },
+        {
+            "type": "java",
+            "name": "Launch demo02",
+            "request": "launch",
+            "mainClass": "demoCode.demo02",
+            "projectName": "blogstore_59bc1d40"
+        },
+        {
+            "type": "java",
+            "name": "Launch dfsDemo",
+            "request": "launch",
+            "mainClass": "demoCode.dfsDemo",
+            "projectName": "blogstore_59bc1d40"
+        },
+        {
+            "type": "java",
+            "name": "Launch CircleArray",
+            "request": "launch",
+            "mainClass": "linear.CircleArray",
+            "projectName": "blogstore_59bc1d40"
+        },
+        {
+            "type": "java",
+            "name": "Launch CircleList",
+            "request": "launch",
+            "mainClass": "linear.CircleList",
+            "projectName": "blogstore_59bc1d40"
+        },
+        {
+            "type": "java",
+            "name": "Launch DoublyLinklist",
+            "request": "launch",
+            "mainClass": "linear.DoublyLinklist",
+            "projectName": "blogstore_59bc1d40"
+        },
+        {
+            "type": "java",
+            "name": "Launch JosephCircle",
+            "request": "launch",
+            "mainClass": "linear.JosephCircle",
+            "projectName": "blogstore_59bc1d40"
+        },
+        {
+            "type": "java",
+            "name": "Launch LinkList",
+            "request": "launch",
+            "mainClass": "linear.LinkList",
+            "projectName": "blogstore_59bc1d40"
+        },
+        {
+            "type": "java",
+            "name": "Launch NewQueue",
+            "request": "launch",
+            "mainClass": "linear.NewQueue",
+            "projectName": "blogstore_59bc1d40"
+        },
+        {
+            "type": "java",
+            "name": "Launch SequenceList",
+            "request": "launch",
+            "mainClass": "linear.SequenceList",
+            "projectName": "blogstore_59bc1d40"
+        },
+        {
+            "type": "java",
+            "name": "Launch SparseArray",
+            "request": "launch",
+            "mainClass": "linear.SparseArray",
+            "projectName": "blogstore_59bc1d40"
+        },
+        {
+            "type": "java",
+            "name": "Launch BubbleSort",
+            "request": "launch",
+            "mainClass": "sort.BubbleSort",
+            "projectName": "blogstore_59bc1d40"
+        },
+        {
+            "type": "java",
+            "name": "Launch DivideAndConquerSort",
+            "request": "launch",
+            "mainClass": "sort.DivideAndConquerSort",
+            "projectName": "blogstore_59bc1d40"
+        },
+        {
+            "type": "java",
+            "name": "Launch InsertionSort",
+            "request": "launch",
+            "mainClass": "sort.InsertionSort",
+            "projectName": "blogstore_59bc1d40"
+        },
+        {
+            "type": "java",
+            "name": "Launch Merge",
+            "request": "launch",
+            "mainClass": "sort.Merge",
+            "projectName": "blogstore_59bc1d40"
+        },
+        {
+            "type": "java",
+            "name": "Launch QuickSort",
+            "request": "launch",
+            "mainClass": "sort.QuickSort",
+            "projectName": "blogstore_59bc1d40"
+        },
+        {
+            "type": "java",
+            "name": "Launch SelectionSort",
+            "request": "launch",
+            "mainClass": "sort.SelectionSort",
+            "projectName": "blogstore_59bc1d40"
+        },
+        {
+            "type": "java",
+            "name": "Launch BinaryTree",
+            "request": "launch",
+            "mainClass": "tree.BinaryTree",
+            "projectName": "blogstore_59bc1d40"
+        }
+    ]
+}
