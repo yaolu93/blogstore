@@ -71,3 +71,5 @@ Zookeeper( 协调和调度中心)
  每一个Partition 都是有序的队列。
 
  top 是列出linux的内存和cpu占用信息
+
+ Kafka 的log 追踪。
