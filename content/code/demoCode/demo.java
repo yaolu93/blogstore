@@ -13,7 +13,7 @@ public class demo{
         // this is embassy thing for submit 
         System.out.println("the result is :" + b);
         
-
+        // let's begin
         int option = 2;
         switch (option) {
         case 1:
