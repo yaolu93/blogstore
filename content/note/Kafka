@@ -69,3 +69,9 @@ Zookeeper( 协调和调度中心)
  只有Leader有读写功能，Followers在Leader挂了之后才有读写能力，平时都不可以读写。
 
  每一个Partition 都是有序的队列。
+
+ top 是列出linux的内存和cpu占用信息
+
+ Kafka 的log 追踪。
+
+ 
