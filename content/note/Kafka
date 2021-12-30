@@ -73,5 +73,5 @@ Zookeeper( 协调和调度中心)
  top 是列出linux的内存和cpu占用信息
 
  Kafka 的log 追踪。
-
+争取以后在 Emacs上开发了
  
