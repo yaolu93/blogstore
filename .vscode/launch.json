@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch NewHello",
+            "request": "launch",
+            "mainClass": "demoCode.NewHello",
+            "projectName": "blogstore_5a9eb35a"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
