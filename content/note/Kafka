@@ -74,4 +74,12 @@ Zookeeper( 协调和调度中心)
 
  Kafka 的log 追踪。
 
- 
+ Kafka 零复制问题：
+ 因为Kafka是直接向系统底层发指令，读写文件，而不是像JVM 那样，读一次到缓存，再读一次到readbuffer,写一次到writebuffer，再写一次到缓存，总共四次。
+ Kafka是直接发指令到系统，让其帮忙写入。底层指令为 fork()。JUC 写实复制技术
+
+ log 是记录日志，
+ index 是记录偏移量和字节的位置。
+
+
+Kafka is able to seamlessly handle multiple producers
