@@ -88,3 +88,5 @@ Kafka is able to seamlessly handle multiple producers
 争取以后在 Emacs上开发了
  
 >>>>>>> d2cfd3aca93f7a73727399d17037a92c091913f3
+
+3. 同步发送消息，异步发送消息。
