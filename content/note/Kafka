@@ -90,3 +90,5 @@ Kafka is able to seamlessly handle multiple producers
 >>>>>>> d2cfd3aca93f7a73727399d17037a92c091913f3
 
 3. 同步发送消息，异步发送消息。
+
+char 的取值范围和 byte, short, int 的都不一样，在向上转型的时候我们需要格外留意。
