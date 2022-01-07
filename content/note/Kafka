@@ -1,4 +1,4 @@
-kafka: real-time event driven application
+tokafka: real-time event driven application
 
 produce comsume
 fast
@@ -73,7 +73,6 @@ Zookeeper( 协调和调度中心)
  top 是列出linux的内存和cpu占用信息
 
  Kafka 的log 追踪。
-<<<<<<< HEAD
 
  Kafka 零复制问题：
  因为Kafka是直接向系统底层发指令，读写文件，而不是像JVM 那样，读一次到缓存，再读一次到readbuffer,写一次到writebuffer，再写一次到缓存，总共四次。
@@ -84,10 +83,8 @@ Zookeeper( 协调和调度中心)
 
 
 Kafka is able to seamlessly handle multiple producers
-=======
 争取以后在 Emacs上开发了
  
->>>>>>> d2cfd3aca93f7a73727399d17037a92c091913f3
 
 3. 同步发送消息，异步发送消息。
 
@@ -98,3 +95,8 @@ char 的取值范围和 byte, short, int 的都不一样，在向上转型的时
 
 history 
 !1031
+
+Kafka Schema Registry
+
+
+to know what is the git stage
