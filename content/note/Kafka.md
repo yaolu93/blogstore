@@ -101,3 +101,6 @@ Kafka Schema Registry
 
 to know what is the git stage
 and what
+
+
+shell command 真心好玩呀呀呀呀～～
