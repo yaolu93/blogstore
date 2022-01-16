@@ -109,3 +109,5 @@ shell command 真心好玩呀呀呀呀～～
 can we please retry the leetcode tomorrow?!
 
 git upgrade and emacs~!
+
+let's update git first
