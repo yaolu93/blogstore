@@ -111,3 +111,6 @@ can we please retry the leetcode tomorrow?!
 git upgrade and emacs~!
 
 let's update git first
+
+
+git 升级之后整个人都好了。。。
