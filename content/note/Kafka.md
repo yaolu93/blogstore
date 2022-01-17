@@ -114,3 +114,9 @@ let's update git first
 
 
 git 升级之后整个人都好了。。。
+今天侥幸是coworker的配置文件除了问题。
+那万一是要自己找错误该怎么办。
+kafka 还没有看熟练吧。
+
+好消息是emacs tramp 可以用了。
+
