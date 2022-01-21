@@ -38,10 +38,18 @@ Always considering cohesion and optimizing software with design patterns and alg
 
 ## **PROFESSIONAL EXPERIENCE** 
 --------------------
-### **Amdocs<span style="float:right">Dec 2021 - Present</span>** 
+### **Amdocs<span style="float:right">Nov 2021 - Present</span>** 
 
 **DevOps Engineer**	  		 
 <span style="float:right">Dublin, Ireland</span>				
+
+ * Implement Test Cases and fully executed in Jenkins and Kubernetes
+
+ - #### ***Project: Openet Data Fabric***  
+   * **Java 1.8** + **Kafka** + **Confluent 5.5** + **Avro** + **RocksDB**
+   * **Kubernetes** + **Docker** + **Jenkins**
+   * **Shell Script** + **JBang** + **Python**
+   * **Amazon Cloud Virtual Machine: CentOS 7.9**
 ### **University of Limerick <span style="float:right">Sep 2020 - Sep 2021</span>** 
 
 **Microservices Architecture Researcher**									 
@@ -50,7 +58,7 @@ Always considering cohesion and optimizing software with design patterns and alg
 - #### Microservices Research
     * Comparing Approaches for the Migration to Microservices Architecture using Smells
     * Build the microservices on Oracle Cloud using SSH, Docker
-    * Modified application architecture is Java, SpringBoot, Microservices, routes REST requests to the ap~ropriate backend server
+    * Modified application architecture is Java, SpringBoot, Microservices, routes REST requests to the appropriate backend server
 - #### Gym builder
     * This project aimed to critique the use of architecture and design patterns as a mechanism for supporting quality attributes. 
     * Facilitated conceptualizing and designing back-end (**Python** & **Flask**), Database (**SQLAlchemy**). 
@@ -100,17 +108,17 @@ Always considering cohesion and optimizing software with design patterns and alg
 ## **TECHNICAL SKILLS AND EXPERTISE**
 ----------
     
-**Programming and Scripting Language**: Java, Python, Golang, SQL, JavaScript, HTML, CSS, XML 
+**Programming and Scripting Language**: Java, Python, Golang, SQL, Shell Script, JavaScript, HTML, CSS, XML 
 
-**Web Frameworks**：Spring Boot,Spring Cloud, SpringMVC, Flask 
+**Frameworks**：Kafka, Spring Boot,Spring Cloud, SpringMVC, Flask 
 
 **Development Environment**：Emacs, Vim, IntelliJ, Eclipse, VS Code, Android Studio 
 
-**Database System**：MySQL, Redis, MyBatis, SQLAlchemy, SQLite 
+**Database System**：RocksDB, Avro, MySQL, Redis, MyBatis, SQLAlchemy, SQLite 
 
-**Android**:  Native Android development, Mobile development life cycle, User experience design 
+**DevOps**: Oracle-Cloud, Amazon-Cloud, Docker, Kubernetes, Jenkins
 
-**DevOps**: Oracle-Cloud, Docker
+**Android**:  Native Android development, Mobile development life cycle 
 
 **Version Control Software**: Git, SVN 
 
@@ -129,5 +137,5 @@ Always considering cohesion and optimizing software with design patterns and alg
 
 ----
 
-> <lytreetree@gmail.com> • +353 (0)83 346 0631 • 27 years old\
+> <lytreetree@gmail.com> • +353 (0)83 346 0631 • 28 years old\
 > address - Limerick, Ireland
