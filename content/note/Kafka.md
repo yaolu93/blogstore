@@ -90,8 +90,8 @@ Kafka is able to seamlessly handle multiple producers
 
  
  
-
-3. 同步发送消息，异步发送消息。
+   
+1. 同步发送消息，异步发送消息。
 
 char 的取值范围和 byte, short, int 的都不一样，在向上转型的时候我们需要格外留意。
 
@@ -130,3 +130,7 @@ kafka 还没有看熟练吧。
 
 
 我们今天来试一下改变一下， host_name来看看是反应。
+
+
+
+我们只要看一下Github上面的日期就知道这，日子，这时光，飞得究竟得有多狠。
