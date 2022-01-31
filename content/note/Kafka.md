@@ -147,3 +147,6 @@ kafka 还没有看熟练吧。
 
 
 今天这个年是过得真舒服啊
+
+
+how are you ? I m fine. thank you~
