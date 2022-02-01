@@ -150,3 +150,8 @@ kafka 还没有看熟练吧。
 
 
 how are you ? I m fine. thank you~
+
+
+
+昨天解决了那个 python的业务逻辑问题之后真的是日爽的啊。
+
