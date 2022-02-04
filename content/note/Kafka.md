@@ -163,3 +163,6 @@ how are you ? I m fine. thank you~
 
 
 明天终于可以跟Carlos一起学Jenkins了呀
+
+
+所以 今天总算也是学到了嘛。
