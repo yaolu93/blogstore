@@ -134,3 +134,5 @@ how are you ? I m fine. thank you~
 老头的涨价提醒，让我萌生了搬家的想法
 
 今天要去howth玩咯
+
+敬畏神是一切智慧的开始。
