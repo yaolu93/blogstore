@@ -136,3 +136,6 @@ how are you ? I m fine. thank you~
 今天要去howth玩咯
 
 敬畏神是一切智慧的开始。
+
+听到eberhard说他不用吃抗抑郁的药，我感觉很安心，有神的帮助
+
