@@ -141,3 +141,6 @@ how are you ? I m fine. thank you~
 
 
 坑爹哟，代码在别的项目有冲突还能在Jenkins上面跑通哦
+
+
+今天把架构图画一画咯。
