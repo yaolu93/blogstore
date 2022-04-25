@@ -231,3 +231,5 @@ OOO
 
 4.  我知道上帝又在帮我度过难关了
 5.  MY god please help your poor son
+
+6. my lovely father please guide my way
