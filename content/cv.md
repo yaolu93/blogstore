@@ -43,13 +43,17 @@ Always considering cohesion and optimizing software with design patterns and alg
 **DevOps Engineer**	  		 
 <span style="float:right">Dublin, Ireland</span>				
 
- * Implement Test Cases and fully executed in Jenkins and Kubernetes
+ * Achieved agile development cycle requirements
+ * Participating in product refinement session with manager and co-works
+ * Designing project feature test plan and implementing test cases
 
- - #### ***Project: Openet Data Fabric***  
-   * **Java 1.8** + **Kafka** + **Confluent 5.5** + **Avro** + **RocksDB**
-   * **Kubernetes** + **Docker** + **Jenkins**
-   * **Shell Script** + **JBang** + **Python**
-   * **Amazon Cloud Virtual Machine: CentOS 7.9**
+ - #### ***Project: Openet Data Fabric***  (Development Platform on AWS: Centos 7.9) Kafka +Java 1.8 +Python 2.7 +Shell Script +Docker +Kubernetes +Helm +Ansible +Maven +Jenkins +Git
+     The project was about developing the distribution layer of a mediation product using Kafka to integrate data sources into a common format for distribution to downstream applications
+   * Developing mediation Orchestrator Project using (**Java** & **Kafka**)
+   * **Docker(izing)** micro-services and deploying them on **Kubernetes** environment using **Helm charts**
+   * Writing Units Tests using (**JBang** & **Shell Script**), and Integration Tests using (**Python** & **Shell Script**)
+   * Automating the project builds by using technologies such as **Maven** and **Jenkins**
+   * Analyzing existing code and writing design documents for the implementation of refinement feature
 ### **University of Limerick <span style="float:right">Sep 2020 - Sep 2021</span>** 
 
 **Microservices Architecture Researcher**									 
@@ -108,15 +112,15 @@ Always considering cohesion and optimizing software with design patterns and alg
 ## **TECHNICAL SKILLS AND EXPERTISE**
 ----------
     
-**Programming and Scripting Language**: Java, Python, Golang, SQL, Shell Script, JavaScript, HTML, CSS, XML 
+**Programming and Scripting Language**: Java 1.8, Python 2.7, Golang, SQL, Shell Script, JavaScript, HTML, CSS, XML 
 
-**Frameworks**：Kafka, Spring Boot,Spring Cloud, SpringMVC, Flask 
+**Frameworks**：Kafka, Source Connector, Sink Connector, Spring Boot,Spring Cloud, SpringMVC, Flask 
 
 **Development Environment**：Emacs, Vim, IntelliJ, Eclipse, VS Code, Android Studio 
 
 **Database System**：RocksDB, Avro, MySQL, Redis, MyBatis, SQLAlchemy, SQLite 
 
-**DevOps**: Oracle-Cloud, Amazon-Cloud, Docker, Kubernetes, Jenkins
+**DevOps**: Oracle-Cloud, Amazon-Cloud(Centos 7.9), Docker, Kubernetes, Jenkins, Helm, Ansible
 
 **Android**:  Native Android development, Mobile development life cycle 
 
@@ -137,5 +141,5 @@ Always considering cohesion and optimizing software with design patterns and alg
 
 ----
 
-> <lytreetree@gmail.com> • +353 (0)83 346 0631 • 28 years old\
-> address - Limerick, Ireland
+> <yao.lu.1223@gmail.com> • +353 (0)83 346 0631 • 28 years old\
+> address - Dublin, Ireland
