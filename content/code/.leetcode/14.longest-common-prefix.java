@@ -51,20 +51,22 @@ class Solution {
         if (strs.length == 0) {
             return null;
         }
-        
-        int num = strs[0].toCharArray().length;
+        //之前的题解zhen'sh
         int lengths = strs.length;
-
-        for (int i = 0; i < num; i++) {
-            char c = strs[0].charAt(i);
-            for (int j = 1; j < lengths; j++) {
-                if (c != strs[j].charAt(i)  || i == strs[j].length()) {
-                    return strs[0].substring(0, i);
-                }
+        String prefix = strs[0];
+        
+        for (int i = 1; i < lengths; i++) {
+            while(!strs[i].startsWith(prefix)){
+                prefix = prefix.substring(0, prefix.length()-1);
             }
+            // while(strs[i].indexOf(prefix) != 0){
+            //     prefix = prefix.substring(0, prefix.length()-1);
+            // }
         }
-        return strs[0];
+        return prefix;
+
     }
 }
+// this one has not passed
 // @lc code=end
 
