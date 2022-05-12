@@ -48,23 +48,21 @@
 // @lc code=start
 class Solution {
     public String longestCommonPrefix(String[] strs) {
+    // flower,flow,fly
         if (strs.length == 0) {
             return null;
         }
-        //之前的题解zhen'sh
-        int lengths = strs.length;
+
         String prefix = strs[0];
-        
+        int lengths = strs.length;
+
         for (int i = 1; i < lengths; i++) {
-            while(!strs[i].startsWith(prefix)){
+            
+            while (prefix.indexOf(strs[i]) != 0) {
                 prefix = prefix.substring(0, prefix.length()-1);
             }
-            // while(strs[i].indexOf(prefix) != 0){
-            //     prefix = prefix.substring(0, prefix.length()-1);
-            // }
         }
         return prefix;
-
     }
 }
 // this one has not passed
