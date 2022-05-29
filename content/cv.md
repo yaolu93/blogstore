@@ -53,7 +53,7 @@ Always considering cohesion and optimizing software with design patterns and alg
     [Openet Data](https://www.openet.com/data/)
    * Developing mediation Orchestrator Project using (**Java** & **Kafka**)
    * **Docker(izing)** micro-services and deploying them on **Kubernetes** environment using **Helm charts**
-   * Writing Units Tests using (**JBhttps://www.openet.com/data/ang** & **Shell Script**), and Integration Tests using (**Python** & **Shell Script**)
+   * Writing Units Tests using (**JBang** & **Shell Script**), and Integration Tests using (**Python** & **Shell Script**)
    * Automating the project builds by using technologies such as **Maven** and **Jenkins**
    * Analyzing existing code and writing design documents for the implementation of refinement feature
 ### **University of Limerick <span style="float:right">Sep 2020 - Sep 2021</span>** 
@@ -80,7 +80,7 @@ Always considering cohesion and optimizing software with design patterns and alg
 * Cooperate code review with coworkers in the development cycle to find ideal solutions to problems
 * Collaborate with front-end and mobile developers
 
- - #### ***Project: Ping Jia Car Insurance*** (Vue.js +Spring Boot +MyBatis +MySQL +Redis +Swagger +Jenkins +Git) 
+ - #### ***Project: Ping Jia Car Insurance*** (Spring Boot +MyBatis +MySQL +Redis +Swagger +Jenkins +Git) 
     * Develop Microservices and Software Components from scratch using **SpringBoot** to implement the business logic, interact with the database using **Mybaits**, provide flexible API interfaces
     * Managing Car insurance source code using **Git** , releasing different versions by **Jenkins**
     * Refactor policy query statements to reduce query time from 5 seconds to 1 second
@@ -98,7 +98,7 @@ Always considering cohesion and optimizing software with design patterns and alg
 * Work cross functionally with other team members: other engineers, testers, designers and customer support
 * Attend scrum meetings, communicate with the product manager to ensure their requirements are fulfilled
 
-- ####  ***Project: Book Chaser*** (Android SDK +Node.js +Redis +Alibaba Cloud +Jenkins +Git)
+- ####  ***Project: Book Chaser*** (Android SDK +Redis +Alibaba Cloud +Jenkins +Git)
 
 - ***Project address in google play:*** [Book Chaser](https://play.google.com/store/apps/details?id=com.ushaqi.zhuishushenqi.play) 
 
@@ -120,9 +120,9 @@ Always considering cohesion and optimizing software with design patterns and alg
 
 **Development Environment**：Emacs, Vim, IntelliJ, Eclipse, VS Code, Android Studio 
 
-**Database System**：RocksDB, Avro, MySQL, Redis, MyBatis, SQLAlchemy, SQLite 
+**Database System**：MySQL, Redis, MyBatis, SQLAlchemy, SQLite
 
-**DevOps**: Oracle-Cloud, Amazon-Cloud(Centos 7.9), Docker, Kubernetes, Jenkins, Helm, Ansible
+**DevOps**: Amazon-Cloud(Centos 7.9), Oracle-Cloud, Docker, Kubernetes, Jenkins, Helm, Ansible
 
 **Android**:  Native Android development, Mobile development life cycle 
 
