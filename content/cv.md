@@ -40,7 +40,7 @@ Always considering cohesion and optimizing software with design patterns and alg
 --------------------
 ### **Amdocs<span style="float:right">Nov 2021 - Present</span>** 
 
-**DevOps Engineer**	  		 
+**Software Engineer**	  		 
 <span style="float:right">Dublin, Ireland</span>				
 
  * Achieved agile development cycle requirements
