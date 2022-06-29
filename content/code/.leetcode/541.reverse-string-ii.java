@@ -42,7 +42,29 @@
 // @lc code=start
 class Solution {
     public String reverseStr(String s, int k) {
+        char[] cs = s.toCharArray();
+        int length = s.length();
+
+        for (int l = 0; l < length; l = 2*k + l) {
+            int r = l + k - 1;
+
+            reverse(cs, l, Math.min(r, length - 1));
+            // reverse(cs, l, r);
+            //
+        }
+        return String.valueOf(cs);
         
+    }
+
+    public void reverse(char[] cs, int l , int r){
+        while(l < r ){
+
+            char tmp = cs[l];
+            cs[l] = cs[r];
+            cs[r] = tmp;
+            l++;
+            r--;
+        }
     }
 }
 // @lc code=end
