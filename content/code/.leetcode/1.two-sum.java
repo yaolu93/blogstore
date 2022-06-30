@@ -63,18 +63,39 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         
-        int lengths = nums.length;
-
-        for (int i = 0; i < lengths; i++) {
-            for (int j = 1+i; j < lengths; j++) {
-                if (nums[i] + nums[j] == target) {
-                    return new int[]{i,j};
+        int length = nums.length;
+        for (int i = 0; i < length; i++) {
+            
+            for (int j = i+1; j < length; j++) {
+                //why is while, it is not if
+                while (nums[i] + nums[j] == target) {
+                    return new int[] {i, j};
                 }
             }
         }
+
         return null;
 
     }
 }
 // @lc code=end
+
+
+
+// class Solution {
+//     public int[] twoSum(int[] nums, int target) {
+        
+//         int lengths = nums.length;
+
+//         for (int i = 0; i < lengths; i++) {
+//             for (int j = 1+i; j < lengths; j++) {
+//                 if (nums[i] + nums[j] == target) {
+//                     return new int[]{i,j};
+//                 }
+//             }
+//         }
+//         return null;
+
+//     }
+// }
 
