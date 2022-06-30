@@ -42,23 +42,22 @@
 // @lc code=start
 class Solution {
     public String reverseStr(String s, int k) {
-        char[] cs = s.toCharArray();
-        int length = s.length();
 
-        for (int l = 0; l < length; l = 2*k + l) {
+        int length = s.length();
+        char [] cs = s.toCharArray();
+
+        for (int l = 0; l < length; l = l + 2*k) {
             int r = l + k - 1;
 
-            reverse(cs, l, Math.min(r, length - 1));
-            // reverse(cs, l, r);
-            //
+            reverse(cs, l , Math.min(r, length - 1));
+
         }
         return String.valueOf(cs);
-        
+
     }
 
-    public void reverse(char[] cs, int l , int r){
-        while(l < r ){
-
+    private void reverse(char[] cs, int l, int r) {
+        while (l < r) {
             char tmp = cs[l];
             cs[l] = cs[r];
             cs[r] = tmp;
@@ -66,6 +65,37 @@ class Solution {
             r--;
         }
     }
+
+
+
 }
 // @lc code=end
+
+// class Solution {
+//     public String reverseStr(String s, int k) {
+//         char[] cs = s.toCharArray();
+//         int length = s.length();
+
+//         for (int l = 0; l < length; l = 2*k + l) {
+//             int r = l + k - 1;
+
+//             reverse(cs, l, Math.min(r, length - 1));
+//             // reverse(cs, l, r);
+//             //
+//         }
+//         return String.valueOf(cs);
+        
+//     }
+
+//     public void reverse(char[] cs, int l , int r){
+//         while(l < r ){
+
+//             char tmp = cs[l];
+//             cs[l] = cs[r];
+//             cs[r] = tmp;
+//             l++;
+//             r--;
+//         }
+//     }
+// }
 
