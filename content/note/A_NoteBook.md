@@ -293,6 +293,7 @@ OOO
 60. 要一个人去土耳其了嘛
 61. life is short, time is luck
 62. 今天去了微软
+63. 不知道这个blog接了剧情会走向何方呢～
 
 
 
