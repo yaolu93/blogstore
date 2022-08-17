@@ -311,7 +311,8 @@ OOO
 78.  答应了去周五的bible study 这次上帝会让我遇见什么呢
 79.  so what you did today?
 80.  今天和suzy學習了，三重天堂
-81.  
+81.  過年能夠回去嗎？
+82.  
     
 
 
