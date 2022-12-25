@@ -46,14 +46,17 @@ Always considering cohesion and optimizing software with design patterns and alg
  * Achieved agile development cycle requirements
  * Participating in product refinement session with manager and co-works
  * Designing project feature test plan and implementing test cases
+ * CVE scan and fix
+ * Performance Test
 
  - #### ***Project: Openet Data Fabric***  (Development Platform on AWS: Centos 7.9) Kafka +Java 1.8 +Python 2.7 +Shell Script +Docker +Kubernetes +Helm +Ansible +Maven +Jenkins +Git
   
      The project was about developing the distribution layer of a mediation product using Kafka to integrate data sources into a common format for distribution to downstream applications
+
     [Openet Data](https://www.openet.com/data/)
    * Developing mediation Orchestrator Project using (**Java** & **Kafka**)
    * **Docker(izing)** micro-services and deploying them on **Kubernetes** environment using **Helm charts**
-   * Writing Units Tests using (**JBang** & **Shell Script**), and Integration Tests using (**Python** & **Shell Script**)
+   * Writing Units Tests using (**Java** & **Shell Script**), and Integration Tests using (**Python** & **Shell Script**)
    * Automating the project builds by using technologies such as **Maven** and **Jenkins**
    * Analyzing existing code and writing design documents for the implementation of refinement feature
 ### **University of Limerick <span style="float:right">Sep 2020 - Sep 2021</span>** 
@@ -143,5 +146,5 @@ Always considering cohesion and optimizing software with design patterns and alg
 
 ----
 
-> <yao.lu.1223@gmail.com> • +353 (0)83 346 0631 • 28 years old\
+> <yao.lu.1223@gmail.com> • +353 (0)83 346 0631 • 29 years old\
 > address - Dublin, Ireland
