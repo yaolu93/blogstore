@@ -1,7 +1,7 @@
 ---
 title: "CV"
 date: 2021-04-02
-lastmod: 2021-12-07
+lastmod: 2023-05-20
 menu: "main"
 weight: 50
 author: "Yao"
@@ -54,9 +54,9 @@ Always considering cohesion and optimizing software with design patterns and alg
      The project was about developing the distribution layer of a mediation product using Kafka to integrate data sources into a common format for distribution to downstream applications
 
     [Openet Data](https://www.openet.com/data/)
-   * Developing mediation Orchestrator Project using (**Java** & **Kafka**)
-   * **Docker(izing)** micro-services and deploying them on **Kubernetes** environment using **Helm charts**
-   * Writing Units Tests using (**Java** & **Shell Script**), and Integration Tests using (**Python** & **Shell Script**)
+   * Developing Big Data Project using (**Java** & **Kafka**)
+   * **Docker(izing)** micro-services and deploying them on **Kubernetes** environment using **Helm**
+   * Writing Units Tests using (**Java** & **Shell Script**), and Automation Tests using (**Python** & **Shell Script**)
    * Automating the project builds by using technologies such as **Maven** and **Jenkins**
    * Analyzing existing code and writing design documents for the implementation of refinement feature
 ### **University of Limerick <span style="float:right">Sep 2020 - Sep 2021</span>** 
@@ -119,13 +119,13 @@ Always considering cohesion and optimizing software with design patterns and alg
     
 **Programming and Scripting Language**: Java 1.8, Python 2.7, Golang, SQL, Shell Script, JavaScript, HTML, CSS, XML 
 
-**Frameworks**：Kafka, Source Connector, Sink Connector, Spring Boot,Spring Cloud, SpringMVC, Flask 
+**Frameworks**：Kafka, Source Connector, Sink Connector, Spring Boot, Spring Cloud, SpringMVC, Flask 
 
 **Development Environment**：Emacs, Vim, IntelliJ, Eclipse, VS Code, Android Studio 
 
 **Database System**：MySQL, Redis, MyBatis, SQLAlchemy, SQLite
 
-**DevOps**: Amazon-Cloud(Centos 7.9), Oracle-Cloud, Docker, Kubernetes, Jenkins, Helm, Ansible
+**DevOps**: Centos 7.9, Oracle-Cloud, Docker, Kubernetes, Jenkins, Helm, Ansible
 
 **Android**:  Native Android development, Mobile development life cycle 
 
