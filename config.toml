@@ -1,4 +1,7 @@
-baseURL = "https://www.yaolugnu.com/"
+#baseURL = "https://www.yaolugnu.com/"
+baseURL = "https://yaolu93.github.io/AchillesLy/"
+#baseURL = "https://127.0.0.1/AchillesLy/"
+
 languageCode = "en"
 defaultContentLanguage = "en"                             # en / zh-cn / ... (This field determines which i18n file to use)
 title = "Yao"
