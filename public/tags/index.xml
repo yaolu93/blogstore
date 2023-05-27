@@ -2,98 +2,98 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Yao</title>
-    <link>https://yaolu93.github.io/yao_blog/tags/</link>
+    <link>https://yaolu93.github.io/tags/</link>
     <description>Recent content in Tags on Yao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 29 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yaolu93.github.io/yao_blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yaolu93.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java</title>
-      <link>https://yaolu93.github.io/yao_blog/tags/java/</link>
+      <link>https://yaolu93.github.io/tags/java/</link>
       <pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://yaolu93.github.io/yao_blog/tags/java/</guid>
+      <guid>https://yaolu93.github.io/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Leetcode</title>
-      <link>https://yaolu93.github.io/yao_blog/tags/leetcode/</link>
+      <link>https://yaolu93.github.io/tags/leetcode/</link>
       <pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://yaolu93.github.io/yao_blog/tags/leetcode/</guid>
+      <guid>https://yaolu93.github.io/tags/leetcode/</guid>
       <description></description>
     </item>
     
     <item>
       <title>String</title>
-      <link>https://yaolu93.github.io/yao_blog/tags/string/</link>
+      <link>https://yaolu93.github.io/tags/string/</link>
       <pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://yaolu93.github.io/yao_blog/tags/string/</guid>
+      <guid>https://yaolu93.github.io/tags/string/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sort</title>
-      <link>https://yaolu93.github.io/yao_blog/tags/sort/</link>
+      <link>https://yaolu93.github.io/tags/sort/</link>
       <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://yaolu93.github.io/yao_blog/tags/sort/</guid>
+      <guid>https://yaolu93.github.io/tags/sort/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linear</title>
-      <link>https://yaolu93.github.io/yao_blog/tags/linear/</link>
+      <link>https://yaolu93.github.io/tags/linear/</link>
       <pubDate>Thu, 16 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://yaolu93.github.io/yao_blog/tags/linear/</guid>
+      <guid>https://yaolu93.github.io/tags/linear/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Command</title>
-      <link>https://yaolu93.github.io/yao_blog/tags/command/</link>
+      <link>https://yaolu93.github.io/tags/command/</link>
       <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://yaolu93.github.io/yao_blog/tags/command/</guid>
+      <guid>https://yaolu93.github.io/tags/command/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://yaolu93.github.io/yao_blog/tags/python/</link>
+      <link>https://yaolu93.github.io/tags/python/</link>
       <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://yaolu93.github.io/yao_blog/tags/python/</guid>
+      <guid>https://yaolu93.github.io/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>中文</title>
-      <link>https://yaolu93.github.io/yao_blog/tags/%E4%B8%AD%E6%96%87/</link>
+      <link>https://yaolu93.github.io/tags/%E4%B8%AD%E6%96%87/</link>
       <pubDate>Thu, 04 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://yaolu93.github.io/yao_blog/tags/%E4%B8%AD%E6%96%87/</guid>
+      <guid>https://yaolu93.github.io/tags/%E4%B8%AD%E6%96%87/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Memento</title>
-      <link>https://yaolu93.github.io/yao_blog/tags/memento/</link>
+      <link>https://yaolu93.github.io/tags/memento/</link>
       <pubDate>Tue, 04 Jun 2019 17:40:19 +0800</pubDate>
       
-      <guid>https://yaolu93.github.io/yao_blog/tags/memento/</guid>
+      <guid>https://yaolu93.github.io/tags/memento/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vistor</title>
-      <link>https://yaolu93.github.io/yao_blog/tags/vistor/</link>
+      <link>https://yaolu93.github.io/tags/vistor/</link>
       <pubDate>Tue, 04 Jun 2019 17:40:19 +0800</pubDate>
       
-      <guid>https://yaolu93.github.io/yao_blog/tags/vistor/</guid>
+      <guid>https://yaolu93.github.io/tags/vistor/</guid>
       <description></description>
     </item>
     

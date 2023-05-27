@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>String on Yao</title>
-    <link>https://yaolu93.github.io/yao_blog/tags/string/</link>
+    <link>https://yaolu93.github.io/tags/string/</link>
     <description>Recent content in String on Yao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 29 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yaolu93.github.io/yao_blog/tags/string/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yaolu93.github.io/tags/string/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>String--leetcode</title>
-      <link>https://yaolu93.github.io/yao_blog/post/string-leetcode/</link>
+      <link>https://yaolu93.github.io/post/string-leetcode/</link>
       <pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://yaolu93.github.io/yao_blog/post/string-leetcode/</guid>
+      <guid>https://yaolu93.github.io/post/string-leetcode/</guid>
       <description>Leetcode Questions about String 14.longest-common-prefix.java
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  class Solution { public String longestCommonPrefix(String[] strs) { // flower,flow,fly  if (strs.length == 0) { return null; } String prefix = strs[0]; int lengths = strs.length; for (int i = 1; i &amp;lt; lengths; i++) { while (strs[i].indexOf(prefix) != 0) { prefix = prefix.substring(0, prefix.</description>
     </item>

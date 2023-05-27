@@ -2,71 +2,71 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Yao</title>
-    <link>https://yaolu93.github.io/yao_blog/categories/</link>
+    <link>https://yaolu93.github.io/categories/</link>
     <description>Recent content in Categories on Yao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 29 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yaolu93.github.io/yao_blog/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yaolu93.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Leetcode</title>
-      <link>https://yaolu93.github.io/yao_blog/categories/leetcode/</link>
+      <link>https://yaolu93.github.io/categories/leetcode/</link>
       <pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://yaolu93.github.io/yao_blog/categories/leetcode/</guid>
+      <guid>https://yaolu93.github.io/categories/leetcode/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Design Pattern</title>
-      <link>https://yaolu93.github.io/yao_blog/categories/design-pattern/</link>
+      <link>https://yaolu93.github.io/categories/design-pattern/</link>
       <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://yaolu93.github.io/yao_blog/categories/design-pattern/</guid>
+      <guid>https://yaolu93.github.io/categories/design-pattern/</guid>
       <description></description>
     </item>
     
     <item>
       <title>中文</title>
-      <link>https://yaolu93.github.io/yao_blog/categories/%E4%B8%AD%E6%96%87/</link>
+      <link>https://yaolu93.github.io/categories/%E4%B8%AD%E6%96%87/</link>
       <pubDate>Thu, 04 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://yaolu93.github.io/yao_blog/categories/%E4%B8%AD%E6%96%87/</guid>
+      <guid>https://yaolu93.github.io/categories/%E4%B8%AD%E6%96%87/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>https://yaolu93.github.io/yao_blog/categories/linux/</link>
+      <link>https://yaolu93.github.io/categories/linux/</link>
       <pubDate>Tue, 04 Jun 2019 17:40:19 +0800</pubDate>
       
-      <guid>https://yaolu93.github.io/yao_blog/categories/linux/</guid>
+      <guid>https://yaolu93.github.io/categories/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Microservice</title>
-      <link>https://yaolu93.github.io/yao_blog/categories/microservice/</link>
+      <link>https://yaolu93.github.io/categories/microservice/</link>
       <pubDate>Tue, 04 Jun 2019 17:40:19 +0800</pubDate>
       
-      <guid>https://yaolu93.github.io/yao_blog/categories/microservice/</guid>
+      <guid>https://yaolu93.github.io/categories/microservice/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Penetration Test</title>
-      <link>https://yaolu93.github.io/yao_blog/categories/penetration-test/</link>
+      <link>https://yaolu93.github.io/categories/penetration-test/</link>
       <pubDate>Tue, 04 Jun 2019 17:40:19 +0800</pubDate>
       
-      <guid>https://yaolu93.github.io/yao_blog/categories/penetration-test/</guid>
+      <guid>https://yaolu93.github.io/categories/penetration-test/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Spring Framework</title>
-      <link>https://yaolu93.github.io/yao_blog/categories/spring-framework/</link>
+      <link>https://yaolu93.github.io/categories/spring-framework/</link>
       <pubDate>Tue, 04 Jun 2019 17:40:19 +0800</pubDate>
       
-      <guid>https://yaolu93.github.io/yao_blog/categories/spring-framework/</guid>
+      <guid>https://yaolu93.github.io/categories/spring-framework/</guid>
       <description></description>
     </item>
     
