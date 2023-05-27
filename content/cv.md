@@ -48,7 +48,7 @@ Always considering cohesion and optimizing software with design patterns and alg
  * Designing project feature test plan and implementing test cases
  * CVE scan and fix
  * Performance Test
-
+ <!-- //todo: describe sth about mentor  -->
  - #### ***Project: Openet Data Fabric***  (Development Platform on AWS: Centos 7.9) Kafka +Java 1.8 +Python 2.7 +Shell Script +Docker +Kubernetes +Helm +Ansible +Maven +Jenkins +Git
   
      The project was about developing the distribution layer of a mediation product using Kafka to integrate data sources into a common format for distribution to downstream applications
