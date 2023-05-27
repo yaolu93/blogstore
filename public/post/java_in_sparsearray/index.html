@@ -29,16 +29,16 @@
 <meta name="generator" content="Hugo 0.92.2 with theme even" />
 
 
-<link rel="canonical" href="https://yaolu93.github.io/post/java_in_sparsearray/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="https://yaolu93.github.io/yao_blog/post/java_in_sparsearray/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/yao_blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/yao_blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/yao_blog/favicon-16x16.png">
+<link rel="manifest" href="/yao_blog/manifest.json">
+<link rel="mask-icon" href="/yao_blog/safari-pinned-tab.svg" color="#5bbad5">
 
 
 
-<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link href="/yao_blog/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -48,7 +48,7 @@
   2D to sparseArray, then sparseArray to 2D
  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108  public class SparseArray { //create init 2D array  // 0 means not 1 black 2 blue  public static void main(String[] args) { System." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://yaolu93.github.io/post/java_in_sparsearray/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://yaolu93.github.io/yao_blog/post/java_in_sparsearray/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-12-23T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-12-23T00:00:00+00:00" />
 
@@ -79,7 +79,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">yao lu</a>
+    <a href="/yao_blog/" class="logo">yao lu</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -89,15 +89,15 @@
 </div>
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
-    <a href="/">
+    <a href="/yao_blog/">
         <li class="mobile-menu-item">Home</li>
-      </a><a href="/post/">
+      </a><a href="/yao_blog/post/">
         <li class="mobile-menu-item">Archives</li>
-      </a><a href="/tags/">
+      </a><a href="/yao_blog/tags/">
         <li class="mobile-menu-item">Tags</li>
-      </a><a href="/categories/">
+      </a><a href="/yao_blog/categories/">
         <li class="mobile-menu-item">Categories</li>
-      </a><a href="/cv/">
+      </a><a href="/yao_blog/cv/">
         <li class="mobile-menu-item">CV</li>
       </a>
   </ul>
@@ -110,7 +110,7 @@
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/" class="logo">yao lu</a>
+  <a href="/yao_blog/" class="logo">yao lu</a>
 </div>
 
 
@@ -120,15 +120,15 @@
 <nav class="site-navbar">
   <ul id="menu" class="menu">
     <li class="menu-item">
-        <a class="menu-item-link" href="/">Home</a>
+        <a class="menu-item-link" href="/yao_blog/">Home</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
+        <a class="menu-item-link" href="/yao_blog/post/">Archives</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/tags/">Tags</a>
+        <a class="menu-item-link" href="/yao_blog/tags/">Tags</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
+        <a class="menu-item-link" href="/yao_blog/categories/">Categories</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/cv/">CV</a>
+        <a class="menu-item-link" href="/yao_blog/cv/">CV</a>
       </li>
   </ul>
 </nav>
@@ -146,7 +146,7 @@
       <div class="post-meta">
         <span class="post-time"> 2020-12-23 </span>
         <div class="post-category">
-            <a href="/categories/leetcode/"> Leetcode </a>
+            <a href="/yao_blog/categories/leetcode/"> Leetcode </a>
             </div>
           <span class="more-meta"> 439 words </span>
           <span class="more-meta"> 3 mins read </span>
@@ -416,16 +416,16 @@
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/java/">Java</a>
-          <a href="/tags/leetcode/">Leetcode</a>
+          <a href="/yao_blog/tags/java/">Java</a>
+          <a href="/yao_blog/tags/leetcode/">Leetcode</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/command_pattern/">
+        <a class="prev" href="/yao_blog/post/command_pattern/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">Command Pattern in Python</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/post/chinese-preview/">
+        <a class="next" href="/yao_blog/post/chinese-preview/">
             <span class="next-text nav-default">[中文] 《金缕曲》</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -448,7 +448,7 @@
       <a href="https://yao.lu.1223@gmail.com" class="iconfont icon-email" title="email"></a>
       <a href="https://www.linkedin.com/in/yao-lu93" class="iconfont icon-linkedin" title="linkedin"></a>
       <a href="https://github.com/yaolu93" class="iconfont icon-github" title="github"></a>
-  <a href="https://yaolu93.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  <a href="https://yaolu93.github.io/yao_blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
 <div class="copyright">
@@ -483,7 +483,7 @@
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/yao_blog/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
 
 
 

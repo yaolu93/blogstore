@@ -2,47 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Leetcode on Yao</title>
-    <link>https://yaolu93.github.io/tags/leetcode/</link>
+    <link>https://yaolu93.github.io/yao_blog/tags/leetcode/</link>
     <description>Recent content in Leetcode on Yao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 29 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yaolu93.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yaolu93.github.io/yao_blog/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>String--leetcode</title>
-      <link>https://yaolu93.github.io/post/string-leetcode/</link>
+      <link>https://yaolu93.github.io/yao_blog/post/string-leetcode/</link>
       <pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://yaolu93.github.io/post/string-leetcode/</guid>
+      <guid>https://yaolu93.github.io/yao_blog/post/string-leetcode/</guid>
       <description>Leetcode Questions about String 14.longest-common-prefix.java
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  class Solution { public String longestCommonPrefix(String[] strs) { // flower,flow,fly  if (strs.length == 0) { return null; } String prefix = strs[0]; int lengths = strs.length; for (int i = 1; i &amp;lt; lengths; i++) { while (strs[i].indexOf(prefix) != 0) { prefix = prefix.substring(0, prefix.</description>
     </item>
     
     <item>
       <title>Bubble, Insertion and Selection Sort</title>
-      <link>https://yaolu93.github.io/post/bubble-sort/</link>
+      <link>https://yaolu93.github.io/yao_blog/post/bubble-sort/</link>
       <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://yaolu93.github.io/post/bubble-sort/</guid>
+      <guid>https://yaolu93.github.io/yao_blog/post/bubble-sort/</guid>
       <description>Bubble Sort Bubble Sort	is a simple sorting algorithm. It compares two adjacent elements and swap them until all elements are in order. It&amp;rsquo;s not suitable for large data set as its time complexity are of (n2).
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32  public class BubbleSort { public static void sort(Comparable[] a){ for(int i = a.</description>
     </item>
     
     <item>
       <title>Quick Sort and Partition</title>
-      <link>https://yaolu93.github.io/post/quicksort/</link>
+      <link>https://yaolu93.github.io/yao_blog/post/quicksort/</link>
       <pubDate>Fri, 17 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://yaolu93.github.io/post/quicksort/</guid>
+      <guid>https://yaolu93.github.io/yao_blog/post/quicksort/</guid>
       <description>Quick Sort Quick sort is a Divide and Conquer algorithm. It partitions a large array into two arrays by a pivot value, and carry out the process recursively so that the entire array becomes an ordered sequence.
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43  public class QuickSort { public static void main(String[] args) { System.</description>
     </item>
     
     <item>
       <title>Linklist and DoublyLinklist</title>
-      <link>https://yaolu93.github.io/post/linklist_and_doublylinklist/</link>
+      <link>https://yaolu93.github.io/yao_blog/post/linklist_and_doublylinklist/</link>
       <pubDate>Thu, 16 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://yaolu93.github.io/post/linklist_and_doublylinklist/</guid>
+      <guid>https://yaolu93.github.io/yao_blog/post/linklist_and_doublylinklist/</guid>
       <description>This demo is to help us identify the different between the Linklist and DoublyLinklist
  what we need to notice
  Compare with the Linklist and DoublyLinklist, the Linklist compact with two elements, one is item, another is next point. the DoublyLinklist concact three elements, one is item as well, two others are preview ponit and next point.
@@ -52,10 +52,10 @@ Linklist  Linklist
     
     <item>
       <title>Java_in_SparseArray</title>
-      <link>https://yaolu93.github.io/post/java_in_sparsearray/</link>
+      <link>https://yaolu93.github.io/yao_blog/post/java_in_sparsearray/</link>
       <pubDate>Wed, 23 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://yaolu93.github.io/post/java_in_sparsearray/</guid>
+      <guid>https://yaolu93.github.io/yao_blog/post/java_in_sparsearray/</guid>
       <description>SharseArray this demo is to help us transform the data from big data to the small data
  what we need to notic &amp;ldquo;= new int [11][11];&amp;rdquo; it means we have a Array is 11*11.
   2D to sparseArray, then sparseArray to 2D

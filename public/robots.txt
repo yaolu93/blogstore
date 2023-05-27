@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://yaolu93.github.io/sitemap.xml
+Sitemap: https://yaolu93.github.io/yao_blog/sitemap.xml
