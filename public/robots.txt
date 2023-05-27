@@ -1,2 +1,0 @@
-User-agent: *
-Sitemap: https://yaolu93.github.io/sitemap.xml
