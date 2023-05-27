@@ -1,5 +1,7 @@
 #!/bin/bash
 
+hugo
+
 # 保存 .git 文件夹和 CNAME 文件
 mv /home/yaolu/fromGithub/yao_blog/.git /tmp
 mv /home/yaolu/fromGithub/yao_blog/CNAME /tmp
@@ -19,3 +21,9 @@ mv /tmp/CNAME /home/yaolu/fromGithub/yao_blog
 # 复制 public 内容到目标文件夹
 cp -r public/* /home/yaolu/fromGithub/yao_blog
 
+cd /home/yaolu/fromGithub/yao_blog
+git status
+git add .
+git commit -am "update content"
+git status
+git push

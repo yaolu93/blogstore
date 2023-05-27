@@ -1,5 +1,5 @@
 ---
-title: "String--leetcode"
+title: "String-leetcode"
 date: 2022-05-29
 lastmod: 2022-05-29
 draft: false
