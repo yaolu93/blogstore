@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>String--leetcode - Yao</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Yao Lu" /><meta name="description" content="Leetcode Questions about String 14.longest-common-prefix.java
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  class Solution { public String longestCommonPrefix(String[] strs) { // flower,flow,fly  if (strs.length == 0) { return null; } String prefix = strs[0]; int lengths = strs.length; for (int i = 1; i &amp;lt; lengths; i&#43;&#43;) { while (strs[i].indexOf(prefix) != 0) { prefix = prefix.substring(0, prefix." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.92.2 with theme even" />
+
+
+<link rel="canonical" href="https://yaolu93.github.io/yao_blog/post/string-leetcode/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/yao_blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/yao_blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/yao_blog/favicon-16x16.png">
+<link rel="manifest" href="/yao_blog/manifest.json">
+<link rel="mask-icon" href="/yao_blog/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/yao_blog/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="String--leetcode" />
+<meta property="og:description" content="Leetcode Questions about String 14.longest-common-prefix.java
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  class Solution { public String longestCommonPrefix(String[] strs) { // flower,flow,fly  if (strs.length == 0) { return null; } String prefix = strs[0]; int lengths = strs.length; for (int i = 1; i &lt; lengths; i&#43;&#43;) { while (strs[i].indexOf(prefix) != 0) { prefix = prefix.substring(0, prefix." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaolu93.github.io/yao_blog/post/string-leetcode/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-05-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-05-29T00:00:00+00:00" />
+
+<meta itemprop="name" content="String--leetcode">
+<meta itemprop="description" content="Leetcode Questions about String 14.longest-common-prefix.java
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  class Solution { public String longestCommonPrefix(String[] strs) { // flower,flow,fly  if (strs.length == 0) { return null; } String prefix = strs[0]; int lengths = strs.length; for (int i = 1; i &lt; lengths; i&#43;&#43;) { while (strs[i].indexOf(prefix) != 0) { prefix = prefix.substring(0, prefix."><meta itemprop="datePublished" content="2022-05-29T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-05-29T00:00:00+00:00" />
+<meta itemprop="wordCount" content="393">
+<meta itemprop="keywords" content="Java,Leetcode,String," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="String--leetcode"/>
+<meta name="twitter:description" content="Leetcode Questions about String 14.longest-common-prefix.java
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  class Solution { public String longestCommonPrefix(String[] strs) { // flower,flow,fly  if (strs.length == 0) { return null; } String prefix = strs[0]; int lengths = strs.length; for (int i = 1; i &lt; lengths; i&#43;&#43;) { while (strs[i].indexOf(prefix) != 0) { prefix = prefix.substring(0, prefix."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/yao_blog/" class="logo">yao lu</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/yao_blog/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/yao_blog/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/yao_blog/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/yao_blog/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/yao_blog/cv/">
+        <li class="mobile-menu-item">CV</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/yao_blog/" class="logo">yao lu</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/yao_blog/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/yao_blog/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/yao_blog/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/yao_blog/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/yao_blog/cv/">CV</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">String--leetcode</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-05-29 </span>
+        <div class="post-category">
+            <a href="/yao_blog/categories/leetcode/"> Leetcode </a>
+            </div>
+          <span class="more-meta"> 393 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#leetcode-questions-about-string">Leetcode Questions about String</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="leetcode-questions-about-string">Leetcode Questions about String</h1>
+<p><a href="https://leetcode.com/problems/longest-common-prefix/description/">14.longest-common-prefix.java</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">longestCommonPrefix</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">strs</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// flower,flow,fly
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">strs</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="n">String</span> <span class="n">prefix</span> <span class="o">=</span> <span class="n">strs</span><span class="o">[</span><span class="n">0</span><span class="o">];</span>
+        <span class="kt">int</span> <span class="n">lengths</span> <span class="o">=</span> <span class="n">strs</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">lengths</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            
+            <span class="k">while</span> <span class="o">(</span><span class="n">strs</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">indexOf</span><span class="o">(</span><span class="n">prefix</span><span class="o">)</span> <span class="o">!=</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">prefix</span> <span class="o">=</span> <span class="n">prefix</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">0</span><span class="o">,</span> <span class="n">prefix</span><span class="o">.</span><span class="na">length</span><span class="o">()-</span><span class="n">1</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">prefix</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<p><a href="https://leetcode.com/problems/valid-palindrome/description/">125.valid-palindrome.java</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java">
+<span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isPalindrome</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+
+       <span class="n">String</span> <span class="n">fixed_string</span> <span class="o">=</span> <span class="s">&#34;&#34;</span><span class="o">;</span>
+       <span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="n">s</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">())</span> <span class="o">{</span>
+           <span class="k">if</span> <span class="o">(</span><span class="n">Character</span><span class="o">.</span><span class="na">isDigit</span><span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="o">||</span> <span class="n">Character</span><span class="o">.</span><span class="na">isLetter</span><span class="o">(</span><span class="n">c</span><span class="o">))</span> <span class="o">{</span>
+               <span class="n">fixed_string</span> <span class="o">+=</span> <span class="n">c</span><span class="o">;</span>
+           <span class="o">}</span>
+
+           <span class="n">fixed_string</span> <span class="o">=</span> <span class="n">fixed_string</span><span class="o">.</span><span class="na">toLowerCase</span><span class="o">();</span>
+       <span class="o">}</span>
+       
+       <span class="kt">int</span> <span class="n">a_pointer</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+       <span class="kt">int</span> <span class="n">b_pointer</span> <span class="o">=</span> <span class="n">fixed_string</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span><span class="o">;</span>
+
+       <span class="k">while</span> <span class="o">(</span><span class="n">a_pointer</span> <span class="o">&lt;=</span> <span class="n">b_pointer</span><span class="o">)</span> <span class="o">{</span>
+           <span class="k">if</span> <span class="o">(</span><span class="n">fixed_string</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">a_pointer</span><span class="o">)</span> <span class="o">!=</span> <span class="n">fixed_string</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">b_pointer</span><span class="o">))</span> <span class="o">{</span>
+               <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+           <span class="o">}</span>
+
+           <span class="n">a_pointer</span> <span class="o">+=</span> <span class="n">1</span><span class="o">;</span>
+           <span class="n">b_pointer</span> <span class="o">-=</span> <span class="n">1</span><span class="o">;</span>
+       <span class="o">}</span>
+       <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<p><a href="https://leetcode.com/problems/valid-anagram/description/">242.valid-anagram.java</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java">
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SelectionSort</span> <span class="o">{</span>
+	
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Selection,Sort!&#34;</span><span class="o">);</span>
+        <span class="n">Integer</span><span class="o">[]</span> <span class="n">a</span> <span class="o">=</span> <span class="o">{</span> <span class="n">8</span><span class="o">,</span> <span class="n">2</span><span class="o">,</span> <span class="n">3</span><span class="o">,</span> <span class="n">1</span><span class="o">,</span> <span class="n">4</span><span class="o">,</span> <span class="n">6</span><span class="o">,</span> <span class="n">7</span><span class="o">,</span> <span class="n">5</span> <span class="o">};</span>
+        <span class="n">selection</span><span class="o">(</span><span class="n">a</span><span class="o">);</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">a</span><span class="o">));</span>
+    <span class="o">}</span>
+
+ 
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">exchange</span><span class="o">(</span><span class="n">Comparable</span><span class="o">[]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Comparable</span> <span class="n">temp</span><span class="o">;</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+        <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">j</span><span class="o">];</span>
+        <span class="n">a</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">temp</span><span class="o">;</span>
+
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">greater</span><span class="o">(</span><span class="n">Comparable</span> <span class="n">v</span><span class="o">,</span> <span class="n">Comparable</span> <span class="n">w</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">v</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">w</span><span class="o">)</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">selection</span><span class="o">(</span><span class="n">Comparable</span><span class="o">[]</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="n">1</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">minIndex</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="n">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">greater</span><span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">minIndex</span><span class="o">],</span> <span class="n">a</span><span class="o">[</span><span class="n">j</span><span class="o">]))</span> <span class="o">{</span>
+                   <span class="c1">// exchange(a, minIndex, j); we can not exchange here,see i as assistant point every time need to move forward.
+</span><span class="c1"></span>                    <span class="n">minIndex</span> <span class="o">=</span> <span class="n">j</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="n">exchange</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">minIndex</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+	
+	<span class="o">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<p><a href="https://leetcode.com/problems/reverse-string/description/">344.reverse-string.java</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">reverseString</span><span class="o">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+       <span class="kt">int</span> <span class="n">a_pointer</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+       <span class="kt">int</span> <span class="n">b_pointer</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">1</span><span class="o">;</span>
+
+       <span class="k">while</span><span class="o">(</span><span class="n">a_pointer</span> <span class="o">&lt;=</span> <span class="n">b_pointer</span><span class="o">){</span>
+           <span class="kt">char</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">s</span><span class="o">[</span><span class="n">a_pointer</span><span class="o">];</span>
+           <span class="n">s</span><span class="o">[</span><span class="n">a_pointer</span><span class="o">]</span> <span class="o">=</span> <span class="n">s</span><span class="o">[</span><span class="n">b_pointer</span><span class="o">];</span>
+           <span class="n">s</span><span class="o">[</span><span class="n">b_pointer</span><span class="o">]</span> <span class="o">=</span> <span class="n">temp</span><span class="o">;</span>
+           <span class="n">a_pointer</span> <span class="o">+=</span> <span class="n">1</span><span class="o">;</span>
+           <span class="n">b_pointer</span> <span class="o">-=</span> <span class="n">1</span><span class="o">;</span>
+       <span class="o">}</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Yao Lu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2022-05-29
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/yao_blog/tags/java/">Java</a>
+          <a href="/yao_blog/tags/leetcode/">Leetcode</a>
+          <a href="/yao_blog/tags/string/">String</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/yao_blog/post/bubble-sort/">
+            <span class="next-text nav-default">Bubble, Insertion and Selection Sort</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://yao.lu.1223@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.linkedin.com/in/yao-lu93" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/yaolu93" class="iconfont icon-github" title="github"></a>
+  <a href="https://yaolu93.github.io/yao_blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yao</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/yao_blog/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

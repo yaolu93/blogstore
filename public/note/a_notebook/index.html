@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title> - Yao</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Yao" /><meta name="description" content="争取以后在 Emacs上开发了 特么的以后配置好的环境真的不能手贱去修改的啊 同步发送消息，异步发送消息。 char 的取值范围和 byte, short, int 的都不一样，在向上转" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.92.2 with theme even" />
+
+
+<link rel="canonical" href="https://yaolu93.github.io/yao_blog/note/a_notebook/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/yao_blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/yao_blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/yao_blog/favicon-16x16.png">
+<link rel="manifest" href="/yao_blog/manifest.json">
+<link rel="mask-icon" href="/yao_blog/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/yao_blog/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="争取以后在 Emacs上开发了 特么的以后配置好的环境真的不能手贱去修改的啊 同步发送消息，异步发送消息。 char 的取值范围和 byte, short, int 的都不一样，在向上转" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaolu93.github.io/yao_blog/note/a_notebook/" /><meta property="article:section" content="note" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="争取以后在 Emacs上开发了 特么的以后配置好的环境真的不能手贱去修改的啊 同步发送消息，异步发送消息。 char 的取值范围和 byte, short, int 的都不一样，在向上转">
+
+<meta itemprop="wordCount" content="3733">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="争取以后在 Emacs上开发了 特么的以后配置好的环境真的不能手贱去修改的啊 同步发送消息，异步发送消息。 char 的取值范围和 byte, short, int 的都不一样，在向上转"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/yao_blog/" class="logo">yao lu</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/yao_blog/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/yao_blog/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/yao_blog/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/yao_blog/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/yao_blog/cv/">
+        <li class="mobile-menu-item">CV</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/yao_blog/" class="logo">yao lu</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/yao_blog/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/yao_blog/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/yao_blog/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/yao_blog/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/yao_blog/cv/">CV</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>争取以后在 Emacs上开发了</p>
+<p>特么的以后配置好的环境真的不能手贱去修改的啊</p>
+<ol>
+<li>同步发送消息，异步发送消息。</li>
+</ol>
+<p>char 的取值范围和 byte, short, int 的都不一样，在向上转型的时候我们需要格外留意。</p>
+<p>那我们也有必要学一下ANT了吗？</p>
+<p>history
+!1031</p>
+<p>Kafka Schema Registry</p>
+<p>to know what is the git stage
+and what</p>
+<p>shell command 真心好玩呀呀呀呀～～</p>
+<p>can we please retry the leetcode tomorrow?!</p>
+<p>git upgrade and emacs~!</p>
+<p>let&rsquo;s update git first</p>
+<p>git 升级之后整个人都好了。。。
+今天侥幸是coworker的配置文件除了问题。
+那万一是要自己找错误该怎么办。
+kafka 还没有看熟练吧。</p>
+<p>好消息是emacs tramp 可以用了。</p>
+<p>如果是Jenkins没有用好那么造成的冲突可不比代码造成的冲突低呀</p>
+<p>我们今天来试一下改变一下， host_name来看看是反应。</p>
+<p>我们只要看一下Github上面的日期就知道这，日子，这时光，飞得究竟得有多狠。</p>
+<p>新的一天，卷动开始。</p>
+<p>今天要是把那个  test case 10 搞出来那应该还是挺有成就感的。</p>
+<p>记得给那个妹子发面试题目</p>
+<p>这test case 10  还是没搞出来咯，不过对K8S有了进一步的了解，真的又被Mark卷到啊。</p>
+<p>今天这个年是过得真舒服啊</p>
+<p>how are you ? I m fine. thank you~</p>
+<p>昨天解决了那个 python的业务逻辑问题之后真的是日爽.</p>
+<p>真滴是人生如梦，寂寞如雪啊。</p>
+<p>明天终于可以跟Carlos一起学Jenkins了呀</p>
+<p>所以 今天总算也是学到了嘛。</p>
+<p>这个时间啊，那流逝的是真的快的不行啊。</p>
+<p>昨天一天没打卡，就是被自己卷到了。。。哎</p>
+<p>我靠这个丢星期真的是忙，打卡就这一点。侧面反应是啥样了</p>
+<p>阿三真是能演啊。</p>
+<p>在欧洲的天空下，人是否能逃离认知的局限？「爱情神话」</p>
+<p>打卡打卡呀呀呀</p>
+<p>明天上线今天莫非是要卷死我咯？
+学习 Java Stream</p>
+<p>哈哈啊哈哈这是要被throttling strategy 坑醉比。。的节奏啊？</p>
+<p>真的是极度有必要搞一个issue复现问题集啊。</p>
+<p>所以说，卷卷更健康嘛。。。哎，论基础知识的重要性</p>
+<p>明天，去老师家吃法，听着就很开心了</p>
+<p>看来我还是挺招人喜欢的，何炜都喊我去喝茶嘛。</p>
+<p>感觉test case10 pass 后整个人都可以升华了，感觉这就是上帝在带引我如何好好的深入了解项目。</p>
+<p>这个鸟项目确实还是有点大的</p>
+<p>看来PR真的要赶紧咯，不然一个接着一个的不好搞哦</p>
+<p>今天的pr提交了，可是怎么会没有报错呢，真的很奇怪哦</p>
+<p>今天的阳光是真心的好呀。</p>
+<p>卷死我了呀，哈哈哈哈哈</p>
+<p>老头的涨价提醒，让我萌生了搬家的想法</p>
+<p>今天要去howth玩咯</p>
+<p>敬畏神是一切智慧的开始。</p>
+<p>听到eberhard说他不用吃抗抑郁的药，我感觉很安心，有神的帮助</p>
+<p>坑爹哟，代码在别的项目有冲突还能在Jenkins上面跑通哦</p>
+<p>今天把架构图画一画咯。</p>
+<p>今天Mark又来教我滑水了嘛？</p>
+<p>运维组又来搞幺蛾子了啊。</p>
+<p>以前干前端被后端坑，现在干后段被运维坑嘛？</p>
+<p>运维后端爱打架，所以就DevOps应运而生了</p>
+<p>秀儿呀秀儿～～</p>
+<p>就是happy呀开心呀，参加圣特帕克节</p>
+<p>希望明天细化需求的时候，坡度别那么陡峭哦。</p>
+<p>hello mr my yesterday</p>
+<p>Omotolla是真的很犀利的呀</p>
+<p>Rohan 咋还划分新的分组了列。。。</p>
+<p>今天周四上课，让我们看看今天会发生一些什么有趣的事情吧～～</p>
+<p>好吧以后上班的时间点真的要注意一点好吧？</p>
+<p>今天还没打卡，但我真的想要分析需求了。</p>
+<p>好嘛，今晚需求分析又没了嘛。</p>
+<p>忙坏了差点没打卡哟</p>
+<p>今天如果把log玩会了那么进度就应该会大增了吧。</p>
+<p>思考过多了会这么累哟。</p>
+<p>今天也要好好学习呀</p>
+<p>今天真的好奇幻哦</p>
+<p>我需要学着将我所有的忧愁交托给上帝呀</p>
+<p>以后工作日也要试着在晚上做饭，然后白天中午再吃。</p>
+<p>这样做午饭很省时间，结果省下来的时间都拿来工作了，我丢哈哈哈</p>
+<p>今天终于有偷得浮生半日闲了</p>
+<p>五月份是要搬家了吗</p>
+<p>这真的被卷得冷汗都下来了哦</p>
+<p>这个周末应该好似人生中最刻苦的周末了吧。</p>
+<p>感谢上帝让我遇到好的同事呀。</p>
+<p>有时候就是这样，问别人一句的功夫，自己可以节省一整天的时间，哎呀，是真的丢呀丢呀！！！
+今天就是，把sink-connector看完，把一个sink-test-case跑通</p>
+<p>就是说明天开始搬家咯？</p>
+<ol start="2">
+<li>
+<p>好了，搬家结束
+OOO</p>
+</li>
+<li>
+<p>正则匹配夺我命吗？</p>
+</li>
+<li>
+<p>我知道上帝又在帮我度过难关了</p>
+</li>
+<li>
+<p>MY god please help your poor son</p>
+</li>
+<li>
+<p>my lovely father please guide my way</p>
+</li>
+<li>
+<p>睡前一卷啊</p>
+</li>
+<li>
+<p>日卷一足啊</p>
+</li>
+<li>
+<p>事到如今，那就好好刷题吧。</p>
+</li>
+<li>
+<p>搬到都柏林来之后mental会好一些</p>
+</li>
+<li>
+<p>竖屏玩的这么爽的啊？</p>
+</li>
+<li>
+<p>搬过来之后独处的潇洒是慢慢在消失吗？</p>
+</li>
+<li>
+<p>要优雅对吧</p>
+</li>
+<li>
+<p>请人帮忙也真是很尴尬的一件事哦。</p>
+</li>
+<li>
+<p>确实时自身实力要加强，不然受制于人多难受呀。</p>
+</li>
+<li>
+<p>有时候时别人额原因，有时候也时自己的原因，多从自己方面下手思考解决方案。</p>
+</li>
+<li>
+<p>父母说的没错哟，就是，还是要和朋友多接触接触啊</p>
+</li>
+<li>
+<p>希望我的每日 leetcode计划能够成真呢</p>
+</li>
+<li>
+<p>漏刷题，罪过罪过呀。</p>
+</li>
+<li>
+<p>明天又是属灵的一天啊</p>
+</li>
+<li>
+<p>感恩上帝能够听见我的呼唤， Amen</p>
+</li>
+<li>
+<p>遇见一个好的同事真是挺难得的。</p>
+</li>
+<li>
+<p>想一下三天晚上都是可以是自己的</p>
+</li>
+<li>
+<p>这可能是难得的一周满打卡吧？</p>
+</li>
+<li>
+<p>都柏林真是能让人放松的好地方哦</p>
+</li>
+<li>
+<p>微服务没掌握好，面试不过，确实不能怪人家。</p>
+</li>
+<li>
+<p>明天又去见宿命劫难哈哈哈哈啊哈</p>
+</li>
+<li>
+<p>把剧本给演好吧</p>
+</li>
+<li>
+<p>说好了每日一练嘛。今天练习345.</p>
+</li>
+<li>
+<p>希望今天可以刷到345</p>
+</li>
+<li>
+<p>刷个题找的借口可真多呀</p>
+</li>
+<li>
+<p>明天去公司上班咯</p>
+</li>
+<li>
+<p>Eberhard said I am almost family</p>
+</li>
+<li>
+<p>罪过罪过，呀呀哈哈</p>
+</li>
+<li>
+<p>其实我感觉根本在于，没有好好的管理时间和精力，以上。</p>
+</li>
+<li>
+<p>等待上品，时间不足惜</p>
+</li>
+<li>
+<p>要不然，明日试着早起看一下能不能有进度</p>
+</li>
+<li>
+<p>我是在想，如果，能够坚持下去，会不会觉得很帅？</p>
+</li>
+<li>
+<p>稍微有点变强的才有感觉呀</p>
+</li>
+<li>
+<p>感恩上帝</p>
+</li>
+<li>
+<p>这下可太牛逼了。连密码都不能输入了</p>
+</li>
+<li>
+<p>不得不说，在这家公司工作真的要万分小心啊</p>
+</li>
+<li>
+<p>感恩上帝。</p>
+</li>
+<li>
+<p>感谢上帝，你虔诚的儿子，遥</p>
+</li>
+<li>
+<p>你要反思一下这两周是什么让你混乱，是什么让你懈怠，意乱神迷。</p>
+</li>
+<li>
+<p>没有什么是理应值得或者理应不值得的。</p>
+</li>
+<li>
+<p>好难得的一个周日，没有工作的困扰，我只想好好的看一下书书。</p>
+</li>
+<li>
+<p>把握这次机会，做大做强，再创辉煌。 我觉得这样每天做一次笔记，其实真的挺好的。</p>
+</li>
+<li>
+<p>就目前来说，唯有阅读，能够救赎，cloud今天主动给我提了他家里的事情，需要有好的方法安慰她。</p>
+</li>
+<li>
+<p>好好抓住这次stream得机会让自己的编码能力加强一下。</p>
+</li>
+<li>
+<p>可以定要降低期待呀，这样对自己好。</p>
+</li>
+<li>
+<p>LBC结课了，我感觉伤感的层度还是慢慢的在降低</p>
+</li>
+<li>
+<p>立白也是回避型人格，她给我讲的故事让我有了些许勇气啊。</p>
+</li>
+<li>
+<p>番茄工作法其实也蛮能够缓解焦虑的</p>
+</li>
+<li>
+<p>感谢上帝让那个一直困扰我的bug解决了。一切交托给神。</p>
+</li>
+<li>
+<p>感谢上帝今天的任务也完成得很好</p>
+</li>
+<li>
+<p>三种酒一起喝</p>
+</li>
+<li>
+<p>想一想敏超入职微软之后还在感叹，他周五晚上没有刷题吧～</p>
+</li>
+<li>
+<p>今天gym办了一张健身卡嘛，往后的每一天都想去的</p>
+</li>
+<li>
+<p>土耳其的签证下来了呀，嘻嘻嘻嘻～</p>
+</li>
+<li>
+<p>要一个人去土耳其了嘛</p>
+</li>
+<li>
+<p>life is short, time is luck</p>
+</li>
+<li>
+<p>今天去了微软</p>
+</li>
+<li>
+<p>不知道这个blog接了剧情会走向何方呢～</p>
+</li>
+<li>
+<p>哎今天西班牙簽證被因爲irp的原因被拒絕了咯，然後，我要開始刷二叉樹了</p>
+</li>
+<li>
+<p>这周基本没干活，也是醉了，哈哈哈</p>
+</li>
+<li>
+<p>希望明天的行程不要有什么Drama</p>
+</li>
+<li>
+<p>上帝让Drama发生，鲁遥一定要记得31072022晚上发生的事情哦，拜托要有尊严的活着。</p>
+</li>
+<li>
+<p>城府活着狠起来，也是真心狠哟。</p>
+</li>
+<li>
+<p>无论何时，都需要有人格的活下去</p>
+</li>
+<li>
+<p>Eberhard说，时间还没有到，我有我当有的时间，即便在婚姻关系中也会有很多问题</p>
+</li>
+<li>
+<p>这周日说不定又是一个Drama，不过我确定没有上一个Drama严重，请上帝赐我平静与能力。</p>
+</li>
+<li>
+<p>哈哈哈哈搞笑得很呐，周日这个Drama真的是活久见</p>
+</li>
+<li>
+<p>inimate relationship</p>
+</li>
+<li>
+<p>人前人后要一致，不能像王那样幼稚。～</p>
+</li>
+<li>
+<p>compare：太阳底下没有新鲜事，假设，你有湿疹，想想人家有重度残疾的，假设，考试没考过，想一下人家没有上过学的呢，假设，申请学校学校被拒，想想还有一辈子都待在国内的呢，假设，跟一个人的感情断裂了，算一算这个世界有八十亿人，数一万个就要累死了。</p>
+</li>
+<li>
+<p>To take care of you, spoiled kid.</p>
+</li>
+<li>
+<p>要见Eberhard了，他一定会给我很好的教育</p>
+</li>
+<li>
+<p>答应了去周五的bible study 这次上帝会让我遇见什么呢</p>
+</li>
+<li>
+<p>so what you did today?</p>
+</li>
+<li>
+<p>今天和suzy學習了，三重天堂</p>
+</li>
+<li>
+<p>過年能夠回去嗎？</p>
+</li>
+<li>
+<p>昨天和老張約好了，下次她來我就不去了。</p>
+</li>
+<li>
+<p>和朋友聊天还是挺有效果的</p>
+</li>
+<li>
+<p>準備要爲Liby慶生了哦</p>
+</li>
+<li>
+<p>今天用Latex 幫 Sun改一下簡歷</p>
+</li>
+<li>
+<p>每日一次日记多好呀。昨天为什么会梦到她怀孕哦？</p>
+</li>
+<li>
+<p>你是一本书，读你千遍也不厌倦？需要情感思想人格的独立，让对方产生需求</p>
+</li>
+<li>
+<p>只想好好攒钱远离中国人。</p>
+</li>
+<li>
+<p>今天做了一罐辣椒油，晚上和敏超三儿一块出去吃饭。</p>
+</li>
+<li>
+<p>打算学着做一份长寿面呀</p>
+</li>
+<li>
+<p>漏洞扫面工程应该还蛮大的，明天要早起，然后中午少吃一点咯啦</p>
+</li>
+<li>
+<p>上帝与我同在，23号的机票改签被改签到24号</p>
+</li>
+<li>
+<p>今天噢，人就是很奇怪的动物，让人琢磨不透的人.</p>
+</li>
+<li>
+<p>这是想要我早起刷题嘛</p>
+</li>
+<li>
+<p>这是有很少能这么早关灯的周五吧</p>
+</li>
+<li>
+<p>今天做了最长的一次清洁大扫除、</p>
+</li>
+<li>
+<p>那我需要再看一看三毛吗？</p>
+</li>
+<li>
+<p>为什么今晚月亮是缺的但是却说是圆的？</p>
+</li>
+<li>
+<p>买一个好枕头当背靠，反向将军最为致命</p>
+</li>
+<li>
+<p>梦寐以求的烧烤自由就要实现了吗</p>
+</li>
+<li>
+<p>今天中秋，把立白的生日过得好好啊。  还有我可以坐沙发是真的爽呀。</p>
+</li>
+<li>
+<p>想找一天，独自一人在家后院烧烤的乐趣</p>
+</li>
+<li>
+<p>有时有我在想到底是经理变态呢还是想练升级。</p>
+</li>
+<li>
+<p>time is luck, life is short, 想想，这转眼间已经是我认识Eberhard一年了，珍惜当下吧，时间太残忍了。</p>
+</li>
+<li>
+<p>今天听同事讲爱尔兰买房之后离婚的事情，简直不要太惊悚了</p>
+</li>
+<li>
+<p>让我们来试试明天早上可不可以起来刷算法的哈</p>
+</li>
+<li>
+<p>好嘛。如果早上不能早起刷算法， 那么真的时间会被生活中的其他给占据呀。</p>
+</li>
+<li>
+<p>原谅他人，再看一遍圣经故事。</p>
+</li>
+<li>
+<p>今天早上，上帝派一只鸟喊我起床啦</p>
+</li>
+<li>
+<p>嘻嘻嘻嘻嘻，低胰岛素食物</p>
+</li>
+<li>
+<p>这体内的Vim DNA 又开始躁动了嘛</p>
+</li>
+<li>
+<p>原谅不了就远离吧，要好好把握这一次的开发机会呀</p>
+</li>
+<li>
+<p>人与之间的冷漠才是最大的伤害呢， 下次走了真不能回来了呀～</p>
+</li>
+<li>
+<p>mental health</p>
+</li>
+<li>
+<p>不看书的坏处真的简直就是让人无语的嘛。</p>
+</li>
+<li>
+<p>试一下安装Jenkins咯</p>
+</li>
+<li>
+<p>透过现象，看本质</p>
+</li>
+<li>
+<p>Hello Spain</p>
+</li>
+<li>
+<p>抱歉好久没更新了，需要记日记才感觉日子流逝得不那么可怕。</p>
+</li>
+</ol>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://yao.lu.1223@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.linkedin.com/in/yao-lu93" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/yaolu93" class="iconfont icon-github" title="github"></a>
+  <a href="https://yaolu93.github.io/yao_blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yao</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/yao_blog/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

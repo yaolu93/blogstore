@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Command Pattern in Python - Yao</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Yao" /><meta name="description" content="Command 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  &amp;#34;&amp;#34;&amp;#34; This is a Command Class &amp;#34;&amp;#34;&amp;#34; class Command(ABC): &amp;#34;&amp;#34;&amp;#34; The Command interface declares a method for executing a command. &amp;#34;&amp;#34;&amp;#34; @abstractmethod def execute(self) -&amp;gt; None: pass @abstractmethod def undo(self) -&amp;gt; None: pass   LightOnCommand 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  class LightOnCommand(Command): &amp;#34;&amp;#34;&amp;#34; We need cohersion the Receiver and implement real command object &amp;#34;&amp;#34;&amp;#34; def __init__(self, receiver: Receiver, a: str) -&amp;gt; None: self." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.92.2 with theme even" />
+
+
+<link rel="canonical" href="https://yaolu93.github.io/yao_blog/post/command_pattern/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/yao_blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/yao_blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/yao_blog/favicon-16x16.png">
+<link rel="manifest" href="/yao_blog/manifest.json">
+<link rel="mask-icon" href="/yao_blog/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/yao_blog/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Command Pattern in Python" />
+<meta property="og:description" content="Command 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  &#34;&#34;&#34; This is a Command Class &#34;&#34;&#34; class Command(ABC): &#34;&#34;&#34; The Command interface declares a method for executing a command. &#34;&#34;&#34; @abstractmethod def execute(self) -&gt; None: pass @abstractmethod def undo(self) -&gt; None: pass   LightOnCommand 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  class LightOnCommand(Command): &#34;&#34;&#34; We need cohersion the Receiver and implement real command object &#34;&#34;&#34; def __init__(self, receiver: Receiver, a: str) -&gt; None: self." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaolu93.github.io/yao_blog/post/command_pattern/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-04-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-04-01T00:00:00+00:00" />
+
+<meta itemprop="name" content="Command Pattern in Python">
+<meta itemprop="description" content="Command 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  &#34;&#34;&#34; This is a Command Class &#34;&#34;&#34; class Command(ABC): &#34;&#34;&#34; The Command interface declares a method for executing a command. &#34;&#34;&#34; @abstractmethod def execute(self) -&gt; None: pass @abstractmethod def undo(self) -&gt; None: pass   LightOnCommand 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  class LightOnCommand(Command): &#34;&#34;&#34; We need cohersion the Receiver and implement real command object &#34;&#34;&#34; def __init__(self, receiver: Receiver, a: str) -&gt; None: self."><meta itemprop="datePublished" content="2021-04-01T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-04-01T00:00:00+00:00" />
+<meta itemprop="wordCount" content="553">
+<meta itemprop="keywords" content="Python,Command," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Command Pattern in Python"/>
+<meta name="twitter:description" content="Command 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  &#34;&#34;&#34; This is a Command Class &#34;&#34;&#34; class Command(ABC): &#34;&#34;&#34; The Command interface declares a method for executing a command. &#34;&#34;&#34; @abstractmethod def execute(self) -&gt; None: pass @abstractmethod def undo(self) -&gt; None: pass   LightOnCommand 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  class LightOnCommand(Command): &#34;&#34;&#34; We need cohersion the Receiver and implement real command object &#34;&#34;&#34; def __init__(self, receiver: Receiver, a: str) -&gt; None: self."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/yao_blog/" class="logo">yao lu</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/yao_blog/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/yao_blog/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/yao_blog/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/yao_blog/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/yao_blog/cv/">
+        <li class="mobile-menu-item">CV</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/yao_blog/" class="logo">yao lu</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/yao_blog/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/yao_blog/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/yao_blog/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/yao_blog/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/yao_blog/cv/">CV</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Command Pattern in Python</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-04-01 </span>
+        <div class="post-category">
+            <a href="/yao_blog/categories/design-pattern/"> Design Pattern </a>
+            </div>
+          <span class="more-meta"> 553 words </span>
+          <span class="more-meta"> 3 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#command">Command</a></li>
+        <li><a href="#lightoncommand">LightOnCommand</a></li>
+        <li><a href="#lightoffcommand">LightOffCommand</a></li>
+        <li><a href="#receiver">Receiver</a></li>
+        <li><a href="#invoker">Invoker</a></li>
+        <li><a href="#client">Client</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="command">Command</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python">
+<span class="s2">&#34;&#34;&#34;
+</span><span class="s2">This is a Command Class
+</span><span class="s2">&#34;&#34;&#34;</span>
+<span class="k">class</span> <span class="nc">Command</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    The Command interface declares a method for executing a command.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">undo</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">pass</span>
+		
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="lightoncommand">LightOnCommand</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python">
+<span class="k">class</span> <span class="nc">LightOnCommand</span><span class="p">(</span><span class="n">Command</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34; 
+</span><span class="s2">    We need cohersion the Receiver and implement real command object 
+</span><span class="s2">    &#34;&#34;&#34;</span>
+
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">receiver</span><span class="p">:</span> <span class="n">Receiver</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_receiver</span> <span class="o">=</span> <span class="n">receiver</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_a</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_receiver</span><span class="o">.</span><span class="n">on</span>
+        <span class="c1"># print()</span>
+
+    <span class="k">def</span> <span class="nf">undo</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_receiver</span><span class="o">.</span><span class="n">off</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="lightoffcommand">LightOffCommand</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python">
+<span class="k">class</span> <span class="nc">LightOffCommand</span><span class="p">(</span><span class="n">Command</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34; 
+</span><span class="s2">    We need cohersion the Receiver and implement real command object 
+</span><span class="s2">    &#34;&#34;&#34;</span>
+
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">receiver</span><span class="p">:</span> <span class="n">Receiver</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_receiver</span> <span class="o">=</span> <span class="n">receiver</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_a</span> <span class="o">=</span> <span class="n">a</span>
+
+    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_receiver</span><span class="o">.</span><span class="n">off</span>
+        <span class="c1"># print()</span>
+
+    <span class="k">def</span> <span class="nf">undo</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_receiver</span><span class="o">.</span><span class="n">on</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="receiver">Receiver</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="k">class</span> <span class="nc">Receiver</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    The Receiver classes contain some important business logic. They know how to
+</span><span class="s2">    perform all kinds of operations, associated with carrying out a request. In
+</span><span class="s2">    fact, any class may serve as a Receiver.
+</span><span class="s2">
+</span><span class="s2">    implement turn on and turn off Receiver 
+</span><span class="s2">    &#34;&#34;&#34;</span>
+
+    <span class="k">def</span> <span class="nf">on</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2"> turn on the Light (</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">.)&#34;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span> <span class="p">)</span>
+
+    
+    
+    <span class="k">def</span> <span class="nf">off</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2"> turn off the Light (</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">.)&#34;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span> <span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="invoker">Invoker</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="k">class</span> <span class="nc">NoCommand</span><span class="p">(</span><span class="n">Command</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Command Not Found&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">undo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Command Not Found&#39;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Invoker</span><span class="p">:</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    The Invoker is associated with one or several commands. It sends a request
+</span><span class="s2">    to the command.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    Initialize commands.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+         <span class="bp">self</span><span class="o">.</span><span class="n">on_commands</span> <span class="o">=</span> <span class="p">[</span><span class="n">NoCommand</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">)]</span>
+         <span class="bp">self</span><span class="o">.</span><span class="n">off_commands</span> <span class="o">=</span> <span class="p">[</span><span class="n">NoCommand</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">)]</span>
+         <span class="bp">self</span><span class="o">.</span><span class="n">undo_command</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">set_command</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slot</span><span class="p">,</span> <span class="n">on_command</span><span class="p">,</span> <span class="n">off_command</span><span class="p">):</span>
+       
+        <span class="bp">self</span><span class="o">.</span><span class="n">on_commands</span><span class="p">[</span><span class="n">slot</span><span class="p">]</span> <span class="o">=</span> <span class="n">on_command</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">off_commands</span><span class="p">[</span><span class="n">slot</span><span class="p">]</span> <span class="o">=</span> <span class="n">off_command</span>
+
+    <span class="k">def</span> <span class="nf">on_button_was_pressed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slot</span><span class="p">):</span>
+        <span class="n">command</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_commands</span><span class="p">[</span><span class="n">slot</span><span class="p">]</span>
+        <span class="n">command</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">undo_command</span> <span class="o">=</span> <span class="n">command</span>
+
+    <span class="k">def</span> <span class="nf">off_button_was_pressed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slot</span><span class="p">):</span>
+        <span class="n">command</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">off_commands</span><span class="p">[</span><span class="n">slot</span><span class="p">]</span>
+        <span class="n">command</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">undo_command</span> <span class="o">=</span> <span class="n">command</span>
+
+    <span class="k">def</span> <span class="nf">undo_button_was_pressed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">undo_command</span><span class="o">.</span><span class="n">undo</span><span class="p">()</span>
+    
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[slot </span><span class="si">%d</span><span class="s1">] </span><span class="si">%s</span><span class="s1"> </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span>
+                                       <span class="bp">self</span><span class="o">.</span><span class="n">on_commands</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
+                                       <span class="bp">self</span><span class="o">.</span><span class="n">off_commands</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span>
+    
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="client">Client</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python">
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    The client code can parameterize an invoker with any commands.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+
+    <span class="n">invoker</span> <span class="o">=</span> <span class="n">Invoker</span><span class="p">()</span>
+
+    <span class="n">living_room_light</span> <span class="o">=</span> <span class="n">Receiver</span><span class="p">()</span>
+    <span class="n">living_room_light_on</span> <span class="o">=</span> <span class="n">LightOnCommand</span><span class="p">(</span><span class="n">living_room_light</span><span class="p">,</span> <span class="s2">&#34;Living Room Light&#34;</span><span class="p">)</span>
+    <span class="n">living_room_light_off</span> <span class="o">=</span> <span class="n">LightOffCommand</span><span class="p">(</span><span class="n">living_room_light</span><span class="p">,</span> <span class="s2">&#34;Living Room Light&#34;</span><span class="p">)</span>
+
+
+    <span class="n">invoker</span><span class="o">.</span><span class="n">set_command</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">living_room_light_on</span><span class="p">,</span> <span class="n">living_room_light_off</span> <span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">invoker</span><span class="p">)</span>
+    <span class="n">invoker</span><span class="o">.</span><span class="n">on_button_was_pressed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">invoker</span><span class="o">.</span><span class="n">off_button_was_pressed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><input checked="" disabled="" type="checkbox"> Alreadu finish the implement: Turn on/off the light</li>
+<li><input disabled="" type="checkbox"> We need to have more scenarios.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Class Name</th>
+<th style="text-align:right">Description</th>
+<th style="text-align:center">Abstract</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Command</td>
+<td style="text-align:right">Interface which need implemented by sub-class</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">LightOnCommand</td>
+<td style="text-align:right">Some commands can implement simple operations on their own.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td style="text-align:left">LightOffCommand</td>
+<td style="text-align:right"></td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Receiver</td>
+<td style="text-align:right">The Receiver classes contain some important business logic.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Invoker</td>
+<td style="text-align:right">The Invoker is associated with one or several commands.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td style="text-align:left">Client</td>
+<td style="text-align:right">The client code can parameterize an invoker with any commands.</td>
+<td style="text-align:center">No</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://gist.github.com/gusibi/e66134218fdecff59e5690298d657c26">[Source Code]</a></p>
+<p><a href="http://www.yaolugnu.com/">Achilles' Blog</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Yao</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-04-01
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/yao_blog/tags/python/">Python</a>
+          <a href="/yao_blog/tags/command/">Command</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/yao_blog/post/linklist_and_doublylinklist/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Linklist and DoublyLinklist</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/yao_blog/post/java_in_sparsearray/">
+            <span class="next-text nav-default">Java_in_SparseArray</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://yao.lu.1223@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.linkedin.com/in/yao-lu93" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/yaolu93" class="iconfont icon-github" title="github"></a>
+  <a href="https://yaolu93.github.io/yao_blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yao</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/yao_blog/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

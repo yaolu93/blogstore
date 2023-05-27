@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title> - Yao</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Yao" /><meta name="description" content="tokafka: real-time event driven application produce comsume fast high accuracy in order fault tolerant 栈：负责运行。 一个请求一个线程，就会出现没有内存去分配的形况。 栈内存溢出。（cristiano问过这个。） 一个服" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.92.2 with theme even" />
+
+
+<link rel="canonical" href="https://yaolu93.github.io/yao_blog/note/kafka/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/yao_blog/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/yao_blog/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/yao_blog/favicon-16x16.png">
+<link rel="manifest" href="/yao_blog/manifest.json">
+<link rel="mask-icon" href="/yao_blog/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/yao_blog/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="tokafka: real-time event driven application produce comsume fast high accuracy in order fault tolerant 栈：负责运行。 一个请求一个线程，就会出现没有内存去分配的形况。 栈内存溢出。（cristiano问过这个。） 一个服" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaolu93.github.io/yao_blog/note/kafka/" /><meta property="article:section" content="note" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="tokafka: real-time event driven application produce comsume fast high accuracy in order fault tolerant 栈：负责运行。 一个请求一个线程，就会出现没有内存去分配的形况。 栈内存溢出。（cristiano问过这个。） 一个服">
+
+<meta itemprop="wordCount" content="935">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="tokafka: real-time event driven application produce comsume fast high accuracy in order fault tolerant 栈：负责运行。 一个请求一个线程，就会出现没有内存去分配的形况。 栈内存溢出。（cristiano问过这个。） 一个服"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/yao_blog/" class="logo">yao lu</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/yao_blog/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/yao_blog/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/yao_blog/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/yao_blog/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/yao_blog/cv/">
+        <li class="mobile-menu-item">CV</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/yao_blog/" class="logo">yao lu</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/yao_blog/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/yao_blog/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/yao_blog/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/yao_blog/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/yao_blog/cv/">CV</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <p>tokafka: real-time event driven application</p>
+<p>produce comsume
+fast
+high accuracy
+in order
+fault tolerant</p>
+<p>栈：负责运行。
+一个请求一个线程，就会出现没有内存去分配的形况。 栈内存溢出。（cristiano问过这个。）
+一个服务器承载不了大量用户的访问。
+方法一：可以多加一个服务，（分布式）
+默认的服务器地址是80，可是我们现在加入一个81的新服务器，用户应该怎么找到呢。~</p>
+<p>分布式的用户1：（服务器端的负载均衡） Zookeeper</p>
+<p>用户1； 用户2； 用户3
+集群：
+负载均衡器（80）。
+服务器1（81），服务器2（82）
+缓存服务器（redis）</p>
+<p>在集群里面可以让两个服务之间的数据互相拷贝。效果就不可能高。
+sun公司开发了框架rmi： 遵循了协议 rpc==&gt; ejb (后面出现了这个封装框架)==》spring</p>
+<p>分布式的用户2：（客户端的负载均衡）</p>
+<p>用户1； 用户2； 用户3
+集群：</p>
+<p>注册中心：
+server1-&gt;81
+server2-&gt;82
+server3-&gt;83</p>
+<p>服务器1（81），服务器2（82）, 服务器3（83）,
+缓存服务器（redis）</p>
+<p>用户的访问就不走集群了，就走注册中心了。（轮询）</p>
+<p>分布式的系统。 把一个系统分成几个系统就叫分布式系统，那么他们是怎么交互的呢？</p>
+<p>User1: User 2: User 3 :     User 4
+3                            1             <br>
+server(IP1: 80) 【订单】,     server2(IP2: 81)【财务】,  Server2(IP3: 82) 【管理】, Server3 (IP3:83)【物流】
+不在在服务之间直接访问， 而是要在它们之间加一个消息系统===》 【Message】</p>
+<p>Flume:海量日志的信息采集工具。 缺点：数据主要保存在内存当中，也容易丢失： 消费者不容易</p>
+<p>Kafka:每个系统只从消息系统中获取它们关系的数据。</p>
+<p>Zookeeper( 协调和调度中心)</p>
+<p>要学位运算！！！ 算法！ 所有框架的底层。</p>
+<p>为什么需要消息队列：
+1, 解耦
+2，冗余
+3，扩展性
+4， 灵活性+峰值处理能力
+5， 可恢复性
+6，顺序保证
+7，缓冲
+8，异步通信</p>
+<p>只有Leader有读写功能，Followers在Leader挂了之后才有读写能力，平时都不可以读写。</p>
+<p>每一个Partition 都是有序的队列。</p>
+<p>top 是列出linux的内存和cpu占用信息</p>
+<p>Kafka 的log 追踪。</p>
+<p>Kafka 零复制问题：
+因为Kafka是直接向系统底层发指令，读写文件，而不是像JVM 那样，读一次到缓存，再读一次到readbuffer,写一次到writebuffer，再写一次到缓存，总共四次。
+Kafka是直接发指令到系统，让其帮忙写入。底层指令为 fork()。JUC 写实复制技术</p>
+<p>log 是记录日志，
+index 是记录偏移量和字节的位置。</p>
+<p>Kafka is able to seamlessly handle multiple producers</p>
+
+  </div>
+</article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://yao.lu.1223@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.linkedin.com/in/yao-lu93" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/yaolu93" class="iconfont icon-github" title="github"></a>
+  <a href="https://yaolu93.github.io/yao_blog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yao</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/yao_blog/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
