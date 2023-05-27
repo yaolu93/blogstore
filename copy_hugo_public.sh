@@ -1,6 +1,13 @@
 #!/bin/bash
 
 hugo
+git pull
+git status
+git add .
+git commit -am "update content"
+git status
+git push
+
 
 # 保存 .git 文件夹和 CNAME 文件
 mv /home/yaolu/fromGithub/yao_blog/.git /tmp
@@ -22,6 +29,8 @@ mv /tmp/CNAME /home/yaolu/fromGithub/yao_blog
 cp -r public/* /home/yaolu/fromGithub/yao_blog
 
 cd /home/yaolu/fromGithub/yao_blog
+
+git pull
 git status
 git add .
 git commit -am "update content"

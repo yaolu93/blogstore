@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linear on Yao</title>
-    <link>https://www.yaolugnu.com/yao_blog/tags/linear/</link>
+    <link>https://www.yaolugnu.com/tags/linear/</link>
     <description>Recent content in Linear on Yao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 16 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.yaolugnu.com/yao_blog/tags/linear/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.yaolugnu.com/tags/linear/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linklist and DoublyLinklist</title>
-      <link>https://www.yaolugnu.com/yao_blog/post/linklist_and_doublylinklist/</link>
+      <link>https://www.yaolugnu.com/post/linklist_and_doublylinklist/</link>
       <pubDate>Thu, 16 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.yaolugnu.com/yao_blog/post/linklist_and_doublylinklist/</guid>
+      <guid>https://www.yaolugnu.com/post/linklist_and_doublylinklist/</guid>
       <description>This demo is to help us identify the different between the Linklist and DoublyLinklist
  what we need to notice
  Compare with the Linklist and DoublyLinklist, the Linklist compact with two elements, one is item, another is next point. the DoublyLinklist concact three elements, one is item as well, two others are preview ponit and next point.

@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://www.yaolugnu.com/yao_blog/sitemap.xml
+Sitemap: https://www.yaolugnu.com/sitemap.xml
