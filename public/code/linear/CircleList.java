@@ -23,7 +23,7 @@ public class CircleList {
         third.next = forth;
         forth.next = fifth;
         fifth.next = sixth;
-        sixth.next = seventh;
+        sixth.next = seveth;
 
         //product the circle
         seventh.next = third;
