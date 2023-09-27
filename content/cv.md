@@ -1,7 +1,7 @@
 ---
 title: "CV"
 date: 2021-04-02
-lastmod: 2023-05-20
+lastmod: 2023-09-27
 menu: "main"
 weight: 50
 author: "Yao"
@@ -39,12 +39,16 @@ Always considering cohesion and optimizing software with design patterns and alg
 ## **PROFESSIONAL EXPERIENCE** 
 --------------------
 ### **Amdocs<span style="float:right">Nov 2021 - Present</span>** 
+**L3 Tech Support Engineer**	  		 
+<span style="float:right">Dublin, Ireland</span>
+
+* As the subject matter expert for Product Maintenance, I fixed bugs in deployed software using agile methodology and Jira.
 
 **Software Engineer**	  		 
 <span style="float:right">Dublin, Ireland</span>				
 
  * Achieved agile development cycle requirements
- * Participating in product refinement session with manager and co-works
+ * Participating in product refinement session with architect and co-works
  * Designing project feature test plan and implementing test cases
  * CVE scan and fix
  * Performance Test
