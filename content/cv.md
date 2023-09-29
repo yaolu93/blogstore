@@ -40,20 +40,22 @@ Always considering cohesion and optimizing software with design patterns and alg
 --------------------
 ### **Amdocs<span style="float:right">Nov 2021 - Present</span>** 
 **L3 Tech Support Engineer**	  		 
-<span style="float:right">Dublin, Ireland</span>
+<span style="float:right">Dublin, Sep 2023</span>
 
-* As the subject matter expert for Product Maintenance, I fixed bugs in deployed software using agile methodology and Jira.
+* As the subject matter expert for Product Maintenance, fixed bugs in deployed software using agile methodology and Jira
+* Troubleshooting technical issues in collaboration with clients and solution delivery teams
 
 **Software Engineer**	  		 
-<span style="float:right">Dublin, Ireland</span>				
+<span style="float:right">Dublin, Nov 2021</span>
 
+ * Provide mentorship and guidance to new hires on the components
  * Achieved agile development cycle requirements
  * Participating in product refinement session with architect and co-works
  * Designing project feature test plan and implementing test cases
  * CVE scan and fix
  * Performance Test
  <!-- //todo: describe sth about mentor  -->
- - #### ***Project: Openet Data Fabric***  (Development Platform on AWS: Centos 7.9) Kafka +Java 1.8 +Python 2.7 +Shell Script +Docker +Kubernetes +Helm +Ansible +Maven +Jenkins +Git
+ - #### ***Project: Amdocs Network Data Fabric***  (Development Platform on AWS: Centos 7.9) Kafka +Java 1.8 +Python 2.7 +Shell Script +Docker +Kubernetes +Helm +Ansible +Maven +Jenkins +Git
   
      The project was about developing the distribution layer of a mediation product using Kafka to integrate data sources into a common format for distribution to downstream applications
 
