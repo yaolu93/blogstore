@@ -1,3 +1,10 @@
+```bash
+sudo update-alternatives --config javac
+sudo update-alternatives --config java
+
+
+
+----
 理解 shell 的父子关系
 
 默认为 command prompt
