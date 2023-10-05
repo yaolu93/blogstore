@@ -1,3 +1,5 @@
+```bash
+
 sudo systemctl status confluent*
 sudo systemctl restart confluent-kafka-connect
 sudo systemctl restart confluent-kafka
