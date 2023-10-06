@@ -21,3 +21,7 @@ sudo systemctl status confluent-kafka
 sudo systemctl status confluent-zookeeper
 sudo systemctl status confluent-schema-registry
 sudo systemctl status odf-streamer
+
+
+kubectl delete -f ~/workspace/ngm-test-container/jenkins/resources/minikube/kcat.yaml
+kubectl apply -f ~/workspace/ngm-test-container/jenkins/resources/minikube/kcat.yaml       
