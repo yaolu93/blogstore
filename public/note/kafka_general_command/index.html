@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Yao" /><meta name="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 sudo update-alternatives --config javac sudo update-alternatives --config java mvn clean install -DskipTests ---- 理解 shell 的父子关系 默认为 command prompt 我们需要转换那 git 的用户名 yaolu Ly19931223. ## Git Stage &amp;gt;git stash" />
+<meta name="author" content="Yao" /><meta name="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26  kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-input --property print.key=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-output --property print." />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.92.2 with theme even" />
 
 
-<link rel="canonical" href="https://www.yaolugnu.com/note/linux_shell/" />
+<link rel="canonical" href="https://www.yaolugnu.com/note/kafka_general_command/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -40,19 +40,19 @@
 
 
 <meta property="og:title" content="" />
-<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 sudo update-alternatives --config javac sudo update-alternatives --config java mvn clean install -DskipTests ---- 理解 shell 的父子关系 默认为 command prompt 我们需要转换那 git 的用户名 yaolu Ly19931223. ## Git Stage &gt;git stash" />
+<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26  kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-input --property print.key=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-output --property print." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.yaolugnu.com/note/linux_shell/" /><meta property="article:section" content="note" />
+<meta property="og:url" content="https://www.yaolugnu.com/note/kafka_general_command/" /><meta property="article:section" content="note" />
 
 
 
 <meta itemprop="name" content="">
-<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 sudo update-alternatives --config javac sudo update-alternatives --config java mvn clean install -DskipTests ---- 理解 shell 的父子关系 默认为 command prompt 我们需要转换那 git 的用户名 yaolu Ly19931223. ## Git Stage &gt;git stash">
+<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26  kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-input --property print.key=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-output --property print.">
 
-<meta itemprop="wordCount" content="153">
+<meta itemprop="wordCount" content="134">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 sudo update-alternatives --config javac sudo update-alternatives --config java mvn clean install -DskipTests ---- 理解 shell 的父子关系 默认为 command prompt 我们需要转换那 git 的用户名 yaolu Ly19931223. ## Git Stage &gt;git stash"/>
+<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26  kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-input --property print.key=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-output --property print."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -155,33 +155,35 @@
 </span><span class="lnt">23
 </span><span class="lnt">24
 </span><span class="lnt">25
+</span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sudo update-alternatives --config javac
-sudo update-alternatives --config java
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
+kafka-topics --list --bootstrap-server odfhost1:9092
+kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input
+kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input
+kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor <span class="m">1</span> --partitions <span class="m">1</span> --topic streams-input       
+sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-input --property print.key<span class="o">=</span><span class="nb">true</span> --key-deserializer<span class="o">=</span>org.apache.kafka.common.serialization.StringDeserializer
+sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-output --property print.key<span class="o">=</span><span class="nb">true</span> --key-deserializer<span class="o">=</span>org.apache.kafka.common.serialization.StringDeserializer
+sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-duplicate --property print.key<span class="o">=</span><span class="nb">true</span> --key-deserializer<span class="o">=</span>org.apache.kafka.common.serialization.StringDeserializer
 
-mvn clean install -DskipTests
+
+sudo systemctl status confluent*
+sudo systemctl restart confluent-kafka-connect
+sudo systemctl restart confluent-kafka
+sudo systemctl restart confluent-zookeeper
+sudo systemctl restart confluent-schema-registry
+sudo systemctl restart odf-streamer
+
+sudo systemctl status confluent-kafka-connect
+sudo systemctl status confluent-kafka
+sudo systemctl status confluent-zookeeper
+sudo systemctl status confluent-schema-registry
+sudo systemctl status odf-streamer
 
 
-
-----
-理解 shell 的父子关系
-
-默认为 <span class="nb">command</span> prompt
-
-我们需要转换那 git 的用户名
-
-yaolu
-Ly19931223.
-
-<span class="c1">## Git Stage</span>
-
-&gt;git stash save <span class="s1">&#39;message...&#39;</span>可以添加一些注释
-
-&gt;stash_id是通过git stash list命令得到的
-
-&gt;git stash pop stash@<span class="o">{</span>1<span class="o">}</span>恢复指定的进度到工作区
-<span class="c1">## Git fetch</span>
+kubectl delete -f ~/workspace/ngm-test-container/jenkins/resources/minikube/kcat.yaml
+kubectl apply -f ~/workspace/ngm-test-container/jenkins/resources/minikube/kcat.yaml       
 </code></pre></td></tr></table>
 </div>
 </div>
