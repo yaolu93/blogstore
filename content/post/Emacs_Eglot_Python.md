@@ -3,7 +3,8 @@ title: "Emacs Eglot Python config"
 date: 2023-10-06
 lastmod: 2023-10-06
 draft: false
-author: "Yao"
+tags: ["Python","Emacs"]
+author: "Yao Lu"
 ---
 
 
@@ -17,7 +18,6 @@ author: "Yao"
   One of the python server need to be installed, for example I chosed the pyright
   ``` bash
   $ pip install pyright
-
   ````
  
 # Emacs 

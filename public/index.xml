@@ -27,7 +27,7 @@ Dissertation: Comparing Approaches for the Migration toMicroservices Architectur
       
       <guid>https://www.yaolugnu.com/post/emacs_eglot_python/</guid>
       <description>How to config The config is very sample just show as below.  Prerequisites One of the python server need to be installed, for example I chosed the pyright
-1 2  $ pip install pyright   Emacs  Elisp
+1  $ pip install pyright   Emacs  Elisp
  1 2 3 4 5  (use-package eglot :config (add-to-list &amp;#39;eglot-server-programs &amp;#39;(python-mode . (&amp;#34;pyright-langserver&amp;#34; &amp;#34;--stdio&amp;#34;))) (add-hook &amp;#39;python-mode-hook &amp;#39;eglot-ensure))   </description>
     </item>
     
