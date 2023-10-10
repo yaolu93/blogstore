@@ -23,3 +23,9 @@ sudo systemctl status odf-streamer
 
 kubectl delete -f ~/workspace/ngm-test-container/jenkins/resources/minikube/kcat.yaml
 kubectl apply -f ~/workspace/ngm-test-container/jenkins/resources/minikube/kcat.yaml       
+
+## operate kafka-topic
+kafka-topics --list --bootstrap-server odfhost1:9092
+kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-output
+kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-output
+kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-output                               		 
