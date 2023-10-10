@@ -8,7 +8,6 @@ sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:90
 sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-output --property print.key=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
 sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-duplicate --property print.key=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
 
-
 sudo systemctl status confluent*
 sudo systemctl restart confluent-kafka-connect
 sudo systemctl restart confluent-kafka
@@ -21,7 +20,6 @@ sudo systemctl status confluent-kafka
 sudo systemctl status confluent-zookeeper
 sudo systemctl status confluent-schema-registry
 sudo systemctl status odf-streamer
-
 
 kubectl delete -f ~/workspace/ngm-test-container/jenkins/resources/minikube/kcat.yaml
 kubectl apply -f ~/workspace/ngm-test-container/jenkins/resources/minikube/kcat.yaml       
