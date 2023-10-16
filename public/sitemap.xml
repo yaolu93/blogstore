@@ -226,6 +226,12 @@
   </url>
   
   <url>
+    <loc>https://www.yaolugnu.com/code/democode/merge_sort/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.yaolugnu.com/note/a_notebook/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -263,6 +269,12 @@
   
   <url>
     <loc>https://www.yaolugnu.com/note/linux_shell/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yaolugnu.com/code/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
