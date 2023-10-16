@@ -57,7 +57,7 @@ Always considering cohesion and optimizing software with design patterns and alg
  <!-- //todo: describe sth about mentor  -->
  - #### ***Project: Amdocs Network Data Fabric***  (Development Platform on AWS: Centos 7.9) Kafka +Java 1.8 +Python 2.7 +Shell Script +Docker +Kubernetes +Helm +Ansible +Maven +Jenkins +Git
   
-     The project was about developing the distribution layer of a mediation product using Kafka to integrate data sources into a common format for distribution to downstream applications
+    Amdocs Network Data Fabric (ANDF) is a real-time processing engine that can process data from many heterogeneous sources and deliver it to various data consumers. The data sources can include all types of telecom networks, and a multiplicity of external sources as required. It processes, enriches, and refines the data to the output and distributes the correct dataset to meet the specific business application.
 
     [Openet Data](https://www.openet.com/data/)
    * Developing Big Data Project using (**Java** & **Kafka**)
