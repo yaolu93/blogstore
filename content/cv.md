@@ -44,6 +44,7 @@ Always considering cohesion and optimizing software with design patterns and alg
 
 * As the subject matter expert for Product Maintenance, fixed bugs in deployed software using agile methodology and Jira
 * Troubleshooting technical issues in collaboration with clients and solution delivery teams
+* On-call rotation
 
 **Software Engineer**	  		 
 <span style="float:right">Dublin, Nov 2021</span>
