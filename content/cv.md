@@ -56,11 +56,11 @@ Always considering cohesion and optimizing software with design patterns and alg
  * CVE scan and fix
  * Performance Test
  <!-- //todo: describe sth about mentor  -->
- - #### ***Project: Amdocs Network Data Fabric***  (Development Platform on AWS: Centos 7.9) Kafka +Java 1.8 +Python 2.7 +Shell Script +Docker +Kubernetes +Helm +Ansible +Maven +Jenkins +Git
+ - #### ***Project: Amdocs Network Data Fabric***  (Development Platform on Centos 7.9) Kafka +Java 1.8 +Python +Shell Script +Docker +Kubernetes +Helm +Ansible +Maven +Jenkins +Git
   
     Amdocs Network Data Fabric (ANDF) is a real-time processing engine that can process data from many heterogeneous sources and deliver it to various data consumers. The data sources can include all types of telecom networks, and a multiplicity of external sources as required. It processes, enriches, and refines the data to the output and distributes the correct dataset to meet the specific business application.
 
-    [Openet Data](https://www.openet.com/data/)
+    [ANDF](https://www.openet.com/data/)
    * Developing Big Data Project using (**Java** & **Kafka**)
    * **Docker(izing)** micro-services and deploying them on **Kubernetes** environment using **Helm**
    * Writing Units Tests using (**Java** & **Shell Script**), and Automation Tests using (**Python** & **Shell Script**)
