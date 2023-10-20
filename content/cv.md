@@ -9,7 +9,7 @@ author: "Yao"
 
 
 
->  A Knowledge Enthusiast and ambitious Software Engineer with **3+ years** of practical experience.
+>  A Knowledge Enthusiast and ambitious Software Engineer with **4+ years** of practical experience.
 <br> 
 Additionally has a good personality and adapts to different countries, multi-language, and diverse development environments.
 <br> 
@@ -124,15 +124,15 @@ Always considering cohesion and optimizing software with design patterns and alg
 ## **TECHNICAL SKILLS AND EXPERTISE**
 ----------
     
-**Programming and Scripting Language**: Java 1.8, Python 2.7, Golang, SQL, Shell Script, JavaScript, HTML, CSS, XML 
+**Programming and Scripting Language**: Java 1.8, Python 2.7, SQL, Shell Script, JavaScript, HTML, CSS, XML 
 
-**Frameworks**：Kafka, KafkaSteamer, Source Connector, Sink Connector, Spring Boot, SpringMVC, Flask 
+**Frameworks**：Kafka, KafkaSteamer, Kafka Connector, Spring Boot, SpringMVC, Flask 
 
 **Development Environment**：Emacs, Vim, IntelliJ, Eclipse, VS Code, Android Studio 
 
 **Database System**：MySQL, Redis, MyBatis, SQLAlchemy, SQLite
 
-**DevOps**: Centos 7.9, Oracle-Cloud, Docker, Kubernetes, Jenkins, Helm, Ansible
+**DevOps**: Centos 7.9, Docker, Kubernetes, Jenkins, Helm, Ansible
 
 **Android**:  Native Android development, Mobile development life cycle 
 
