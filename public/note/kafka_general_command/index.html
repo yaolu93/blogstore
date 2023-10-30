@@ -16,14 +16,14 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Yao" /><meta name="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36  kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-input --property print." />
+<meta name="author" content="Yao" /><meta name="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38  kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-input --property print." />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.91.2 with theme even" />
 
 
 <link rel="canonical" href="https://www.yaolugnu.com/note/kafka_general_command/" />
@@ -40,19 +40,19 @@
 
 
 <meta property="og:title" content="" />
-<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36  kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-input --property print." />
+<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38  kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-input --property print." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.yaolugnu.com/note/kafka_general_command/" /><meta property="article:section" content="note" />
 
 
 
 <meta itemprop="name" content="">
-<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36  kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-input --property print.">
+<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38  kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-input --property print.">
 
-<meta itemprop="wordCount" content="193">
+<meta itemprop="wordCount" content="210">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36  kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-input --property print."/>
+<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38  kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-input --property print."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -166,6 +166,8 @@
 </span><span class="lnt">34
 </span><span class="lnt">35
 </span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
@@ -199,6 +201,8 @@ kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-output
 kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-output
 kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor <span class="m">1</span> --partitions <span class="m">1</span> --topic streams-output                               		 
 
+<span class="c1">## get image version</span>
+$ kubectl describe deployment -n spacename  componentname <span class="p">|</span> grep -i image
 
 <span class="c1">## initial infra</span>
 minikube start --kubernetes-version<span class="o">=</span>1.21.0 --embed-certs --cpus <span class="m">2</span> --memory <span class="m">16384</span>
