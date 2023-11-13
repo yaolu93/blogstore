@@ -3,6 +3,7 @@ sudo update-alternatives --config javac
 sudo update-alternatives --config java
 
 mvn clean install -DskipTests
+mvn clean install -DskipTests
 
 
 
