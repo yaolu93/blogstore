@@ -10,3 +10,5 @@ sudo systemctl restart odf-streamer
 
 ## streamer logs
 sudo journalctl -u odf-streamer.service -n 1000 -f
+## Or See Logs
+sudo tail -f /var/log/odf/odf-streamer.log
