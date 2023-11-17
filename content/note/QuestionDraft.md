@@ -1,4 +1,4 @@
-```
+```java
         if (partialTopic != null) {
             KStream<String, GenericRecord>[] partialBranch = stream
                     .branch((k, v) -> {
