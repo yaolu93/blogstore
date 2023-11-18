@@ -26,3 +26,20 @@
         }
 
 ```
+
+
+```Java
+
+ @Override
+    @SuppressWarnings("unchecked")
+    public KStream<String, GenericRecord> apply(KStream<String, GenericRecord> stream) {
+        KStream<String, GenericRecord>[] postBranch = stream
+                .transform(() -> new MappingTransformer(configsBySchemaName))
+                .branch((k, v) -> isErrorRecord(v), (k, v) -> true);
+        if (mappingStageConfig.hasErrorTopic()) {
+            postBranch[0].mapValues(this::unmarkErrorRecord).to(mappingStageConfig.errorTopic);
+        }
+        return postBranch[1];
+    }
+
+```
