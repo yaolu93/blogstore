@@ -15,6 +15,7 @@ DEBUG_SUSPEND=y
 save the file and restart the service
 
 ## streamer logs
+sudo tail  /tmp/tests.log -n 1000 -f
 sudo journalctl -u odf-streamer.service -n 1000 -f
 ## Or See Logs
 sudo tail -f /var/log/odf/odf-streamer.log
