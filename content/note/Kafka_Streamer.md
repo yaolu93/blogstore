@@ -7,6 +7,8 @@ sudo systemctl restart confluent-zookeeper
 sudo systemctl restart confluent-schema-registry
 sudo systemctl restart odf-streamer
 
+$  sudo vim odf-streamer.service.d/override.conf
+
 
 ## streamer logs
 sudo journalctl -u odf-streamer.service -n 1000 -f
