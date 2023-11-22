@@ -10,6 +10,10 @@ sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:90
 sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-duplicate --property print.key=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
 sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-error --property print.key=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
 
+### to check the record headers
+sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-input --property print.key=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer --property print.headers=true
+
+
 sudo systemctl status confluent*
 sudo systemctl restart confluent-kafka-connect
 sudo systemctl restart confluent-kafka
