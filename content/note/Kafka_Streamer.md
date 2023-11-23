@@ -21,3 +21,7 @@ sudo tail  /tmp/tests.log -n 10000 -f
 sudo journalctl -u odf-streamer.service -n 10000 -f
 ## Or See Logs
 sudo tail -f /var/log/odf/odf-streamer.log
+
+
+### To print the record headers
+docker run -it --network=host --rm         edenhill/kcat:1.7.0            -b odfhost1:9092        -s value=avro -r http://localhost:8081            -C            -f '\nKey (%K bytes): %k\t\nValue (%S bytes): %s\n\Partition: %p\tOffset: %o\nHeaders: %h\n--\n'            -t streams-output
