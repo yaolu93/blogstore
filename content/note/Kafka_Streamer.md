@@ -25,3 +25,53 @@ sudo tail -f /var/log/odf/odf-streamer.log
 
 ### To print the record headers
 docker run -it --network=host --rm         edenhill/kcat:1.7.0            -b odfhost1:9092        -s value=avro -r http://localhost:8081            -C            -f '\nKey (%K bytes): %k\t\nValue (%S bytes): %s\n\Partition: %p\tOffset: %o\nHeaders: %h\n--\n'            -t streams-output
+
+
+
+#!/bin/bash
+
+cd ~/workspace/ngm-mod-streamer
+mvn clean install -DskipTests
+
+VERSION=2.12.17-yao-SNAPSHOT
+IP="odfhost1"
+USER=yaolu
+FILE=streamer-package-$VERSION-bundles.tar.gz
+DIR=/home/yaolu/workspace/ngm-mod-streamer/package/target
+scp $DIR/$FILE $USER@$IP:/tmp/
+
+sleep 2
+
+NAME=streamer-package-2.12.17-yao-SNAPSHOT
+TARFILE=/tmp/$NAME-bundles.tar.gz
+OUTPATH=/tmp/$NAME
+STREAMER_PATH=/home/openet/streamer
+## update streamer jars
+sudo systemctl stop odf-streamer
+sudo rm -rf $OUTPATH
+mkdir -p $OUTPATH
+tar -xvf $TARFILE -C $OUTPATH
+sudo rm -rf $STREAMER_PATH/bundles/app-bundles/
+sudo mkdir -p $STREAMER_PATH/bundles/app-bundles/
+echo "copying app-bundles"
+sudo cp -r $OUTPATH/opt/deploy/SBA/bundles/app-bundles/* $STREAMER_PATH/bundles/app-bundles/
+sudo chown -R openet:openet $STREAMER_PATH/bundles/app-bundles/
+sudo cp -r $OUTPATH/opt/deploy/SBA/lib/* $STREAMER_PATH/lib/
+sudo chown -R openet:openet $STREAMER_PATH/lib/
+# remove old third party bundles
+# sudo rm $STREAMER_PATH/bundles/sba-core/org.apache.servicemix.bundles.avro*
+# sudo rm $STREAMER_PATH/bundles/sba-core/org.apache.servicemix.bundles.common*
+# sudo rm $STREAMER_PATH/bundles/sba-core/org.apache.servicemix.bundles.kafka*
+# sudo rm $STREAMER_PATH/bundles/sba-core/org.apache.servicemix.bundles.reflections*
+# update third party bundles
+sudo cp -r $OUTPATH/opt/deploy/SBA/bundles/sba-core/* $STREAMER_PATH/bundles/sba-core/
+
+# ## update streamer.yaml file
+#echo "updating streamer file"
+#STREAMER_FILE=./ansible/config/streamer.yaml
+#OUTPUT_SCHEMA=./ansible/config/output.avsc
+#sudo cp $STREAMER_FILE /home/openet/streamer/config/deployment-config/streamer.yaml
+#sudo cp $OUTPUT_SCHEMA /home/openet/output.avsc
+
+echo "Restarting streamer service"
+sudo systemctl start odf-streamer
