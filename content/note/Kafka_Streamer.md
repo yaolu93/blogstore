@@ -7,6 +7,8 @@ sudo systemctl restart confluent-zookeeper
 sudo systemctl restart confluent-schema-registry
 sudo systemctl restart odf-streamer
 
+kubectl exec -ti [streamer-pod] -- bash -c "ls -al bundles/app-bundles/streamer"
+
 $  sudo vim odf-streamer.service.d/override.conf
 // add debugger to streamer / ansible
 sudo nano /home/openet/streamer/bin/StartService.sh
