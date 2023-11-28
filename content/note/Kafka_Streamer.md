@@ -7,6 +7,10 @@ sudo systemctl restart confluent-zookeeper
 sudo systemctl restart confluent-schema-registry
 sudo systemctl restart odf-streamer
 
+sudo systemctl stop odf-streamer
+sudo systemctl start odf-streamer
+
+
 kubectl exec -ti [streamer-pod] -- bash -c "ls -al bundles/app-bundles/streamer"
 
 $  sudo vim odf-streamer.service.d/override.conf
