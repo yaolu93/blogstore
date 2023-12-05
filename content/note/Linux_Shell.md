@@ -25,3 +25,7 @@ Ly19931223.
 
 >git stash pop stash@{1}恢复指定的进度到工作区
 ## Git fetch
+
+docker rm -f $(docker ps -aq)
+docker volume ls -q | xargs docker volume rm
+docker volume rm $(docker volume ls -q)
