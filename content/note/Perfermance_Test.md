@@ -95,10 +95,13 @@ kubectl logs strimzi-cluster-operator-56bcf69b8b-22hvc
 
 alias kgetpods='kubectl get pods'
 
+## for example  kcuc dev-lab-odf-2
+
 alias kcuc='kubectl config use-context'
 alias kcsc='kubectl config set-context'
 alias kcdc='kubectl config delete-context'
 alias kccc='kubectl config current-context'
+
 # List all contexts
 alias kcgc='kubectl config get-contexts'
 alias kcn='kubectl config set-context --current --namespace'
