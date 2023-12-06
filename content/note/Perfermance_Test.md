@@ -95,7 +95,7 @@ kubectl logs strimzi-cluster-operator-56bcf69b8b-22hvc
 
 alias kgetpods='kubectl get pods'
 
-## for example  kcuc dev-lab-odf-2
+## for example  kcuc dev-lab-odf-2   ||  kcuc dev-lab-odf-1
 
 alias kcuc='kubectl config use-context'
 alias kcsc='kubectl config set-context'
