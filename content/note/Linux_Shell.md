@@ -5,6 +5,7 @@ sudo update-alternatives --config java
 mvn clean install -DskipTests
 mvn clean install -DskipTests
 
+ssh-keygen -t rsa -b 4096 -C "yao.lu@openet.com"
 
 
 ----
