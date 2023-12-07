@@ -1,9 +1,13 @@
 ```
 
 ####################Should change the firefox proxy#####################
+# get the password, userid is elastic
+kubectl -n monitoring get secret monitoring-elasticsearch-es-elastic-user -o=jsonpath='{.data.elastic}' | base64 --decode; echo
+# do port forwarding on your dev-vm
+kubectl port-forward --address 0.0.0.0 svc/gateway-proxy -n  monitoring 30090:80
+10.15.32.90:30090/kibana/
 
 ./perf_new/e2e_enrich_keyRange/run_test_e2e_enrich_keyRange_k8s_local.sh
-10.15.32.90:30090/kibana/
 
 minikube start --embed-certs
 minikube start --kubernetes-version=1.21.0 --embed-certs --cpus 2 --memory 16384
@@ -65,7 +69,8 @@ kubectl exec -ti `kubectl  get pod -l pod/name=schema-registry-helm | awk '{prin
 
 export ODF_TEST_ENV="k8s";pytest -s /app/acceptance_perf_soak/test_main_perf_collect_data.py::test_perf_collect_data_streamer
 
-kubectl port-forward --address 0.0.0.0 svc/gateway-proxy -n  monitoring 30090:80
+
+
 
 
 helm list
