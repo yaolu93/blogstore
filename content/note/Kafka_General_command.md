@@ -53,3 +53,23 @@ sudo vi /etc/systemd/system/confluent-kafka-connect.service.d/override.conf
 LimitNOFILE=100000
 Environment="KAFKA_OPTS=-Dlog4j.configuration=file:/etc/kafka/connect_distributed_log4j.properties"
 Environment="KAFKA_HEAP_OPTS=-Xms256M -Xmx2G -agentlib:jdwp=transport=dt_socket,server=y,address=8000,suspend=n"
+
+
+### For K8s
+1.
+kubectl create configmap debug-port --from-literal=debug=-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:5555
+2.
+strimzi-kafkaconnect:
+  externalConfiguration:
+    env:
+      - name: JAVA_TOOL_OPTIONS
+        valueFrom:
+          configMapKeyRef:
+            name: debug-port
+            key: debug
+3.
+kubectl get svc <kafkaconnect-service-name> -n cgf -o=jsonpath='{.metadata.ownerReferences[0].uid}'
+===
+kubectl get svc odf-connect-cluster-connect  -n cgf -o=jsonpath='{.metadata.ownerReferences[0].uid}'
+4.
+
