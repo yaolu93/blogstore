@@ -71,6 +71,8 @@ strimzi-kafkaconnect:
 kubectl get svc <kafkaconnect-service-name> -n cgf -o=jsonpath='{.metadata.ownerReferences[0].uid}'
 ==
 kubectl get svc odf-connect-cluster-connect  -n cgf -o=jsonpath='{.metadata.ownerReferences[0].uid}'
+kubectl get svc odf-connect-cluster-connect-api  -n cgf -o=jsonpath='{.metadata.ownerReferences[0].uid}'
+
 =>b2a729d2-2ffd-41cf-a1d8-ef048e36062b
 4.
 
