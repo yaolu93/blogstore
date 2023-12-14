@@ -20,6 +20,17 @@ DEBUG_PORT=5555
 DEBUG_SUSPEND=y
 save the file and restart the service
 
+### How to debugger in minikube
+replicaCount: 1
+fullnameOverride: ngmstreamertimewindow-streamer-helm
+image:
+  pullPolicy: Always
+env:
+  - name: DEBUG_PORT
+    value: "5566"
+  - name: DEBUG_SUSPEND
+    value: "y"  
+
 ### kafka streams headers 不能在input topic 之中读取
 
 ## streamer logs
