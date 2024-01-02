@@ -2,6 +2,8 @@
 
 kubectl get events -w
 
+k get pods -n monitoring -w
+
 watch -n 1 helm list
 
 watch -n 1 kubectl get pods -n cgf
