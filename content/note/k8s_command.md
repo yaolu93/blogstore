@@ -14,3 +14,9 @@ minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=v1.25.0
 
 
 minikube start --kubernetes-version=1.21.0 --embed-certs --cpus 2 --memory 8192
+
+# get the password, userid is elastic
+kubectl -n monitoring get secret monitoring-elasticsearch-es-elastic-user -o=jsonpath='{.data.elastic}' | base64 --decode; echo
+# do port forwarding on your dev-vm
+kubectl port-forward --address 0.0.0.0 svc/gateway-proxy -n  monitoring 30090:80
+
