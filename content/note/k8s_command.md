@@ -4,6 +4,8 @@ kubectl get events -w
 
 k get pods -n monitoring -w
 
+k logs -f monitoring-metrics-beat-metricbeat-665485c685-tcz72 -n monitoring
+
 watch -n 1 helm list
 
 watch -n 1 kubectl get pods -n cgf
