@@ -1,5 +1,7 @@
 
 ```
+F12: console: javascript:document.cookie
+
 异或运算就是无进位相加
 
 0^N = N  | N^N = 0
