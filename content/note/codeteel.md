@@ -2,6 +2,9 @@
 ```
 F12: console: javascript:document.cookie
 
+leetcode-cli:
+leetcode show 1 -g -l java
+
 异或运算就是无进位相加
 
 0^N = N  | N^N = 0
