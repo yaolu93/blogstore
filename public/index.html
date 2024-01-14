@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.91.2 with theme even" />
+<meta name="generator" content="Hugo 0.121.2 with theme even" />
 
 
 <link rel="canonical" href="https://www.yaolugnu.com/" />
@@ -47,8 +47,7 @@
 <meta property="og:url" content="https://www.yaolugnu.com/" />
 
 <meta itemprop="name" content="Yao">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Yao"/>
+<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Yao"/>
 <meta name="twitter:description" content=""/>
 
 <!--[if lte IE 9]>
@@ -137,9 +136,9 @@
   
   <div class="post-content">
     <div class="post-summary">
-      How to config The config is very sample just show as below.  Prerequisites One of the python server need to be installed, for example I chosed the pyright
-1  $ pip install pyright   Emacs  Elisp
- 1 2 3 4 5  (use-package eglot :config (add-to-list &#39;eglot-server-programs &#39;(python-mode . (&#34;pyright-langserver&#34; &#34;--stdio&#34;))) (add-hook &#39;python-mode-hook &#39;eglot-ensure))   
+      How to config The config is very sample just show as below. Prerequisites One of the python server need to be installed, for example I chosed the pyright
+1 $ pip install pyright Emacs Elisp
+1 2 3 4 5 (use-package eglot :config (add-to-list &#39;eglot-server-programs &#39;(python-mode . (&#34;pyright-langserver&#34; &#34;--stdio&#34;))) (add-hook &#39;python-mode-hook &#39;eglot-ensure)) 
     </div>
     <div class="read-more">
       <a href="/post/emacs_eglot_python/" class="read-more-link">Read more...</a>
@@ -155,7 +154,7 @@
       <div class="post-category">
           <a href="/categories/leetcode/"> Leetcode </a>
           </div>
-        <span class="more-meta"> 393 words </span>
+        <span class="more-meta"> 392 words </span>
         <span class="more-meta"> 2 mins read </span>
     </div>
   </header>
@@ -163,7 +162,7 @@
   <div class="post-content">
     <div class="post-summary">
       Leetcode Questions about String 14.longest-common-prefix.java
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  class Solution { public String longestCommonPrefix(String[] strs) { // flower,flow,fly  if (strs.length == 0) { return null; } String prefix = strs[0]; int lengths = strs.length; for (int i = 1; i &lt; lengths; i++) { while (strs[i].indexOf(prefix) != 0) { prefix = prefix.substring(0, prefix.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 class Solution { public String longestCommonPrefix(String[] strs) { // flower,flow,fly if (strs.length == 0) { return null; } String prefix = strs[0]; int lengths = strs.length; for (int i = 1; i &lt; lengths; i++) { while (strs[i].indexOf(prefix) != 0) { prefix = prefix.substring(0, prefix.length()-1); } } return prefix; } } 125.
     </div>
     <div class="read-more">
       <a href="/post/string-leetcode/" class="read-more-link">Read more...</a>
@@ -187,7 +186,7 @@
   <div class="post-content">
     <div class="post-summary">
       Bubble Sort Bubble Sort	is a simple sorting algorithm. It compares two adjacent elements and swap them until all elements are in order. It&rsquo;s not suitable for large data set as its time complexity are of (n2).
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32  public class BubbleSort { public static void sort(Comparable[] a){ for(int i = a.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 public class BubbleSort { public static void sort(Comparable[] a){ for(int i = a.
     </div>
     <div class="read-more">
       <a href="/post/bubble-sort/" class="read-more-link">Read more...</a>
@@ -211,7 +210,7 @@
   <div class="post-content">
     <div class="post-summary">
       Quick Sort Quick sort is a Divide and Conquer algorithm. It partitions a large array into two arrays by a pivot value, and carry out the process recursively so that the entire array becomes an ordered sequence.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43  public class QuickSort { public static void main(String[] args) { System.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 public class QuickSort { public static void main(String[] args) { System.
     </div>
     <div class="read-more">
       <a href="/post/quicksort/" class="read-more-link">Read more...</a>
@@ -235,10 +234,10 @@
   <div class="post-content">
     <div class="post-summary">
       This demo is to help us identify the different between the Linklist and DoublyLinklist
- what we need to notice
- Compare with the Linklist and DoublyLinklist, the Linklist compact with two elements, one is item, another is next point. the DoublyLinklist concact three elements, one is item as well, two others are preview ponit and next point.
-Linklist  Linklist
- please notice some boundary conditions, like when we insert the elements the index need to be security check (index &lt; 0 || index &gt; N is not allowed)
+what we need to notice
+Compare with the Linklist and DoublyLinklist, the Linklist compact with two elements, one is item, another is next point. the DoublyLinklist concact three elements, one is item as well, two others are preview ponit and next point.
+Linklist Linklist
+please notice some boundary conditions, like when we insert the elements the index need to be security check (index &lt; 0 || index &gt; N is not allowed)
     </div>
     <div class="read-more">
       <a href="/post/linklist_and_doublylinklist/" class="read-more-link">Read more...</a>
@@ -284,7 +283,7 @@ Linklist  Linklist
   <span class="copyright-year">
     &copy; 
     2020 - 
-    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yao</span>
+    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yao</span>
   </span>
 </div>
 
@@ -301,7 +300,7 @@ Linklist  Linklist
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
 

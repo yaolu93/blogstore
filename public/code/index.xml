@@ -5,15 +5,14 @@
     <link>https://www.yaolugnu.com/code/</link>
     <description>Recent content in Codes on Yao</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://www.yaolugnu.com/code/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <atom:link href="https://www.yaolugnu.com/code/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://www.yaolugnu.com/code/democode/merge_sort/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://www.yaolugnu.com/code/democode/merge_sort/</guid>
-      <description> Merge sort and quick sort  </description>
+      <description> Merge sort and quick sort </description>
     </item>
-    
   </channel>
 </rss>

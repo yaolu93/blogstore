@@ -244,6 +244,12 @@
   </url>
   
   <url>
+    <loc>https://www.yaolugnu.com/note/codeteel/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.yaolugnu.com/note/k8s_command/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -269,6 +275,18 @@
   
   <url>
     <loc>https://www.yaolugnu.com/note/linux_shell/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yaolugnu.com/note/perfermance_test/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yaolugnu.com/note/questiondraft/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -16,14 +16,14 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Yao" /><meta name="description" content="1 2 3 4 5 6 7 8 9 10 11  sudo systemctl status confluent* sudo systemctl restart confluent-kafka-connect sudo systemctl restart confluent-kafka sudo systemctl restart confluent-zookeeper sudo systemctl restart confluent-schema-registry sudo systemctl restart odf-streamer ## streamer logs sudo journalctl -u odf-streamer.service -n 1000 -f   " />
+<meta name="author" content="Yao" /><meta name="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.91.2 with theme even" />
+<meta name="generator" content="Hugo 0.121.2 with theme even" />
 
 
 <link rel="canonical" href="https://www.yaolugnu.com/note/kafka_streamer/" />
@@ -40,19 +40,18 @@
 
 
 <meta property="og:title" content="" />
-<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11  sudo systemctl status confluent* sudo systemctl restart confluent-kafka-connect sudo systemctl restart confluent-kafka sudo systemctl restart confluent-zookeeper sudo systemctl restart confluent-schema-registry sudo systemctl restart odf-streamer ## streamer logs sudo journalctl -u odf-streamer.service -n 1000 -f   " />
+<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.yaolugnu.com/note/kafka_streamer/" /><meta property="article:section" content="note" />
 
 
 
 <meta itemprop="name" content="">
-<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11  sudo systemctl status confluent* sudo systemctl restart confluent-kafka-connect sudo systemctl restart confluent-kafka sudo systemctl restart confluent-zookeeper sudo systemctl restart confluent-schema-registry sudo systemctl restart odf-streamer ## streamer logs sudo journalctl -u odf-streamer.service -n 1000 -f   ">
+<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70">
 
-<meta itemprop="wordCount" content="45">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11  sudo systemctl status confluent* sudo systemctl restart confluent-kafka-connect sudo systemctl restart confluent-kafka sudo systemctl restart confluent-zookeeper sudo systemctl restart confluent-schema-registry sudo systemctl restart odf-streamer ## streamer logs sudo journalctl -u odf-streamer.service -n 1000 -f   "/>
+<meta itemprop="wordCount" content="386">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -141,20 +140,184 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
-sudo systemctl status confluent*
-sudo systemctl restart confluent-kafka-connect
-sudo systemctl restart confluent-kafka
-sudo systemctl restart confluent-zookeeper
-sudo systemctl restart confluent-schema-registry
-sudo systemctl restart odf-streamer
-
-
-<span class="c1">## streamer logs</span>
-sudo journalctl -u odf-streamer.service -n <span class="m">1000</span> -f
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo systemctl status confluent*
+</span></span><span class="line"><span class="cl">sudo systemctl restart confluent-kafka-connect
+</span></span><span class="line"><span class="cl">sudo systemctl restart confluent-kafka
+</span></span><span class="line"><span class="cl">sudo systemctl restart confluent-zookeeper
+</span></span><span class="line"><span class="cl">sudo systemctl restart confluent-schema-registry
+</span></span><span class="line"><span class="cl">sudo systemctl restart odf-streamer
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo systemctl stop odf-streamer
+</span></span><span class="line"><span class="cl">sudo systemctl start odf-streamer
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">kubectl <span class="nb">exec</span> -ti <span class="o">[</span>streamer-pod<span class="o">]</span> -- bash -c <span class="s2">&#34;ls -al bundles/app-bundles/streamer&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$  sudo vim odf-streamer.service.d/override.conf
+</span></span><span class="line"><span class="cl">// add debugger to streamer / ansible
+</span></span><span class="line"><span class="cl">sudo nano /home/openet/streamer/bin/StartService.sh
+</span></span><span class="line"><span class="cl"><span class="nv">DEBUG_PORT</span><span class="o">=</span><span class="m">5555</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DEBUG_SUSPEND</span><span class="o">=</span>y
+</span></span><span class="line"><span class="cl">save the file and restart the service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">### How to debugger in minikube</span>
+</span></span><span class="line"><span class="cl">replicaCount: <span class="m">1</span>
+</span></span><span class="line"><span class="cl">fullnameOverride: ngmstreamertimewindow-streamer-helm
+</span></span><span class="line"><span class="cl">image:
+</span></span><span class="line"><span class="cl">  pullPolicy: Always
+</span></span><span class="line"><span class="cl">env:
+</span></span><span class="line"><span class="cl">  - name: DEBUG_PORT
+</span></span><span class="line"><span class="cl">    value: <span class="s2">&#34;5566&#34;</span>
+</span></span><span class="line"><span class="cl">  - name: DEBUG_SUSPEND
+</span></span><span class="line"><span class="cl">    value: <span class="s2">&#34;y&#34;</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">### kafka streams headers 不能在input topic 之中读取</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## streamer logs</span>
+</span></span><span class="line"><span class="cl">sudo tail  /tmp/tests.log -n <span class="m">10000</span> -f
+</span></span><span class="line"><span class="cl">sudo journalctl -u odf-streamer.service -n <span class="m">10000</span> -f
+</span></span><span class="line"><span class="cl"><span class="c1">## Or See Logs</span>
+</span></span><span class="line"><span class="cl">sudo tail -f /var/log/odf/odf-streamer.log
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">### To print the record headers</span>
+</span></span><span class="line"><span class="cl">docker run -it --network<span class="o">=</span>host --rm         edenhill/kcat:1.7.0            -b odfhost1:9092        -s <span class="nv">value</span><span class="o">=</span>avro -r http://localhost:8081            -C            -f <span class="s1">&#39;\nKey (%K bytes): %k\t\nValue (%S bytes): %s\n\Partition: %p\tOffset: %o\nHeaders: %h\n--\n&#39;</span>            -t streams-output
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#!/bin/bash</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/workspace/ngm-mod-streamer
+</span></span><span class="line"><span class="cl">mvn clean install -DskipTests
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">VERSION</span><span class="o">=</span>2.12.17-yao-SNAPSHOT
+</span></span><span class="line"><span class="cl"><span class="nv">IP</span><span class="o">=</span><span class="s2">&#34;odfhost1&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">USER</span><span class="o">=</span>yaolu
+</span></span><span class="line"><span class="cl"><span class="nv">FILE</span><span class="o">=</span>streamer-package-<span class="nv">$VERSION</span>-bundles.tar.gz
+</span></span><span class="line"><span class="cl"><span class="nv">DIR</span><span class="o">=</span>/home/yaolu/workspace/ngm-mod-streamer/package/target
+</span></span><span class="line"><span class="cl">scp <span class="nv">$DIR</span>/<span class="nv">$FILE</span> <span class="nv">$USER</span>@<span class="nv">$IP</span>:/tmp/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sleep <span class="m">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">NAME</span><span class="o">=</span>streamer-package-2.12.17-yao-SNAPSHOT
+</span></span><span class="line"><span class="cl"><span class="nv">TARFILE</span><span class="o">=</span>/tmp/<span class="nv">$NAME</span>-bundles.tar.gz
+</span></span><span class="line"><span class="cl"><span class="nv">OUTPATH</span><span class="o">=</span>/tmp/<span class="nv">$NAME</span>
+</span></span><span class="line"><span class="cl"><span class="nv">STREAMER_PATH</span><span class="o">=</span>/home/openet/streamer
+</span></span><span class="line"><span class="cl"><span class="c1">## update streamer jars</span>
+</span></span><span class="line"><span class="cl">sudo systemctl stop odf-streamer
+</span></span><span class="line"><span class="cl">sudo rm -rf <span class="nv">$OUTPATH</span>
+</span></span><span class="line"><span class="cl">mkdir -p <span class="nv">$OUTPATH</span>
+</span></span><span class="line"><span class="cl">tar -xvf <span class="nv">$TARFILE</span> -C <span class="nv">$OUTPATH</span>
+</span></span><span class="line"><span class="cl">sudo rm -rf <span class="nv">$STREAMER_PATH</span>/bundles/app-bundles/
+</span></span><span class="line"><span class="cl">sudo mkdir -p <span class="nv">$STREAMER_PATH</span>/bundles/app-bundles/
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;copying app-bundles&#34;</span>
+</span></span><span class="line"><span class="cl">sudo cp -r <span class="nv">$OUTPATH</span>/opt/deploy/SBA/bundles/app-bundles/* <span class="nv">$STREAMER_PATH</span>/bundles/app-bundles/
+</span></span><span class="line"><span class="cl">sudo chown -R openet:openet <span class="nv">$STREAMER_PATH</span>/bundles/app-bundles/
+</span></span><span class="line"><span class="cl">sudo cp -r <span class="nv">$OUTPATH</span>/opt/deploy/SBA/lib/* <span class="nv">$STREAMER_PATH</span>/lib/
+</span></span><span class="line"><span class="cl">sudo chown -R openet:openet <span class="nv">$STREAMER_PATH</span>/lib/
+</span></span><span class="line"><span class="cl"><span class="c1"># remove old third party bundles</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># sudo rm $STREAMER_PATH/bundles/sba-core/org.apache.servicemix.bundles.avro*</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># sudo rm $STREAMER_PATH/bundles/sba-core/org.apache.servicemix.bundles.common*</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># sudo rm $STREAMER_PATH/bundles/sba-core/org.apache.servicemix.bundles.kafka*</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># sudo rm $STREAMER_PATH/bundles/sba-core/org.apache.servicemix.bundles.reflections*</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># update third party bundles</span>
+</span></span><span class="line"><span class="cl">sudo cp -r <span class="nv">$OUTPATH</span>/opt/deploy/SBA/bundles/sba-core/* <span class="nv">$STREAMER_PATH</span>/bundles/sba-core/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># ## update streamer.yaml file</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#echo &#34;updating streamer file&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#STREAMER_FILE=./ansible/config/streamer.yaml</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#OUTPUT_SCHEMA=./ansible/config/output.avsc</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#sudo cp $STREAMER_FILE /home/openet/streamer/config/deployment-config/streamer.yaml</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#sudo cp $OUTPUT_SCHEMA /home/openet/output.avsc</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Restarting streamer service&#34;</span>
+</span></span><span class="line"><span class="cl">sudo systemctl start odf-streamer
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
   </div>
@@ -192,7 +355,7 @@ sudo journalctl -u odf-streamer.service -n <span class="m">1000</span> -f
   <span class="copyright-year">
     &copy; 
     2020 - 
-    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yao</span>
+    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yao</span>
   </span>
 </div>
 
@@ -209,7 +372,7 @@ sudo journalctl -u odf-streamer.service -n <span class="m">1000</span> -f
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
 
