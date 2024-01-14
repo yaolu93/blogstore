@@ -1,7 +1,7 @@
 ---
 title: "CV"
 date: 2021-04-02
-lastmod: 2023-09-27
+lastmod: 2024-01-14
 menu: "main"
 weight: 50
 author: "Yao"
@@ -153,5 +153,5 @@ Always considering cohesion and optimizing software with design patterns and alg
 
 ----
 
-> <yao.lu.1223@gmail.com> • +353 (0)83 346 0631 • 29 years old\
+> <yao.lu.1223@gmail.com> • +353 (0)83 346 0631 • 30 years old\
 > address - Dublin, Ireland
