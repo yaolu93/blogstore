@@ -4,6 +4,14 @@ F12: console: javascript:document.cookie
 
 leetcode-cli:
 leetcode show 1 -g -l java
+lc version -v
+lc user -l
+lc list
+lc test 1. two sm -t
+rm 1.two sum
+lc submission.
+lc stat
+lc config -a
 
 异或运算就是无进位相加
 
