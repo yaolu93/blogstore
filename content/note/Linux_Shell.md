@@ -34,3 +34,7 @@ docker volume rm $(docker volume ls -q)
 
 ### top
 top E 1
+
+
+### jdtls
+./mvnw clean verify -DskipTests=true
