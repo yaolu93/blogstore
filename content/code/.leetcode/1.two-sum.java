@@ -62,7 +62,7 @@
 // @lc code=start
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        
+        // test class here
         int length = nums.length;
         for (int i = 0; i < length; i++) {
             
@@ -71,6 +71,7 @@ class Solution {
                 while (nums[i] + nums[j] == target) {
                     return new int[] {i, j};
                 }
+		
             }
         }
 
