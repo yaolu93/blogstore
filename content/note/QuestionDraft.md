@@ -1,3 +1,6 @@
+Mockito 详解：
+https://pdai.tech/md/develop/ut/dev-ut-x-mockito.html  
+
 ```Java
         if (partialTopic != null) {
             KStream<String, GenericRecord>[] partialBranch = stream
