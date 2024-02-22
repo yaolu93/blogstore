@@ -83,3 +83,5 @@ Zookeeper( 协调和调度中心)
 
 
 Kafka is able to seamlessly handle multiple producers
+
+auto.create.topics.enable 的默认值是什么？它应该存在于哪里?
