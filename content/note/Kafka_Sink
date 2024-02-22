@@ -79,7 +79,7 @@ date
 set +x
 
 # echo "show the connector list"
-# curl  -X GET  http://localhost:8083/connectors | jq
+curl  -X GET  http://localhost:8083/connectors | jq
 
 # curl -X DELETE localhost:8083/connectors/dg-stats-file-sink-connector
 # sleep 2
