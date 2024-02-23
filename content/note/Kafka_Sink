@@ -1,4 +1,5 @@
 ```bash
+sudo tail -n 1000 -f /var/log/kafka/connect-distributed.log |grep -A 30 "yao"
 
 sudo systemctl status confluent*
 sudo systemctl restart confluent-kafka-connect
