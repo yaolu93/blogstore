@@ -10,6 +10,10 @@ sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:90
 sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-duplicate --property print.key=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
 sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-error --property print.key=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
 
+### for json
+sudo kafka-console-consumer --from-beginning --bootstrap-server localhost:9092 --topic topic-distributor
+
+
 ### to check the record headers
 sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-input --property print.key=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer --property print.headers=true
 
