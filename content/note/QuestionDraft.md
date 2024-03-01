@@ -78,4 +78,5 @@ https://pdai.tech/md/develop/ut/dev-ut-x-mockito.html
 ### lambda 表達式：
 https://zhuanlan.zhihu.com/p/112771403 
 //lambda表达式写法，省略接口和方法名
+//Lambda 表达式的语法形式如下：(参数列表) -> { 方法体 }
 ```
