@@ -45,4 +45,34 @@ https://pdai.tech/md/develop/ut/dev-ut-x-mockito.html
         return postBranch[1];
     }
 
+
+```Java
+         @Test
+            public void testProduceWithAvroSerializer() throws NoSuchFieldException, IllegalAccessException {
+        
+                // Set up the test data
+                settings = this.settings();
+                SinkRecord sinkRecord = getTestRecord();
+                List<SinkRecord> sinkRecords = Collections.singletonList(sinkRecord);
+        
+                AvroData avroData = mock(AvroData.class);
+                java.lang.reflect.Field avroDataField = KafkaSinkTask.class.getDeclaredField("avroData");
+                avroDataField.setAccessible(true);
+                avroDataField.set(task, avroData);
+        
+                task.start(settings);
+        
+                task.put(sinkRecords);
+        
+                // Mock the necessary dependencies
+                when(config.getOutputTopic()).thenReturn("outputTopic");
+                when(avroProducer.send(any(ProducerRecord.class))).thenReturn("hello");
+        
+        
+                // Call the method under test
+        //        verify(avroProducer, times(1)).send(any());
+        
+                Assertions.assertEquals(avroProducer.send(any()), null);
+            }
+
 ```
