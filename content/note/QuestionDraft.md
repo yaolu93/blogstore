@@ -46,7 +46,7 @@ https://pdai.tech/md/develop/ut/dev-ut-x-mockito.html
     }
 
 
-```Java
+
          @Test
             public void testProduceWithAvroSerializer() throws NoSuchFieldException, IllegalAccessException {
         
@@ -75,8 +75,9 @@ https://pdai.tech/md/develop/ut/dev-ut-x-mockito.html
                 Assertions.assertEquals(avroProducer.send(any()), null);
             }
 
-### lambda 表達式：
-https://zhuanlan.zhihu.com/p/112771403 
-//lambda表达式写法，省略接口和方法名
-//Lambda 表达式的语法形式如下：(参数列表) -> { 方法体 }
+        ### lambda 表達式：
+        https://zhuanlan.zhihu.com/p/112771403 
+        //lambda表达式写法，省略接口和方法名
+        //Lambda 表达式的语法形式如下：(参数列表) -> { 方法体 }
+        // 匿名内部类可以是接口、抽象类或具体类
 ```
