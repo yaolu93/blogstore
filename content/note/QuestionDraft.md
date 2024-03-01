@@ -75,4 +75,7 @@ https://pdai.tech/md/develop/ut/dev-ut-x-mockito.html
                 Assertions.assertEquals(avroProducer.send(any()), null);
             }
 
+### lambda 表達式：
+https://zhuanlan.zhihu.com/p/112771403 
+
 ```
