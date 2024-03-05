@@ -1,5 +1,8 @@
 ```bash
 
+kgetpods -n kafka-external -w
+
+
 kubectl get events -w
 
 k get pods -n monitoring -w
