@@ -8,6 +8,9 @@ k logs -f monitoring-metrics-beat-metricbeat-665485c685-tcz72 -n monitoring
 
 watch -n 1 helm list
 
+watch -n 10 helm list -n kafka-external
+
+
 watch -n 1 kubectl get pods -n cgf
 
 minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=${K8S_VERSION}
