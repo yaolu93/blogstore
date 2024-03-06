@@ -4,6 +4,7 @@ kgetpods -n kafka-external -w
 
 
 kubectl get events -w
+k get events -w -n kafka-external
 
 k get pods -n monitoring -w
 
