@@ -3,7 +3,17 @@ sudo tail -n 1000 -f /var/log/kafka/connect-distributed.log |grep -A 30 "yao"
 
 sudo journalctl -f -u confluent-schema-registry
 
+sudo journalctl -f -u confluent-kafka
+
+sudo journalctl -f -u confluent-zookeeper
+
 sudo systemctl status confluent*
+sudo systemctl status confluent-kafka-connect
+sudo systemctl status confluent-kafka
+sudo systemctl status confluent-zookeeper
+sudo systemctl status confluent-schema-registry
+sudo systemctl status odf-streamer
+
 sudo systemctl restart confluent-kafka-connect
 sudo systemctl restart confluent-kafka
 sudo systemctl restart confluent-zookeeper
