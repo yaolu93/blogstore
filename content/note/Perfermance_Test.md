@@ -67,6 +67,9 @@ kubectl exec -ti `kubectl  get pod -l pod/name=schema-registry-helm | awk '{prin
 
 kubectl exec -ti `kubectl  get pod -l pod/name=schema-registry-helm | awk '{print $1}' | tail -n 1` -n cgf -c schema-registry-helm -- bash -c "unset JMX_PORT ; kafka-avro-console-consumer --topic streams-input-enrich --bootstrap-server odf-cluster-kafka-bootstrap:9092 --from-beginning --property print.key=true --property print.timestamp=true --property print.schema.ids=true --property print.headers=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer"
 
+k exec -ti odf-cluster-schema-registry-57646c6787-dk9lq -c schema-registry-helm bash
+
+unset JMX_PORT && kafka-avro-console-consumer --from-beginning --bootstrap-server  odf-cluster-kafka-0.odf-cluster-kafka-brokers.kafka-external.svc.cluster.local:9092 --topic kafka-sink-output --property print. timestamp=true --group connect-cluster
 
 export ODF_TEST_ENV="k8s";pytest -s /app/acceptance_perf_soak/test_main_perf_collect_data.py::test_perf_collect_data_streamer
 
