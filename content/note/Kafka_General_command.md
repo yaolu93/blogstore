@@ -94,3 +94,6 @@ curl -X GET http://localhost:8081/subjects/schema/versions/
 
 #### topic-distributor
 curl -X GET http://localhost:8081/subjects/topic-distributor-value/versions/latest
+
+### delete the schema
+curl -X DELETE http://localhost:8081/subjects/topic-distributor-value
