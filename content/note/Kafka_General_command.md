@@ -91,3 +91,6 @@ sudo journalctl -f -u confluent-schema-registry
 
 ### get describe from schema
 curl -X GET http://localhost:8081/subjects/schema/versions/
+
+#### topic-distributor
+curl -X GET http://localhost:8081/subjects/topic-distributor-value/versions/latest
