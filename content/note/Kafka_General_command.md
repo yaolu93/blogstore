@@ -89,3 +89,5 @@ sudo journalctl -f -u confluent-zookeeper
 ### logs for Schema Register
 sudo journalctl -f -u confluent-schema-registry
 
+### get describe from schema
+curl -X GET http://localhost:8081/subjects/schema/versions/
