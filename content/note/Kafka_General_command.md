@@ -5,6 +5,9 @@ kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input
 kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input
 kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input
 
+kubectl -n <namespace> exec -ti <Kafka Pod ID> -- ./bin/kafka-topics.sh --version
+kubectl -n cgf exec -ti odf-cluster-kafka-0 -- ./bin/kafka-topics.sh --version
+
 sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-input --property print.key=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
 sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-output --property print.key=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
 sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-duplicate --property print.key=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
