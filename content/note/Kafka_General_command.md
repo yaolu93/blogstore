@@ -7,6 +7,8 @@ kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --
 
 kubectl -n <namespace> exec -ti <Kafka Pod ID> -- ./bin/kafka-topics.sh --version
 kubectl -n cgf exec -ti odf-cluster-kafka-0 -- ./bin/kafka-topics.sh --version
+kubectl -n cgf exec -ti odf-cluster-kafka-0 -- ./bin/kafka-topics.sh  --list --bootstrap-server localhost:9092
+kubectl -n cgf exec -ti odf-cluster-kafka-0 -- ./bin/kafka-topics.sh --describe --topic kafka-sink-error --bootstrap-server localhost:9092
 
 sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-input --property print.key=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
 sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-output --property print.key=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
