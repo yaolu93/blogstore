@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Yao" /><meta name="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 if (partialTopic != null) { KStream&amp;lt;String, GenericRecord&amp;gt;[] partialBranch = stream .branch((k, v) -&amp;gt; { Map&amp;lt;Utf8, Utf8&amp;gt; metrics = Optional.ofNullable((Map) v.get(METRIC)).orElse(new HashMap&amp;lt;&amp;gt;()); return metrics.containsKey(new Utf8(PARTIAL)); } , (k, v) -&amp;gt; true); partialBranch[0] .process(() -&amp;gt; new Processor&amp;lt;String, GenericRecord, String, GenericRecord&amp;gt;() { ProcessorContext context; @Override public void init(ProcessorContext context) { this." />
+<meta name="author" content="Yao" /><meta name="description" content="Mockito 详解： https://pdai.tech/md/develop/ut/dev-ut-x-mockito.html 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 if (partialTopic != null) { KStream&amp;lt;String, GenericRecord&amp;gt;[] partialBranch = stream .branch((k, v) -&amp;gt; { Map&amp;lt;Utf8, Utf8&amp;gt; metrics = Optional.ofNullable((Map) v.get(METRIC)).orElse(new HashMap&amp;lt;&amp;gt;()); return metrics.containsKey(new Utf8(PARTIAL)); } , (k, v) -&amp;gt; true); partialBranch[0] .process(() -&amp;gt; new Processor&amp;lt;String, GenericRecord, String, GenericRecord&amp;gt;() { ProcessorContext" />
 
 
 
@@ -40,18 +40,18 @@
 
 
 <meta property="og:title" content="" />
-<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 if (partialTopic != null) { KStream&lt;String, GenericRecord&gt;[] partialBranch = stream .branch((k, v) -&gt; { Map&lt;Utf8, Utf8&gt; metrics = Optional.ofNullable((Map) v.get(METRIC)).orElse(new HashMap&lt;&gt;()); return metrics.containsKey(new Utf8(PARTIAL)); } , (k, v) -&gt; true); partialBranch[0] .process(() -&gt; new Processor&lt;String, GenericRecord, String, GenericRecord&gt;() { ProcessorContext context; @Override public void init(ProcessorContext context) { this." />
+<meta property="og:description" content="Mockito 详解： https://pdai.tech/md/develop/ut/dev-ut-x-mockito.html 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 if (partialTopic != null) { KStream&lt;String, GenericRecord&gt;[] partialBranch = stream .branch((k, v) -&gt; { Map&lt;Utf8, Utf8&gt; metrics = Optional.ofNullable((Map) v.get(METRIC)).orElse(new HashMap&lt;&gt;()); return metrics.containsKey(new Utf8(PARTIAL)); } , (k, v) -&gt; true); partialBranch[0] .process(() -&gt; new Processor&lt;String, GenericRecord, String, GenericRecord&gt;() { ProcessorContext" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.yaolugnu.com/note/questiondraft/" /><meta property="article:section" content="note" />
 
 
 
 <meta itemprop="name" content="">
-<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 if (partialTopic != null) { KStream&lt;String, GenericRecord&gt;[] partialBranch = stream .branch((k, v) -&gt; { Map&lt;Utf8, Utf8&gt; metrics = Optional.ofNullable((Map) v.get(METRIC)).orElse(new HashMap&lt;&gt;()); return metrics.containsKey(new Utf8(PARTIAL)); } , (k, v) -&gt; true); partialBranch[0] .process(() -&gt; new Processor&lt;String, GenericRecord, String, GenericRecord&gt;() { ProcessorContext context; @Override public void init(ProcessorContext context) { this.">
+<meta itemprop="description" content="Mockito 详解： https://pdai.tech/md/develop/ut/dev-ut-x-mockito.html 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 if (partialTopic != null) { KStream&lt;String, GenericRecord&gt;[] partialBranch = stream .branch((k, v) -&gt; { Map&lt;Utf8, Utf8&gt; metrics = Optional.ofNullable((Map) v.get(METRIC)).orElse(new HashMap&lt;&gt;()); return metrics.containsKey(new Utf8(PARTIAL)); } , (k, v) -&gt; true); partialBranch[0] .process(() -&gt; new Processor&lt;String, GenericRecord, String, GenericRecord&gt;() { ProcessorContext">
 
-<meta itemprop="wordCount" content="137">
+<meta itemprop="wordCount" content="307">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 if (partialTopic != null) { KStream&lt;String, GenericRecord&gt;[] partialBranch = stream .branch((k, v) -&gt; { Map&lt;Utf8, Utf8&gt; metrics = Optional.ofNullable((Map) v.get(METRIC)).orElse(new HashMap&lt;&gt;()); return metrics.containsKey(new Utf8(PARTIAL)); } , (k, v) -&gt; true); partialBranch[0] .process(() -&gt; new Processor&lt;String, GenericRecord, String, GenericRecord&gt;() { ProcessorContext context; @Override public void init(ProcessorContext context) { this."/>
+<meta name="twitter:description" content="Mockito 详解： https://pdai.tech/md/develop/ut/dev-ut-x-mockito.html 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 if (partialTopic != null) { KStream&lt;String, GenericRecord&gt;[] partialBranch = stream .branch((k, v) -&gt; { Map&lt;Utf8, Utf8&gt; metrics = Optional.ofNullable((Map) v.get(METRIC)).orElse(new HashMap&lt;&gt;()); return metrics.containsKey(new Utf8(PARTIAL)); } , (k, v) -&gt; true); partialBranch[0] .process(() -&gt; new Processor&lt;String, GenericRecord, String, GenericRecord&gt;() { ProcessorContext"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -127,7 +127,9 @@
         <div id="content" class="content">
           <article class="post">
   <div class="post-content">
-    <div class="highlight"><div class="chroma">
+    <p>Mockito 详解：
+<a href="https://pdai.tech/md/develop/ut/dev-ut-x-mockito.html">https://pdai.tech/md/develop/ut/dev-ut-x-mockito.html</a></p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -197,6 +199,42 @@
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="line"><span class="cl"><span class="w">
@@ -211,6 +249,42 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">postBranch</span><span class="o">[</span><span class="n">1</span><span class="o">]</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="nd">@Test</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testProduceWithAvroSerializer</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">NoSuchFieldException</span><span class="p">,</span><span class="w"> </span><span class="n">IllegalAccessException</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// Set up the test data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">settings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">settings</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">SinkRecord</span><span class="w"> </span><span class="n">sinkRecord</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getTestRecord</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">List</span><span class="o">&lt;</span><span class="n">SinkRecord</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sinkRecords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Collections</span><span class="p">.</span><span class="na">singletonList</span><span class="p">(</span><span class="n">sinkRecord</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">AvroData</span><span class="w"> </span><span class="n">avroData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mock</span><span class="p">(</span><span class="n">AvroData</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">java</span><span class="p">.</span><span class="na">lang</span><span class="p">.</span><span class="na">reflect</span><span class="p">.</span><span class="na">Field</span><span class="w"> </span><span class="n">avroDataField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KafkaSinkTask</span><span class="p">.</span><span class="na">class</span><span class="p">.</span><span class="na">getDeclaredField</span><span class="p">(</span><span class="s">&#34;avroData&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">avroDataField</span><span class="p">.</span><span class="na">setAccessible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">avroDataField</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">task</span><span class="p">,</span><span class="w"> </span><span class="n">avroData</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">task</span><span class="p">.</span><span class="na">start</span><span class="p">(</span><span class="n">settings</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">task</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">sinkRecords</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// Mock the necessary dependencies</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">when</span><span class="p">(</span><span class="n">config</span><span class="p">.</span><span class="na">getOutputTopic</span><span class="p">()).</span><span class="na">thenReturn</span><span class="p">(</span><span class="s">&#34;outputTopic&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">when</span><span class="p">(</span><span class="n">avroProducer</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="n">any</span><span class="p">(</span><span class="n">ProducerRecord</span><span class="p">.</span><span class="na">class</span><span class="p">))).</span><span class="na">thenReturn</span><span class="p">(</span><span class="s">&#34;hello&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// Call the method under test</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//        verify(avroProducer, times(1)).send(any());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">Assertions</span><span class="p">.</span><span class="na">assertEquals</span><span class="p">(</span><span class="n">avroProducer</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="n">any</span><span class="p">()),</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="err">###</span><span class="w"> </span><span class="n">lambda</span><span class="w"> </span><span class="n">表達式</span><span class="err">：</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">https</span><span class="p">:</span><span class="c1">//zhuanlan.zhihu.com/p/112771403 </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//lambda表达式写法，省略接口和方法名</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//Lambda 表达式的语法形式如下：(参数列表) -&gt; { 方法体 }</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 匿名内部类可以是接口、抽象类或具体类</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div>

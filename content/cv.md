@@ -55,6 +55,7 @@ Always considering cohesion and optimizing software with design patterns and alg
  * Designing project feature test plan and implementing test cases
  * CVE scan and fix
  * Performance Test
+ * Resiliency Test
  <!-- //todo: describe sth about mentor  -->
  - #### ***Project: Amdocs Network Data Fabric***  (Development Platform on Centos 7.9) Kafka +Java 1.8 +Python +Shell Script +Docker +Kubernetes +Helm +Ansible +Maven +Jenkins +Git
   

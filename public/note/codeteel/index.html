@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Yao" /><meta name="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 F12: console: javascript:document.cookie leetcode-cli: leetcode show 1 -g -l java 异或运算就是无进位相加 0^N = N | N^N = 0 满足交换律和结合律 # 内存需要是独立的 a" />
+<meta name="author" content="Yao" /><meta name="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 F12: console: javascript:document.cookie leetcode-cli: leetcode show 1 -g -l java lc version -v lc stat lc config -a Login with your leetcode account $ leetcode user -l Browse all" />
 
 
 
@@ -40,18 +40,18 @@
 
 
 <meta property="og:title" content="" />
-<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 F12: console: javascript:document.cookie leetcode-cli: leetcode show 1 -g -l java 异或运算就是无进位相加 0^N = N | N^N = 0 满足交换律和结合律 # 内存需要是独立的 a" />
+<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 F12: console: javascript:document.cookie leetcode-cli: leetcode show 1 -g -l java lc version -v lc stat lc config -a Login with your leetcode account $ leetcode user -l Browse all" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.yaolugnu.com/note/codeteel/" /><meta property="article:section" content="note" />
 
 
 
 <meta itemprop="name" content="">
-<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 F12: console: javascript:document.cookie leetcode-cli: leetcode show 1 -g -l java 异或运算就是无进位相加 0^N = N | N^N = 0 满足交换律和结合律 # 内存需要是独立的 a">
+<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 F12: console: javascript:document.cookie leetcode-cli: leetcode show 1 -g -l java lc version -v lc stat lc config -a Login with your leetcode account $ leetcode user -l Browse all">
 
-<meta itemprop="wordCount" content="175">
+<meta itemprop="wordCount" content="332">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 F12: console: javascript:document.cookie leetcode-cli: leetcode show 1 -g -l java 异或运算就是无进位相加 0^N = N | N^N = 0 满足交换律和结合律 # 内存需要是独立的 a"/>
+<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 F12: console: javascript:document.cookie leetcode-cli: leetcode show 1 -g -l java lc version -v lc stat lc config -a Login with your leetcode account $ leetcode user -l Browse all"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -152,12 +152,39 @@
 </span><span class="lnt">21
 </span><span class="lnt">22
 </span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">F12: console: javascript:document.cookie
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">leetcode-cli:
 </span></span><span class="line"><span class="cl">leetcode show 1 -g -l java
+</span></span><span class="line"><span class="cl">lc version -v
+</span></span><span class="line"><span class="cl">lc stat
+</span></span><span class="line"><span class="cl">lc config -a
+</span></span><span class="line"><span class="cl">Login with your leetcode account        $ leetcode user -l
+</span></span><span class="line"><span class="cl">Browse all questions                    $ leetcode list
+</span></span><span class="line"><span class="cl">Choose one question                     $ leetcode show 1 -g -l cpp
+</span></span><span class="line"><span class="cl">Coding it!
+</span></span><span class="line"><span class="cl">Run test(s) and pray...                 $ leetcode test ./two-sum.cpp -t &#39;[3,2,4]\n7&#39;
+</span></span><span class="line"><span class="cl">Submit final solution!                  $ leetcode submit ./two-sum.cpp
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">异或运算就是无进位相加
 </span></span><span class="line"><span class="cl">
@@ -177,6 +204,15 @@
 </span></span><span class="line"><span class="cl">P4：
 </span></span><span class="line"><span class="cl">讲的排序是基于左讲的衍生的
 </span></span><span class="line"><span class="cl">P5:
+</span></span><span class="line"><span class="cl">修改堆比较器的时候，一般都是需要手动修改的， 不然时间复杂度都不会达到理想的效果。 图之中对继续讲
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">P6:
+</span></span><span class="line"><span class="cl">前缀树（数）非常重要的哇，在后面会讲，二叉树的所有套路
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">P7：
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">P8:
+</span></span><span class="line"><span class="cl">二叉树的递归套路
 </span></span></code></pre></td></tr></table>
 </div>
 </div>

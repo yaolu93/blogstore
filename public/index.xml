@@ -90,7 +90,7 @@
       <link>https://www.yaolugnu.com/note/a_notebook/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://www.yaolugnu.com/note/a_notebook/</guid>
-      <description>I&amp;rsquo;mwe 争取以后在 Emacs上开发了 特么的以后配置好的环境真的不能手贱去修改的啊 同步发送消息，异步发送消息。 char 的取值范围和 byte, short, int 的都不一样，在向上</description>
+      <description>why I&amp;rsquo;mwe 争取以后在 Emacs上开发了 特么的以后配置好的环境真的不能手贱去修改的啊 同步发送消息，异步发送消息。 char 的取值范围和 byte, short, int 的都不一样，在向</description>
     </item>
     <item>
       <title></title>
@@ -104,14 +104,14 @@
       <link>https://www.yaolugnu.com/note/codeteel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://www.yaolugnu.com/note/codeteel/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 F12: console: javascript:document.cookie leetcode-cli: leetcode show 1 -g -l java 异或运算就是无进位相加 0^N = N | N^N = 0 满足交换律和结合律 # 内存需要是独立的 a</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 F12: console: javascript:document.cookie leetcode-cli: leetcode show 1 -g -l java lc version -v lc stat lc config -a Login with your leetcode account $ leetcode user -l Browse all</description>
     </item>
     <item>
       <title></title>
       <link>https://www.yaolugnu.com/note/k8s_command/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://www.yaolugnu.com/note/k8s_command/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 kubectl get events -w k get pods -n monitoring -w k logs -f monitoring-metrics-beat-metricbeat-665485c685-tcz72 -n monitoring watch -n 1 helm list watch -n 1 kubectl get pods -n cgf minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=${K8S_VERSION} minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=v1.25.0 minikube start --kubernetes-version=1.</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 kgetpods -n kafka-external -w kubectl get events -w k get events -w -n kafka-external k get pods -n monitoring -w k logs -f monitoring-metrics-beat-metricbeat-665485c685-tcz72 -n monitoring watch -n 1 helm list watch -n 10 helm list -n kafka-external watch -n 1 kubectl get pods -n cgf minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=${K8S_VERSION} minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=v1.</description>
     </item>
     <item>
       <title></title>
@@ -125,7 +125,7 @@
       <link>https://www.yaolugnu.com/note/kafka_general_command/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://www.yaolugnu.com/note/kafka_general_command/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-input --property print.</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input kubectl -n &amp;lt;namespace&amp;gt; exec -ti &amp;lt;Kafka Pod ID&amp;gt; -- .</description>
     </item>
     <item>
       <title></title>
@@ -139,21 +139,21 @@
       <link>https://www.yaolugnu.com/note/linux_shell/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://www.yaolugnu.com/note/linux_shell/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 sudo update-alternatives --config javac sudo update-alternatives --config java mvn clean install -DskipTests mvn clean install -DskipTests ssh-keygen -t rsa -b 4096 -C &amp;#34;yao.lu@openet.com&amp;#34; ---- 理解 shell 的父子关系 默认为</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 sudo update-alternatives --config javac sudo update-alternatives --config java mvn clean install -DskipTests mvn clean install -DskipTests ssh-keygen -t rsa -b 4096 -C &amp;#34;yao.lu@openet.com&amp;#34; ---- 理解 shell 的父子关</description>
     </item>
     <item>
       <title></title>
       <link>https://www.yaolugnu.com/note/perfermance_test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://www.yaolugnu.com/note/perfermance_test/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 ####################Should change the firefox proxy##################### # get the password, userid is elastic kubectl -n monitoring get secret monitoring-elasticsearch-es-elastic-user -o=jsonpath=&amp;#39;{.</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 ####################Should change the firefox proxy##################### # get the password, userid is elastic kubectl -n monitoring get secret monitoring-elasticsearch-es-elastic-user -o=jsonpath=&amp;#39;{.</description>
     </item>
     <item>
       <title></title>
       <link>https://www.yaolugnu.com/note/questiondraft/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://www.yaolugnu.com/note/questiondraft/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 if (partialTopic != null) { KStream&amp;lt;String, GenericRecord&amp;gt;[] partialBranch = stream .branch((k, v) -&amp;gt; { Map&amp;lt;Utf8, Utf8&amp;gt; metrics = Optional.ofNullable((Map) v.get(METRIC)).orElse(new HashMap&amp;lt;&amp;gt;()); return metrics.containsKey(new Utf8(PARTIAL)); } , (k, v) -&amp;gt; true); partialBranch[0] .process(() -&amp;gt; new Processor&amp;lt;String, GenericRecord, String, GenericRecord&amp;gt;() { ProcessorContext context; @Override public void init(ProcessorContext context) { this.</description>
+      <description>Mockito 详解： https://pdai.tech/md/develop/ut/dev-ut-x-mockito.html 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 if (partialTopic != null) { KStream&amp;lt;String, GenericRecord&amp;gt;[] partialBranch = stream .branch((k, v) -&amp;gt; { Map&amp;lt;Utf8, Utf8&amp;gt; metrics = Optional.ofNullable((Map) v.get(METRIC)).orElse(new HashMap&amp;lt;&amp;gt;()); return metrics.containsKey(new Utf8(PARTIAL)); } , (k, v) -&amp;gt; true); partialBranch[0] .process(() -&amp;gt; new Processor&amp;lt;String, GenericRecord, String, GenericRecord&amp;gt;() { ProcessorContext</description>
     </item>
   </channel>
 </rss>

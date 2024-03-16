@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Yao" /><meta name="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 kubectl get events -w k get pods -n monitoring -w k logs -f monitoring-metrics-beat-metricbeat-665485c685-tcz72 -n monitoring watch -n 1 helm list watch -n 1 kubectl get pods -n cgf minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=${K8S_VERSION} minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=v1.25.0 minikube start --kubernetes-version=1." />
+<meta name="author" content="Yao" /><meta name="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 kgetpods -n kafka-external -w kubectl get events -w k get events -w -n kafka-external k get pods -n monitoring -w k logs -f monitoring-metrics-beat-metricbeat-665485c685-tcz72 -n monitoring watch -n 1 helm list watch -n 10 helm list -n kafka-external watch -n 1 kubectl get pods -n cgf minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=${K8S_VERSION} minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=v1." />
 
 
 
@@ -40,18 +40,18 @@
 
 
 <meta property="og:title" content="" />
-<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 kubectl get events -w k get pods -n monitoring -w k logs -f monitoring-metrics-beat-metricbeat-665485c685-tcz72 -n monitoring watch -n 1 helm list watch -n 1 kubectl get pods -n cgf minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=${K8S_VERSION} minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=v1.25.0 minikube start --kubernetes-version=1." />
+<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 kgetpods -n kafka-external -w kubectl get events -w k get events -w -n kafka-external k get pods -n monitoring -w k logs -f monitoring-metrics-beat-metricbeat-665485c685-tcz72 -n monitoring watch -n 1 helm list watch -n 10 helm list -n kafka-external watch -n 1 kubectl get pods -n cgf minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=${K8S_VERSION} minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=v1." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.yaolugnu.com/note/k8s_command/" /><meta property="article:section" content="note" />
 
 
 
 <meta itemprop="name" content="">
-<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 kubectl get events -w k get pods -n monitoring -w k logs -f monitoring-metrics-beat-metricbeat-665485c685-tcz72 -n monitoring watch -n 1 helm list watch -n 1 kubectl get pods -n cgf minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=${K8S_VERSION} minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=v1.25.0 minikube start --kubernetes-version=1.">
+<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 kgetpods -n kafka-external -w kubectl get events -w k get events -w -n kafka-external k get pods -n monitoring -w k logs -f monitoring-metrics-beat-metricbeat-665485c685-tcz72 -n monitoring watch -n 1 helm list watch -n 10 helm list -n kafka-external watch -n 1 kubectl get pods -n cgf minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=${K8S_VERSION} minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=v1.">
 
-<meta itemprop="wordCount" content="108">
+<meta itemprop="wordCount" content="132">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 kubectl get events -w k get pods -n monitoring -w k logs -f monitoring-metrics-beat-metricbeat-665485c685-tcz72 -n monitoring watch -n 1 helm list watch -n 1 kubectl get pods -n cgf minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=${K8S_VERSION} minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=v1.25.0 minikube start --kubernetes-version=1."/>
+<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 kgetpods -n kafka-external -w kubectl get events -w k get events -w -n kafka-external k get pods -n monitoring -w k logs -f monitoring-metrics-beat-metricbeat-665485c685-tcz72 -n monitoring watch -n 1 helm list watch -n 10 helm list -n kafka-external watch -n 1 kubectl get pods -n cgf minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=${K8S_VERSION} minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=v1."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -151,16 +151,30 @@
 </span><span class="lnt">20
 </span><span class="lnt">21
 </span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">kgetpods -n kafka-external -w
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">kubectl get events -w
+</span></span><span class="line"><span class="cl">k get events -w -n kafka-external
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">k get pods -n monitoring -w
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">k logs -f monitoring-metrics-beat-metricbeat-665485c685-tcz72 -n monitoring
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">watch -n <span class="m">1</span> helm list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">watch -n <span class="m">10</span> helm list -n kafka-external
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">watch -n <span class="m">1</span> kubectl get pods -n cgf
 </span></span><span class="line"><span class="cl">
