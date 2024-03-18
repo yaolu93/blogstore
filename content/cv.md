@@ -27,7 +27,7 @@ Always considering cohesion and optimizing software with design patterns and alg
 
     ***(First-Class Honours 1.1)***
 
-    *Dissertation: Comparing Approaches for the Migration toMicroservices Architecture using Smells*   
+    *Dissertation: Comparing Approaches for the Migration to Microservices Architecture using Smells*   
     ***(A1 Grade)***
 
 2012-2016
