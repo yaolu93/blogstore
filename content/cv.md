@@ -53,6 +53,7 @@ Always considering cohesion and optimizing software with design patterns and alg
  * Achieved agile development cycle requirements
  * Participating in product refinement session with architect and co-works
  * Designing project feature test plan and implementing test cases
+ * Using VisualVM to analyze Java code and optimize performance
  * CVE scan and fix
  * Performance Test
  * Resiliency Test
