@@ -322,4 +322,5 @@ Rohan 咋还划分新的分组了列。。。
 228. 真的之後ZW1只有這一個team了嘛哈哈哈哈哈
 229. 今天想把那個scripts移植完畢
 230. 嘿那個scripts移植的好快啊，Rao肉眼debug代碼的能力還是有的哇，哈哈
+231. 新来的Product Owner 是要取代Mark 了吗
      
