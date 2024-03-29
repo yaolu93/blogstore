@@ -4,16 +4,11 @@ kgetpods -n kafka-external -w
 
 kubectl get events -w
 k get events -w -n kafka-external
-
 k get pods -n monitoring -w
-
 k logs -f monitoring-metrics-beat-metricbeat-665485c685-tcz72 -n monitoring
 
 watch -n 1 helm list
-
 watch -n 10 helm list -n kafka-external
-
-
 watch -n 1 kubectl get pods -n cgf
 
 minikube start --embed-certs --cpus 2 --memory 8192 --kubernetes-version=${K8S_VERSION}
@@ -42,3 +37,18 @@ docker tag yaolu/debian:test01 achillesly/debian:test01
 
 docker push achillesly/debian:test01
 docker pull achillesly/debian:test01
+
+# Emacs
+### Download and install
+wget https://mirror.lyrahosting.com/gnu/emacs/emacs-29.3.tar.gz
+ 
+tar -xzf emacs-29.3.tar.gz
+sudo apt update
+sudo apt install build-essential autoconf automake texinfo libjpeg-dev libpng-dev libgif-dev libtiff-dev libx11-dev libncurses-dev
+apt install libgnutls28-dev
+sudo apt install libxpm-dev
+sudo apt install libgnutls28-dev
+./autogen.sh
+./configure
+make
+make install
