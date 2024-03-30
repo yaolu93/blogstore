@@ -4,7 +4,9 @@
 F12: console: javascript:document.cookie
 
 leetcode-cli:
+
 leetcode show 1 -g -l java
+
 lc version -v
 lc stat
 lc config -a
@@ -14,7 +16,10 @@ Choose one question                     $ leetcode show 1 -g -l cpp
 Coding it!
 Run test(s) and pray...                 $ leetcode test ./two-sum.cpp -t '[3,2,4]\n7'
 Submit final solution!                  $ leetcode submit ./two-sum.cpp
+##codespace
+gh codespace list
 
+###
 异或运算就是无进位相加
 
 0^N = N  | N^N = 0
