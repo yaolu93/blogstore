@@ -37,7 +37,8 @@ docker tag yaolu/debian:test01 achillesly/debian:test01
 
 docker push achillesly/debian:test01
 docker pull achillesly/debian:test01
-
+## Emace inside Docker
+**https://rebeja.eu/posts/python-ide-with-emacs-and-docker/**
 # Emacs
 ### Download and install
 wget https://mirror.lyrahosting.com/gnu/emacs/emacs-29.3.tar.gz
