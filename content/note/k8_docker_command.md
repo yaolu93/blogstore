@@ -39,6 +39,7 @@ docker push achillesly/debian:test01
 docker pull achillesly/debian:test01
 ## Emace inside Docker
 **https://rebeja.eu/posts/python-ide-with-emacs-and-docker/**
+**[docker_emacs_gui]:https://dev.to/acro5piano/we-can-virtualize-even-gui-text-editor-with-docker-container--5bhh**
 # Emacs
 ### Download and install
 wget https://mirror.lyrahosting.com/gnu/emacs/emacs-29.3.tar.gz
