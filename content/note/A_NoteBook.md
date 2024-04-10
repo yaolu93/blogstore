@@ -333,5 +333,6 @@ Rohan 咋还划分新的分组了列。。。
 239. 今天要把并查集和暴力递归看完吧
 240. 根据Bharani的话来看，傻逼马克应该是被干掉了。
 241. 这该不会要开始解决内存泄露问题了吧
+242. Today is my first time to resolve leak of memory issue.
 
      
