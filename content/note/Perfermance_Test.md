@@ -7,10 +7,7 @@ kubectl -n monitoring get secret monitoring-elasticsearch-es-elastic-user -o=jso
 kubectl port-forward --address 0.0.0.0 svc/gateway-proxy -n  monitoring 30090:80
 10.15.32.90:30090/kibana/
 
-####### using jcmd command to check the thread dump(stacktrack)
-jcmd 17264 Thread.print
 
-* https://blog.csdn.net/qq_45455361/article/details/120938015 
 
 
 ./perf_new/e2e_enrich_keyRange/run_test_e2e_enrich_keyRange_k8s_local.sh
