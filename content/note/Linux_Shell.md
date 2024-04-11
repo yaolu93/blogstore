@@ -155,3 +155,8 @@ EOF
 
 ### jdtls
 ./mvnw clean verify -DskipTests=true
+
+####### using jcmd command to check the thread dump(stacktrack)
+jcmd 17264 Thread.print
+
+* https://blog.csdn.net/qq_45455361/article/details/120938015 
