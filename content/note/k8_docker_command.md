@@ -37,6 +37,10 @@ docker tag yaolu/debian:test01 achillesly/debian:test01
 
 docker push achillesly/debian:test01
 docker pull achillesly/debian:test01
+
+#### docker cp:
+docker cp kafka-connect:/tmp/heapdump-1713352230746.hprof /tmp/test
+
 ## Emace inside Docker
 **https://rebeja.eu/posts/python-ide-with-emacs-and-docker/**
 **[docker_emacs_gui]:https://dev.to/acro5piano/we-can-virtualize-even-gui-text-editor-with-docker-container--5bhh**
