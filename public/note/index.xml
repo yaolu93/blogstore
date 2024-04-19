@@ -12,7 +12,7 @@
       <link>https://www.yaolugnu.com/note/a_notebook/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://www.yaolugnu.com/note/a_notebook/</guid>
-      <description>why I&amp;rsquo;mwe 争取以后在 Emacs上开发了 特么的以后配置好的环境真的不能手贱去修改的啊 同步发送消息，异步发送消息。 char 的取值范围和 byte, short, int 的都不一样，在向</description>
+      <description>争取以后在 Emacs上开发了 特么的以后配置好的环境真的不能手贱去修改的啊 同步发送消息，异步发送消息。 char 的取值范围和 byte, short, int 的都不一样，在向上转</description>
     </item>
     <item>
       <title></title>
@@ -26,7 +26,7 @@
       <link>https://www.yaolugnu.com/note/codeteel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://www.yaolugnu.com/note/codeteel/</guid>
-      <description>F12: console: javascript:document.cookie leetcode-cli: leetcode show 1 -g -l java lc version -v lc stat lc config -a Login with your leetcode account $ leetcode user -l Browse all questions $ leetcode list Choose one question $ leetcode show 1 -g -l cpp Coding it! Run test(s) and pray&amp;hellip; $ leetcode test ./two-sum.cpp -t &amp;lsquo;[3,2,4]\n7&amp;rsquo; Submit final solution! $ leetcode submit ./two-sum.cpp 异或运算就是无进</description>
+      <description>F12: console: javascript:document.cookie leetcode-cli: leetcode show 1 -g -l java lc version -v lc stat lc config -a Login with your leetcode account $ leetcode user -l Browse all questions $ leetcode list Choose one question $ leetcode show 1 -g -l cpp Coding it! Run test(s) and pray&amp;hellip; $ leetcode test ./two-sum.cpp -t &amp;lsquo;[3,2,4]\n7&amp;rsquo; Submit final solution! $ leetcode submit ./two-sum.cpp ##codespace gh codespace list https://docs.github.com/en/codespaces/developing-in-a-codespace/using-github-codespaces-with-github-cli 异或运</description>
     </item>
     <item>
       <title></title>
@@ -68,7 +68,7 @@
       <link>https://www.yaolugnu.com/note/perfermance_test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://www.yaolugnu.com/note/perfermance_test/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 ####################Should change the firefox proxy##################### # get the password, userid is elastic kubectl -n monitoring get secret monitoring-elasticsearch-es-elastic-user -o=jsonpath=&amp;#39;{.</description>
+      <description>####################Should change the firefox proxy#####################&#xA;get the password, userid is elastic kubectl -n monitoring get secret monitoring-elasticsearch-es-elastic-user -o=jsonpath=&amp;rsquo;{.data.elastic}&amp;rsquo; | base64 &amp;ndash;decode; echo&#xA;do port forwarding on your dev-vm kubectl port-forward &amp;ndash;address 0.0.0.0 svc/gateway-proxy -n monitoring 30090:80 10.15.32.90:30090/kibana/&#xA;./perf_new/e2e_enrich_keyRange/run_test_e2e_enrich_keyRange_k8s_local.sh&#xA;minikube start &amp;ndash;embed-certs minikube start &amp;ndash;kubernetes-version=1.21.0 &amp;ndash;embed-certs &amp;ndash;cpus 2 &amp;ndash;memory 16384&#xA;kubectl create ns cgf kubectl config set-context &amp;ndash;current &amp;ndash;namespace=cgf&#xA;cd ./acceptance_perf_soak/perf_new/scripts ./start_odf_test_container_k8s.sh ./copy_test_files.sh&#xA;kubectl apply -f ~/workspace/ngm-test-container/resources/k8s-pods/sftp-local.yaml&#xA;sh ~/workspace/ngm-test-container/acceptance_perf_soak/perf_new/scripts/deploy_strimzi_operator.sh&#xA;inside acceptance_perf_soak .</description>
     </item>
     <item>
       <title></title>

@@ -58,7 +58,7 @@ kubectl get events -w k get events -w -n kafka-external k get pods -n monitoring
 watch -n 1 helm list watch -n 10 helm list -n kafka-external watch -n 1 kubectl get pods -n cgf
 minikube start &ndash;embed-certs &ndash;cpus 2 &ndash;memory 8192 &ndash;kubernetes-version=${K8S_VERSION} minikube start &ndash;embed-certs &ndash;cpus 2 &ndash;memory 8192 &ndash;kubernetes-version=v1.25.0 minikube start &ndash;kubernetes-version=1.21.0 &ndash;embed-certs &ndash;cpus 2 &ndash;memory 8192">
 
-<meta itemprop="wordCount" content="182">
+<meta itemprop="wordCount" content="193">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content=""/>
 <meta name="twitter:description" content="K8s kgetpods -n kafka-external -w
 kubectl get events -w k get events -w -n kafka-external k get pods -n monitoring -w k logs -f monitoring-metrics-beat-metricbeat-665485c685-tcz72 -n monitoring
@@ -169,6 +169,11 @@ Ly19931223</p>
 docker tag yaolu/debian:test01 achillesly/debian:test01</p>
 <p>docker push achillesly/debian:test01
 docker pull achillesly/debian:test01</p>
+<h4 id="docker-cp">docker cp:</h4>
+<p>docker cp kafka-connect:/tmp/heapdump-1713352230746.hprof /tmp/test</p>
+<h2 id="emace-inside-docker">Emace inside Docker</h2>
+<p><strong><a href="https://rebeja.eu/posts/python-ide-with-emacs-and-docker/">https://rebeja.eu/posts/python-ide-with-emacs-and-docker/</a></strong>
+<strong>[docker_emacs_gui]:https://dev.to/acro5piano/we-can-virtualize-even-gui-text-editor-with-docker-container&ndash;5bhh</strong></p>
 <h1 id="emacs">Emacs</h1>
 <h3 id="download-and-install">Download and install</h3>
 <p>wget <a href="https://mirror.lyrahosting.com/gnu/emacs/emacs-29.3.tar.gz">https://mirror.lyrahosting.com/gnu/emacs/emacs-29.3.tar.gz</a></p>
