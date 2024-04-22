@@ -57,7 +57,8 @@ kubectl config set-context --current --namespace=cgf
 #Edit the conf file
 sudo vi /etc/systemd/system/confluent-kafka-connect.service.d/override.conf
  
- 
+### How to added a debug port
+jvm.args = -Xms256M, -Xmx2G, -agentlib:jdwp=transport=dt_socket,server=y,address=8000,suspend=n, 
 [Service]
 LimitNOFILE=100000
 Environment="KAFKA_OPTS=-Dlog4j.configuration=file:/etc/kafka/connect_distributed_log4j.properties"
