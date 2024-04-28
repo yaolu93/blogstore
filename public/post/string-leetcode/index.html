@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.124.1 with theme even" />
+<meta name="generator" content="Hugo 0.121.2 with theme even" />
 
 
 <link rel="canonical" href="https://www.yaolugnu.com/post/string-leetcode/" />
@@ -47,6 +47,7 @@
 <meta property="og:url" content="https://www.yaolugnu.com/post/string-leetcode/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-05-29T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-05-29T00:00:00+00:00" />
+
 <meta itemprop="name" content="String-leetcode">
 <meta itemprop="description" content="Leetcode Questions about String 14.longest-common-prefix.java
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 class Solution { public String longestCommonPrefix(String[] strs) { // flower,flow,fly if (strs.length == 0) { return null; } String prefix = strs[0]; int lengths = strs.length; for (int i = 1; i &lt; lengths; i&#43;&#43;) { while (strs[i].indexOf(prefix) != 0) { prefix = prefix.substring(0, prefix.length()-1); } } return prefix; } } 125."><meta itemprop="datePublished" content="2022-05-29T00:00:00+00:00" />
