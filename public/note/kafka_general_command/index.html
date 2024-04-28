@@ -16,14 +16,14 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Yao" /><meta name="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input kubectl -n &amp;lt;namespace&amp;gt; exec -ti &amp;lt;Kafka Pod ID&amp;gt; -- ." />
+<meta name="author" content="Yao" /><meta name="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input kubectl -n &amp;lt;namespace&amp;gt; exec -ti &amp;lt;Kafka Pod ID&amp;gt; -- ." />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.121.2 with theme even" />
+<meta name="generator" content="Hugo 0.124.1 with theme even" />
 
 
 <link rel="canonical" href="https://www.yaolugnu.com/note/kafka_general_command/" />
@@ -40,18 +40,17 @@
 
 
 <meta property="og:title" content="" />
-<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input kubectl -n &lt;namespace&gt; exec -ti &lt;Kafka Pod ID&gt; -- ." />
+<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input kubectl -n &lt;namespace&gt; exec -ti &lt;Kafka Pod ID&gt; -- ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.yaolugnu.com/note/kafka_general_command/" /><meta property="article:section" content="note" />
 
 
-
 <meta itemprop="name" content="">
-<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input kubectl -n &lt;namespace&gt; exec -ti &lt;Kafka Pod ID&gt; -- .">
+<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input kubectl -n &lt;namespace&gt; exec -ti &lt;Kafka Pod ID&gt; -- .">
 
-<meta itemprop="wordCount" content="473">
+<meta itemprop="wordCount" content="486">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input kubectl -n &lt;namespace&gt; exec -ti &lt;Kafka Pod ID&gt; -- ."/>
+<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 kafka-topics --list --bootstrap-server odfhost1:9092 kafka-topics --describe --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --delete --bootstrap-server odfhost1:9092 --topic streams-input kafka-topics --create --bootstrap-server odfhost1:9092 --replication-factor 1 --partitions 1 --topic streams-input kubectl -n &lt;namespace&gt; exec -ti &lt;Kafka Pod ID&gt; -- ."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -232,6 +231,7 @@
 </span><span class="lnt">101
 </span><span class="lnt">102
 </span><span class="lnt">103
+</span><span class="lnt">104
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
@@ -292,7 +292,8 @@
 </span></span><span class="line"><span class="cl"><span class="c1">#Edit the conf file</span>
 </span></span><span class="line"><span class="cl">sudo vi /etc/systemd/system/confluent-kafka-connect.service.d/override.conf
 </span></span><span class="line"><span class="cl"> 
-</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="c1">### How to added a debug port</span>
+</span></span><span class="line"><span class="cl">jvm.args <span class="o">=</span> -Xms256M, -Xmx2G, -agentlib:jdwp<span class="o">=</span><span class="nv">transport</span><span class="o">=</span>dt_socket,server<span class="o">=</span>y,address<span class="o">=</span>8000,suspend<span class="o">=</span>n, 
 </span></span><span class="line"><span class="cl"><span class="o">[</span>Service<span class="o">]</span>
 </span></span><span class="line"><span class="cl"><span class="nv">LimitNOFILE</span><span class="o">=</span><span class="m">100000</span>
 </span></span><span class="line"><span class="cl"><span class="nv">Environment</span><span class="o">=</span><span class="s2">&#34;KAFKA_OPTS=-Dlog4j.configuration=file:/etc/kafka/connect_distributed_log4j.properties&#34;</span>

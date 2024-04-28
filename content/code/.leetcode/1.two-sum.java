@@ -85,9 +85,7 @@ class Solution {
 
 // class Solution {
 //     public int[] twoSum(int[] nums, int target) {
-        
 //         int lengths = nums.length;
-
 //         for (int i = 0; i < lengths; i++) {
 //             for (int j = 1+i; j < lengths; j++) {
 //                 if (nums[i] + nums[j] == target) {
@@ -96,7 +94,6 @@ class Solution {
 //             }
 //         }
 //         return null;
-
 //     }
 // }
 
