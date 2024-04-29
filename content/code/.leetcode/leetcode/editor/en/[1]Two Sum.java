@@ -52,21 +52,58 @@ O(n²)
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        // test class here
-        int length = nums.length;
-        for (int i = 0; i < length; i++) {
-
-            for (int j = i+1; j < length; j++) {
-                //why is while, it is not if
-                while (nums[i] + nums[j] == target) {
-                    return new int[] {i, j};
+        // need to have a temp length, because we need second loop to added
+        // just 33%
+        int n = nums.length;
+        for (int i = 0; i <= n-1; i++) {
+            for(int j = i + 1; j <= n - 1 ; j++){
+                if(target == nums[i] + nums[j]){
+                    return new int[]{i, j};
                 }
-
             }
         }
-
-        return null;
-
+        return new int[]{};
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
+
+
+//public int[] twoSum(int[] nums, int target) {
+//    // 66%
+//    //should have a length
+//    //use Hashmap, nMap.get(complement) - actually return the index
+//    //return int array
+//    int n = nums.length;
+//    Map<Integer, Integer> nMap = new HashMap<>();
+//    for(int i = 0; i < n; i++){
+//        nMap.put(nums[i], i);
+//    }
+//
+//    for(int i = 0; i < n; i++ ){
+//        int complement = target - nums[i];
+//        if(nMap.containsKey(complement) && nMap.get(complement) != i){
+//            return new int[]{nMap.get(complement), i};
+//        }
+//    }
+//
+//    return new int[]{};
+//}
+
+//class Solution {
+//    public int[] twoSum(int[] nums, int target) {
+//        // 99%
+//        //just one for loop
+//        int n = nums.length;
+//        Map<Integer, Integer> numMap = new HashMap<>();
+//
+//        for(int i = 0; i < n; i++){
+//            int complement = target - nums[i];
+//            if(numMap.containsKey(complement)){
+//                return new int[]{numMap.get(complement), i};
+//            }
+//            numMap.put(nums[i], i);
+//        }
+//
+//        return new int[]{};
+//    }
+//}
