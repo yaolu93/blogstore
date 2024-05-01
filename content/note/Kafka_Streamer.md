@@ -20,6 +20,30 @@ DEBUG_PORT=5555
 DEBUG_SUSPEND=y
 save the file and restart the service
 
+### How to debugger in Docker
+---
+version: '2'
+services:
+  streams:
+    image: openet/ngm_streamer:0.1.0
+    build:
+      context: .
+      dockerfile: Dockerfile-local
+    hostname: streams
+    container_name: streams
+    ports:
+      - '6666:6666'
+      - '6668:6668'
+#      - '5555:5555'
+    environment:
+      - SBA_JMX_PORT=6668
+#      - DEBUG_PORT=5555
+#      - DEBUG_SUSPEND=y
+networks:
+  default:
+    external:
+      name: kafka_default
+
 ### How to debugger in minikube
 replicaCount: 1
 fullnameOverride: ngmstreamertimewindow-streamer-helm
