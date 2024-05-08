@@ -39,34 +39,25 @@
 // Related Topics Hash Table String Sliding Window 👍 39188 👎 1849
 
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int lengthOfLongestSubstring(String s) {
-        //1.滑動窗口
-        //2.哈希表
-        //3.雙指針
         int n = s.length();
-        int left = 0;
-        Set<Character> charSet = new HashSet<>();
-
         int maxLength = 0;
+        int[] charIndex = new int[128];
+        Arrays.fill(charIndex, -1);
+        int left = 0;
 
         for (int right = 0; right < n; right++) {
-            if (!charSet.contains(s.charAt(right))) {
-                charSet.add(s.charAt(right));
-                maxLength = Math.max(maxLength, right - left + 1);
-            } else {
-
-                while (charSet.contains(s.charAt(right))) {
-                    charSet.remove(s.charAt(left));
-                    left++;
-                }
-                charSet.add(s.charAt(right));
+            if (charIndex[s.charAt(right)] >= left) {
+                left = charIndex[s.charAt(right)] + 1;
             }
+            charIndex[s.charAt(right)] = right;
+            maxLength = Math.max(maxLength, right - left + 1);
         }
+
         return maxLength;
     }
 }
@@ -74,3 +65,76 @@ class Solution {
 
 
 //4.動態規劃
+
+//public int lengthOfLongestSubstring(String s) {
+//    //1.滑動窗口
+//    //2.哈希表
+//    //3.雙指針
+//    int n = s.length();
+//    int left = 0;
+//    Set<Character> charSet = new HashSet<>();
+//
+//    int maxLength = 0;
+//
+//    for (int right = 0; right < n; right++) {
+//        if (!charSet.contains(s.charAt(right))) {
+//            charSet.add(s.charAt(right));
+//            maxLength = Math.max(maxLength, right - left + 1);
+//        } else {
+//            while (charSet.contains(s.charAt(right))) {
+//                charSet.remove(s.charAt(left));
+//                left++;
+//            }
+//            charSet.add(s.charAt(right));
+//        }
+//    }
+//    return maxLength;
+//}
+
+
+//public int lengthOfLongestSubstring(String s) {
+//    //HashMap
+//    int num = s.length();
+//    int left = 0;
+//    int maxLength = 0;
+//
+//    Map<Character, Integer> charMap = new HashMap<>();
+//
+//    for (int right = 0; right < num; right++) {
+//        if(!charMap.containsKey(s.charAt(right))){
+//            charMap.put(s.charAt(right), right);
+//            maxLength = Math.max(maxLength, right - left +1);
+//        } else {
+//            while(charMap.containsKey(s.charAt(right))){
+//                charMap.remove((s.charAt(left)));
+//                left++;
+//            }
+//            charMap.put(s.charAt(right), right);
+//
+//        }
+//    }
+//    return maxLength;
+//}
+
+
+//public int lengthOfLongestSubstring(String s) {
+//    //HashMap
+//    int num = s.length();
+//    int left = 0;
+//    int maxLength = 0;
+//
+//    Map<Character, Integer> charMap = new HashMap<>();
+//
+//    for (int right = 0; right < num; right++) {
+//        if(!charMap.containsKey(s.charAt(right)) || charMap.get(s.charAt(right)) < left){
+//            // 因为这里的键不允许重复，所以，不能纯粹用 right来写，应该用，right 作为下标所获取的值来真正确定
+//            charMap.put(s.charAt(right), right);
+//            maxLength = Math.max(maxLength, right - left +1);
+//        } else {
+//            left = charMap.get(s.charAt(right)) + 1;
+//            charMap.put(s.charAt(right), right);
+//
+//        }
+//    }
+//    return maxLength;
+//}
