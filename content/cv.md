@@ -42,7 +42,7 @@ Always considering cohesion and optimizing software with design patterns and alg
 **L3 Tech Support Engineer**	  		 
 <span style="float:right">Dublin, Sep 2023</span>
 
-* As the subject matter expert for Product Maintenance, fixed bugs in deployed software using agile methodology and Jira
+* As the subject matter expert for Product Maintenance, fixed bugs in deployed software using agile methodology
 * Troubleshooting technical issues in collaboration with clients and solution delivery teams
 * On-call rotation
 
