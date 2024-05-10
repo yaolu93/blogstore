@@ -68,6 +68,7 @@ class Solution {
             }
         }
         return sb.toString();
+        Array[] arr = new Array[size];
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
