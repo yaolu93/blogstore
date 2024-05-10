@@ -49,13 +49,15 @@
 // Related Topics Two Pointers String 👍 3700 👎 86
 
 
+import java.lang.reflect.Array;
+
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public String mergeAlternately(String word1, String word2) {
         int l = word1.length();
         int m = word2.length();
         int size = Math.max(l, m);
-
+        Array[] arr = new Array[size];
         StringBuilder sb = new StringBuilder();
         for(int i = 0; i < size; i++){
             if(i < l ){
@@ -69,3 +71,17 @@ class Solution {
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
+
+//  cute method
+//public String mergeAlternately(String word1, String word2) {
+//    StringBuilder sb = new StringBuilder();
+//    int n = word1.length();
+//    int m = word2.length();
+//    int i=0;
+//    while(i<n && i<m){
+//        sb.append(word1.charAt(i)).append(word2.charAt(i));
+//        i++;
+//    }
+//    sb.append(word1.substring(i, n)).append(word2.substring(i, m));
+//    return sb.toString();
+//}
