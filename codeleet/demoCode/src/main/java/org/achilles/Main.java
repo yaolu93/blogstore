@@ -43,7 +43,7 @@ public class Main {
         }
 
         for (Entry point : entry) {
-            int x = point.getX() - 1;
+            int x = point.getX() - 1;//这里改一下以后再调一下
             int y = maxY - point.getY();
             chart[y][x] = '*';
         }
