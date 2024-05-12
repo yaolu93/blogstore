@@ -17,24 +17,53 @@ public class Main {
         int maxX = 0;
         for (Entry sizeX : entry) {
             maxX = Math.max(maxX, sizeX.getX());
-            System.out.printf("maxX: %d%n", maxX);
         }
 
         int maxY = 0;
         for (Entry sizeY : entry) {
             maxY = Math.max(maxY, sizeY.getX());
-            System.out.printf("maxY: %d%n", maxY);
         }
 
-        for (int i = maxX - 1; i >= 0; i--) {
-            for (int j = maxY; j > 0; j--) {
+        for (int i = maxY - 1; i >= 0; i--) {
+            for (int j = maxX; j > 0; j--) {
                 System.out.print("- ");
             }
             System.out.println();
         }
 
+
+        char[][] chart = createChart(entry, maxX, maxY);
+        printStars(chart);
     }
 
+    public static char[][] createChart(Entry[] entry, int maxX, int maxY) {
+        char[][] chart = new char[maxY][maxX];
+        for (char[] row : chart) {
+            Arrays.fill(row, ' ');
+        }
+
+        for (Entry point : entry) {
+            int x = point.getX() - 1;
+            int y = maxY - point.getY();
+            chart[y][x] = '*';
+        }
+
+        return chart;
+    }
+
+
+    public static void printStars(char[][] chart) {
+        for (char[] row : chart) {
+            for (char c : row) {
+                if (c == '*') {
+                    System.out.print(c);
+                } else {
+                    System.out.print('-');
+                }
+            }
+            System.out.println();
+        }
+    }
     public static class Entry {
         private int x;
         private int y;
