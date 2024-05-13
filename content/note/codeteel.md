@@ -15,6 +15,7 @@ Run test(s) and pray...                 $ leetcode test ./two-sum.cpp -t '[3,2,4
 Submit final solution!                  $ leetcode submit ./two-sum.cpp
 ##codespace
 gh codespace list
+gh codespace ssh -c octocat-literate-space-parakeet-7gwrqp9q9jcx4vq
 
 https://docs.github.com/en/codespaces/developing-in-a-codespace/using-github-codespaces-with-github-cli  
 
