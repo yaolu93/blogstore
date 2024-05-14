@@ -31,30 +31,46 @@ import static java.util.Collections.swap;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public void moveZeroes(int[] nums) {
-        int size = nums.length;
-        System.out.println(size);
-        int left = 0;
+        if (nums.length == 1) {
+            return;
+        }
 
-        for (int right = 0; right < size; right++) {
-            if (nums[right] != 0){
-                swap(nums, left, right);
-                left++;
+        int nonZeroIndex = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                nums[nonZeroIndex] = nums[i];
+                nonZeroIndex++;
             }
         }
+        // 這個方法很暴力哇
+        while(nonZeroIndex<nums.length){
+            nums[nonZeroIndex] = 0;
+            nonZeroIndex++;
+        }
     }
-
-    private void swap(int[] nums, int left, int right) {
-        int tmp = nums[left];
-        System.out.println(tmp);
-
-        nums[left] = nums[right];
-        System.out.println(nums[left]);
-
-        nums[right] = tmp;
-        System.out.println(nums[right]);
-
-    }
-
-
 }
 //leetcode submit region end(Prohibit modification and deletion)
+
+
+//public void moveZeroes(int[] nums) {
+//    int size = nums.length;
+//    int left = 0;
+//    for (int right = 0; right < size; right++) {
+//        if (nums[right] != 0){
+//            swap(nums, left, right);
+//            left++;
+//        }
+//    }
+//}
+//
+//private void swap(int[] nums, int left, int right) {
+//    int tmp = nums[left];
+//    System.out.println(tmp);
+//
+//    nums[left] = nums[right];
+//    System.out.println(nums[left]);
+//
+//    nums[right] = tmp;
+//    System.out.println(nums[right]);
+//}
