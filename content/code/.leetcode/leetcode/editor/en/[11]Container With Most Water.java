@@ -39,10 +39,21 @@
 // Related Topics Array Two Pointers Greedy 👍 28660 👎 1709
 
 
+import java.util.Arrays;
+
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int maxArea(int[] height) {
-        
+        int length = height.length;
+//        int i = height[1];
+        int[] values = Arrays.copyOf(height, length);
+        // i, j ==> x
+        // y： Math.min()
+        //get max value, by using Math.max()
+        //int i = 0;
+        //int j = 0; //begin to move first
+
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
