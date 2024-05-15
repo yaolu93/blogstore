@@ -37,7 +37,22 @@
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public boolean isSubsequence(String s, String t) {
-        
+        int sizeT = t.length();
+        int sizeS = s.length();
+
+        int i = 0;
+        int j = 0;
+        // s is smaller then t , i is smaller then j
+        while ( j < sizeT && i < sizeS){ //之所以 i < sizeS 那是因为防止 sizeS 为 null
+            if(s.charAt(i) == t.charAt(j)){
+                i++;
+            }
+            j++;
+        }
+
+        return i == s.length();
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
+
+//在上述示例中，我们将char类型的字符'A'使用String.valueOf()方法转换为String对象，由于String实现了CharSequence接口，因此该String对象也可以被视为CharSequence类型。
