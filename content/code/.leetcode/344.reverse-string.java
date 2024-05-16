@@ -50,8 +50,6 @@ class Solution {
             a_pointer += 1;
             b_pointer -= 1;
         }
-
-
     }
 }
 // @lc code=end
