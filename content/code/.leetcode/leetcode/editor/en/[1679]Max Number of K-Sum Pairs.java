@@ -42,22 +42,43 @@ import java.util.*;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int maxOperations(int[] nums, int k) {
-        Map<Integer,Integer>map=new HashMap<>();
-        int count =0;
-        for(int i=0;i<nums.length;i++){
-            if(map.containsKey(k-nums[i]) && map.get(k-nums[i])>0){
+        //2,1,3,4 I like this method really
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int count = 0;
+        for (int indexValue : nums) {
+            int remaining = k - indexValue;
+            if (map.containsKey(remaining)) {
                 count++;
-                map.put(k-nums[i],map.get(k-nums[i])-1);
-            }
-            else{
-                map.put(nums[i],map.getOrDefault(nums[i],0)+1);
+                if (map.get(remaining) == 1) {
+                    map.remove(remaining); //这个是计数器只剩一个的情况下如此做法，不然就是走 else逻辑，将计数器数量减一
+                } else {
+                    map.put(remaining, map.get(remaining) - 1); //这个就是将匹配的值的计数器减一
+                }
+            } else {
+                map.put(indexValue, map.getOrDefault(indexValue, 0) + 1);
+                //key-value, value-count+1+1+1+1
             }
         }
         return count;
     }
+
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
+
+//public int maxOperations(int[] nums, int k) {
+//    Map<Integer, Integer> map = new HashMap<>();
+//    int count = 0;
+//    for (int i = 0; i < nums.length; i++) {
+//        if (map.containsKey(k - nums[i]) && map.get(k - nums[i]) > 0) {
+//            count++;
+//            map.put(k - nums[i], map.get(k - nums[i]) - 1);
+//        } else {
+//            map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
+//        }
+//    }
+//    return count;
+//}
 
 //public int maxOperations(int[] nums, int k) {
 //    //这特么的这个双指针真的简单炸了哇
