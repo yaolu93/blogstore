@@ -37,10 +37,75 @@
 // Related Topics Array Hash Table Two Pointers Sorting 👍 3045 👎 80
 
 
+import java.util.*;
+
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int maxOperations(int[] nums, int k) {
-        
+        Map<Integer,Integer>map=new HashMap<>();
+        int count =0;
+        for(int i=0;i<nums.length;i++){
+            if(map.containsKey(k-nums[i]) && map.get(k-nums[i])>0){
+                count++;
+                map.put(k-nums[i],map.get(k-nums[i])-1);
+            }
+            else{
+                map.put(nums[i],map.getOrDefault(nums[i],0)+1);
+            }
+        }
+        return count;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
+
+
+//public int maxOperations(int[] nums, int k) {
+//    //这特么的这个双指针真的简单炸了哇
+//    Arrays.sort(nums);
+//    int ans=0;
+//    for(int i=0, y=nums.length-1 ; i<y ;){
+//        if(nums[i]+nums[y]==k){
+//            ans++;
+//            i++;
+//            y--;
+//        }
+//        else if(nums[i]+nums[y]<k){
+//            i++;
+//        }
+//        else{
+//            y--;
+//        }
+//    }
+//    return ans;
+//}
+
+//public int maxOperations(int[] nums, int k) {
+//    //remove them from the array, so it should use lib which can remove the elements
+//    //so it could be arraylist
+//    // 这一题目的基本思路是有的了，就是在性能时候出了问题
+//    Arrays.sort(nums);
+//
+//    Map<Integer, Integer> numsMap = new HashMap<>();
+//    for (int i = 0; i < nums.length; i++) {
+//        numsMap.put(i, nums[i]);
+//    }
+//    int left = 0;
+//    int right = nums.length - 1;
+//    int count = 0;
+//    while (left < right) {
+//        if (numsMap.containsKey(left) && numsMap.containsKey(right) && numsMap.get(left) + numsMap.get(right) == k) {
+//            numsMap.remove(left);
+//            numsMap.remove(right);
+//            count++;
+//            left++;
+//            right--;
+//            System.out.println(numsMap.toString());
+//        } else if (numsMap.containsKey(left) && numsMap.containsKey(right) && numsMap.get(left) + numsMap.get(right) > k) {
+//            right--; //这个left ++ 和 right-- 的顺序不能够搞错，因为，大了就需要缩小，小了就需要变大。
+//        } else if (numsMap.containsKey(left) && numsMap.containsKey(right) && numsMap.get(left) + numsMap.get(right) < k){
+//            left++;
+//        }
+//    }
+//
+//    return count;
+//}
