@@ -40,23 +40,42 @@ import java.util.List;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public double findMaxAverage(int[] nums, int k) {
-        int left = 0;
-        int right = left + k;
+        double maxAverage = 0;
         ArrayList<Integer> numsList = new ArrayList<>();
-        for(int indexValue : nums){
+        for (int indexValue : nums) {
             numsList.add(indexValue);
         }
-        double average = 0;
-        for (int i = left; i < nums.length - k ; i++) {
 
+        for (int i = 0; i <= nums.length - k; i++) {
+            double sum = 0.0;
+            int left = i;
+            int right = i + k;
             while (left < right) {
-                average = average +  numsList.get(i);
+                sum += (double) numsList.get(left);
                 left++;
             }
-            average = Math.max(average, 0);
+            double average = sum / k;
+            maxAverage = Math.max(maxAverage, average);
         }
-
-        return average/k;
+        return maxAverage;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
+//public double findMaxAverage(int[] nums, int k) {
+//    double maxAverage = Double.NEGATIVE_INFINITY;
+//    for (int left = 0; left <= nums.length - k; left++) {
+//        double sum = 0.0;
+//        int i = left;
+//        int right = left + k;
+//
+//        while (i < right) {
+//            sum += nums[i];
+//            i++;
+//        }
+//
+//        double average = sum / k;
+//        maxAverage = Math.max(maxAverage, average);
+//    }
+//
+//    return maxAverage;
+//}
