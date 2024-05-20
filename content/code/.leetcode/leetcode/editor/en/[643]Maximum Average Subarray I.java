@@ -33,10 +33,30 @@
 // Related Topics Array Sliding Window 👍 3428 👎 309
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public double findMaxAverage(int[] nums, int k) {
-        
+        int left = 0;
+        int right = left + k;
+        ArrayList<Integer> numsList = new ArrayList<>();
+        for(int indexValue : nums){
+            numsList.add(indexValue);
+        }
+        double average = 0;
+        for (int i = left; i < nums.length - k ; i++) {
+
+            while (left < right) {
+                average = average +  numsList.get(i);
+                left++;
+            }
+            average = Math.max(average, 0);
+        }
+
+        return average/k;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
