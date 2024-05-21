@@ -43,7 +43,50 @@
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int maxVowels(String s, int k) {
-        
+        String vowel = "aeiou";
+        char[] input = s.toCharArray();
+        int count = 0;
+        int maxCount = 0;
+
+        for (int left = 0; left < k; left++) {
+            if (vowel.contains(String.valueOf(input[left]))) {
+                count++;
+            }
+        }
+        maxCount = count;
+
+        for (int left = 0; left < input.length - k; left++) {
+            int right = left + k ;
+            // 下面的逻辑就是滑动窗口
+            if (vowel.contains(String.valueOf(input[right]))) {
+                count++;
+            }
+            if (vowel.contains(String.valueOf(input[left]))) {
+                count--;
+            }
+            maxCount = Math.max(maxCount, count);
+        }
+
+        return maxCount;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
+
+//public int maxVowels(String s, int k) {
+//    String vowel = "aeiou";
+//    char[] input = s.toCharArray();
+//    int count = 0;
+//    for (int left = 0; left < k; left++) {
+//        int right = left + k;
+//        int i = left;
+//        while (i <= right) {
+//            if (vowel.contains(String.valueOf(input[left]))) {
+//                count++;
+//                System.out.println(count);
+//                i++;
+//            }
+//            count = Math.max(count, 0);
+//        }
+//    }
+//    return count;
+//}
