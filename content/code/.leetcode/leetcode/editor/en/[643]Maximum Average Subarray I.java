@@ -40,24 +40,32 @@ import java.util.List;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public double findMaxAverage(int[] nums, int k) {
-        double maxAverage = 0;
-        ArrayList<Integer> numsList = new ArrayList<>();
-        for (int indexValue : nums) {
-            numsList.add(indexValue);
+        // If the array has only one element, return the element itself as the maximum average
+        if (nums.length == 1)
+            return (double) nums[0];
+
+        int start = 0;
+        int end = k;
+        double average = 0;
+
+        // Calculate the initial average of the first k elements
+        for (int i = 0; i < k; i++) {
+            average = average + (double) nums[i] / k;
         }
 
-        for (int i = 0; i <= nums.length - k; i++) {
-            double sum = 0.0;
-            int left = i;
-            int right = i + k;
-            while (left < right) {
-                sum += (double) numsList.get(left);
-                left++;
-            }
-            double average = sum / k;
-            maxAverage = Math.max(maxAverage, average);
+        // Set the initial maximum average to the calculated average
+        double max = average;
+
+        while (end < nums.length) {
+            // 尾巴减了，头部再加，就是滑动窗口
+            average = average - (double) nums[start++] / k;
+            average = average + (double) nums[end++] / k;
+
+            // Update the maximum average if the current average is greater
+            max = Math.max(average, max);
         }
-        return maxAverage;
+
+        return max;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
@@ -77,5 +85,27 @@ class Solution {
 //        maxAverage = Math.max(maxAverage, average);
 //    }
 //
+//    return maxAverage;
+//}
+
+
+//public double findMaxAverage(int[] nums, int k) {
+//    double maxAverage = Double.NEGATIVE_INFINITY;
+//    ArrayList<Integer> numsList = new ArrayList<>();
+//    for (int indexValue : nums) {
+//        numsList.add(indexValue);
+//    }
+//
+//    for (int i = 0; i <= nums.length - k; i++) {
+//        double sum = 0.0;
+//        int left = i;
+//        int right = i + k;
+//        while (left < right) {
+//            sum += (double) numsList.get(left);
+//            left++;
+//        }
+//        double average = sum / k;
+//        maxAverage = Math.max(maxAverage, average);
+//    }
 //    return maxAverage;
 //}
