@@ -61,7 +61,21 @@ the-middle-index-in-array/
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int pivotIndex(int[] nums) {
-        
+        //妈惹法克，可以考虑 totalsum，和totalsum的一半啊
+        int totalSum = 0;
+        int leftSum = 0;
+
+        int n = nums.length;
+        for(int ele : nums){
+            totalSum += ele;
+        }
+        for(int left = 0; left < n; left++){
+            if( leftSum*2 == totalSum - nums[left]){
+                return left;
+            }
+            leftSum += nums[left];
+        }
+        return -1;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
