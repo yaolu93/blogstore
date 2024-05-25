@@ -40,7 +40,19 @@ Explanation: The altitudes are [0,-4,-7,-9,-10,-6,-3,-1]. The highest is 0.
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int largestAltitude(int[] gain) {
-        
+        int sum = 0;
+
+        int n = gain.length;
+
+        int highest = 0;
+        for(int i = 0; i < n ; i++){
+            highest += gain[i];
+            sum = Math.max(sum, highest);
+            System.out.println(sum);
+            System.out.println(highest);
+
+        }
+        return sum;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
