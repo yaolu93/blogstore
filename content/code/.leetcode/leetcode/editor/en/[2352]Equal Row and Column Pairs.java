@@ -1,3 +1,5 @@
+import java.util.*;
+
 /**
 Given a 0-indexed n x n integer matrix grid, return the number of pairs (ri, cj)
  such that row ri and column cj are equal. 
@@ -42,7 +44,39 @@ Explanation: There are 3 equal row and column pairs:
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int equalPairs(int[][] grid) {
-        
+//        使用 foreach 循环 for (int[] row : grid) 遍历二维数组 grid，实际上是遍历每一行而不是每一列。
+        int length = grid.length;
+        Map<Integer, int[]> rowMap = new HashMap<>();
+        for (int row = 0; row < length; row ++){
+            rowMap.put(row, grid[row]);
+            System.out.println(rowMap.get(row));
+            for (int column : rowMap.get(row)){
+                System.out.println(column+"column");
+            }
+        }
+
+        Map<List<Integer>, Integer> rowHashMap = new HashMap<>();
+        for (int[] row: grid){
+            List<Integer> rowKey = new ArrayList<>();
+            for (int column : row){
+                rowKey.add(column);
+            }
+            rowHashMap.put(rowKey, rowHashMap.getOrDefault(rowKey, 0)+1);
+        }
+
+        //traversal column
+        int count = 0;
+        for (int column = 0; column < length; column++) {
+            List<Integer> columnKey = new ArrayList<>();
+            for (int row = 0; row < length; row++) {
+                columnKey.add(grid[row][column]);
+            }
+            if (rowHashMap.containsKey(columnKey)){
+                count = count + rowHashMap.get(columnKey);
+            }
+        }
+
+        return count;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
