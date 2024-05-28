@@ -65,7 +65,7 @@ class Solution {
         // test class here
         int length = nums.length;
         for (int i = 0; i < length; i++) {
-            
+            System.out.print("hello, World");
             for (int j = i+1; j < length; j++) {
                 //why is while, it is not if
                 while (nums[i] + nums[j] == target) {
