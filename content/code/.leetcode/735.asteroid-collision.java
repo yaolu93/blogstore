@@ -63,18 +63,55 @@
  */
 
 // @lc code=start
+
+import java.util.Stack;
+
 class Solution {
     public int[] asteroidCollision(int[] asteroids) {
         //[5, 10, -5, -3, -5, -4, 7]
         int size = asteroids.length;
+        Stack<Integer> stack = new Stack<>();
         System.out.println(size);
-        for (int i = 0; i < size ; i++) {
-            
-            System.out.println(asteroids[i]); 
-             } 
 
-        Math.abs(asteroids[1]);
-        return null;
+        for (int i = 0; i < size; i++) {
+            if (asteroids[i] > 0 || stack.isEmpty()) {
+                stack.push(asteroids[i]);
+            } else {
+                while (!stack.isEmpty() && stack.peek() > 0 && stack.peek() < Math.abs(asteroids[i])) {
+                    stack.pop();
+                }
+                if (!stack.isEmpty() && stack.peek() == Math.abs(asteroids[i])) {
+                    stack.pop();
+                } else {
+                    if (stack.isEmpty() || stack.peek() < 0) {
+                        stack.push(asteroids[i]);
+                    }
+                }
+            }
+        }
+        // for (int i = 0; i < size ; i++) {
+        //     System.out.println(asteroids[i]);
+        //     if(asteroids[i] > 0){
+        //         stack.push(asteroids[i]);
+        //     } else if(asteroids[i] < 0 && Math.abs(asteroids[i]) >= stack.peek()){
+        //         while (Math.abs(asteroids[i]) >= stack.peek()) {
+        //             stack.pop();
+        //             // if(stack.peek() == null){
+        //             //     stack.push(asteroids[i]);
+        //             // }
+        //         }
+        //     }
+        // }
+
+        int[] array = new int[stack.size()];
+        int index = 0;
+        for (int ele : stack ) {
+            array[index] = ele;
+            index++;
+        } 
+
+
+        return array;
     }
 }
 // @lc code=end
