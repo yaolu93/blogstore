@@ -63,10 +63,10 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         // test class here
-        int length = nums.length;
-        for (int i = 0; i < length; i++) {
+        int numslength = nums.length;
+        for (int i = 0; i < numslength; i++) {
             System.out.print("hello, World");
-            for (int j = i+1; j < length; j++) {
+            for (int j = i+1; j < numslength; j++) {
                 //why is while, it is not if
                 while (nums[i] + nums[j] == target) {
                     return new int[] {i, j};
