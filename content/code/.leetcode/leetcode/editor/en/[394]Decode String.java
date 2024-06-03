@@ -55,7 +55,6 @@ Output: "abcabccdcdcdef"
 class Solution {
     public String decodeString(String s) {
         Stack<Object> objects = new Stack<>();
-
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
