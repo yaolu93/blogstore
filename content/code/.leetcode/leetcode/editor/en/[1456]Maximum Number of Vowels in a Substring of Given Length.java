@@ -40,6 +40,8 @@
 // Related Topics String Sliding Window 👍 3427 👎 123
 
 
+import java.util.HashMap;
+
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int maxVowels(String s, int k) {
@@ -55,6 +57,7 @@ class Solution {
         }
         maxCount = count;
 
+        new HashMap<>();
         for (int left = 0; left < input.length - k; left++) {
             int right = left + k ;
             // 下面的逻辑就是滑动窗口
