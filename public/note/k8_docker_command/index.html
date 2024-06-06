@@ -58,7 +58,7 @@ kubectl get events -w k get events -w -n kafka-external k get pods -n monitoring
 watch -n 1 helm list watch -n 10 helm list -n kafka-external watch -n 1 kubectl get pods -n cgf
 minikube start &ndash;embed-certs &ndash;cpus 2 &ndash;memory 8192 &ndash;kubernetes-version=${K8S_VERSION} minikube start &ndash;embed-certs &ndash;cpus 2 &ndash;memory 8192 &ndash;kubernetes-version=v1.25.0 minikube start &ndash;kubernetes-version=1.21.0 &ndash;embed-certs &ndash;cpus 2 &ndash;memory 8192">
 
-<meta itemprop="wordCount" content="193">
+<meta itemprop="wordCount" content="195">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content=""/>
 <meta name="twitter:description" content="K8s kgetpods -n kafka-external -w
 kubectl get events -w k get events -w -n kafka-external k get pods -n monitoring -w k logs -f monitoring-metrics-beat-metricbeat-665485c685-tcz72 -n monitoring
@@ -151,7 +151,7 @@ watch -n 1 kubectl get pods -n cgf</p>
 <p>minikube start &ndash;embed-certs &ndash;cpus 2 &ndash;memory 8192 &ndash;kubernetes-version=${K8S_VERSION}
 minikube start &ndash;embed-certs &ndash;cpus 2 &ndash;memory 8192 &ndash;kubernetes-version=v1.25.0
 minikube start &ndash;kubernetes-version=1.21.0 &ndash;embed-certs &ndash;cpus 2 &ndash;memory 8192</p>
-<h3 id="get-the-password-userid-is-elastic">get the password, userid is elastic</h3>
+<h3 id="get-the-password-for-kibana-userid-is-elastic">get the password for Kibana, userid is elastic</h3>
 <p>kubectl -n monitoring get secret monitoring-elasticsearch-es-elastic-user -o=jsonpath=&rsquo;{.data.elastic}&rsquo; | base64 &ndash;decode; echo</p>
 <h3 id="do-port-forwarding-on-your-dev-vm">do port forwarding on your dev-vm</h3>
 <p>kubectl port-forward &ndash;address 0.0.0.0 svc/gateway-proxy -n  monitoring 30090:80</p>

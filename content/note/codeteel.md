@@ -1,6 +1,11 @@
 F12: console: javascript:document.cookie
 leetcode.cn: lytreetree@gmail.com/Ly19931223
 leetcode-cli:
+# to remove the old version
+npm uninstall -g leetcode-cli
+# to install the up-to-date version(2.6.17+)
+npm install -g leetcode-tools/leetcode-cli
+
 
 leetcode show 1 -g -l java
 
@@ -15,7 +20,7 @@ Run test(s) and pray...                 $ leetcode test ./two-sum.cpp -t '[3,2,4
 Submit final solution!                  $ leetcode submit ./two-sum.cpp
 ##codespace
 gh codespace list
-gh codespace ssh -c octocat-literate-space-parakeet-7gwrqp9q9jcx4vq
+gh codespace ssh -c orange-zebra-69prvq6xrjqhqxj
 
 https://docs.github.com/en/codespaces/developing-in-a-codespace/using-github-codespaces-with-github-cli  
 

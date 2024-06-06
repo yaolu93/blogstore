@@ -33,27 +33,49 @@
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+
+    //        rsum += 1 - nums[right]; 这一步封神了
     public int longestOnes(int[] nums, int k) {
-        int maxConsecutive = 0;
-        int zerosCount = 0;
+        int n = nums.length;
+        int lsum = 0;
+        int rsum = 0;
+        int count = 0;
         int left = 0;
 
-        for (int right = 0; right < nums.length; right++) {
-            if (nums[right] == 0) {
-                zerosCount++;
-            }
+        for (int right = 0; right < n; ++right) {
+            rsum = rsum + (1 - nums[right]); //+= 也可以改写成这种形式
 
-            while (zerosCount > k) {
-                if (nums[left] == 0) {
-                    zerosCount--;
-                }
+            //int left = 0; 我需要想明白为什么，我把left放在这里面的时候是错误的，如果老是在里面就无法完成持续累加了，每次for循环都会将它初始化
+            while (rsum - lsum > k){
+                lsum += 1 - nums[left];
                 left++;
             }
-
-            maxConsecutive = Math.max(maxConsecutive, right - left + 1);
+            count = Math.max(count, right - left + 1);
         }
 
-        return maxConsecutive;
+        return count;
     }
+
 }
 //leetcode submit region end(Prohibit modification and deletion)
+
+
+//public int longestOnes(int[] nums, int k) {
+//    int maxConsecutive = 0;
+//    int zerosCount = 0;
+//    int left = 0;
+//    for (int right = 0; right < nums.length; right++) {
+//        if (nums[right] == 0) {
+//            zerosCount++;
+//        }
+//        while (zerosCount > k) {
+//            if (nums[left] == 0) {
+//                zerosCount--;
+//            }
+//            left++;
+//        }
+//
+//        maxConsecutive = Math.max(maxConsecutive, right - left + 1);
+//    }
+//    return maxConsecutive;
+//}
