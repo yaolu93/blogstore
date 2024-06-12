@@ -64,6 +64,9 @@ kubectl exec -ti odf-sftp-0 --  bash
 
 kubectl exec -ti `kubectl  get pod -l pod/name=schema-registry-helm | awk '{print $1}' | tail -n 1` -n cgf -c schema-registry-helm -- bash -c "unset JMX_PORT ; kafka-avro-console-consumer --topic streams-output --bootstrap-server odf-cluster-kafka-bootstrap:9092 --from-beginning --property print.key=true --property print.timestamp=true --property print.schema.ids=true --property print.headers=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer"
 
+kubectl exec -it $schema_registry_pod -c schema-registry-helm -- bash -c "unset JMX_PORT ; kafka-json-schema-console-consumer --from-beginning --bootstrap-server odf-cluster-kafka-bootstrap:9092 --topic $2 --property print.key=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer --property print.timestamp=true"
+
+
 
 kubectl exec -ti `kubectl  get pod -l pod/name=schema-registry-helm | awk '{print $1}' | tail -n 1` -n cgf -c schema-registry-helm -- bash -c "unset JMX_PORT ; kafka-avro-console-consumer --topic streams-error --bootstrap-server odf-cluster-kafka-bootstrap:9092 --from-beginning --property print.key=true --property print.timestamp=true --property print.schema.ids=true --property print.headers=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer"
 
