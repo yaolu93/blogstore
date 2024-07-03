@@ -22,6 +22,8 @@ sudo kafka-console-consumer --from-beginning --bootstrap-server localhost:9092 -
 ### to check the record headers
 sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:9092 --topic streams-input --property print.key=true --key-deserializer=org.apache.kafka.common.serialization.StringDeserializer --property print.headers=true
 
+### query kafkacat
+kubectl exec -ti  `kubectl get po -n cgf | grep kafkacat | awk '{print $1}' | tail -1` -n cgf -- kcat -b odf-cluster-kafka-bootstrap:9092 -r http://odf-cluster-schema-registry:8081 -C -s value=avro -o beginning -f 'Offset: %o\nPartition: %p\nHeaders: %h\nTimestamp: %T\nKey: %k\nValue: %s\n' -t streams-input
 
 sudo systemctl status confluent*
 sudo systemctl restart confluent-kafka-connect
