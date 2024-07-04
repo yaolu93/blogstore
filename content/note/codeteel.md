@@ -13,6 +13,8 @@ lc version -v
 lc stat
 lc config -a
 Login with your leetcode account        $ leetcode user -l
+Login with your leetcode cookie        $ leetcode user -c
+
 Browse all questions                    $ leetcode list
 Choose one question                     $ leetcode show 1 -g -l cpp
 Coding it!
