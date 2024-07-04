@@ -1,4 +1,3 @@
-F12: console: javascript:document.cookie
 leetcode.cn: lytreetree@gmail.com/Ly19931223
 leetcode-cli:
 # to remove the old version
