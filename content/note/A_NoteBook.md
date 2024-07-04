@@ -362,3 +362,5 @@ Rohan 咋还划分新的分组了列。。。
 269. 要去美国的前夜为什么不像之前想象之中的兴奋呢
 270. 尽量把握好今天
 271. I remember why I can't typing the Chinese in ubuntuEmacs
+272. try to use the magit
+
