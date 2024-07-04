@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="Yao" /><meta name="description" content="####################Should change the firefox proxy#####################
-get the password, userid is elastic kubectl -n monitoring get secret monitoring-elasticsearch-es-elastic-user -o=jsonpath=&amp;rsquo;{.data.elastic}&amp;rsquo; | base64 &amp;ndash;decode; echo
+get the password, userid is elastic kubectl -n monitoring get secret monitoring-elasticsearch-es-elastic-user -o=jsonpath=&#39;{.data.elastic}&#39; | base64 &amp;ndash;decode; echo
 do port forwarding on your dev-vm kubectl port-forward &amp;ndash;address 0.0.0.0 svc/gateway-proxy -n monitoring 30090:80 10.15.32.90:30090/kibana/
 ./perf_new/e2e_enrich_keyRange/run_test_e2e_enrich_keyRange_k8s_local.sh
 minikube start &amp;ndash;embed-certs minikube start &amp;ndash;kubernetes-version=1.21.0 &amp;ndash;embed-certs &amp;ndash;cpus 2 &amp;ndash;memory 16384
@@ -32,7 +32,7 @@ inside acceptance_perf_soak ." />
 
 
 
-<meta name="generator" content="Hugo 0.121.2 with theme even" />
+<meta name="generator" content="Hugo 0.92.2 with theme even" />
 
 
 <link rel="canonical" href="https://www.yaolugnu.com/note/perfermance_test/" />
@@ -50,7 +50,7 @@ inside acceptance_perf_soak ." />
 
 <meta property="og:title" content="" />
 <meta property="og:description" content="####################Should change the firefox proxy#####################
-get the password, userid is elastic kubectl -n monitoring get secret monitoring-elasticsearch-es-elastic-user -o=jsonpath=&rsquo;{.data.elastic}&rsquo; | base64 &ndash;decode; echo
+get the password, userid is elastic kubectl -n monitoring get secret monitoring-elasticsearch-es-elastic-user -o=jsonpath=&#39;{.data.elastic}&#39; | base64 &ndash;decode; echo
 do port forwarding on your dev-vm kubectl port-forward &ndash;address 0.0.0.0 svc/gateway-proxy -n monitoring 30090:80 10.15.32.90:30090/kibana/
 ./perf_new/e2e_enrich_keyRange/run_test_e2e_enrich_keyRange_k8s_local.sh
 minikube start &ndash;embed-certs minikube start &ndash;kubernetes-version=1.21.0 &ndash;embed-certs &ndash;cpus 2 &ndash;memory 16384
@@ -66,7 +66,7 @@ inside acceptance_perf_soak ." />
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="####################Should change the firefox proxy#####################
-get the password, userid is elastic kubectl -n monitoring get secret monitoring-elasticsearch-es-elastic-user -o=jsonpath=&rsquo;{.data.elastic}&rsquo; | base64 &ndash;decode; echo
+get the password, userid is elastic kubectl -n monitoring get secret monitoring-elasticsearch-es-elastic-user -o=jsonpath=&#39;{.data.elastic}&#39; | base64 &ndash;decode; echo
 do port forwarding on your dev-vm kubectl port-forward &ndash;address 0.0.0.0 svc/gateway-proxy -n monitoring 30090:80 10.15.32.90:30090/kibana/
 ./perf_new/e2e_enrich_keyRange/run_test_e2e_enrich_keyRange_k8s_local.sh
 minikube start &ndash;embed-certs minikube start &ndash;kubernetes-version=1.21.0 &ndash;embed-certs &ndash;cpus 2 &ndash;memory 16384
@@ -76,10 +76,11 @@ kubectl apply -f ~/workspace/ngm-test-container/resources/k8s-pods/sftp-local.ya
 sh ~/workspace/ngm-test-container/acceptance_perf_soak/perf_new/scripts/deploy_strimzi_operator.sh
 inside acceptance_perf_soak .">
 
-<meta itemprop="wordCount" content="794">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content=""/>
+<meta itemprop="wordCount" content="817">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
 <meta name="twitter:description" content="####################Should change the firefox proxy#####################
-get the password, userid is elastic kubectl -n monitoring get secret monitoring-elasticsearch-es-elastic-user -o=jsonpath=&rsquo;{.data.elastic}&rsquo; | base64 &ndash;decode; echo
+get the password, userid is elastic kubectl -n monitoring get secret monitoring-elasticsearch-es-elastic-user -o=jsonpath=&#39;{.data.elastic}&#39; | base64 &ndash;decode; echo
 do port forwarding on your dev-vm kubectl port-forward &ndash;address 0.0.0.0 svc/gateway-proxy -n monitoring 30090:80 10.15.32.90:30090/kibana/
 ./perf_new/e2e_enrich_keyRange/run_test_e2e_enrich_keyRange_k8s_local.sh
 minikube start &ndash;embed-certs minikube start &ndash;kubernetes-version=1.21.0 &ndash;embed-certs &ndash;cpus 2 &ndash;memory 16384
@@ -165,7 +166,7 @@ inside acceptance_perf_soak ."/>
   <div class="post-content">
     <p>####################Should change the firefox proxy#####################</p>
 <h1 id="get-the-password-userid-is-elastic">get the password, userid is elastic</h1>
-<p>kubectl -n monitoring get secret monitoring-elasticsearch-es-elastic-user -o=jsonpath=&rsquo;{.data.elastic}&rsquo; | base64 &ndash;decode; echo</p>
+<p>kubectl -n monitoring get secret monitoring-elasticsearch-es-elastic-user -o=jsonpath='{.data.elastic}' | base64 &ndash;decode; echo</p>
 <h1 id="do-port-forwarding-on-your-dev-vm">do port forwarding on your dev-vm</h1>
 <p>kubectl port-forward &ndash;address 0.0.0.0 svc/gateway-proxy -n  monitoring 30090:80
 10.15.32.90:30090/kibana/</p>
@@ -198,6 +199,7 @@ kubectl delete -f ~/workspace/ngm-test-container/resources/k8s-pods/sftp-local.y
 ./acceptance_perf_soak/scripts/run_test_enrich_strategy_key_k8s.sh</p>
 <p>kubectl exec -ti <code>kubectl  get pod -l pod/name=schema-registry-helm | awk '{print $1}' | tail -n 1</code> -n cgf -c schema-registry-helm &ndash; bash -c &ldquo;unset JMX_PORT ; kafka-avro-console-consumer &ndash;topic streams-input &ndash;bootstrap-server odf-cluster-kafka-bootstrap:9092 &ndash;from-beginning &ndash;property print.key=true &ndash;property print.timestamp=true &ndash;property print.schema.ids=true &ndash;property print.headers=true &ndash;key-deserializer=org.apache.kafka.common.serialization.StringDeserializer&rdquo;</p>
 <p>kubectl exec -ti <code>kubectl  get pod -l pod/name=schema-registry-helm | awk '{print $1}' | tail -n 1</code> -n cgf -c schema-registry-helm &ndash; bash -c &ldquo;unset JMX_PORT ; kafka-avro-console-consumer &ndash;topic streams-output &ndash;bootstrap-server odf-cluster-kafka-bootstrap:9092 &ndash;from-beginning &ndash;property print.key=true &ndash;property print.timestamp=true &ndash;property print.schema.ids=true &ndash;property print.headers=true &ndash;key-deserializer=org.apache.kafka.common.serialization.StringDeserializer&rdquo;</p>
+<p>kubectl exec -it $schema_registry_pod -c schema-registry-helm &ndash; bash -c &ldquo;unset JMX_PORT ; kafka-json-schema-console-consumer &ndash;from-beginning &ndash;bootstrap-server odf-cluster-kafka-bootstrap:9092 &ndash;topic $2 &ndash;property print.key=true &ndash;key-deserializer=org.apache.kafka.common.serialization.StringDeserializer &ndash;property print.timestamp=true&rdquo;</p>
 <p>kubectl exec -ti <code>kubectl  get pod -l pod/name=schema-registry-helm | awk '{print $1}' | tail -n 1</code> -n cgf -c schema-registry-helm &ndash; bash -c &ldquo;unset JMX_PORT ; kafka-avro-console-consumer &ndash;topic streams-error &ndash;bootstrap-server odf-cluster-kafka-bootstrap:9092 &ndash;from-beginning &ndash;property print.key=true &ndash;property print.timestamp=true &ndash;property print.schema.ids=true &ndash;property print.headers=true &ndash;key-deserializer=org.apache.kafka.common.serialization.StringDeserializer&rdquo;</p>
 <p>kubectl exec -ti <code>kubectl  get pod -l pod/name=schema-registry-helm | awk '{print $1}' | tail -n 1</code> -n cgf -c schema-registry-helm &ndash; bash -c &ldquo;unset JMX_PORT ; kafka-avro-console-consumer &ndash;topic streams-input-enrich &ndash;bootstrap-server odf-cluster-kafka-bootstrap:9092 &ndash;from-beginning &ndash;property print.key=true &ndash;property print.timestamp=true &ndash;property print.schema.ids=true &ndash;property print.headers=true &ndash;key-deserializer=org.apache.kafka.common.serialization.StringDeserializer&rdquo;</p>
 <p>k exec -ti odf-cluster-schema-registry-57646c6787-dk9lq -c schema-registry-helm bash</p>
@@ -233,9 +235,9 @@ docker cp ../../acceptance_perf_soak/ odf_test:/app/</p>
 <h1 id="create-test-result-directory">Create test result directory</h1>
 <p>[ ! -d /tmp/perf_result ] &amp;&amp; mkdir /tmp/perf_result</p>
 <h1 id="executing-the-actual-test">Executing the Actual Test</h1>
-<p>docker exec -t odf_test /bin/bash -lc &rsquo;nohup python3 -u -m pytest -s /app/acceptance_perf_soak/test_main_perf.py::test_perf_enrich_strategy_key | tee test_perf_enrich_strategy_key.log'</p>
+<p>docker exec -t odf_test /bin/bash -lc &lsquo;nohup python3 -u -m pytest -s /app/acceptance_perf_soak/test_main_perf.py::test_perf_enrich_strategy_key | tee test_perf_enrich_strategy_key.log&rsquo;</p>
 <h1 id="saves-the-test-logs-and-results-in-host-machine">Saves the test logs and results in host machine</h1>
-<p>docker exec -it odf_test bash -c &rsquo;ls -1 *.log&rsquo; | tr -d &lsquo;\r&rsquo; |  xargs -n1 -i docker cp odf_test:/app/{} /tmp/perf_result/{}
+<p>docker exec -it odf_test bash -c &lsquo;ls -1 *.log&rsquo; | tr -d &lsquo;\r&rsquo; |  xargs -n1 -i docker cp odf_test:/app/{} /tmp/perf_result/{}
 docker exec -it odf_test bash -c &lsquo;(cd /tmp &amp;&amp; ls -1 *.csv)&rsquo; | tr -d &lsquo;\r&rsquo; |  xargs -n1 -i docker cp odf_test:/tmp/{} /tmp/perf_result/{}
 set +x</p>
 <p>To elaborate the issue:</p>
@@ -248,14 +250,14 @@ docker cp ../acceptance_perf_soak/ odf-test:/app/</p>
 <h1 id="create-test-result-directory-1">Create test result directory</h1>
 <p>[ ! -d /tmp/perf_result ] &amp;&amp; mkdir /tmp/perf_result</p>
 <h1 id="executing-the-actual-test-1">Executing the Actual Test</h1>
-<p>docker exec -t odf-test /bin/bash -lc &rsquo;nohup python3 -u -m pytest -s /app/acceptance_perf_soak/test_main_perf.py::test_perf_enrich_strategy_key | tee test_perf_enrich_strategy_key.log&rsquo;</p>
+<p>docker exec -t odf-test /bin/bash -lc &lsquo;nohup python3 -u -m pytest -s /app/acceptance_perf_soak/test_main_perf.py::test_perf_enrich_strategy_key | tee test_perf_enrich_strategy_key.log&rsquo;</p>
 <h1 id="saves-the-test-logs-and-results-in-host-machine-1">Saves the test logs and results in host machine</h1>
-<p>docker exec -it odf-test bash -c &rsquo;ls -1 *.log&rsquo; | tr -d &lsquo;\r&rsquo; |  xargs -n1 -i docker cp odf-test:/app/{} /tmp/perf_result/{}
+<p>docker exec -it odf-test bash -c &lsquo;ls -1 *.log&rsquo; | tr -d &lsquo;\r&rsquo; |  xargs -n1 -i docker cp odf-test:/app/{} /tmp/perf_result/{}
 docker exec -it odf-test bash -c &lsquo;(cd /tmp &amp;&amp; ls -1 *.csv)&rsquo; | tr -d &lsquo;\r&rsquo; |  xargs -n1 -i docker cp odf-test:/tmp/{} /tmp/perf_result/{}
 set +x</p>
 <ol start="2">
 <li>
-<p>And before I ran the script, I executed script &rsquo;ngm-test-container/resources/scripts/minikube/install_odf_minikube_perf_assembly.sh&rsquo; And then I get sftp, odf-test and strimzi-cluster pod up. In the script, I set the variable minikube as true since I am running the test on local.</p>
+<p>And before I ran the script, I executed script &lsquo;ngm-test-container/resources/scripts/minikube/install_odf_minikube_perf_assembly.sh&rsquo; And then I get sftp, odf-test and strimzi-cluster pod up. In the script, I set the variable minikube as true since I am running the test on local.</p>
 </li>
 <li>
 <p>And then to get the pods kafka, zookeeper, SR, streamer etc. up, I executed:</p>
@@ -331,7 +333,7 @@ set +x</p>
 
 
 
-<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
 
 
 
