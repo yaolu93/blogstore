@@ -77,25 +77,55 @@
  * -100 <= nums[i] <= 100
  * nums is sorted in non-decreasing order.
  * 
- * 
+ * en
  */
 
 // @lc code=start
 class Solution {
+    // public int removeDuplicates(int[] nums) {
+    //     if(nums.length == 0 || nums == null){return 0;}
+    //     int left = 0;
+    //     int right = 1;
+    //     int length = nums.length;
+
+    //     while (right < length ) {
+    //         if(nums[left] != nums[right]){
+    //             nums[left + 1] = nums[right];
+    //             left++;
+    //         }
+    //         right++;
+    //     }
+
+    //     return left + 1;
+    // }
+
     public int removeDuplicates(int[] nums) {
-        if(nums.length == 0 || nums == null){
-            return 0;
-        }
+        
+        return process(nums, 1);
+    }
 
+    // int process(int[] nums, int count) {
+    //     int index = 0; 
+    //     for (int ele : nums) {
+    //         if (index < count || nums[index - count] != ele) {
+    //             nums[index++] = ele;
+    //         }
+    //     }
+    //     return index;
+    // }
+
+    int process(int[] nums, int count) {
+        int index = 0;
         int i = 0;
-        for(int j = 0 ; j < nums.length; j++){
-            if(nums[i] != nums[j]){
-                i++;
-                nums[i] = nums[j];
+        while (i < nums.length) {
+            int ele = nums[i];
+            if (index < count || nums[index - count] != ele) {
+                nums[index] = ele;
+                index++;
             }
+            i++;
         }
-
-        return i+1;
+        return index;
     }
 }
 // @lc code=end
