@@ -15,7 +15,7 @@ Login with your leetcode account        $ leetcode user -l
 Login with your leetcode cookie        $ leetcode user -c
 
 Browse all questions                    $ leetcode list
-Choose one question                     $ leetcode show 1 -g -l cpp
+Choose one question                     $ leetcode show 666 -gx -l java
 Coding it!
 Run test(s) and pray...                 $ leetcode test ./two-sum.cpp -t '[3,2,4]\n7'
 Submit final solution!                  $ leetcode submit ./two-sum.cpp
