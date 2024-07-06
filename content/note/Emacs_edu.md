@@ -9,5 +9,5 @@ cp -R emacs.d/. ~/.emacs.d/
 ### download jdtls: 
 https://download.eclipse.org/jdtls/milestones/?d
 
-unzip: 
+unzip: //这个jdk版本至少是17以上所以不行
 tar -xzf jdt-language-server-1.37.0-202406271335.tar.gz -C ~/Downloads/jdtls
