@@ -11,3 +11,9 @@ https://download.eclipse.org/jdtls/milestones/?d
 
 unzip: //这个jdk版本至少是17以上所以不行
 tar -xzf jdt-language-server-1.37.0-202406271335.tar.gz -C ~/Downloads/jdtls
+
+
+### 跳转至之后一行
+C + x + ]
+### 将窗口向右滑动
+C + x + }
