@@ -64,6 +64,7 @@ class Solution {
 
 
 
+
 // class Solution {
 //     public List<List<Integer>> generate(int numRows) {
 //         List<List<Integer>> results = new ArrayList<>();
