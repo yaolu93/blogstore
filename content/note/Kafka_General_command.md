@@ -28,6 +28,16 @@ kubectl exec -ti  `kubectl get po -n cgf | grep kafkacat | awk '{print $1}' | ta
 ### go inside the schema register
 kubectl exec -ti `kubectl get po | grep odf-cluster-schema-registry | awk {'print $1'}` -c schema-registry-helm -- bash
 
+### send record inside k8s schema register
+kubectl exec `kubectl get pods -o jsonpath="{.items[0].metadata.name}" -l app=schema-registry-helm` -i -c schema-registry-helm -- \
+              bash -c "unset JMX_PORT ; \
+                     kafka-avro-console-producer --broker-list odf-cluster-kafka-bootstrap:9092 \
+                                                 --topic $TOPIC \
+                                                 --property 'parse.key=true' \
+                                                 --property 'key.separator=:' \
+                                                 --property key.serializer=org.apache.kafka.common.serialization.StringSerializer \
+                                                 --property value.schema='$SCHEMA'" < $DATA
+
 ### copy the schema and input data
 kubectl cp data.json $(kubectl get po | grep odf-cluster-schema-registry | awk '{print $1}'):/tmp -c schema-registry-helm
 
