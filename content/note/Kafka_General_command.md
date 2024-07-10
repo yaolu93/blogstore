@@ -25,6 +25,12 @@ sudo kafka-avro-console-consumer --from-beginning --bootstrap-server odfhost1:90
 ### query kafkacat
 kubectl exec -ti  `kubectl get po -n cgf | grep kafkacat | awk '{print $1}' | tail -1` -n cgf -- kcat -b odf-cluster-kafka-bootstrap:9092 -r http://odf-cluster-schema-registry:8081 -C -s value=avro -o beginning -f 'Offset: %o\nPartition: %p\nHeaders: %h\nTimestamp: %T\nKey: %k\nValue: %s\n' -t streams-input
 
+### go inside the schema register
+kubectl exec -ti `kubectl get po | grep odf-cluster-schema-registry | awk {'print $1'}` -c schema-registry-helm -- bash
+
+### copy the schema and input data
+kubectl cp data.json $(kubectl get po | grep odf-cluster-schema-registry | awk '{print $1}'):/tmp -c schema-registry-helm
+
 sudo systemctl status confluent*
 sudo systemctl restart confluent-kafka-connect
 sudo systemctl restart confluent-kafka
