@@ -39,10 +39,110 @@
  */
 
 // @lc code=start
+
+
+
 class Solution {
     public void moveZeroes(int[] nums) {
-
+        int j = 0;
+        for(int i = 0; i < nums.length; i++) {
+            if(nums[i] != 0) {
+                int temp = nums[j];
+                nums[j] = nums[i];
+                nums[i] = temp;
+                j++;
+            }
+        }
+        
     }
 }
 // @lc code=end
 
+
+
+// I still like this solution but it just not matched the request
+// import java.util.Arrays;
+
+// class Solution {
+//     public void moveZeroes(int[] nums) {
+//         int left = 0;
+//         int right = nums.length - 1;
+
+//         Arrays.sort(nums);
+
+//         reverse(nums, left, right);
+//     }
+
+//     public static void reverse(int[] nums, int left, int right){
+//         while (left < right) {
+//             int temp = nums[left];
+//             nums[left] = nums[right];
+//             nums[right] = temp;
+
+//             left++;
+//             right--;
+//         }
+//     }
+// }
+
+
+// class Solution {
+//     public void moveZeroes(int[] nums) {
+
+//         int snowball = 0;
+        
+//         for (int i = 0; i < nums.length; i++) {
+//             if(nums[i] == 0){
+//                 snowball++;
+//             }
+//             else if(snowball > 0) {
+//                 // I am really hard to think about else if condition
+//                 int temp = nums[i];
+//                 nums[i] = 0;
+//                 nums[i - snowball] = temp;
+//             }
+//         } 
+//     }
+// }
+
+
+
+class Solution {
+    public void moveZeroes(int[] nums) {
+
+        if(nums == null || nums.length == 0){
+            return;
+        }
+
+        int insertPos = 0;
+        for (int num : nums ) {
+            if(num != 0){
+                nums[insertPos++] = num;
+            }
+        }
+
+        while (insertPos < nums.length ) {
+            nums[insertPos++] = 0;
+        } 
+    }
+}
+
+
+// same one
+class Solution {
+    public void moveZeroes(int[] nums) {
+        if(nums==null) {
+            return;
+        }
+
+        int j = 0;
+        for(int i=0;i<nums.length;++i) {
+            if(nums[i]!=0) {
+                nums[j++] = nums[i];
+            }
+        }
+        for(int i=j;i<nums.length;++i) {
+            nums[i] = 0;
+        }
+    }
+}	

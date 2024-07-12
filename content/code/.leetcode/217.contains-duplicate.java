@@ -40,22 +40,47 @@
 // @lc code=start
 
 import java.util.Arrays;
-
 class Solution {
     public boolean containsDuplicate(int[] nums) {
-        int length = nums.length -1; // be careful of the corner case
         
-        Arrays.sort(nums);
-        int left = 0;
-        for (int right = 1; right <= length ; right++) {
-            if(nums[left] == nums[right]){
-                return true;
-            } else {
-                left = right;
-            }
-        } 
-        return false;
     }
-    
 }
 // @lc code=end
+
+
+
+// import java.util.Arrays;
+// class Solution {
+//     public boolean containsDuplicate(int[] nums) {
+//         int length = nums.length -1; // be careful of the corner case
+        
+//         Arrays.sort(nums);
+//         int left = 0;
+//         for (int right = 1; right <= length ; right++) {
+//             if(nums[left] == nums[right]){
+//                 return true;
+//             } else {
+//                 left = right;
+//             }
+//         } 
+//         return false;
+//     }
+    
+// }
+
+
+// time limit exceeded
+
+//     public boolean containsDuplicate(int[] nums) {
+//         // todo, double forloop method
+//         boolean flag = false;
+
+//         for (int i = 0; i < nums.length; i++) {
+//             for (int j = i + 1; j < nums.length; j++) {
+//                 if(nums[i] == nums[j]){
+//                     flag = true;
+//                 }
+//              } 
+//         }
+//         return flag;
+//     }
