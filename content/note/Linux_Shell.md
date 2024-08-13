@@ -159,4 +159,8 @@ EOF
 ####### using jcmd command to check the thread dump(stacktrack)
 jcmd 17264 Thread.print
 
-* https://blog.csdn.net/qq_45455361/article/details/120938015 
+* https://blog.csdn.net/qq_45455361/article/details/120938015
+
+#### 查询本地端口映射情况
+sudo lsof -i -P -n | grep LISTEN
+
