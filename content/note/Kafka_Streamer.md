@@ -53,7 +53,9 @@ env:
   - name: DEBUG_PORT
     value: "5566"
   - name: DEBUG_SUSPEND
-    value: "y"  
+    value: "y"
+
+# kubectl port-forward ngmstreamertimewindow-streamer-helm-75cdcf854b-slt68 5555:5555
 
 ### kafka streams headers 不能在input topic 之中读取
 
