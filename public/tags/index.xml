@@ -6,105 +6,84 @@
     <description>Recent content in Tags on Yao</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.yaolugnu.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.yaolugnu.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java</title>
       <link>https://www.yaolugnu.com/tags/java/</link>
       <pubDate>Fri, 19 Apr 2024 00:00:00 +0000</pubDate>
-      
       <guid>https://www.yaolugnu.com/tags/java/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Emacs</title>
       <link>https://www.yaolugnu.com/tags/emacs/</link>
       <pubDate>Fri, 06 Oct 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://www.yaolugnu.com/tags/emacs/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Python</title>
       <link>https://www.yaolugnu.com/tags/python/</link>
       <pubDate>Fri, 06 Oct 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://www.yaolugnu.com/tags/python/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Leetcode</title>
       <link>https://www.yaolugnu.com/tags/leetcode/</link>
       <pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.yaolugnu.com/tags/leetcode/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>String</title>
       <link>https://www.yaolugnu.com/tags/string/</link>
       <pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.yaolugnu.com/tags/string/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Sort</title>
       <link>https://www.yaolugnu.com/tags/sort/</link>
       <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://www.yaolugnu.com/tags/sort/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Linear</title>
       <link>https://www.yaolugnu.com/tags/linear/</link>
       <pubDate>Thu, 16 Sep 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://www.yaolugnu.com/tags/linear/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Command</title>
       <link>https://www.yaolugnu.com/tags/command/</link>
       <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://www.yaolugnu.com/tags/command/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>中文</title>
       <link>https://www.yaolugnu.com/tags/%E4%B8%AD%E6%96%87/</link>
       <pubDate>Thu, 04 Jun 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://www.yaolugnu.com/tags/%E4%B8%AD%E6%96%87/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Memento</title>
       <link>https://www.yaolugnu.com/tags/memento/</link>
       <pubDate>Tue, 04 Jun 2019 17:40:19 +0800</pubDate>
-      
       <guid>https://www.yaolugnu.com/tags/memento/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Vistor</title>
       <link>https://www.yaolugnu.com/tags/vistor/</link>
       <pubDate>Tue, 04 Jun 2019 17:40:19 +0800</pubDate>
-      
       <guid>https://www.yaolugnu.com/tags/vistor/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>
