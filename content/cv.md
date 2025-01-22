@@ -9,7 +9,7 @@ author: "Yao"
 
 
 
->  A Knowledge Enthusiast and ambitious Software Engineer with **5+ years** of practical experience.
+>  A Knowledge Enthusiast and ambitious Software Engineer with **6+ years** of practical experience.
 <br> 
 Additionally has a good personality and adapts to different countries, multi-language, and diverse development environments.
 <br> 
