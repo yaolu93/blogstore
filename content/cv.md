@@ -42,26 +42,24 @@ Always considering cohesion and optimizing software with design patterns and alg
 **L3 Tech Support Engineer**	  		 
 <span style="float:right">Dublin, Sep 2023</span>
 
- * Acted as the subject matter expert for Product Maintenance, efficiently resolved high‑priority issues during L3 rotation
- * Diagnosed and resolved occasional problems in high‑performance scenarios, utilizing Elastic monitoring tools and VisualVM to optimize
+ * Acted as the **subject matter expert** for Product Maintenance, efficiently resolved high‑priority issues during L3 rotation
+ * Diagnosed and resolved occasional problems in high‑performance scenarios, utilizing **Elastic** monitoring tools and **VisualVM** to optimize
 memory usage
- * Conducted migration of product components: Migrated ANDF, consisting of nearly 20 components, from Ansible deployment environment
-to Kubernetes deployment environment, reducing deployment time by 60% and improving system stability under high‑load conditions
+ * Conducted migration of product components: Migrated ANDF, consisting of nearly 20 components, from **Ansible** deployment environment
+to **Kubernetes** deployment environment, reducing deployment time by 60% and improving system stability under high‑load conditions
  * Troubleshooting technical issues in collaboration with clients and solution delivery teams
  * Modified Jenkins deployment process to make product releases and test runs more efficient
- * On‑call rotation
+ * **On‑call** rotation
 
 **Software Engineer**	  		 
 <span style="float:right">Dublin, Nov 2021</span>
 
- * Provide mentorship and guidance to new hires on the components
- * Achieved agile development cycle requirements
- * Participating in product refinement session with architect and co-works
- * Designing project feature test plan and implementing test cases
- * Using VisualVM to analyze Java code and optimize performance
- * CVE scan and fix
- * Performance Test
- * Resiliency Test
+ * Designed and implemented critical product features, including time‑sensitive scheduling and real‑time billing, ensuring accurate transaction
+processing, handling 2K+ TPS (transactions per second)
+ *  Proficient in Kubernetes troubleshooting techniques, debugging and resolving issues in Linux environments (local/development/performance
+testing VMs)
+ *  Provided **mentorship** and guidance to new hires on the components, ensuring they achieved agile development cycle requirements
+ *  Designed and implemented nearly all product‑related tests, including **unit tests**, **regression tests**, **performance tests**, and **resiliency tests**
  <!-- //todo: describe sth about mentor  -->
  - #### ***Project: Amdocs Network Data Fabric***  (Development Platform on Centos 7.9) Kafka +Java 1.8 +Python +Shell Script +Docker +Kubernetes +Helm +Ansible +Maven +Jenkins +Git
   
@@ -130,25 +128,23 @@ to Kubernetes deployment environment, reducing deployment time by 60% and improv
 
 ## **TECHNICAL SKILLS AND EXPERTISE**
 ----------
-    
-**Programming and Scripting Language**: Java 1.8, Python 2.7, SQL, Shell Script, JavaScript, HTML, CSS, XML 
 
-**Frameworks**：Kafka, KafkaSteamer, Kafka Connector, Spring Boot, SpringMVC, Flask 
 
-**Development Environment**：Emacs, Vim, IntelliJ, Eclipse, VS Code, Android Studio 
+**Cloud & Infrastructure**: Docker, Kubernetes, Helm, Ansible, AWS (S3, EC2)
 
-**Database System**：MySQL, Redis, MyBatis, SQLAlchemy, SQLite
+**Monitoring & Logging**: Prometheus, ELK Stack(Elasticsearch, Kibana), logrotate
 
-**DevOps**: Centos 7.9, Docker, Kubernetes, Jenkins, Helm, Ansible
+**Frameworks & Libraries**: Apache Kafka (Kafka Connect, Kafka Streams), SpringBoot, SpringMVC, Flask, React
 
-**Android**:  Native Android development, Mobile development life cycle 
+**Programming Languages**: Java, Python, Groovy, SQL, JavaScript, HTML, CSS, XML
 
-**Version Control Software**: Git, SVN 
+**Databases**: MySQL, Redis, MyBatis, SQLite
 
-<!--**Communication skills**: Excellent written and verbal communication skills. Empathic listener.  
+**Tools**: Git, SVN, Emacs, Vim, IntelliJ, VS Code, Android Studio
 
-**Teamwork**: Excellent team player with the ability to contribute immensely towards a common goal and meet up.	 -->
+**Communication skills**: Excellent written and verbal communication skills. Empathic listener
 
+**Teamwork**: Excellent team player with the ability to contribute immensely towards a common goal and meet up
 
 
 ----------------------------------------
@@ -160,5 +156,5 @@ to Kubernetes deployment environment, reducing deployment time by 60% and improv
 
 ----
 
-> <yao.lu.1223@gmail.com> • +353 (0)83 346 0631 • 30 years old\
+> <yao.lu.1223@gmail.com> • +353 (0)83 346 0631 • 31 years old\
 > address - Cork, Ireland
