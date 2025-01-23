@@ -42,9 +42,14 @@ Always considering cohesion and optimizing software with design patterns and alg
 **L3 Tech Support Engineer**	  		 
 <span style="float:right">Dublin, Sep 2023</span>
 
-* As the subject matter expert for Product Maintenance, fixed bugs in deployed software using agile methodology
-* Troubleshooting technical issues in collaboration with clients and solution delivery teams
-* On-call rotation
+ * Acted as the subject matter expert for Product Maintenance, efficiently resolved high‑priority issues during L3 rotation
+ * Diagnosed and resolved occasional problems in high‑performance scenarios, utilizing Elastic monitoring tools and VisualVM to optimize
+memory usage
+ * Conducted migration of product components: Migrated ANDF, consisting of nearly 20 components, from Ansible deployment environment
+to Kubernetes deployment environment, reducing deployment time by 60% and improving system stability under high‑load conditions
+ * Troubleshooting technical issues in collaboration with clients and solution delivery teams
+ * Modified Jenkins deployment process to make product releases and test runs more efficient
+ * On‑call rotation
 
 **Software Engineer**	  		 
 <span style="float:right">Dublin, Nov 2021</span>
