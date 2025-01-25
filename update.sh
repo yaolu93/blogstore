@@ -1,6 +1,5 @@
 #!/bin/bash
 
-hugo
 
 git status
 git pull
