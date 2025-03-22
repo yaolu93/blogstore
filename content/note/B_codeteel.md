@@ -3,7 +3,7 @@ leetcode-cli:
 # to remove the old version
 npm uninstall -g leetcode-cli
 # to install the up-to-date version(2.6.17+)
-npm install -g leetcode-tools/leetcode-cli
+
 
 
 leetcode show 1 -g -l java
@@ -17,8 +17,8 @@ Login with your leetcode cookie        $ leetcode user -c
 Browse all questions                    $ leetcode list
 Choose one question                     $ leetcode show 666 -gx -l java
 Coding it!
-Run test(s) and pray...                 $ leetcode test ./two-sum.cpp -t '[3,2,4]\n7'
-Submit final solution!                  $ leetcode submit ./two-sum.cpp
+Run test(s) and pray...                 $ leetcode test 27.xxx.py
+Submit final solution!                  $ leetcode submit 27.xxx.py
 ##codespace
 gh codespace list
 gh codespace ssh -c orange-zebra-69prvq6xrjqhqxj
