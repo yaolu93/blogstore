@@ -246,7 +246,19 @@
   </url>
   
   <url>
+    <loc>https://www.yaolugnu.com/note/b_codeteel/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.yaolugnu.com/code/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yaolugnu.com/note/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
