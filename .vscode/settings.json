@@ -2,5 +2,6 @@
     "java.project.sourcePaths": [
         "content/code"
     ],
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "vim.disableExtension": false
 }
