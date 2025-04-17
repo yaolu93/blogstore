@@ -48,3 +48,23 @@ git status -s
 # Get commit message
 read -p "Enter commit message (press enter to use 'update content'): " commit_msg
 commit_msg=${commit_msg:-"update content"}
+
+# Commit changes
+print_status "Committing changes..."
+if ! git commit -m "$commit_msg"; then
+    print_error "Failed to commit changes"
+    exit 1
+fi
+
+# Push changes
+print_status "Pushing to remote..."
+if ! git push origin "$current_branch"; then
+    print_error "Failed to push changes"
+    exit 1
+fi
+
+print_status "Successfully updated repository!"
+
+# Show final status
+print_status "Final status:"
+git status
