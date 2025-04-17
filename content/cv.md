@@ -13,8 +13,9 @@ author: "Yao"
 <br> 
 Additionally has a good personality and adapts to different countries, multi-language, and diverse development environments.
 <br> 
-Always considering cohesion and optimizing software with design patterns and algorithms.  
-
+Designing and implementing critical features for high‑availability systems, migrating large‑scale services to Kubernetes.
+<br>
+Fast learner with strong problem‑solving skills and a collaborative mindset, adept at troubleshooting complex issues and driving technical innovation.
 <br>
 
 ## **EDUCATION**
