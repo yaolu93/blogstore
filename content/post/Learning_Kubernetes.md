@@ -12,7 +12,7 @@ author: "Yao Lu"
 
 
 # How to config
-	The config is very sample just show as below.
+    The config is very sample just show as below.
 
 # Prerequisites
   One of the python server need to be installed, for example I chosed the pyright
@@ -30,8 +30,20 @@ author: "Yao Lu"
        '(python-mode . ("pyright-langserver" "--stdio")))
       (add-hook 'python-mode-hook 'eglot-ensure))                                                                                                                                                                                                  
 ```
-
+## Kubernetes Archtecture
+- Master Node and Work Node
+-
+-
+-
+-
 
        
 
-                                                                                                                                                                                                                 
+                                                                                                                         
+* todo question
+1. etcd
+2. Service
+3. Deployment
+4. Pod
+5. DeamonSet
+6. kubelet                                                                                          
