@@ -52,24 +52,24 @@
 class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
         
-            dump = ListNode(0) 
-            dump.next = head
-            
-            pre = dump
-            current = head
-            
-            while current != None:
-                if current.next and current.val == current.next.val:    
-                    duplicate_val = current.val
-                    while current and duplicate_val == current.val:
-                        current = current.next
-                        pre.next = current
-                else:
-                    pre = pre.next
-                    current = current.next  
-            
-            return dump.next
         
+        dump = ListNode(0)
+        dump.next = head
+
+        pre = dump
+        current = head
         
+        while current != None:
+            if current.next and current.val == current.next.val:
+                duplicate_val = current.val
+                while current and duplicate_val == current.val:
+                    current = current.next
+                    pre.next = current
+            else:
+                pre = pre.next
+                current = current.next
+        
+        return dump.next
+
 # @lc code=end
 
