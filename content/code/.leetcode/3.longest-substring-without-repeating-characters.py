@@ -57,23 +57,28 @@
 # @lc code=start
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        
         left = 0
         right = 0
         n = len(s)
-        max_length = 0
-        char_set = set()
         
-        while right < n:
-
-            while s[right] in char_set:
-                char_set.remove(s[left])
-                left += 1
-
-            char_set.add(s[right])
-            right += 1
-            max_length = max(max_length, right - left)
+        #abcdef
+        #012345 -> right
+        index = {}
+        max_length = 0
+        
+        for right in range(n):
+            if s[right]in index and index[s[right]]>= left:
+                left = index[s[right]] + 1 #窗口保持最小值扩大
+            
+            index[s[right]] = right
+            max_length = max(max_length, right - left + 1)
+            
         return max_length
+            
+            
+            
+
+                
 
 # @lc code=end
 
