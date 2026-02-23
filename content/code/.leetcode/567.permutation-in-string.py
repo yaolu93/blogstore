@@ -49,26 +49,29 @@ from collections import Counter
 # @lc code=start
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
+    
         if len(s1) > len(s2):
-            return False
+            return False   
         
-        need_hashMap = Counter(s1)
-        window_hashMap = Counter(s2[:len(s1)])
+        need_hash   = Counter(s1)
+        window_hash = Counter(s2[:len(s1)])
         
-        if need_hashMap == window_hashMap:
+        
+        if need_hash == window_hash:
             return True
-        
-        for i in range(len(s1), len(s2)):
-            window_hashMap[s2[i]] += 1
-            window_hashMap[s2[i - len(s1)]] -= 1
+
+        for i in range(len(s1),len(s2)):
+           
+            window_hash[s2[i]]          += 1
+            window_hash[s2[i - len(s1)]]    -= 1
+            if window_hash[s2[i - len(s1)]] == 0:
+                    del window_hash[s2[i - len(s1)]]
             
-            if window_hashMap[s2[i - len(s1)]] == 0:
-                del window_hashMap[s2[i - len(s1)]]
-                
-            if window_hashMap == need_hashMap:
+            if window_hash == need_hash:
                 return True
         
-        return False
+        return True
+                
         
 # @lc code=end
 
