@@ -4,11 +4,12 @@
       {{ range .Site.Home.AllTranslations }}
         {{ $active := eq .Language $.Site.Language }}
         {{ $translation := index (where $.Page.AllTranslations "Language.Lang" "eq" .Language.Lang) 0 }}
+        {{ $label := index (dict "en" "en" "zh-cn" "中") .Language.Lang | default .Language.LanguageName }}
         <li class="language-item{{ if $active }} active{{ end }}">
           {{ with $translation }}
-            <a href="{{ .RelPermalink }}" lang="{{ .Language.LanguageCode }}" hreflang="{{ .Language.LanguageCode }}">{{ .Language.LanguageName }}</a>
+            <a href="{{ .RelPermalink }}" lang="{{ .Language.LanguageCode }}" hreflang="{{ .Language.LanguageCode }}" aria-label="{{ .Language.LanguageName }}">{{ $label }}</a>
           {{ else }}
-            <a href="{{ .RelPermalink }}" lang="{{ .Language.LanguageCode }}" hreflang="{{ .Language.LanguageCode }}">{{ .Language.LanguageName }}</a>
+            <a href="{{ .RelPermalink }}" lang="{{ .Language.LanguageCode }}" hreflang="{{ .Language.LanguageCode }}" aria-label="{{ .Language.LanguageName }}">{{ $label }}</a>
           {{ end }}
         </li>
       {{ end }}

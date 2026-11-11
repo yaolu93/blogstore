@@ -1,0 +1,25 @@
+.language-selector {
+  width: max-content;
+
+  .languages-list {
+    display: flex;
+    padding: 0;
+    background: darken($deputy-color, 3%);
+    font-family: $global-serif-font-family;
+    list-style: none;
+
+    .language-item {
+      font-size: $menu-link-font-size;
+      padding: 0 10px;
+
+      &.active {
+        background: $theme-color;
+        color: #fff;
+
+        > a {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
