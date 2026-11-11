@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Accessing a VMware NAT Virtual Machine from Another PC: Networking, SSH Authentication, and Troubleshooting - Yao</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Yao Lu" /><meta name="description" content="This article records how I connected a second Windows computer to a Linux virtual machine running in VMware, including the port conflict and SSH authentication issues I encountered.
+Both computers are connected to the same home Wi-Fi network. PC1 runs VMware Workstation, and PC2 connects to the VM over SSH. Once SSH works, I use VS Code Remote-SSH for remote development.
+Prerequisites PC1: Windows with VMware Workstation installed. The Linux VM uses a NAT network." />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.128.0 with theme even" />
+
+
+<link rel="canonical" href="http://172.17.140.72:1313/post/pc2-to-vmware-vm-remote-ssh-guide/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f12a676c32df9e435ec7ad4167a860022a81d6f2bbb96c6624138cf14f6a83b0.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:url" content="http://172.17.140.72:1313/post/pc2-to-vmware-vm-remote-ssh-guide/">
+  <meta property="og:site_name" content="Yao">
+  <meta property="og:title" content="Accessing a VMware NAT Virtual Machine from Another PC: Networking, SSH Authentication, and Troubleshooting">
+  <meta property="og:description" content="This article records how I connected a second Windows computer to a Linux virtual machine running in VMware, including the port conflict and SSH authentication issues I encountered.
+Both computers are connected to the same home Wi-Fi network. PC1 runs VMware Workstation, and PC2 connects to the VM over SSH. Once SSH works, I use VS Code Remote-SSH for remote development.
+Prerequisites PC1: Windows with VMware Workstation installed. The Linux VM uses a NAT network.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2026-11-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-11-11T00:00:00+00:00">
+    <meta property="article:tag" content="VMware">
+    <meta property="article:tag" content="NAT">
+    <meta property="article:tag" content="SSH">
+    <meta property="article:tag" content="VSCode">
+    <meta property="article:tag" content="Windows">
+    <meta property="article:tag" content="Linux">
+
+  <meta itemprop="name" content="Accessing a VMware NAT Virtual Machine from Another PC: Networking, SSH Authentication, and Troubleshooting">
+  <meta itemprop="description" content="This article records how I connected a second Windows computer to a Linux virtual machine running in VMware, including the port conflict and SSH authentication issues I encountered.
+Both computers are connected to the same home Wi-Fi network. PC1 runs VMware Workstation, and PC2 connects to the VM over SSH. Once SSH works, I use VS Code Remote-SSH for remote development.
+Prerequisites PC1: Windows with VMware Workstation installed. The Linux VM uses a NAT network.">
+  <meta itemprop="datePublished" content="2026-11-11T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-11-11T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1740">
+  <meta itemprop="keywords" content="VMware,NAT,SSH,VSCode,Windows,Linux">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Accessing a VMware NAT Virtual Machine from Another PC: Networking, SSH Authentication, and Troubleshooting">
+  <meta name="twitter:description" content="This article records how I connected a second Windows computer to a Linux virtual machine running in VMware, including the port conflict and SSH authentication issues I encountered.
+Both computers are connected to the same home Wi-Fi network. PC1 runs VMware Workstation, and PC2 connects to the VM over SSH. Once SSH works, I use VS Code Remote-SSH for remote development.
+Prerequisites PC1: Windows with VMware Workstation installed. The Linux VM uses a NAT network.">
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">yao lu</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/cv/">
+        <li class="mobile-menu-item">CV</li>
+      </a>
+  </ul>
+
+  
+  <div class="language-selector">
+    <ul class="languages-list">
+      
+        
+        
+        
+        <li class="language-item active">
+          
+            <a href="/post/pc2-to-vmware-vm-remote-ssh-guide/" lang="en" hreflang="en" aria-label="English">en</a>
+          
+        </li>
+      
+        
+        
+        
+        <li class="language-item">
+          
+            <a href="/zh-cn/post/pc2-to-vmware-vm-remote-ssh-guide/" lang="zh-CN" hreflang="zh-CN" aria-label="简体中文">中</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">yao lu</a>
+</div>
+
+
+  <div class="language-selector">
+    <ul class="languages-list">
+      
+        
+        
+        
+        <li class="language-item active">
+          
+            <a href="/post/pc2-to-vmware-vm-remote-ssh-guide/" lang="en" hreflang="en" aria-label="English">en</a>
+          
+        </li>
+      
+        
+        
+        
+        <li class="language-item">
+          
+            <a href="/zh-cn/post/pc2-to-vmware-vm-remote-ssh-guide/" lang="zh-CN" hreflang="zh-CN" aria-label="简体中文">中</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/cv/">CV</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Accessing a VMware NAT Virtual Machine from Another PC: Networking, SSH Authentication, and Troubleshooting</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2026-11-11 </span>
+        <div class="post-category">
+            <a href="/categories/networking/"> Networking </a>
+            </div>
+          <span class="more-meta"> 1740 words </span>
+          <span class="more-meta"> 9 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#network-topology">Network Topology</a></li>
+    <li><a href="#check-the-network">Check the Network</a>
+      <ul>
+        <li><a href="#pc2-to-pc1">PC2 to PC1</a></li>
+        <li><a href="#pc1-to-linux-vm">PC1 to Linux VM</a></li>
+      </ul>
+    </li>
+    <li><a href="#vmware-nat-port-forwarding">VMware NAT Port Forwarding</a>
+      <ul>
+        <li><a href="#port-conflict">Port Conflict</a></li>
+      </ul>
+    </li>
+    <li><a href="#windows-firewall">Windows Firewall</a></li>
+    <li><a href="#ssh-authentication">SSH Authentication</a>
+      <ul>
+        <li><a href="#public-key-and-private-key">Public Key and Private Key</a></li>
+      </ul>
+    </li>
+    <li><a href="#vs-code-remote-ssh">VS Code Remote-SSH</a></li>
+    <li><a href="#troubleshooting">Troubleshooting</a></li>
+    <li><a href="#next-step-tailscale">Next Step: Tailscale</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>This article records how I connected a second Windows computer to a Linux virtual machine running in VMware, including the port conflict and SSH authentication issues I encountered.</p>
+<p>Both computers are connected to the same home Wi-Fi network. PC1 runs VMware Workstation, and PC2 connects to the VM over SSH. Once SSH works, I use VS Code Remote-SSH for remote development.</p>
+<h1 id="prerequisites">Prerequisites</h1>
+<ul>
+<li>PC1: Windows with VMware Workstation installed. The Linux VM uses a NAT network.</li>
+<li>PC2: Windows with OpenSSH Client, VS Code, and the Remote - SSH extension installed.</li>
+<li>Linux VM: An SSH server is running, and a Linux user account is available for login.</li>
+</ul>
+<p>The IP addresses and ports below come from this experiment. Replace them with the values for your own setup.</p>
+<h1 id="network-topology">Network Topology</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Home Wi-Fi / LAN 192.168.0.0/24
+</span></span><span class="line"><span class="cl">Router 192.168.0.1
+</span></span><span class="line"><span class="cl">    |
+</span></span><span class="line"><span class="cl">    +-- PC1: Windows 192.168.0.151
+</span></span><span class="line"><span class="cl">    |     |
+</span></span><span class="line"><span class="cl">    |     +-- VMware Workstation / VMnet0 NAT
+</span></span><span class="line"><span class="cl">    |           Host Adapter: 172.16.199.1
+</span></span><span class="line"><span class="cl">    |           NAT Gateway: 172.16.199.254
+</span></span><span class="line"><span class="cl">    |           Linux VM:    172.16.199.201
+</span></span><span class="line"><span class="cl">    |
+</span></span><span class="line"><span class="cl">    +-- PC2: Windows 192.168.0.235
+</span></span><span class="line"><span class="cl">          VS Code + OpenSSH Client
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">PC2 --&gt; PC1:2223  --&gt; Linux VM:22   (SSH)
+</span></span><span class="line"><span class="cl">PC2 --&gt; PC1:18080 --&gt; Linux VM:80   (HTTP)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>In this setup, VMnet0 is configured as a NAT network. VMware commonly uses VMnet8 for NAT by default. Check Virtual Network Editor to find the network used by your VM.</p>
+</blockquote>
+<p>PC2 is on <code>192.168.0.0/24</code>, while the VM is on <code>172.16.199.0/24</code>. PC2 has no route to the VM&rsquo;s private subnet, so I use port forwarding on PC1 to reach the VM.</p>
+<h1 id="check-the-network">Check the Network</h1>
+<h2 id="pc2-to-pc1">PC2 to PC1</h2>
+<p>First, check the IP addresses on both Windows computers:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">ipconfig</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Then test PC1 from PC2:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">ping</span> <span class="mf">192.168</span><span class="p">.</span><span class="py">0</span><span class="p">.</span><span class="py">151</span>
+</span></span><span class="line"><span class="cl"><span class="n">arp</span> <span class="n">-a</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>At first, PC2 could not ping PC1. After allowing inbound ICMPv4 requests from PC2 in PC1&rsquo;s firewall, ping succeeded. PC1&rsquo;s MAC address also appeared in the ARP table.</p>
+<p>If you encounter the same issue, you can add the following rule in an administrator PowerShell session on PC1:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">New-NetFirewallRule</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-DisplayName</span> <span class="s1">&#39;Allow ICMPv4 from PC2&#39;</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-Protocol</span> <span class="n">ICMPv4</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-IcmpType</span> <span class="mf">8</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-RemoteAddress</span> <span class="mf">192.168</span><span class="p">.</span><span class="py">0</span><span class="p">.</span><span class="py">235</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-Action</span> <span class="n">Allow</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-Profile</span> <span class="n">Private</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>A failed ping may simply mean that the firewall is blocking ICMP. An ARP entry helps check address resolution on the same subnet, but it does not prove that SSH or HTTP is available.</p>
+</blockquote>
+<h2 id="pc1-to-linux-vm">PC1 to Linux VM</h2>
+<p>Test the VM from PC1:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">ping</span> <span class="mf">172.16</span><span class="p">.</span><span class="py">199</span><span class="p">.</span><span class="py">201</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Test-NetConnection</span> <span class="mf">172.16</span><span class="p">.</span><span class="py">199</span><span class="p">.</span><span class="py">201</span> <span class="n">-Port</span> <span class="mf">22</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>In this experiment, PC1 could ping the VM and open <code>http://172.16.199.201</code> in a browser. The port 22 test also returned:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">TcpTestSucceeded : True
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Once the VM&rsquo;s network connection and SSH port are reachable from PC1, check the forwarding path from PC2 through PC1.</p>
+<h1 id="vmware-nat-port-forwarding">VMware NAT Port Forwarding</h1>
+<p>On PC1, open:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">VMware Workstation
+</span></span><span class="line"><span class="cl">  → Edit
+</span></span><span class="line"><span class="cl">  → Virtual Network Editor
+</span></span><span class="line"><span class="cl">  → VMnet0
+</span></span><span class="line"><span class="cl">  → NAT Settings
+</span></span><span class="line"><span class="cl">  → Port Forwarding
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>I used the following port forwarding rules:</p>
+<table>
+<thead>
+<tr>
+<th>Host Port</th>
+<th>Protocol</th>
+<th>Virtual Machine IP</th>
+<th>VM Port</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>18080</code></td>
+<td>TCP</td>
+<td><code>172.16.199.201</code></td>
+<td><code>80</code></td>
+</tr>
+<tr>
+<td><code>2223</code></td>
+<td>TCP</td>
+<td><code>172.16.199.201</code></td>
+<td><code>22</code></td>
+</tr>
+</tbody>
+</table>
+<p>When PC2 connects to port <code>2223</code> on PC1, VMware NAT forwards the connection to port <code>22</code> on the VM. PC2 does not need to join the VMware private subnet.</p>
+<h2 id="port-conflict">Port Conflict</h2>
+<p>I initially used host ports <code>8080</code> and <code>2222</code>. The TCP test from PC2 succeeded on <code>8080</code> but failed on <code>2222</code>.</p>
+<p>Check these ports on PC1:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Get-NetTCPConnection</span> <span class="n">-State</span> <span class="n">Listen</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="py">LocalPort</span> <span class="n">-in</span> <span class="mf">8080</span><span class="p">,</span><span class="mf">2222</span> <span class="p">}</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">Select-Object</span> <span class="n">LocalAddress</span><span class="p">,</span><span class="n">LocalPort</span><span class="p">,</span><span class="n">OwningProcess</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Port <code>8080</code> was occupied by PID <code>18988</code>, while nothing was listening on <code>2222</code>. I checked the process details:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Get-Process</span> <span class="n">-Id</span> <span class="mf">18988</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Id</span><span class="p">,</span><span class="n">ProcessName</span><span class="p">,</span><span class="n">Path</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Get-CimInstance</span> <span class="n">Win32_Process</span> <span class="n">-Filter</span> <span class="s1">&#39;ProcessId=18988&#39;</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">Format-List</span> <span class="n">ProcessId</span><span class="p">,</span><span class="n">ParentProcessId</span><span class="p">,</span><span class="n">CommandLine</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>A separate PowerShell proxy script was listening on <code>8080</code>. The earlier TCP test only showed that a program was accepting connections; it did not prove that VMware forwarding was working. I did not establish the exact reason why <code>2222</code> had no listener.</p>
+<p>You can also check the VMware NAT service and Windows port proxy rules:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Get-Service</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="py">DisplayName</span> <span class="o">-like</span> <span class="s1">&#39;*VMware*NAT*&#39;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Get-Process</span> <span class="n">vmnat</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">Select-Object</span> <span class="n">Id</span><span class="p">,</span><span class="n">ProcessName</span><span class="p">,</span><span class="n">Path</span>
+</span></span><span class="line"><span class="cl"><span class="n">netsh</span> <span class="n">interface</span> <span class="n">portproxy</span> <span class="n">show</span> <span class="n">all</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The NAT service was <code>Running</code>, <code>vmnat.exe</code> was present, and Windows <code>portproxy</code> had no rules. I then changed the forwarding ports to <code>18080</code> and <code>2223</code> and continued testing.</p>
+<p>If the updated rules do not take effect, you can restart the NAT service from an administrator PowerShell session on PC1:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Restart-Service</span> <span class="n">-Name</span> <span class="s1">&#39;VMware NAT Service&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>Restarting the service briefly interrupts connections for VMs using that NAT network. If a port is occupied, identify the process before deciding whether to stop it.</p>
+</blockquote>
+<h1 id="windows-firewall">Windows Firewall</h1>
+<p>The following example rules allow only PC2 to access the forwarded ports. Run them in an administrator PowerShell session on PC1:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">New-NetFirewallRule</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-DisplayName</span> <span class="s1">&#39;VM HTTP from PC2&#39;</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="n">-Action</span> <span class="n">Allow</span> <span class="n">-Protocol</span> <span class="n">TCP</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-LocalPort</span> <span class="mf">18080</span> <span class="n">-RemoteAddress</span> <span class="mf">192.168</span><span class="p">.</span><span class="py">0</span><span class="p">.</span><span class="py">235</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-Profile</span> <span class="n">Private</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">New-NetFirewallRule</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-DisplayName</span> <span class="s1">&#39;VM SSH from PC2&#39;</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="n">-Action</span> <span class="n">Allow</span> <span class="n">-Protocol</span> <span class="n">TCP</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-LocalPort</span> <span class="mf">2223</span> <span class="n">-RemoteAddress</span> <span class="mf">192.168</span><span class="p">.</span><span class="py">0</span><span class="p">.</span><span class="py">235</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-Profile</span> <span class="n">Private</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>These rules apply to the <code>Private</code> network profile. Check the active Windows network profile and existing rules before adding them to avoid duplicates. This connection stays within the home LAN, so no public port forwarding is needed on the home router.</p>
+<p>Test from PC2:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Test-NetConnection</span> <span class="mf">192.168</span><span class="p">.</span><span class="py">0</span><span class="p">.</span><span class="py">151</span> <span class="n">-Port</span> <span class="mf">18080</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Test-NetConnection</span> <span class="mf">192.168</span><span class="p">.</span><span class="py">0</span><span class="p">.</span><span class="py">151</span> <span class="n">-Port</span> <span class="mf">2223</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Both ports returned <code>TcpTestSucceeded : True</code>. The next step is to check the application itself: whether SSH login succeeds and whether HTTP returns the expected page. In this experiment, I only confirmed TCP connectivity from PC2 to <code>18080</code>; I did not separately verify the page content in PC2&rsquo;s browser.</p>
+<h1 id="ssh-authentication">SSH Authentication</h1>
+<p>My first login attempt from PC2 used <code>root</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">ssh</span> <span class="n">-p</span> <span class="mf">2223</span> <span class="n">root</span><span class="nv">@192</span><span class="p">.</span><span class="py">168</span><span class="p">.</span><span class="py">0</span><span class="p">.</span><span class="py">151</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>It returned:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Permission denied (publickey).
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>I then switched to the VM&rsquo;s <code>yao</code> user and enabled verbose logging:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">ssh</span> <span class="n">-vvv</span> <span class="n">-p</span> <span class="mf">2223</span> <span class="n">yao</span><span class="nv">@192</span><span class="p">.</span><span class="py">168</span><span class="p">.</span><span class="py">0</span><span class="p">.</span><span class="py">151</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The relevant log lines were:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">debug1: Connection established.
+</span></span><span class="line"><span class="cl">debug1: Remote protocol version 2.0, remote software version OpenSSH_9.2p1 Debian-2+deb12u7
+</span></span><span class="line"><span class="cl">debug1: Authentications that can continue: publickey
+</span></span><span class="line"><span class="cl">debug3: no such identity: C:\Users\yao/.ssh/id_rsa: No such file or directory
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The TCP connection and SSH protocol negotiation had succeeded. The failure occurred during user authentication. The server offered only <code>publickey</code> authentication, but PC2 could not find a default private key, and the SSH agent had no usable key.</p>
+<blockquote>
+<p>The SSH software version helps identify the server software. To confirm that you are connecting to the intended VM, also verify its host key fingerprint and check the server itself.</p>
+</blockquote>
+<h2 id="public-key-and-private-key">Public Key and Private Key</h2>
+<ul>
+<li>PC2 stores the user&rsquo;s private key, for example <code>~/.ssh/id_rsa</code>.</li>
+<li>The target user on the Linux VM stores the corresponding public key in <code>~/.ssh/authorized_keys</code>.</li>
+<li>PC2&rsquo;s <code>known_hosts</code> file records server host keys to identify servers.</li>
+</ul>
+<p>The final working connection used the <code>yao</code> account and <code>id_rsa</code>. I did not record every step of preparing those keys. As an alternative, you can generate a separate key pair for PC2:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">ssh-keygen</span> <span class="n">-t</span> <span class="n">ed25519</span> <span class="n">-C</span> <span class="s1">&#39;pc2-to-linux-vm&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Set a passphrase for the private key. Then, using the VM console or an existing login method, add the generated <code>.pub</code> public key to <code>~/.ssh/authorized_keys</code> for the VM&rsquo;s <code>yao</code> user. Check the directory and file permissions and ownership. Keep the private key on PC2; do not commit it to Git or include it in a blog post.</p>
+<p>If you use this new key pair, change <code>IdentityFile</code> in the SSH configuration below to <code>~/.ssh/id_ed25519</code>.</p>
+<h1 id="vs-code-remote-ssh">VS Code Remote-SSH</h1>
+<p>Install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote - SSH extension</a> on PC2, then edit the SSH configuration file:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\Users\yao\.ssh\config
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This was the configuration used for the successful connection:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Host ydb
+</span></span><span class="line"><span class="cl">    HostName 192.168.0.151
+</span></span><span class="line"><span class="cl">    User yao
+</span></span><span class="line"><span class="cl">    Port 2223
+</span></span><span class="line"><span class="cl">    IdentityFile ~/.ssh/id_rsa
+</span></span><span class="line"><span class="cl">    IdentitiesOnly yes
+</span></span></code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Host ydb</code></td>
+<td>Connection alias used on PC2</td>
+</tr>
+<tr>
+<td><code>HostName</code></td>
+<td>PC1&rsquo;s LAN IP address</td>
+</tr>
+<tr>
+<td><code>User</code></td>
+<td>The Linux user on the VM</td>
+</tr>
+<tr>
+<td><code>Port</code></td>
+<td>The SSH forwarding port on PC1</td>
+</tr>
+<tr>
+<td><code>IdentityFile</code></td>
+<td>The private key path on PC2</td>
+</tr>
+<tr>
+<td><code>IdentitiesOnly yes</code></td>
+<td>Use only the configured identities for authentication</td>
+</tr>
+</tbody>
+</table>
+<p>First, confirm that you can log in from PC2&rsquo;s terminal:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">ssh</span> <span class="n">ydb</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Then open VS Code:</p>
+<ol>
+<li>Press <code>Ctrl + Shift + P</code> to open the Command Palette.</li>
+<li>Select <code>Remote-SSH: Connect to Host...</code>.</li>
+<li>Select <code>ydb</code>. On the first connection, follow the prompts to install and start VS Code Server.</li>
+<li>Once connected, open a remote terminal and check the environment.</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hostname
+</span></span><span class="line"><span class="cl">whoami
+</span></span><span class="line"><span class="cl"><span class="nb">pwd</span>
+</span></span><span class="line"><span class="cl">ip -br addr
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>PC2 can now connect to the Linux VM through <code>ydb</code> in VS Code. The editor interface runs on PC2, while the remote terminal and VS Code Server run on the VM.</p>
+<h1 id="troubleshooting">Troubleshooting</h1>
+<p>I checked the connection in order: PC2 to PC1, PC1 to the VM, port forwarding, and SSH authentication. Once one part worked, I moved on to the next.</p>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>What to Check</th>
+<th>Command or Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PC2 cannot ping PC1</td>
+<td>Wi-Fi IP addresses and ICMPv4 firewall rules</td>
+<td><code>ipconfig</code>, <code>ping</code>, <code>arp -a</code></td>
+</tr>
+<tr>
+<td>PC1 can reach the VM, but PC2 cannot</td>
+<td>NAT forwarding and PC1&rsquo;s firewall</td>
+<td>Virtual Network Editor</td>
+</tr>
+<tr>
+<td>TCP test succeeds, but the wrong page appears</td>
+<td>Whether another process is using the port</td>
+<td><code>Get-NetTCPConnection</code>, <code>Get-CimInstance</code></td>
+</tr>
+<tr>
+<td>PC1&rsquo;s SSH forwarding port is unreachable</td>
+<td>Listening ports, NAT service, and forwarding rules</td>
+<td><code>Test-NetConnection</code>, <code>Get-Service</code></td>
+</tr>
+<tr>
+<td><code>Permission denied (publickey)</code></td>
+<td>Username, client private key, and server authorized public key</td>
+<td><code>ssh -vvv</code></td>
+</tr>
+<tr>
+<td>SSH works in a terminal, but VS Code fails</td>
+<td>Remote-SSH logs, remote server compatibility, and permissions</td>
+<td>VS Code Output → Remote-SSH</td>
+</tr>
+<tr>
+<td>Connection fails after PC1&rsquo;s IP changes</td>
+<td>DHCP lease and SSH <code>HostName</code></td>
+<td>Router DHCP Reservation</td>
+</tr>
+</tbody>
+</table>
+<p>Keep both PC1&rsquo;s LAN IP and the VM&rsquo;s NAT IP stable. PC2 connects to the first, and the NAT forwarding rules target the second. Update the corresponding configuration whenever either address changes.</p>
+<h1 id="next-step-tailscale">Next Step: Tailscale</h1>
+<p>This experiment was completed on the same home Wi-Fi network. A possible next step is to connect from an external network using Tailscale. I have not implemented this yet.</p>
+<table>
+<thead>
+<tr>
+<th>Installation Locations</th>
+<th>Connection Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PC1 and PC2</td>
+<td>PC2 → PC1&rsquo;s Tailscale IP <code>:2223</code> → VMware NAT → VM <code>:22</code></td>
+</tr>
+<tr>
+<td>Linux VM and PC2</td>
+<td>PC2 → VM&rsquo;s Tailscale IP <code>:22</code></td>
+</tr>
+</tbody>
+</table>
+<p>Neither option requires exposing an SSH port on the home router. Check access policies and host firewalls for the chosen setup. Performance needs to be measured; the number of forwarding steps alone does not determine speed.</p>
+<h1 id="references">References</h1>
+<ul>
+<li><a href="https://docs.vmware.com/">VMware Workstation Documentation</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh-overview">Microsoft OpenSSH for Windows</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement">OpenSSH Key Management</a></li>
+<li><a href="https://learn.microsoft.com/en-us/powershell/module/netsecurity/new-netfirewallrule">New-NetFirewallRule</a></li>
+<li><a href="https://code.visualstudio.com/docs/remote/ssh">VS Code Remote Development using SSH</a></li>
+<li><a href="https://tailscale.com/docs/">Tailscale Documentation</a></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Yao Lu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2026-11-11
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/vmware/">VMware</a>
+          <a href="/tags/nat/">NAT</a>
+          <a href="/tags/ssh/">SSH</a>
+          <a href="/tags/vscode/">VSCode</a>
+          <a href="/tags/windows/">Windows</a>
+          <a href="/tags/linux/">Linux</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/even-preview/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Theme preview</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/apache_kafka_architecture_topology/">
+            <span class="next-text nav-default">Apache_Kafka_Architecture_Topology</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://yao.lu.1223@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.linkedin.com/in/yao-lu93" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/yaolu93" class="iconfont icon-github" title="github"></a>
+  
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2026<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yao</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

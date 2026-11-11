@@ -2,82 +2,81 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Yao</title>
-    <link>https://www.yaolugnu.com/categories/</link>
+    <link>http://172.17.140.72:1313/categories/</link>
     <description>Recent content in Categories on Yao</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.yaolugnu.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://172.17.140.72:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Networking</title>
+      <link>http://172.17.140.72:1313/categories/networking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/categories/networking/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Kafka</title>
-      <link>https://www.yaolugnu.com/categories/kafka/</link>
-      <pubDate>Fri, 19 Apr 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.yaolugnu.com/categories/kafka/</guid>
+      <link>http://172.17.140.72:1313/categories/kafka/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/categories/kafka/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Leetcode</title>
-      <link>https://www.yaolugnu.com/categories/leetcode/</link>
-      <pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.yaolugnu.com/categories/leetcode/</guid>
+      <link>http://172.17.140.72:1313/categories/leetcode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/categories/leetcode/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Design Pattern</title>
-      <link>https://www.yaolugnu.com/categories/design-pattern/</link>
-      <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.yaolugnu.com/categories/design-pattern/</guid>
+      <link>http://172.17.140.72:1313/categories/design-pattern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/categories/design-pattern/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>中文</title>
-      <link>https://www.yaolugnu.com/categories/%E4%B8%AD%E6%96%87/</link>
-      <pubDate>Thu, 04 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.yaolugnu.com/categories/%E4%B8%AD%E6%96%87/</guid>
+      <link>http://172.17.140.72:1313/categories/%E4%B8%AD%E6%96%87/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/categories/%E4%B8%AD%E6%96%87/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Linux</title>
-      <link>https://www.yaolugnu.com/categories/linux/</link>
-      <pubDate>Tue, 04 Jun 2019 17:40:19 +0800</pubDate>
-      
-      <guid>https://www.yaolugnu.com/categories/linux/</guid>
+      <link>http://172.17.140.72:1313/categories/linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/categories/linux/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Microservice</title>
-      <link>https://www.yaolugnu.com/categories/microservice/</link>
-      <pubDate>Tue, 04 Jun 2019 17:40:19 +0800</pubDate>
-      
-      <guid>https://www.yaolugnu.com/categories/microservice/</guid>
+      <link>http://172.17.140.72:1313/categories/microservice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/categories/microservice/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Penetration Test</title>
-      <link>https://www.yaolugnu.com/categories/penetration-test/</link>
-      <pubDate>Tue, 04 Jun 2019 17:40:19 +0800</pubDate>
-      
-      <guid>https://www.yaolugnu.com/categories/penetration-test/</guid>
+      <link>http://172.17.140.72:1313/categories/penetration-test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/categories/penetration-test/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Spring Framework</title>
-      <link>https://www.yaolugnu.com/categories/spring-framework/</link>
-      <pubDate>Tue, 04 Jun 2019 17:40:19 +0800</pubDate>
-      
-      <guid>https://www.yaolugnu.com/categories/spring-framework/</guid>
+      <link>http://172.17.140.72:1313/categories/spring-framework/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/categories/spring-framework/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>English</title>
+      <link>http://172.17.140.72:1313/categories/english/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/categories/english/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

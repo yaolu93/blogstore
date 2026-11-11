@@ -2,109 +2,130 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Yao</title>
-    <link>https://www.yaolugnu.com/tags/</link>
+    <link>http://172.17.140.72:1313/tags/</link>
     <description>Recent content in Tags on Yao</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.yaolugnu.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://172.17.140.72:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>http://172.17.140.72:1313/tags/linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NAT</title>
+      <link>http://172.17.140.72:1313/tags/nat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/tags/nat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SSH</title>
+      <link>http://172.17.140.72:1313/tags/ssh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/tags/ssh/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VMware</title>
+      <link>http://172.17.140.72:1313/tags/vmware/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/tags/vmware/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VSCode</title>
+      <link>http://172.17.140.72:1313/tags/vscode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/tags/vscode/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>http://172.17.140.72:1313/tags/windows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/tags/windows/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Java</title>
-      <link>https://www.yaolugnu.com/tags/java/</link>
-      <pubDate>Fri, 19 Apr 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.yaolugnu.com/tags/java/</guid>
+      <link>http://172.17.140.72:1313/tags/java/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/tags/java/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Emacs</title>
-      <link>https://www.yaolugnu.com/tags/emacs/</link>
-      <pubDate>Fri, 06 Oct 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.yaolugnu.com/tags/emacs/</guid>
+      <link>http://172.17.140.72:1313/tags/emacs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/tags/emacs/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Python</title>
-      <link>https://www.yaolugnu.com/tags/python/</link>
-      <pubDate>Fri, 06 Oct 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.yaolugnu.com/tags/python/</guid>
+      <link>http://172.17.140.72:1313/tags/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/tags/python/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Leetcode</title>
-      <link>https://www.yaolugnu.com/tags/leetcode/</link>
-      <pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.yaolugnu.com/tags/leetcode/</guid>
+      <link>http://172.17.140.72:1313/tags/leetcode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/tags/leetcode/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>String</title>
-      <link>https://www.yaolugnu.com/tags/string/</link>
-      <pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.yaolugnu.com/tags/string/</guid>
+      <link>http://172.17.140.72:1313/tags/string/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/tags/string/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Sort</title>
-      <link>https://www.yaolugnu.com/tags/sort/</link>
-      <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.yaolugnu.com/tags/sort/</guid>
+      <link>http://172.17.140.72:1313/tags/sort/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/tags/sort/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Linear</title>
-      <link>https://www.yaolugnu.com/tags/linear/</link>
-      <pubDate>Thu, 16 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.yaolugnu.com/tags/linear/</guid>
+      <link>http://172.17.140.72:1313/tags/linear/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/tags/linear/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Command</title>
-      <link>https://www.yaolugnu.com/tags/command/</link>
-      <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.yaolugnu.com/tags/command/</guid>
+      <link>http://172.17.140.72:1313/tags/command/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/tags/command/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>中文</title>
-      <link>https://www.yaolugnu.com/tags/%E4%B8%AD%E6%96%87/</link>
-      <pubDate>Thu, 04 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.yaolugnu.com/tags/%E4%B8%AD%E6%96%87/</guid>
+      <link>http://172.17.140.72:1313/tags/%E4%B8%AD%E6%96%87/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/tags/%E4%B8%AD%E6%96%87/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Memento</title>
-      <link>https://www.yaolugnu.com/tags/memento/</link>
-      <pubDate>Tue, 04 Jun 2019 17:40:19 +0800</pubDate>
-      
-      <guid>https://www.yaolugnu.com/tags/memento/</guid>
+      <link>http://172.17.140.72:1313/tags/memento/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/tags/memento/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Vistor</title>
-      <link>https://www.yaolugnu.com/tags/vistor/</link>
-      <pubDate>Tue, 04 Jun 2019 17:40:19 +0800</pubDate>
-      
-      <guid>https://www.yaolugnu.com/tags/vistor/</guid>
+      <link>http://172.17.140.72:1313/tags/vistor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/tags/vistor/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

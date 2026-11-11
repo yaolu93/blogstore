@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Yao</title>
+    <link>http://172.17.140.72:1313/tags/linux/</link>
+    <description>Recent content in Linux on Yao</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 11 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://172.17.140.72:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Accessing a VMware NAT Virtual Machine from Another PC: Networking, SSH Authentication, and Troubleshooting</title>
+      <link>http://172.17.140.72:1313/post/pc2-to-vmware-vm-remote-ssh-guide/</link>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/post/pc2-to-vmware-vm-remote-ssh-guide/</guid>
+      <description>This article records how I connected a second Windows computer to a Linux virtual machine running in VMware, including the port conflict and SSH authentication issues I encountered.&#xA;Both computers are connected to the same home Wi-Fi network. PC1 runs VMware Workstation, and PC2 connects to the VM over SSH. Once SSH works, I use VS Code Remote-SSH for remote development.&#xA;Prerequisites PC1: Windows with VMware Workstation installed. The Linux VM uses a NAT network.</description>
+    </item>
+  </channel>
+</rss>

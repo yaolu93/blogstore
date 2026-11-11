@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>从另一台计算机访问 VMware NAT 虚拟机：网络连接、SSH 身份验证及故障排除 - Yao</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Yao Lu" /><meta name="description" content="这篇文章记录我从第二台 Windows 电脑连接 VMware Linux 虚拟机的配置过程，以及中间遇到的端口冲突和 SSH 认证问题。 两台电脑连接同一个家庭 Wi-Fi。PC1 运行 VMware Wo" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.128.0 with theme even" />
+
+
+<link rel="canonical" href="http://172.17.140.72:1313/zh-cn/post/pc2-to-vmware-vm-remote-ssh-guide/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.dc0a4cbea9ed7af8739bd49aecf7d0dcd321ca4e581bdf48fb5fb111b2271727.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:url" content="http://172.17.140.72:1313/zh-cn/post/pc2-to-vmware-vm-remote-ssh-guide/">
+  <meta property="og:site_name" content="Yao">
+  <meta property="og:title" content="从另一台计算机访问 VMware NAT 虚拟机：网络连接、SSH 身份验证及故障排除">
+  <meta property="og:description" content="这篇文章记录我从第二台 Windows 电脑连接 VMware Linux 虚拟机的配置过程，以及中间遇到的端口冲突和 SSH 认证问题。 两台电脑连接同一个家庭 Wi-Fi。PC1 运行 VMware Wo">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2026-11-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-11-11T00:00:00+00:00">
+    <meta property="article:tag" content="VMware">
+    <meta property="article:tag" content="NAT">
+    <meta property="article:tag" content="SSH">
+    <meta property="article:tag" content="VSCode">
+    <meta property="article:tag" content="Windows">
+    <meta property="article:tag" content="Linux">
+
+  <meta itemprop="name" content="从另一台计算机访问 VMware NAT 虚拟机：网络连接、SSH 身份验证及故障排除">
+  <meta itemprop="description" content="这篇文章记录我从第二台 Windows 电脑连接 VMware Linux 虚拟机的配置过程，以及中间遇到的端口冲突和 SSH 认证问题。 两台电脑连接同一个家庭 Wi-Fi。PC1 运行 VMware Wo">
+  <meta itemprop="datePublished" content="2026-11-11T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-11-11T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2697">
+  <meta itemprop="keywords" content="VMware,NAT,SSH,VSCode,Windows,Linux">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="从另一台计算机访问 VMware NAT 虚拟机：网络连接、SSH 身份验证及故障排除">
+  <meta name="twitter:description" content="这篇文章记录我从第二台 Windows 电脑连接 VMware Linux 虚拟机的配置过程，以及中间遇到的端口冲突和 SSH 认证问题。 两台电脑连接同一个家庭 Wi-Fi。PC1 运行 VMware Wo">
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/zh-cn/" class="logo">yao lu</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/zh-cn/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/zh-cn/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/zh-cn/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/zh-cn/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+
+  
+  <div class="language-selector">
+    <ul class="languages-list">
+      
+        
+        
+        
+        <li class="language-item">
+          
+            <a href="/post/pc2-to-vmware-vm-remote-ssh-guide/" lang="en" hreflang="en" aria-label="English">en</a>
+          
+        </li>
+      
+        
+        
+        
+        <li class="language-item active">
+          
+            <a href="/zh-cn/post/pc2-to-vmware-vm-remote-ssh-guide/" lang="zh-CN" hreflang="zh-CN" aria-label="简体中文">中</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/zh-cn/" class="logo">yao lu</a>
+</div>
+
+
+  <div class="language-selector">
+    <ul class="languages-list">
+      
+        
+        
+        
+        <li class="language-item">
+          
+            <a href="/post/pc2-to-vmware-vm-remote-ssh-guide/" lang="en" hreflang="en" aria-label="English">en</a>
+          
+        </li>
+      
+        
+        
+        
+        <li class="language-item active">
+          
+            <a href="/zh-cn/post/pc2-to-vmware-vm-remote-ssh-guide/" lang="zh-CN" hreflang="zh-CN" aria-label="简体中文">中</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/zh-cn/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/zh-cn/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/zh-cn/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/zh-cn/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">从另一台计算机访问 VMware NAT 虚拟机：网络连接、SSH 身份验证及故障排除</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2026-11-11 </span>
+        <div class="post-category">
+            <a href="/zh-cn/categories/networking/"> Networking </a>
+            </div>
+          <span class="more-meta"> 约 2697 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#network-topology">Network Topology</a></li>
+    <li><a href="#check-the-network">Check the Network</a>
+      <ul>
+        <li><a href="#pc2-to-pc1">PC2 to PC1</a></li>
+        <li><a href="#pc1-to-linux-vm">PC1 to Linux VM</a></li>
+      </ul>
+    </li>
+    <li><a href="#vmware-nat-port-forwarding">VMware NAT Port Forwarding</a>
+      <ul>
+        <li><a href="#port-conflict">Port Conflict</a></li>
+      </ul>
+    </li>
+    <li><a href="#windows-firewall">Windows Firewall</a></li>
+    <li><a href="#ssh-authentication">SSH Authentication</a>
+      <ul>
+        <li><a href="#public-key-and-private-key">Public Key and Private Key</a></li>
+      </ul>
+    </li>
+    <li><a href="#vs-code-remote-ssh">VS Code Remote-SSH</a></li>
+    <li><a href="#troubleshooting">Troubleshooting</a></li>
+    <li><a href="#next-step-tailscale">Next Step: Tailscale</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>这篇文章记录我从第二台 Windows 电脑连接 VMware Linux 虚拟机的配置过程，以及中间遇到的端口冲突和 SSH 认证问题。</p>
+<p>两台电脑连接同一个家庭 Wi-Fi。PC1 运行 VMware Workstation，PC2 通过 SSH 连接 PC1 中的虚拟机，最后使用 VS Code Remote-SSH 进行远程开发。</p>
+<h1 id="prerequisites">Prerequisites</h1>
+<ul>
+<li>PC1：Windows，安装 VMware Workstation，Linux 虚拟机使用 NAT 网络。</li>
+<li>PC2：Windows，安装 OpenSSH Client、VS Code 和 Remote - SSH 扩展。</li>
+<li>Linux VM：SSH 服务已启动，有可登录的 Linux 用户。</li>
+</ul>
+<p>下面的 IP 和端口来自这次实验，使用时需要替换为自己的配置。</p>
+<h1 id="network-topology">Network Topology</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">家庭 Wi-Fi / LAN 192.168.0.0/24
+</span></span><span class="line"><span class="cl">Router 192.168.0.1
+</span></span><span class="line"><span class="cl">    |
+</span></span><span class="line"><span class="cl">    +-- PC1: Windows 192.168.0.151
+</span></span><span class="line"><span class="cl">    |     |
+</span></span><span class="line"><span class="cl">    |     +-- VMware Workstation / VMnet0 NAT
+</span></span><span class="line"><span class="cl">    |           Host Adapter: 172.16.199.1
+</span></span><span class="line"><span class="cl">    |           NAT Gateway: 172.16.199.254
+</span></span><span class="line"><span class="cl">    |           Linux VM:    172.16.199.201
+</span></span><span class="line"><span class="cl">    |
+</span></span><span class="line"><span class="cl">    +-- PC2: Windows 192.168.0.235
+</span></span><span class="line"><span class="cl">          VS Code + OpenSSH Client
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">PC2 --&gt; PC1:2223  --&gt; Linux VM:22   (SSH)
+</span></span><span class="line"><span class="cl">PC2 --&gt; PC1:18080 --&gt; Linux VM:80   (HTTP)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>这次实验将 VMnet0 配置为 NAT。VMware 常见的默认 NAT 网络是 VMnet8，实际使用哪个网络，要看 Virtual Network Editor 中的配置。</p>
+</blockquote>
+<p>PC2 和 VM 分别位于 <code>192.168.0.0/24</code>、<code>172.16.199.0/24</code>。PC2 没有到 VM 私有网段的路由，因此这里使用 PC1 的端口转发访问 VM。</p>
+<h1 id="check-the-network">Check the Network</h1>
+<h2 id="pc2-to-pc1">PC2 to PC1</h2>
+<p>先在两台 Windows 电脑上检查 IP：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">ipconfig</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后在 PC2 测试 PC1：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">ping</span> <span class="mf">192.168</span><span class="p">.</span><span class="py">0</span><span class="p">.</span><span class="py">151</span>
+</span></span><span class="line"><span class="cl"><span class="n">arp</span> <span class="n">-a</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>最初 PC2 无法 Ping 通 PC1。在 PC1 防火墙中允许来自 PC2 的 ICMPv4 请求后，Ping 成功，ARP 表中也能找到 PC1 的 MAC 地址。</p>
+<p>如果遇到同样的问题，可以在 PC1 的管理员 PowerShell 中添加规则：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">New-NetFirewallRule</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-DisplayName</span> <span class="s1">&#39;Allow ICMPv4 from PC2&#39;</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-Protocol</span> <span class="n">ICMPv4</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-IcmpType</span> <span class="mf">8</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-RemoteAddress</span> <span class="mf">192.168</span><span class="p">.</span><span class="py">0</span><span class="p">.</span><span class="py">235</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-Action</span> <span class="n">Allow</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-Profile</span> <span class="n">Private</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>Ping 失败可能只是 ICMP 被防火墙拦截。ARP 记录可以辅助检查同一子网中的地址解析，但不能说明 SSH 或 HTTP 服务可用。</p>
+</blockquote>
+<h2 id="pc1-to-linux-vm">PC1 to Linux VM</h2>
+<p>在 PC1 测试虚拟机：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">ping</span> <span class="mf">172.16</span><span class="p">.</span><span class="py">199</span><span class="p">.</span><span class="py">201</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Test-NetConnection</span> <span class="mf">172.16</span><span class="p">.</span><span class="py">199</span><span class="p">.</span><span class="py">201</span> <span class="n">-Port</span> <span class="mf">22</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这次 PC1 可以 Ping 通 VM，浏览器可以打开 <code>http://172.16.199.201</code>，22 端口的测试也返回：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">TcpTestSucceeded : True
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>PC1 到 VM 的网络和 SSH 端口可达后，再检查 PC2 到 PC1 的转发路径。</p>
+<h1 id="vmware-nat-port-forwarding">VMware NAT Port Forwarding</h1>
+<p>在 PC1 打开：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">VMware Workstation
+</span></span><span class="line"><span class="cl">  → Edit
+</span></span><span class="line"><span class="cl">  → Virtual Network Editor
+</span></span><span class="line"><span class="cl">  → VMnet0
+</span></span><span class="line"><span class="cl">  → NAT Settings
+</span></span><span class="line"><span class="cl">  → Port Forwarding
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>本次使用的端口转发规则如下：</p>
+<table>
+<thead>
+<tr>
+<th>Host Port</th>
+<th>Protocol</th>
+<th>Virtual Machine IP</th>
+<th>VM Port</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>18080</code></td>
+<td>TCP</td>
+<td><code>172.16.199.201</code></td>
+<td><code>80</code></td>
+</tr>
+<tr>
+<td><code>2223</code></td>
+<td>TCP</td>
+<td><code>172.16.199.201</code></td>
+<td><code>22</code></td>
+</tr>
+</tbody>
+</table>
+<p>PC2 访问 PC1 的 <code>2223</code> 端口时，VMware NAT 将连接转发到 VM 的 <code>22</code> 端口。PC2 不需要加入 VMware 的私有子网。</p>
+<h2 id="port-conflict">Port Conflict</h2>
+<p>我最初设置的是 <code>8080</code> 和 <code>2222</code>。PC2 测试 <code>8080</code> 成功，但 <code>2222</code> 失败。</p>
+<p>在 PC1 检查这两个端口：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Get-NetTCPConnection</span> <span class="n">-State</span> <span class="n">Listen</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="py">LocalPort</span> <span class="n">-in</span> <span class="mf">8080</span><span class="p">,</span><span class="mf">2222</span> <span class="p">}</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">Select-Object</span> <span class="n">LocalAddress</span><span class="p">,</span><span class="n">LocalPort</span><span class="p">,</span><span class="n">OwningProcess</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>结果发现 <code>8080</code> 被 PID <code>18988</code> 占用，而 <code>2222</code> 没有监听。继续检查进程来源：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Get-Process</span> <span class="n">-Id</span> <span class="mf">18988</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Id</span><span class="p">,</span><span class="n">ProcessName</span><span class="p">,</span><span class="n">Path</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Get-CimInstance</span> <span class="n">Win32_Process</span> <span class="n">-Filter</span> <span class="s1">&#39;ProcessId=18988&#39;</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">Format-List</span> <span class="n">ProcessId</span><span class="p">,</span><span class="n">ParentProcessId</span><span class="p">,</span><span class="n">CommandLine</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>占用 <code>8080</code> 的是另一个 PowerShell 代理脚本。因此，之前的 TCP 测试成功，只说明有程序在响应，不能说明 VMware 转发成功。<code>2222</code> 没有监听的具体原因，当时没有进一步确认。</p>
+<p>还可以检查 VMware NAT 服务和 Windows 端口代理：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Get-Service</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="py">DisplayName</span> <span class="o">-like</span> <span class="s1">&#39;*VMware*NAT*&#39;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Get-Process</span> <span class="n">vmnat</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">Select-Object</span> <span class="n">Id</span><span class="p">,</span><span class="n">ProcessName</span><span class="p">,</span><span class="n">Path</span>
+</span></span><span class="line"><span class="cl"><span class="n">netsh</span> <span class="n">interface</span> <span class="n">portproxy</span> <span class="n">show</span> <span class="n">all</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这次 NAT 服务处于 <code>Running</code> 状态，<code>vmnat.exe</code> 存在，Windows <code>portproxy</code> 没有规则。最后将转发端口改为 <code>18080</code> 和 <code>2223</code>，再继续测试。</p>
+<p>如果修改规则后没有生效，可以在 PC1 的管理员 PowerShell 中重启 NAT 服务：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Restart-Service</span> <span class="n">-Name</span> <span class="s1">&#39;VMware NAT Service&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>重启会短暂中断使用该 NAT 网络的虚拟机连接。发现端口占用时，先确认进程用途，再决定是否停止它。</p>
+</blockquote>
+<h1 id="windows-firewall">Windows Firewall</h1>
+<p>下面是只允许 PC2 访问转发端口的规则示例。在 PC1 的管理员 PowerShell 中执行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">New-NetFirewallRule</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-DisplayName</span> <span class="s1">&#39;VM HTTP from PC2&#39;</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="n">-Action</span> <span class="n">Allow</span> <span class="n">-Protocol</span> <span class="n">TCP</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-LocalPort</span> <span class="mf">18080</span> <span class="n">-RemoteAddress</span> <span class="mf">192.168</span><span class="p">.</span><span class="py">0</span><span class="p">.</span><span class="py">235</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-Profile</span> <span class="n">Private</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">New-NetFirewallRule</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-DisplayName</span> <span class="s1">&#39;VM SSH from PC2&#39;</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="n">-Action</span> <span class="n">Allow</span> <span class="n">-Protocol</span> <span class="n">TCP</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-LocalPort</span> <span class="mf">2223</span> <span class="n">-RemoteAddress</span> <span class="mf">192.168</span><span class="p">.</span><span class="py">0</span><span class="p">.</span><span class="py">235</span> <span class="p">`</span>
+</span></span><span class="line"><span class="cl">  <span class="n">-Profile</span> <span class="n">Private</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>规则使用 <code>Private</code> 网络配置文件，添加前先检查 Windows 当前网络配置文件和已有规则，避免重复创建。这次连接只在家庭局域网内进行，不需要配置家庭路由器的公网端口转发。</p>
+<p>在 PC2 测试：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Test-NetConnection</span> <span class="mf">192.168</span><span class="p">.</span><span class="py">0</span><span class="p">.</span><span class="py">151</span> <span class="n">-Port</span> <span class="mf">18080</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Test-NetConnection</span> <span class="mf">192.168</span><span class="p">.</span><span class="py">0</span><span class="p">.</span><span class="py">151</span> <span class="n">-Port</span> <span class="mf">2223</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>两个端口都返回了 <code>TcpTestSucceeded : True</code>。接下来还需要检查应用层：SSH 是否能登录，HTTP 是否能返回预期页面。本次只确认了 PC2 到 <code>18080</code> 的 TCP 连通性，没有单独检查 PC2 浏览器中的页面内容。</p>
+<h1 id="ssh-authentication">SSH Authentication</h1>
+<p>最初在 PC2 使用 <code>root</code> 登录：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">ssh</span> <span class="n">-p</span> <span class="mf">2223</span> <span class="n">root</span><span class="nv">@192</span><span class="p">.</span><span class="py">168</span><span class="p">.</span><span class="py">0</span><span class="p">.</span><span class="py">151</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>返回：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Permission denied (publickey).
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>之后改用 VM 中的 <code>yao</code> 用户，并打开详细日志：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">ssh</span> <span class="n">-vvv</span> <span class="n">-p</span> <span class="mf">2223</span> <span class="n">yao</span><span class="nv">@192</span><span class="p">.</span><span class="py">168</span><span class="p">.</span><span class="py">0</span><span class="p">.</span><span class="py">151</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>日志中的关键信息如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">debug1: Connection established.
+</span></span><span class="line"><span class="cl">debug1: Remote protocol version 2.0, remote software version OpenSSH_9.2p1 Debian-2+deb12u7
+</span></span><span class="line"><span class="cl">debug1: Authentications that can continue: publickey
+</span></span><span class="line"><span class="cl">debug3: no such identity: C:\Users\yao/.ssh/id_rsa: No such file or directory
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>TCP 连接和 SSH 协议协商已经成功，问题出在用户认证。服务端只提供 <code>publickey</code> 认证，PC2 当时没有找到默认私钥，SSH Agent 也没有可用密钥。</p>
+<blockquote>
+<p>SSH 软件版本只能帮助识别服务端软件。确认连接的是目标 VM，还需要核对服务器主机密钥指纹和服务器端信息。</p>
+</blockquote>
+<h2 id="public-key-and-private-key">Public Key and Private Key</h2>
+<ul>
+<li>PC2 保存用户私钥，例如 <code>~/.ssh/id_rsa</code>。</li>
+<li>Linux VM 的目标用户在 <code>~/.ssh/authorized_keys</code> 中保存对应公钥。</li>
+<li>PC2 的 <code>known_hosts</code> 记录服务器主机密钥，用来识别服务器。</li>
+</ul>
+<p>这次最终使用 <code>yao</code> 用户和 <code>id_rsa</code> 登录成功。密钥准备过程没有完整记录，下面补充一种为 PC2 新建密钥的做法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">ssh-keygen</span> <span class="n">-t</span> <span class="n">ed25519</span> <span class="n">-C</span> <span class="s1">&#39;pc2-to-linux-vm&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>为私钥设置口令，再通过 VM 控制台或已有登录方式，将生成的 <code>.pub</code> 公钥添加到 VM 上 <code>yao</code> 用户的 <code>~/.ssh/authorized_keys</code>，并检查目录、文件权限和所有者。私钥保留在 PC2，不要提交到 Git 或放进博客。</p>
+<p>如果使用这对新密钥，下面 SSH 配置中的 <code>IdentityFile</code> 应改为 <code>~/.ssh/id_ed25519</code>。</p>
+<h1 id="vs-code-remote-ssh">VS Code Remote-SSH</h1>
+<p>在 PC2 安装 <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote - SSH 扩展</a>，然后编辑 SSH 配置文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\Users\yao\.ssh\config
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下面是这次连接成功时使用的配置：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Host ydb
+</span></span><span class="line"><span class="cl">    HostName 192.168.0.151
+</span></span><span class="line"><span class="cl">    User yao
+</span></span><span class="line"><span class="cl">    Port 2223
+</span></span><span class="line"><span class="cl">    IdentityFile ~/.ssh/id_rsa
+</span></span><span class="line"><span class="cl">    IdentitiesOnly yes
+</span></span></code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Host ydb</code></td>
+<td>PC2 上使用的连接别名</td>
+</tr>
+<tr>
+<td><code>HostName</code></td>
+<td>PC1 的局域网 IP</td>
+</tr>
+<tr>
+<td><code>User</code></td>
+<td>VM 中的 Linux 用户</td>
+</tr>
+<tr>
+<td><code>Port</code></td>
+<td>PC1 的 SSH 转发端口</td>
+</tr>
+<tr>
+<td><code>IdentityFile</code></td>
+<td>PC2 上的私钥路径</td>
+</tr>
+<tr>
+<td><code>IdentitiesOnly yes</code></td>
+<td>只使用配置指定的身份进行认证</td>
+</tr>
+</tbody>
+</table>
+<p>先在 PC2 终端确认可以登录：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">ssh</span> <span class="n">ydb</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>再打开 VS Code：</p>
+<ol>
+<li>按 <code>Ctrl + Shift + P</code> 打开命令面板。</li>
+<li>选择 <code>Remote-SSH: Connect to Host...</code>。</li>
+<li>选择 <code>ydb</code>，首次连接时按提示安装和启动 VS Code Server。</li>
+<li>连接后打开远程终端，检查当前环境。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hostname
+</span></span><span class="line"><span class="cl">whoami
+</span></span><span class="line"><span class="cl"><span class="nb">pwd</span>
+</span></span><span class="line"><span class="cl">ip -br addr
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>到这里，PC2 已经可以通过 <code>ydb</code> 在 VS Code 中连接 Linux VM。编辑器界面运行在 PC2，远程终端和 VS Code Server 运行在 VM 中。</p>
+<h1 id="troubleshooting">Troubleshooting</h1>
+<p>排查时，我按 PC2 到 PC1、PC1 到 VM、端口转发、SSH 认证的顺序检查。前一段路径正常后，再继续往下找。</p>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>检查内容</th>
+<th>命令或位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PC2 无法 Ping PC1</td>
+<td>Wi-Fi IP、ICMPv4 防火墙规则</td>
+<td><code>ipconfig</code>、<code>ping</code>、<code>arp -a</code></td>
+</tr>
+<tr>
+<td>PC1 能访问 VM，PC2 不能</td>
+<td>NAT 转发和 PC1 防火墙</td>
+<td>Virtual Network Editor</td>
+</tr>
+<tr>
+<td>TCP 测试成功，页面却不对</td>
+<td>端口是否被其他程序占用</td>
+<td><code>Get-NetTCPConnection</code>、<code>Get-CimInstance</code></td>
+</tr>
+<tr>
+<td>PC1 的 SSH 转发端口不可达</td>
+<td>监听端口、NAT 服务和转发规则</td>
+<td><code>Test-NetConnection</code>、<code>Get-Service</code></td>
+</tr>
+<tr>
+<td><code>Permission denied (publickey)</code></td>
+<td>用户名、客户端私钥、服务端公钥</td>
+<td><code>ssh -vvv</code></td>
+</tr>
+<tr>
+<td>终端可以 SSH，VS Code 失败</td>
+<td>Remote-SSH 日志、远程 Server 兼容性和权限</td>
+<td>VS Code Output → Remote-SSH</td>
+</tr>
+<tr>
+<td>PC1 IP 变化后无法连接</td>
+<td>DHCP 租约和 SSH <code>HostName</code></td>
+<td>路由器 DHCP Reservation</td>
+</tr>
+</tbody>
+</table>
+<p>PC1 的局域网 IP 和 VM 的 NAT IP 都应保持稳定：前者供 PC2 连接，后者是 NAT 转发规则的目标。修改地址后，需要同步更新对应配置。</p>
+<h1 id="next-step-tailscale">Next Step: Tailscale</h1>
+<p>上面的实验是在同一家庭 Wi-Fi 内完成的。后面可以尝试用 Tailscale 从外部网络连接，目前还没有实施。</p>
+<table>
+<thead>
+<tr>
+<th>安装位置</th>
+<th>连接方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PC1 和 PC2</td>
+<td>PC2 → PC1 的 Tailscale IP <code>:2223</code> → VMware NAT → VM <code>:22</code></td>
+</tr>
+<tr>
+<td>Linux VM 和 PC2</td>
+<td>PC2 → VM 的 Tailscale IP <code>:22</code></td>
+</tr>
+</tbody>
+</table>
+<p>两种方式都不需要在家庭路由器上公开 SSH 端口。选择时还要检查访问策略和主机防火墙，速度则需要实际测试，不能只看转发层数判断。</p>
+<h1 id="references">References</h1>
+<ul>
+<li><a href="https://docs.vmware.com/">VMware Workstation 文档入口</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh-overview">Microsoft OpenSSH for Windows</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement">OpenSSH 密钥管理</a></li>
+<li><a href="https://learn.microsoft.com/en-us/powershell/module/netsecurity/new-netfirewallrule">New-NetFirewallRule</a></li>
+<li><a href="https://code.visualstudio.com/docs/remote/ssh">VS Code Remote Development using SSH</a></li>
+<li><a href="https://tailscale.com/docs/">Tailscale 官方文档</a></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Yao Lu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2026-11-11
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/zh-cn/tags/vmware/">VMware</a>
+          <a href="/zh-cn/tags/nat/">NAT</a>
+          <a href="/zh-cn/tags/ssh/">SSH</a>
+          <a href="/zh-cn/tags/vscode/">VSCode</a>
+          <a href="/zh-cn/tags/windows/">Windows</a>
+          <a href="/zh-cn/tags/linux/">Linux</a>
+          </div>
+      <nav class="post-nav">
+        
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://yao.lu.1223@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.linkedin.com/in/yao-lu93" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/yaolu93" class="iconfont icon-github" title="github"></a>
+  <a href="http://172.17.140.72:1313/zh-cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2026<span class="heart"><i class="iconfont icon-heart"></i></span><span>Yao</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

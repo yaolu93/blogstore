@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Apache_Kafka_Architecture_Topology - Yao</title>
@@ -25,10 +25,10 @@ Kafka Server: Data written by producers is stored and organized via topics." />
 
 
 
-<meta name="generator" content="Hugo 0.111.3 with theme even" />
+<meta name="generator" content="Hugo 0.128.0 with theme even" />
 
 
-<link rel="canonical" href="https://www.yaolugnu.com/post/apache_kafka_architecture_topology/" />
+<link rel="canonical" href="http://172.17.140.72:1313/post/apache_kafka_architecture_topology/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -37,29 +37,36 @@ Kafka Server: Data written by producers is stored and organized via topics." />
 
 
 
-<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link href="/sass/main.min.dc0a4cbea9ed7af8739bd49aecf7d0dcd321ca4e581bdf48fb5fb111b2271727.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Apache_Kafka_Architecture_Topology" />
-<meta property="og:description" content="This article will describe the how the Apache Kafka work with components
+<meta property="og:url" content="http://172.17.140.72:1313/post/apache_kafka_architecture_topology/">
+  <meta property="og:site_name" content="Yao">
+  <meta property="og:title" content="Apache_Kafka_Architecture_Topology">
+  <meta property="og:description" content="This article will describe the how the Apache Kafka work with components
 Kafka and components： Apache kafka is distributed event-streaming engine. It was designed by C/S(Client/Server) archtecture. Client means kafka producer and kafka consumer, which function include: Kafka producer and kafka consumer. Server means kafka broker, which function include: store data; cluster of computers; can also integrate with other systems.
-Kafka Server: Data written by producers is stored and organized via topics." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.yaolugnu.com/post/apache_kafka_architecture_topology/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2024-04-19T00:00:00+00:00" />
-<meta property="article:modified_time" content="2026-01-05T00:00:00+00:00" />
-<meta itemprop="name" content="Apache_Kafka_Architecture_Topology">
-<meta itemprop="description" content="This article will describe the how the Apache Kafka work with components
+Kafka Server: Data written by producers is stored and organized via topics.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-04-19T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-01-05T00:00:00+00:00">
+    <meta property="article:tag" content="Java">
+
+  <meta itemprop="name" content="Apache_Kafka_Architecture_Topology">
+  <meta itemprop="description" content="This article will describe the how the Apache Kafka work with components
 Kafka and components： Apache kafka is distributed event-streaming engine. It was designed by C/S(Client/Server) archtecture. Client means kafka producer and kafka consumer, which function include: Kafka producer and kafka consumer. Server means kafka broker, which function include: store data; cluster of computers; can also integrate with other systems.
-Kafka Server: Data written by producers is stored and organized via topics."><meta itemprop="datePublished" content="2024-04-19T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2026-01-05T00:00:00+00:00" />
-<meta itemprop="wordCount" content="96">
-<meta itemprop="keywords" content="Java," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Apache_Kafka_Architecture_Topology"/>
-<meta name="twitter:description" content="This article will describe the how the Apache Kafka work with components
+Kafka Server: Data written by producers is stored and organized via topics.">
+  <meta itemprop="datePublished" content="2024-04-19T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-01-05T00:00:00+00:00">
+  <meta itemprop="wordCount" content="96">
+  <meta itemprop="keywords" content="Java">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Apache_Kafka_Architecture_Topology">
+  <meta name="twitter:description" content="This article will describe the how the Apache Kafka work with components
 Kafka and components： Apache kafka is distributed event-streaming engine. It was designed by C/S(Client/Server) archtecture. Client means kafka producer and kafka consumer, which function include: Kafka producer and kafka consumer. Server means kafka broker, which function include: store data; cluster of computers; can also integrate with other systems.
-Kafka Server: Data written by producers is stored and organized via topics."/>
+Kafka Server: Data written by producers is stored and organized via topics.">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -98,6 +105,29 @@ Kafka Server: Data written by producers is stored and organized via topics."/>
   </ul>
 
   
+  <div class="language-selector">
+    <ul class="languages-list">
+      
+        
+        
+        
+        <li class="language-item active">
+          
+            <a href="/post/apache_kafka_architecture_topology/" lang="en" hreflang="en" aria-label="English">en</a>
+          
+        </li>
+      
+        
+        
+        
+        <li class="language-item">
+          
+            <a href="/zh-cn/" lang="zh-CN" hreflang="zh-CN" aria-label="简体中文">中</a>
+          
+        </li>
+      
+    </ul>
+  </div>
 
 
 </nav>
@@ -109,6 +139,29 @@ Kafka Server: Data written by producers is stored and organized via topics."/>
 </div>
 
 
+  <div class="language-selector">
+    <ul class="languages-list">
+      
+        
+        
+        
+        <li class="language-item active">
+          
+            <a href="/post/apache_kafka_architecture_topology/" lang="en" hreflang="en" aria-label="English">en</a>
+          
+        </li>
+      
+        
+        
+        
+        <li class="language-item">
+          
+            <a href="/zh-cn/" lang="zh-CN" hreflang="zh-CN" aria-label="简体中文">中</a>
+          
+        </li>
+      
+    </ul>
+  </div>
 
 
 
@@ -253,7 +306,11 @@ Server means kafka broker, which function include: store data; cluster of comput
           <a href="/tags/java/">Java</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/pc2-to-vmware-vm-remote-ssh-guide/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Accessing a VMware NAT Virtual Machine from Another PC: Networking, SSH Authentication, and Troubleshooting</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         <a class="next" href="/post/emacs_eglot_python/">
             <span class="next-text nav-default">Emacs Eglot Python config</span>
             <span class="next-text nav-mobile">Next</span>

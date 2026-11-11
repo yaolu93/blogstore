@@ -1,0 +1,88 @@
+<?xml-stylesheet type="text/xsl" href="http://172.17.140.72:1313/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://172.17.140.72:1313/zh-cn/categories/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://172.17.140.72:1313/zh-cn/tags/linux/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://172.17.140.72:1313/zh-cn/tags/nat/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://172.17.140.72:1313/zh-cn/categories/networking/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://172.17.140.72:1313/zh-cn/post/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://172.17.140.72:1313/zh-cn/tags/ssh/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://172.17.140.72:1313/zh-cn/tags/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://172.17.140.72:1313/zh-cn/tags/vmware/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://172.17.140.72:1313/zh-cn/tags/vscode/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://172.17.140.72:1313/zh-cn/tags/windows/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://172.17.140.72:1313/zh-cn/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://172.17.140.72:1313/zh-cn/post/pc2-to-vmware-vm-remote-ssh-guide/</loc>
+    <lastmod>2026-11-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+</urlset>

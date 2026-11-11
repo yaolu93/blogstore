@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Networking on Yao</title>
+    <link>http://172.17.140.72:1313/zh-cn/categories/networking/</link>
+    <description>Recent content in Networking on Yao</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 11 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://172.17.140.72:1313/zh-cn/categories/networking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>从另一台计算机访问 VMware NAT 虚拟机：网络连接、SSH 身份验证及故障排除</title>
+      <link>http://172.17.140.72:1313/zh-cn/post/pc2-to-vmware-vm-remote-ssh-guide/</link>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
+      <guid>http://172.17.140.72:1313/zh-cn/post/pc2-to-vmware-vm-remote-ssh-guide/</guid>
+      <description>这篇文章记录我从第二台 Windows 电脑连接 VMware Linux 虚拟机的配置过程，以及中间遇到的端口冲突和 SSH 认证问题。 两台电脑连接同一个家庭 Wi-Fi。PC1 运行 VMware Wo</description>
+    </item>
+  </channel>
+</rss>
