@@ -4,6 +4,7 @@ baseURL = "https://www.yaolugnu.com/"
 
 languageCode = "en"
 defaultContentLanguage = "en"                             # en / zh-cn / ... (This field determines which i18n file to use)
+defaultContentLanguageInSubdir = false
 title = "Yao"
 preserveTaxonomyNames = true
 enableRobotsTXT = true
@@ -31,29 +32,60 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   priority = 0.5
   filename = "sitemap.xml"
 
-[[menu.main]]             # config your menu              # 配置目录
-  name = "Home"
-  weight = 10
-  identifier = "home"
-  url = "/"
-  
-[[menu.main]]
-  name = "Archives"
-  weight = 20
-  identifier = "archives"
-  url = "/post/"
-[[menu.main]]
-  name = "Tags"
-  weight = 30
-  identifier = "tags"
-  url = "/tags/"
-[[menu.main]]
-  name = "Categories"
-  weight = 40
-  identifier = "categories"
-  url = "/categories/"
+[languages.en]
+  languageCode = "en"
+  languageName = "English"
+  weight = 1
+
+  [[languages.en.menu.main]]
+    name = "Home"
+    weight = 10
+    identifier = "home"
+    pageRef = "/"
+  [[languages.en.menu.main]]
+    name = "Archives"
+    weight = 20
+    identifier = "archives"
+    pageRef = "/post"
+  [[languages.en.menu.main]]
+    name = "Tags"
+    weight = 30
+    identifier = "tags"
+    pageRef = "/tags"
+  [[languages.en.menu.main]]
+    name = "Categories"
+    weight = 40
+    identifier = "categories"
+    pageRef = "/categories"
+
+[languages.zh-cn]
+  languageCode = "zh-CN"
+  languageName = "简体中文"
+  weight = 2
+
+  [[languages.zh-cn.menu.main]]
+    name = "首页"
+    weight = 10
+    identifier = "home"
+    pageRef = "/"
+  [[languages.zh-cn.menu.main]]
+    name = "归档"
+    weight = 20
+    identifier = "archives"
+    pageRef = "/post"
+  [[languages.zh-cn.menu.main]]
+    name = "标签"
+    weight = 30
+    identifier = "tags"
+    pageRef = "/tags"
+  [[languages.zh-cn.menu.main]]
+    name = "分类"
+    weight = 40
+    identifier = "categories"
+    pageRef = "/categories"
 
 [params]
+  showLanguageSelector = true
   version = "4.x"           # Used to give a friendly message when you have an incompatible update
   debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
 

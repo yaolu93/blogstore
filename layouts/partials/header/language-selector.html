@@ -1,0 +1,17 @@
+{{ if and .Site.IsMultiLingual .Site.Params.showLanguageSelector }}
+  <div class="language-selector">
+    <ul class="languages-list">
+      {{ range .Site.Home.AllTranslations }}
+        {{ $active := eq .Language $.Site.Language }}
+        {{ $translation := index (where $.Page.AllTranslations "Language.Lang" "eq" .Language.Lang) 0 }}
+        <li class="language-item{{ if $active }} active{{ end }}">
+          {{ with $translation }}
+            <a href="{{ .RelPermalink }}" lang="{{ .Language.LanguageCode }}" hreflang="{{ .Language.LanguageCode }}">{{ .Language.LanguageName }}</a>
+          {{ else }}
+            <a href="{{ .RelPermalink }}" lang="{{ .Language.LanguageCode }}" hreflang="{{ .Language.LanguageCode }}">{{ .Language.LanguageName }}</a>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}
